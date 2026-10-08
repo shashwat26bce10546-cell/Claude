@@ -3,6 +3,7 @@
 // output time after the dead-air trims in REMOVE.
 //   node build/build.mjs
 import { writeFileSync } from "node:fs";
+import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -206,8 +207,8 @@ add({
     tl.fromTo("#g-ambrane .slam", {scale:2.4, opacity:0}, {scale:1, opacity:1, duration:.32, ease:"power4.out"}, ${T});
     tl.to("#g-ambrane .slam", {scale:1.08, duration:${Math.max(0.1, D - 0.32)}, ease:"none"}, ${T + 0.32});`,
 });
-sfx.push(["riser", 13.95, 0.3, 8.9]);
-sfx.push(["impact-bass-1", 15.1, 0.55]);
+sfx.push(["riser", 13.95, 0.22, 10.6]);
+sfx.push(["ambrane-boom", 15.1, 0.55]);
 
 add({
   id: "g-since", a: 16.1, b: 18.98, cls: "top",
@@ -443,13 +444,37 @@ const gHtml = G.map((g) => {
 tlLines.push(`tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.5, ease:"power1.in"}, ${fmt(OUT_END - 0.5)});`);
 
 // sfx audio
-const SFX_LEN = { whoosh: 1.2, "whoosh-short": 0.8, "whoosh-cinematic": 1.6, pop: 0.72, "impact-bass-1": 2.12, "impact-bass-2": 2.59, riser: 1.2, sparkle: 1.5, click: 0.37, ping: 1.32, "glitch-1": 1.2, chime: 2.5, error: 1.2 };
+// Pitched-down, voice-carved variants (build/make-sfx.sh). Each base sound rotates
+// through its pool so the same effect never plays twice in a row.
+const POOLS = {
+  whoosh: ["whoosh-a", "whoosh-b"], "whoosh-short": ["whoosh-c", "whoosh-d"],
+  "whoosh-cinematic": ["whoosh-e", "whoosh-f"], "impact-bass-1": ["hit-a", "hit-c", "hit-d"],
+  "impact-bass-2": ["hit-b", "hit-d", "hit-c"], pop: ["pop-a", "pop-b", "pop-c"], click: ["click-a", "click-b"],
+  ping: ["ping-a", "ping-b"], sparkle: ["sparkle-a"], chime: ["chime-a"], "glitch-1": ["glitch-a"], error: ["glitch-a"],
+  riser: ["riser-a"], "ambrane-boom": ["ambrane-boom"],
+};
+const used = {};
+const pick = (base) => {
+  const pool = POOLS[base];
+  const n = (used[base] = (used[base] ?? -1) + 1);
+  return pool[n % pool.length];
+};
+const CAP = { whoosh: 1.5, "whoosh-short": 1.0, "whoosh-cinematic": 2.0, pop: 0.9, "impact-bass-1": 2.6, "impact-bass-2": 3.0, riser: 1.5, sparkle: 1.8, click: 0.45, ping: 1.6, "glitch-1": 1.4, error: 1.4, chime: 3.0, "ambrane-boom": 2.4 };
+const LEN = {};
+const lenOf = (f) =>
+  (LEN[f] ??= +execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${join(here, "..", "assets/sfx-low", f + ".mp3")}"`).toString().trim());
+// output-time windows where someone is speaking (caption phrases)
+const SPEECH = PHRASES.map(([w, end]) => [map(w[0][1]), map(end)]);
+const speaking = (t) => SPEECH.some(([a, b]) => t >= a - 0.05 && t <= b);
 const sfxHtml = sfx
   .sort((x, y) => x[1] - y[1])
-  .map(([f, t, v, ms], i) => {
+  .map(([base, t, v, ms], i) => {
+    const f = pick(base);
     const start = Math.max(0, map(t));
-    const dur = fmt(Math.min(SFX_LEN[f] ?? 1, OUT_END - start));
-    return `      <audio id="sfx-${i}" src="assets/sfx/${f === "error" ? "glitch-1" : f}.mp3" data-start="${start}" data-duration="${dur}"${ms ? ` data-media-start="${ms}"` : ""} data-track-index="${10 + (i % 4)}" data-volume="${v}"></audio>`;
+    const dur = fmt(Math.min(lenOf(f) - (ms || 0), CAP[base] ?? 1.5, OUT_END - start));
+    // half the old level, and lower again while the speaker is talking
+    const vol = fmt(v * 0.5 * (speaking(start + 0.05) ? 0.7 : 1));
+    return `      <audio id="sfx-${i}" src="assets/sfx-low/${f}.mp3" data-start="${start}" data-duration="${dur}"${ms ? ` data-media-start="${ms}"` : ""} data-track-index="${10 + (i % 8)}" data-volume="1" data-automation='${JSON.stringify({ version: 1, lanes: [{ target: "volume", points: [{ t: 0, v: vol }, { t: fmt(Math.max(0.05, dur - 0.2)), v: vol }, { t: dur, v: 0 }] }] })}'></audio>`;
   })
   .join("\n");
 
