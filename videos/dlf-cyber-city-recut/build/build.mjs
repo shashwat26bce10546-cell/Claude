@@ -2,8 +2,7 @@
 // All times below are SOURCE seconds (media/enhanced.mp4); they are mapped to
 // output time after the dead-air trims in REMOVE.
 //   node build/build.mjs
-import { writeFileSync } from "node:fs";
-import { execSync } from "node:child_process";
+import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -166,7 +165,39 @@ const KEY = new Set([
 
 // ---------- motion graphics (source times) ----------
 // Each: { id, a, b, html, anim } — anim is JS added to the timeline at output time T.
-const sfx = []; // [file, sourceTime, volume, mediaStart?]
+// Sound cues: [sound, sourceTime of the on-screen hit, gain]. Every cue has its own sound
+// (see build/make-sfx.sh); each file's loudest point lands on the cue time.
+const sfx = [
+  ["popLight", 0.5, 0.5],
+  ["negTap", 6.7, 0.5],
+  ["buzzer", 11.6, 0.32],
+  ["logo", 15.1, 0.75],
+  ["popHard", 17.2, 0.45],
+  ["hitFuture", 21.5, 0.55],
+  ["popDry", 27.8, 0.5],
+  ["popMsg", 29.5, 0.5],
+  ["popLong", 32.0, 0.5],
+  ["whooshImpact", 32.8, 0.6],
+  ["clickBox", 34.9, 0.55],
+  ["clickTech", 36.0, 0.55],
+  ["clickClassic", 37.1, 0.55],
+  ["tickCorrect", 38.4, 0.45],
+  ["clickCool", 40.0, 0.5],
+  ["hitShort", 41.6, 0.6],
+  ["popLight", 42.2, 0.45],
+  ["zoomHit", 43.1, 0.55],
+  ["popMsg", 43.8, 0.45],
+  ["trailerHit", 44.6, 0.6],
+  ["sparkle", 46.5, 0.45],
+  ["deepImpact", 51.7, 0.6],
+  ["positive", 53.8, 0.45],
+  ["hitFuture", 54.8, 0.55],
+  ["hitShort", 55.6, 0.6],
+  ["epicHit", 56.4, 0.6],
+  ["whooshC", 57.3, 0.45],
+  ["bells", 60.0, 0.45],
+];
+const tcues = []; // transitions get their sound below
 const G = [];
 const add = (g) => G.push(g);
 
@@ -178,7 +209,6 @@ add({
     tl.fromTo("#g-loc .pin", {scale:0}, {scale:1, duration:.4, ease:"back.out(3)"}, ${T + 0.15});
     tl.to("#g-loc .chip", {y:-40, opacity:0, duration:.3, ease:"power2.in"}, ${T + D - 0.3});`,
 });
-sfx.push(["pop", 0.5, 0.45]);
 
 add({
   id: "g-problem", a: 6.7, b: 9.6, cls: "top",
@@ -188,7 +218,6 @@ add({
     tl.fromTo("#g-problem .warn", {rotate:-30, scale:.4}, {rotate:0, scale:1, duration:.5, ease:"back.out(3)"}, ${T + 0.2});
     tl.to("#g-problem .tag", {x:700, duration:.35, ease:"power3.in"}, ${T + D - 0.35});`,
 });
-sfx.push(["glitch-1", 6.7, 0.25]);
 
 add({
   id: "g-hazard", a: 11.6, b: 13.05, cls: "mid",
@@ -198,7 +227,6 @@ add({
     tl.fromTo("#g-hazard .tape-inner", {xPercent:0}, {xPercent:-30, duration:${D}, ease:"none"}, ${T});
     tl.to("#g-hazard .tape", {opacity:0, duration:.2}, ${T + D - 0.2});`,
 });
-sfx.push(["error", 11.6, 0.22]);
 
 add({
   id: "g-ambrane", a: 15.1, b: 15.72, cls: "center",
@@ -207,8 +235,6 @@ add({
     tl.fromTo("#g-ambrane .slam", {scale:2.4, opacity:0}, {scale:1, opacity:1, duration:.32, ease:"power4.out"}, ${T});
     tl.to("#g-ambrane .slam", {scale:1.08, duration:${Math.max(0.1, D - 0.32)}, ease:"none"}, ${T + 0.32});`,
 });
-sfx.push(["riser", 13.95, 0.22, 10.6]);
-sfx.push(["ambrane-boom", 15.1, 0.55]);
 
 add({
   id: "g-since", a: 16.1, b: 18.98, cls: "top",
@@ -219,7 +245,6 @@ add({
     tl.fromTo("#g-since .since-sub", {opacity:0, y:20}, {opacity:1, y:0, duration:.35}, ${map(18.2)});
     tl.to("#g-since .since", {opacity:0, y:-30, duration:.3, ease:"power2.in"}, ${T + D - 0.3});`,
 });
-sfx.push(["ping", 16.4 + 0.8, 0.35]);
 
 add({
   id: "g-empty", a: 21.5, b: 21.78, cls: "mid",
@@ -229,7 +254,6 @@ add({
     tl.to("#g-empty .stamp", {opacity:0, duration:.15}, ${T + D + 0.2});`,
   extra: 0.35,
 });
-sfx.push(["impact-bass-2", 21.5 - 0.35, 0.4]);
 
 add({
   id: "g-plan", a: 25.0, b: 32.75, cls: "top",
@@ -247,7 +271,6 @@ add({
     tl.to("#g-step3", {backgroundColor:"#FFD43B", color:"#111", duration:.2}, ${map(32.45)});
     tl.to("#g-plan .plan", {opacity:0, y:-30, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["whoosh-short", 24.95, 0.3], ["pop", 27.8, 0.4], ["pop", 29.5, 0.4], ["pop", 32.0, 0.4], ["ping", 32.45, 0.35]);
 
 add({
   id: "g-why", a: 32.8, b: 33.75, cls: "center",
@@ -256,7 +279,6 @@ add({
     tl.fromTo("#g-why .why", {scale:.3, opacity:0, rotate:-6}, {scale:1, opacity:1, rotate:-3, duration:.35, ease:"back.out(2.2)"}, ${T});
     tl.to("#g-why .why", {scale:1.1, opacity:0, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["whoosh", 32.65, 0.35]);
 
 add({
   id: "g-check", a: 34.5, b: 39.7, cls: "top",
@@ -272,7 +294,6 @@ add({
     tl.fromTo("#g-c${n} .tick", {scale:0}, {scale:1, duration:.35, ease:"back.out(3)"}, ${map(t) + 0.12});`).join("")}
     tl.to("#g-check .checks", {opacity:0, y:-30, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["click", 34.9, 0.4], ["click", 36.0, 0.4], ["click", 37.1, 0.4], ["ping", 38.4, 0.35]);
 
 add({
   id: "g-zero", a: 40.0, b: 45.2, cls: "top",
@@ -287,7 +308,6 @@ add({
     tl.fromTo("#g-z${n} .zval", {scale:3, opacity:0, rotate:-15}, {scale:1, opacity:1, rotate:0, duration:.25, ease:"power4.out"}, ${map(z)});`).join("")}
     tl.to("#g-zero .zero-board", {opacity:0, y:-30, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["pop", 40.0, 0.3], ["impact-bass-1", 41.6, 0.4], ["pop", 42.2, 0.3], ["impact-bass-1", 43.1, 0.4], ["pop", 43.8, 0.3], ["impact-bass-1", 44.6, 0.45]);
 
 add({
   id: "g-pct", a: 46.5, b: 49.3, cls: "top",
@@ -297,7 +317,6 @@ add({
     tl.fromTo("#g-pct .pct-text", {opacity:0, x:60}, {opacity:1, x:0, duration:.4, ease:"power3.out"}, ${T + 0.2});
     tl.to("#g-pct .pct", {opacity:0, y:-30, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["sparkle", 46.5, 0.3]);
 
 add({
   id: "g-challenge", a: 50.0, b: 52.36, cls: "top",
@@ -307,7 +326,6 @@ add({
     tl.fromTo("#g-challenge .cal-top", {backgroundColor:"#222"}, {backgroundColor:"#E8344E", duration:.2}, ${map(51.7)});
     tl.to("#g-challenge .cal", {opacity:0, y:-40, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["whoosh-short", 49.9, 0.3], ["impact-bass-2", 51.7 - 0.35, 0.35]);
 
 add({
   id: "g-lose", a: 53.6, b: 54.45, cls: "mid",
@@ -316,7 +334,6 @@ add({
     tl.fromTo("#g-lose .stamp", {scale:2, opacity:0, rotate:8}, {scale:1, opacity:1, rotate:4, duration:.22, ease:"power4.out"}, ${T});
     tl.to("#g-lose .stamp", {opacity:0, duration:.15}, ${T + D - 0.15});`,
 });
-sfx.push(["impact-bass-1", 53.8, 0.35]);
 
 add({
   id: "g-trio", a: 54.8, b: 57.35, cls: "top",
@@ -331,7 +348,6 @@ add({
     tl.fromTo("#g-trio .arrow", {x:-20, y:20, opacity:0}, {x:0, y:0, opacity:1, duration:.4, ease:"back.out(3)"}, ${map(56.7)});
     tl.to("#g-trio .trio", {opacity:0, y:-30, duration:.25, ease:"power2.in"}, ${T + D - 0.25});`,
 });
-sfx.push(["impact-bass-2", 54.8 - 0.3, 0.35], ["impact-bass-1", 55.6, 0.35], ["impact-bass-1", 56.4, 0.4]);
 
 add({
   id: "g-end", a: 57.4, b: SRC_END, cls: "top",
@@ -341,7 +357,6 @@ add({
     tl.fromTo("#g-end .end-title", {opacity:0, scale:.8}, {opacity:1, scale:1, duration:.5, ease:"back.out(2)"}, ${T + 0.25});
     tl.fromTo("#g-end .end-title span", {color:"#FFFFFF"}, {color:"#FFD43B", duration:.3}, ${map(60.0)});`,
 });
-sfx.push(["whoosh-cinematic", 57.2, 0.3], ["chime", 60.0, 0.35]);
 
 // ---------- assemble ----------
 const fmt = (n) => +n.toFixed(3);
@@ -388,20 +403,20 @@ segs.forEach((s, i) => {
       `tl.fromTo("#${s.id}-tx", {xPercent:0, filter:"blur(0px)"}, {xPercent:-35, filter:"blur(14px)", duration:.16, ease:"power3.in", immediateRender:false}, ${fmt(c - 0.16)});`,
       `tl.fromTo("#${next.id}-tx", {xPercent:35, filter:"blur(14px)"}, {xPercent:0, filter:"blur(0px)", duration:.22, ease:"power3.out", immediateRender:false}, ${c});`,
     );
-    sfx.push(["whoosh", s.b - 0.3, 0.4]);
+    tcues.push(["whip", s.b]);
   } else if (kind === "zoom") {
     tlLines.push(
       `tl.fromTo("#${s.id}-tx", {scale:1, filter:"blur(0px)"}, {scale:1.25, filter:"blur(10px)", duration:.16, ease:"power3.in", immediateRender:false}, ${fmt(c - 0.16)});`,
       `tl.fromTo("#${next.id}-tx", {scale:1.25, filter:"blur(10px)"}, {scale:1, filter:"blur(0px)", duration:.24, ease:"power3.out", immediateRender:false}, ${c});`,
     );
-    sfx.push(["whoosh-short", s.b - 0.22, 0.4]);
+    tcues.push(["zoom", s.b]);
   } else {
     tlLines.push(`tl.fromTo("#flash", {opacity:0}, {opacity:.85, duration:.07, ease:"none", immediateRender:false}, ${fmt(c - 0.07)});`);
     tlLines.push(`tl.to("#flash", {opacity:0, duration:.28, ease:"power2.out"}, ${c});`);
     tlLines.push(
       `tl.fromTo("#${next.id}-tx", {scale:1.1}, {scale:1, duration:.35, ease:"power3.out", immediateRender:false}, ${c});`,
     );
-    sfx.push(["whoosh-cinematic", s.b - 0.35, 0.3]);
+    tcues.push(["flash", s.b]);
   }
 });
 
@@ -444,37 +459,30 @@ const gHtml = G.map((g) => {
 tlLines.push(`tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.5, ease:"power1.in"}, ${fmt(OUT_END - 0.5)});`);
 
 // sfx audio
-// Pitched-down, voice-carved variants (build/make-sfx.sh). Each base sound rotates
-// through its pool so the same effect never plays twice in a row.
-const POOLS = {
-  whoosh: ["whoosh-a", "whoosh-b"], "whoosh-short": ["whoosh-c", "whoosh-d"],
-  "whoosh-cinematic": ["whoosh-e", "whoosh-f"], "impact-bass-1": ["hit-a", "hit-c", "hit-d"],
-  "impact-bass-2": ["hit-b", "hit-d", "hit-c"], pop: ["pop-a", "pop-b", "pop-c"], click: ["click-a", "click-b"],
-  ping: ["ping-a", "ping-b"], sparkle: ["sparkle-a"], chime: ["chime-a"], "glitch-1": ["glitch-a"], error: ["glitch-a"],
-  riser: ["riser-a"], "ambrane-boom": ["ambrane-boom"],
-};
-const used = {};
-const pick = (base) => {
-  const pool = POOLS[base];
-  const n = (used[base] = (used[base] ?? -1) + 1);
-  return pool[n % pool.length];
-};
-const CAP = { whoosh: 1.5, "whoosh-short": 1.0, "whoosh-cinematic": 2.0, pop: 0.9, "impact-bass-1": 2.6, "impact-bass-2": 3.0, riser: 1.5, sparkle: 1.8, click: 0.45, ping: 1.6, "glitch-1": 1.4, error: 1.4, chime: 3.0, "ambrane-boom": 2.4 };
-const LEN = {};
-const lenOf = (f) =>
-  (LEN[f] ??= +execSync(`ffprobe -v error -show_entries format=duration -of csv=p=0 "${join(here, "..", "assets/sfx-low", f + ".mp3")}"`).toString().trim());
+// transition sounds, rotating per kind so neighbours differ
+const TPOOL = { whip: ["whooshA", "whooshD"], zoom: ["sweepA", "swooshFast", "sweepB", "sweepC"], flash: ["whooshB", null] }; // 2nd flash sits under the "WHY US?" hit
+const tUsed = {};
+for (const [kind, t] of tcues) {
+  const n = (tUsed[kind] = (tUsed[kind] ?? -1) + 1);
+  const name = TPOOL[kind][n % TPOOL[kind].length];
+  if (name) sfx.push([name, t, 0.5]);
+}
+const META = JSON.parse(readFileSync(join(here, "sfx-meta.json"), "utf8"));
 // output-time windows where someone is speaking (caption phrases)
 const SPEECH = PHRASES.map(([w, end]) => [map(w[0][1]), map(end)]);
 const speaking = (t) => SPEECH.some(([a, b]) => t >= a - 0.05 && t <= b);
 const sfxHtml = sfx
   .sort((x, y) => x[1] - y[1])
-  .map(([base, t, v, ms], i) => {
-    const f = pick(base);
-    const start = Math.max(0, map(t));
-    const dur = fmt(Math.min(lenOf(f) - (ms || 0), CAP[base] ?? 1.5, OUT_END - start));
-    // half the old level, and lower again while the speaker is talking
-    const vol = fmt(v * 0.5 * (speaking(start + 0.05) ? 0.7 : 1));
-    return `      <audio id="sfx-${i}" src="assets/sfx-low/${f}.mp3" data-start="${start}" data-duration="${dur}"${ms ? ` data-media-start="${ms}"` : ""} data-track-index="${10 + (i % 8)}" data-volume="1" data-automation='${JSON.stringify({ version: 1, lanes: [{ target: "volume", points: [{ t: 0, v: vol }, { t: fmt(Math.max(0.05, dur - 0.2)), v: vol }, { t: dur, v: 0 }] }] })}'></audio>`;
+  .map(([name, t, gain], i) => {
+    const m = META[name];
+    const hit = map(t);
+    const start = fmt(Math.max(0, hit - m.peak));
+    const skip = fmt(Math.max(0, m.peak - hit)); // cue too close to 0: skip into the file
+    const dur = fmt(Math.min(m.dur - skip, OUT_END - start));
+    // dip a little while the speaker is talking so the voice stays on top
+    const vol = fmt(gain * (speaking(hit) ? 0.8 : 1));
+    const lane = { version: 1, lanes: [{ target: "volume", points: [{ t: 0, v: vol }, { t: fmt(Math.max(0.02, dur - 0.08)), v: vol }, { t: dur, v: 0 }] }] };
+    return `      <audio id="sfx-${i}" src="assets/sfx-mk/${name}.mp3" data-start="${start}" data-duration="${dur}"${skip ? ` data-media-start="${skip}"` : ""} data-track-index="${10 + (i % 8)}" data-volume="1" data-automation='${JSON.stringify(lane)}'></audio>`;
   })
   .join("\n");
 

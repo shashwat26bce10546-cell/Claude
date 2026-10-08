@@ -1,40 +1,65 @@
 #!/bin/bash
-# Builds assets/sfx-low/: pitched-down, voice-friendly variants of the bundled SFX
-# plus a few synthesized one-offs, so no effect repeats identically.
+# Mixkit SFX (Mixkit Sound Effects Free License: free for commercial use, no attribution)
+# -> assets/sfx-mk/<name>.mp3, trimmed around the hit, pitched down 2 semitones,
+# with a small dip in the voice presence band, peak-normalized. Writes build/sfx-meta.json
+# (duration + time of the loudest point) so the composition can land each hit on its cue.
 set -euo pipefail
 cd "$(dirname "$0")/.."
-IN=assets/sfx; OUT=assets/sfx-low; mkdir -p "$OUT"
-# carve the speech band (2-3 kHz presence) and soften highs so the voice stays on top
-EQ="highpass=f=45,equalizer=f=2500:t=q:w=1.2:g=-7,equalizer=f=1000:t=q:w=1:g=-3,lowpass=f=7000"
-v() { # name src semitones extra-filter
-  local r; r=$(python3 -c "print(round(2**($3/12),4))")
-  ffmpeg -v error -y -i "$IN/$2.mp3" -af "asetrate=44100*$r,aresample=44100,$EQ${4:+,$4},afade=t=out:st=0:d=0.01:curve=tri,alimiter=limit=0.8" -ar 44100 -ac 2 -b:a 160k "$OUT/$1.mp3"
-}
-v whoosh-a        whoosh            -3
-v whoosh-b        whoosh            -5  "atempo=1.15"
-v whoosh-c        whoosh-short      -3
-v whoosh-d        whoosh-short      -6
-v whoosh-e        whoosh-cinematic  -3
-v whoosh-f        whoosh-cinematic  -5  "aecho=0.6:0.4:60:0.3"
-v hit-a           impact-bass-1     -3
-v hit-b           impact-bass-2     -3
-v hit-c           impact-bass-1     -5  "lowpass=f=3000"
-v hit-d           impact-bass-2     -6
-v pop-a           pop               -3
-v pop-b           pop               -5
-v pop-c           click             -4
-v click-a         click             -3
-v click-b         click-soft        -2
-v ping-a          ping              -4
-v ping-b          ping              -6
-v sparkle-a       sparkle           -3
-v chime-a         chime             -3
-v glitch-a        glitch-1          -4  "volume=0.7"
-v riser-a         riser             -3
-# one-off for the AMBRANE reveal: deep sub drop + filtered noise burst + tail
-ffmpeg -v error -y \
-  -f lavfi -i "aevalsrc='0.9*sin(2*PI*(38*t+55*(1-exp(-6*t))/6*6))*exp(-2.2*t)':s=44100:d=2.2" \
-  -f lavfi -i "anoisesrc=d=0.6:c=brown:a=0.5:r=44100" \
-  -filter_complex "[1:a]lowpass=f=900,afade=t=out:st=0.05:d=0.5[n];[0:a][n]amix=inputs=2:weights='1 0.6':normalize=0,aecho=0.7:0.5:90|180:0.35|0.2,$EQ,alimiter=limit=0.8" \
-  -ac 2 -b:a 160k "$OUT/ambrane-boom.mp3"
+RAW=build/mixkit-raw; OUT=assets/sfx-mk; mkdir -p "$RAW" "$OUT"
+# name id lead(s before peak kept) tail_end(s)
+SFX="
+sweepA 166 0.3 0.6
+sweepB 168 0.3 0.75
+sweepC 175 0.3 0.6
+sweepD 3115 0.1 0.35
+swooshFast 174 0.3 0.75
+whooshA 1490 0.4 0.95
+whooshB 1492 0.7 1.4
+whooshC 1489 0.5 1.4
+whooshD 1471 0.2 0.95
+logo 2900 1.3 7.4
+hitShort 2299 0.1 0.7
+hitFuture 2303 0.2 0.95
+zoomHit 772 0.3 0.8
+trailerHit 2908 0.5 2.5
+epicHit 2901 0.6 3.6
+deepImpact 1143 0.35 1.6
+whooshImpact 2903 0.6 2.5
+popLight 3005 0.05 0.25
+popHard 2364 0.02 0.35
+popLong 2358 0.03 0.4
+popDry 2356 0.15 0.3
+popMsg 2354 0.05 0.5
+clickBox 1120 0.1 0.25
+clickCool 2568 0.02 0.2
+clickTech 3124 0.02 0.3
+clickClassic 1117 0.12 0.3
+tickCorrect 2870 0.03 0.6
+positive 951 0.2 1.4
+confirm 2867 0.17 0.6
+sparkle 2350 0.75 2.2
+negTap 2569 0.05 0.5
+buzzer 948 0.02 1.2
+bells 937 1.15 2.2
+"
+EQ="highpass=f=40,equalizer=f=2600:t=q:w=1.2:g=-4"
+R=0.8909  # 2^(-2/12)
+echo "{" > build/sfx-meta.json
+first=1
+while read -r name id lead tail; do
+  [ -z "$name" ] && continue
+  [ -f "$RAW/$id.mp3" ] || curl -sf -m 30 -o "$RAW/$id.mp3" "https://assets.mixkit.co/active_storage/sfx/$id/$id-preview.mp3"
+  peak=$(ffmpeg -nostdin -v error -i "$RAW/$id.mp3" -ac 1 -ar 8000 -f s16le - | python3 -I -c "
+import sys,array
+a=array.array('h',sys.stdin.buffer.read()); w=80
+env=[max(abs(x) for x in a[i:i+w]) for i in range(0,len(a),w)]
+print(env.index(max(env))*w/8000)")
+  ss=$(python3 -c "print(max(0,$peak-$lead))"); to=$(python3 -c "print(max($tail,$peak+0.05)+0.12)")
+  ffmpeg -nostdin -v error -y -i "$RAW/$id.mp3" -af "atrim=$ss:$to,asetpts=PTS-STARTPTS,asetrate=44100*$R,aresample=44100,$EQ,afade=t=in:d=0.01,areverse,afade=t=in:d=0.12,areverse,loudnorm=I=-16:TP=-1:LRA=11,alimiter=limit=0.89" -ar 44100 -ac 2 -b:a 192k "$OUT/$name.mp3"
+  dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$OUT/$name.mp3")
+  pk=$(python3 -c "print(round(min($peak,$lead) / $R, 3))")
+  [ $first = 1 ] || echo "," >> build/sfx-meta.json; first=0
+  printf '  "%s": {"id": %s, "dur": %s, "peak": %s}' "$name" "$id" "$dur" "$pk" >> build/sfx-meta.json
+done <<< "$SFX"
+echo "}" >> build/sfx-meta.json
 ls "$OUT" | wc -l
