@@ -1,2 +1,4 @@
 node_modules/
 .DS_Store
+videos/*/renders/.*hf-transaction*/
+videos/*/renders/work-*/
