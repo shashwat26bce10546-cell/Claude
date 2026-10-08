@@ -171,7 +171,7 @@ const sfx = [
   ["popLight", 0.5, 0.5],
   ["negTap", 6.7, 0.5],
   ["buzzer", 11.6, 0.32],
-  ["logo", 15.1, 0.75],
+  ["logo", 15.1, 1.0],
   ["popHard", 17.2, 0.45],
   ["hitFuture", 21.5, 0.55],
   ["popDry", 27.8, 0.5],
