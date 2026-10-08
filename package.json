@@ -1,0 +1,23 @@
+{
+  "name": "hyperframes-videos",
+  "version": "1.0.0",
+  "description": "HyperFrames video projects edited with Claude Code",
+  "scripts": {
+    "doctor": "hyperframes doctor",
+    "skills:update": "npx -y skills add heygen-com/hyperframes --all --agent claude-code -y && rm -rf agent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shashwat26bce10546-cell/Claude.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shashwat26bce10546-cell/Claude/issues"
+  },
+  "homepage": "https://github.com/shashwat26bce10546-cell/Claude#readme",
+  "devDependencies": {
+    "gsap": "^3.14.2",
+    "hyperframes": "^0.8.142"
+  },
+  "private": true
+}
