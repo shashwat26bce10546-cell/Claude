@@ -32,7 +32,7 @@ const captionEnd = (l) => {
 };
 
 const sfx = [
-  ["impact-bass-2", 2.5, 0.55],
+  ["impact-bass-2", 2.5, 0.25],
   ["deepImpact", 15.0, 0.9],
   ...[17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5].map((t) => ["clickClassic", t, 0.3]),
   ["trailerHit", 21.0, 0.85],
@@ -45,7 +45,7 @@ const sfx = [
   ["zoomHit", 47.1, 0.6],
   ["hitShort", 49.2, 0.7],
   ["zoomHit", 50.5, 0.6],
-  ["epicHit", 55.0, 1.0],
+  ["epicHit", 55.0, 0.55],
   ["trailerHit", 56.6, 1.0],
 ];
 const sfxLen = { "impact-bass-2": 2.592, deepImpact: 1.75, clickClassic: 0.339, trailerHit: 2.507, "glitch-1": 2.638,
