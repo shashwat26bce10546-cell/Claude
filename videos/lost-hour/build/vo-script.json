@@ -1,0 +1,71 @@
+{
+ "voice": "am_michael",
+ "speed": 0.9,
+ "lines": [
+  [
+   "v01",
+   2.7,
+   "In Hollow Creek, nothing ever happened."
+  ],
+  [
+   "v02",
+   6.3,
+   "Every night was quiet. Every road was empty."
+  ],
+  [
+   "v03",
+   9.75,
+   "Until the night a light appeared above the trees."
+  ],
+  [
+   "v04",
+   12.95,
+   "And at exactly three seventeen A.M."
+  ],
+  [
+   "v05",
+   17.2,
+   "every clock in town stopped. For one hour."
+  ],
+  [
+   "v06",
+   23.2,
+   "Four hundred and twelve people vanished from their homes."
+  ],
+  [
+   "v07",
+   27.1,
+   "When the hour ended, they came back. Exactly where they'd been."
+  ],
+  [
+   "v08",
+   31.3,
+   "But something came back with them."
+  ],
+  [
+   "v09",
+   34.6,
+   "Doctors found nothing. Police found nothing."
+  ],
+  [
+   "v10",
+   37.8,
+   "And no one can remember where they went."
+  ],
+  [
+   "v11",
+   41.6,
+   "Now the light has returned."
+  ],
+  [
+   "v12",
+   54.15,
+   "It's three sixteen."
+  ],
+  [
+   "v13",
+   57.0,
+   "The Lost Hour."
+  ]
+ ]
+}

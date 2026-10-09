@@ -1,5 +1,5 @@
-// Generates index.html from build/edl.json plus the card / line / sound plan below.
-// Rebuild: bash build/preprocess.sh && node build/build.mjs
+// Generates index.html from build/edl.json, build/vo-lines.json and the card / sound plan below.
+// Rebuild: bash build/preprocess.sh && python3 build/make-vo.py && node build/build.mjs
 import fs from "node:fs";
 import path from "node:path";
 
@@ -19,20 +19,22 @@ const cards = [
   { start: 40.0, dur: 1.5, title: "NO ONE REMEMBERS", top: "", bottom: "" },
 ];
 
-// Lower-third lines (italic serif), like the reference trailers.
-const lines = [
-  { start: 6.4, dur: 2.4, text: "It started with the quiet." },
-  { start: 9.5, dur: 2.8, text: "Then came the light." },
-  { start: 12.9, dur: 2.0, text: "Every night. Same hour." },
-  { start: 25.8, dur: 2.0, text: "For one hour, the whole town was gone." },
-  { start: 31.2, dur: 1.7, text: "And when it came back..." },
-  { start: 41.7, dur: 1.7, text: "Where were you?" },
-];
+// Narration (Kokoro TTS, build/make-vo.py) and its captions in the lower letterbox bar.
+const vo = JSON.parse(fs.readFileSync(path.join(root, "build/vo-lines.json"), "utf8"));
+const voLines = Object.entries(vo).map(([id, v]) => ({ id, ...v })).sort((a, b) => a.start - b.start);
+const VO_PAD = 0.15; // silence padded onto the end of every clip
+// Captions stop where a title card (which already shows the words) takes over.
+const NO_CAPTION = new Set(["v12", "v13"]);
+const captionEnd = (l) => {
+  const end = l.start + l.dur - VO_PAD + 0.25;
+  const card = cards.find((c) => c.start > l.start && c.start < end);
+  return card ? card.start : end;
+};
 
 const sfx = [
   ["impact-bass-2", 2.5, 0.55],
   ["deepImpact", 15.0, 0.9],
-  ...[17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5].map((t) => ["clickClassic", t, 0.45]),
+  ...[17.0, 17.5, 18.0, 18.5, 19.0, 19.5, 20.0, 20.5].map((t) => ["clickClassic", t, 0.3]),
   ["trailerHit", 21.0, 0.85],
   ["glitch-1", 28.0, 0.35],
   ["trailerHit", 33.0, 0.8],
@@ -82,11 +84,25 @@ const cardJs = cards.map((c, i) => [
   `tl.to("#c${i}-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, ${r3(c.start + c.dur - 0.2)});`,
 ].join("\n"));
 
-const lineHtml = lines.map((l, i) => `      <div class="line clip" id="l${i}" data-start="${l.start}" data-duration="${l.dur}" data-track-index="3"><span id="l${i}-t">${l.text}</span></div>`);
-const lineJs = lines.map((l, i) => [
-  `tl.fromTo("#l${i}-t", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, ${l.start});`,
-  `tl.to("#l${i}-t", { opacity: 0, duration: 0.3, ease: "power1.in" }, ${r3(l.start + l.dur - 0.3)});`,
-].join("\n"));
+const caps = voLines.filter((l) => !NO_CAPTION.has(l.id));
+const lineHtml = caps.map((l) => {
+  const words = l.text.split(" ").map((w, j) => `<span class="w" id="${l.id}-w${j}">${w}</span>`).join(" ");
+  return `      <div class="cap clip" id="${l.id}-cap" data-start="${l.start}" data-duration="${r3(captionEnd(l) - l.start)}" data-track-index="3"><div class="cap-in" id="${l.id}-in">${words}</div></div>`;
+});
+// Words light up in step with the speech, timed by character share of the spoken length.
+const lineJs = caps.map((l) => {
+  const words = l.text.split(" ");
+  const spoken = l.dur - VO_PAD;
+  const total = words.reduce((n, w) => n + w.length + 1, 0);
+  let acc = 0;
+  const out = [`tl.fromTo("#${l.id}-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, ${l.start});`];
+  words.forEach((w, j) => {
+    out.push(`tl.fromTo("#${l.id}-w${j}", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, ${r3(l.start + (acc / total) * spoken)});`);
+    acc += w.length + 1;
+  });
+  out.push(`tl.to("#${l.id}-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, ${r3(captionEnd(l) - 0.2)});`);
+  return out.join("\n");
+});
 
 const flashJs = flashes.map((t) =>
   `tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, ${t});`);
@@ -94,8 +110,22 @@ const flashJs = flashes.map((t) =>
 const vol = (v, len, fadeIn = 0, fadeOut = 0.08) => JSON.stringify({ version: 1, lanes: [{ target: "volume", points: [
   { t: 0, v: fadeIn ? 0 : v }, ...(fadeIn ? [{ t: fadeIn, v }] : []), { t: r3(len - fadeOut), v }, { t: r3(len), v: 0 }] }] });
 const musicLen = 54.2;
+// Music sits at 0.9, dips to 0.32 under each narration line inside its window.
+const MUSIC_HI = 0.9, MUSIC_LO = 0.32, RAMP = 0.25;
+const musicPts = [{ t: 0, v: 0 }, { t: 1.5, v: MUSIC_HI }];
+for (const l of voLines) {
+  const a = l.start - RAMP, b = l.start + l.dur - VO_PAD;
+  if (l.start >= musicLen - 0.3) continue; // music has already cut to silence
+  const last = musicPts[musicPts.length - 1];
+  if (a <= last.t) { last.v = MUSIC_LO; } else { musicPts.push({ t: r3(a), v: MUSIC_HI }); }
+  musicPts.push({ t: r3(Math.max(a + RAMP, last.t + 0.01)), v: MUSIC_LO }, { t: r3(Math.min(b, musicLen - 0.2)), v: MUSIC_LO });
+  if (b + RAMP < musicLen - 0.12) musicPts.push({ t: r3(b + RAMP), v: MUSIC_HI });
+}
+musicPts.push({ t: r3(musicLen - 0.12), v: musicPts[musicPts.length - 1].v }, { t: musicLen, v: 0 });
+const musicAuto = JSON.stringify({ version: 1, lanes: [{ target: "volume", points: musicPts }] });
 const audioHtml = [
-  `      <audio id="music" src="assets/music/silent-descent.mp3" data-start="0" data-duration="${musicLen}" data-media-start="${edl.musicOffset}" data-track-index="10" data-volume="1" data-automation='${vol(0.9, musicLen, 1.5, 0.12)}'></audio>`,
+  `      <audio id="music" src="assets/music/silent-descent.mp3" data-start="0" data-duration="${musicLen}" data-media-start="${edl.musicOffset}" data-track-index="10" data-volume="1" data-automation='${musicAuto}'></audio>`,
+  ...voLines.map((l) => `      <audio id="${l.id}" src="assets/vo/${l.id}.mp3" data-start="${l.start}" data-duration="${l.dur}" data-track-index="9" data-volume="1"></audio>`),
   ...sfx.map(([name, t, v, len], i) => {
     const L = r3(Math.min(len ?? sfxLen[name], D - t));
     return `      <audio id="fx${i}" src="assets/sfx/${name}.mp3" data-start="${t}" data-duration="${L}" data-track-index="${11 + (i % 4)}" data-volume="1" data-automation='${vol(v, L, 0, Math.min(0.3, L / 4))}'></audio>`;
@@ -125,10 +155,12 @@ const html = `<!doctype html>
       .card-title { font-family: "Cinzel"; font-weight: 900; font-size: 104px; letter-spacing: 6px; color: var(--gold);
         text-shadow: 0 0 40px rgba(242,194,48,.25); text-align: center; }
       .doc { font-family: "Courier Prime"; font-size: 24px; letter-spacing: 6px; color: rgba(242,194,48,.75); text-transform: uppercase; }
-      .line { position: absolute; left: 0; right: 0; top: 800px; height: 90px; z-index: 30;
+      @font-face { font-family: "EB Garamond"; font-weight: 500; src: url("assets/fonts/eb-garamond-latin-500-normal.woff2") format("woff2"); }
+      .cap { position: absolute; left: 0; right: 0; top: 946px; height: 128px; z-index: 60;
         display: flex; align-items: center; justify-content: center; }
-      .line span { display: block; font-family: "EB Garamond"; font-style: italic; font-size: 46px; color: #f3ead2;
-        text-shadow: 0 2px 14px rgba(0,0,0,.9); }
+      .cap-in { display: block; max-width: 1600px; text-align: center; font-family: "EB Garamond"; font-weight: 500;
+        font-size: 44px; line-height: 1.15; color: #f3ead2; letter-spacing: 0.5px; }
+      .cap-in .w { display: inline-block; }
       #whisper { z-index: 25; display: flex; align-items: center; justify-content: center; }
       #whisper span { display: block; font-family: "Courier Prime"; font-size: 38px; letter-spacing: 10px; color: var(--gold); }
       .t-main { font-family: "Cinzel"; font-weight: 900; font-size: 168px; letter-spacing: 14px; color: var(--gold); text-shadow: 0 0 60px rgba(242,194,48,.3); }

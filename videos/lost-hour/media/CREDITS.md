@@ -36,3 +36,5 @@ Watermarked Filmsupply preview clips (license required for final use). Footage r
 | 29 | 55.0s | 571106 | Silhouette of a man wearing a trenchcoat raising his arms towards a giant glowing sunlike  |
 
 Music: "Silent Descent" — Mixkit (https://mixkit.co/license/#musicFree). SFX: Mixkit / Pixabay via the HyperFrames library.
+
+Narration: synthesized with Kokoro-82M (hexgrad, Apache-2.0) voice am_michael.
