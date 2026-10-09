@@ -9,7 +9,8 @@ JOBS=${JOBS:-2}
 mkdir -p ../assets/shots logs
 one() {
   local s=$1 t=$SECONDS
-  rm -rf "renders/$Q/$s"
+  # frames already rendered are kept (resumable); delete renders/$Q/$s to force a re-render
+  find "renders/$Q/$s" -name "*.png" -size 0 -delete 2>/dev/null
   python3 build_scenes.py --render "$s" --quality "$Q" > "logs/$Q-$s.log" 2>&1
   ffmpeg -y -loglevel error -framerate 24 -i "renders/$Q/$s/%04d.png" \
     -c:v libx264 -pix_fmt yuv420p -crf "$([ "$Q" = final ] && echo 16 || echo 22)" -movflags +faststart \

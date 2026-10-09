@@ -432,6 +432,8 @@ def new_scene(name, quality):
         except Exception:
             pass
     sc.render.image_settings.file_format = "PNG"
+    sc.render.use_overwrite = False  # resumable: skip frames already on disk
+    sc.render.use_placeholder = True
     sc.render.filepath = os.path.join(HERE, "renders", quality, name, "")
     try:
         sc.view_settings.view_transform = "AgX"
@@ -941,7 +943,7 @@ BUILDERS = {
 
 QUALITY = {
     "draft": {"res": (540, 960), "engine": "BLENDER_EEVEE", "samples": 4},
-    "final": {"res": (1080, 1920), "engine": "BLENDER_EEVEE", "samples": 48, "raytrace": False},
+    "final": {"res": (1080, 1920), "engine": "BLENDER_EEVEE", "samples": 6},
 }
 
 
