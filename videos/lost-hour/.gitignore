@@ -1,0 +1,6 @@
+snapshots/
+# Graded shots are regenerated from media/raw by build/preprocess.sh (~370 MB)
+media/shots/
+# Full-quality master is >100 MB (GitHub limit); the -share encode is committed
+renders/the-lost-hour.mp4
+build/vo-raw/

@@ -1,0 +1,86 @@
+{
+ "f1": {
+  "role": "father_tender",
+  "start": 0.9,
+  "text": "When he was little... he was scared of the dark.",
+  "dur": 2.712
+ },
+ "f2": {
+  "role": "father_tender",
+  "start": 5.0,
+  "text": "So I made him a promise.",
+  "dur": 1.488
+ },
+ "f3": {
+  "role": "father_tender",
+  "start": 8.0,
+  "text": "Wherever you are... I'll find you.",
+  "dur": 2.52
+ },
+ "n1": {
+  "role": "narrator",
+  "start": 10.9,
+  "text": "On October ninth, at three seventeen A.M., every clock in Hollow Creek stopped.",
+  "dur": 6.504
+ },
+ "n2": {
+  "role": "narrator",
+  "start": 17.7,
+  "text": "For one hour.",
+  "dur": 1.632
+ },
+ "n3": {
+  "role": "narrator",
+  "start": 19.4,
+  "text": "When time started again... every child came home.",
+  "dur": 4.44
+ },
+ "n4": {
+  "role": "narrator",
+  "start": 24.05,
+  "text": "Except one.",
+  "dur": 1.704
+ },
+ "s1": {
+  "role": "sheriff",
+  "start": 27.7,
+  "text": "Mister Harper. Where were you... at three seventeen?",
+  "dur": 3.24
+ },
+ "f4": {
+  "role": "father_grief",
+  "start": 31.0,
+  "text": "I don't... I don't remember.",
+  "dur": 3.336
+ },
+ "n5": {
+  "role": "narrator",
+  "start": 34.7,
+  "text": "No one remembers the lost hour.",
+  "dur": 2.424
+ },
+ "b1": {
+  "role": "boyphone",
+  "start": 39.7,
+  "text": "Dad? I'm still here.",
+  "dur": 1.632
+ },
+ "f5": {
+  "role": "father_desperate",
+  "start": 41.3,
+  "text": "I'm coming, buddy!",
+  "dur": 2.496
+ },
+ "n6": {
+  "role": "narrator",
+  "start": 54.7,
+  "text": "The Lost Hour.",
+  "dur": 1.44
+ },
+ "b2": {
+  "role": "boy",
+  "start": 57.4,
+  "text": "Dad. Why did you leave me there?",
+  "dur": 2.496
+ }
+}

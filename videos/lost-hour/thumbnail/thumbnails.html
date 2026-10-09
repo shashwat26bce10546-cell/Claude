@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>The Lost Hour — thumbnails</title>
+<style>
+  @font-face { font-family: "Cinzel"; font-weight: 900; src: url("../assets/fonts/cinzel-latin-900-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Cinzel"; font-weight: 700; src: url("../assets/fonts/cinzel-latin-700-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Courier Prime"; src: url("../assets/fonts/courier-prime-latin-400-normal.woff2") format("woff2"); }
+  @font-face { font-family: "DSEG7"; font-weight: 700; src: url("../assets/fonts/DSEG7Classic-Bold.woff2") format("woff2"); }
+  :root { --gold: #F2C230; --led: #ff2a1a; --cream: #f3ead2; }
+  body { margin: 0; background: #111; }
+  .thumb { position: relative; width: 1280px; height: 720px; overflow: hidden; background: #000; margin-bottom: 20px; }
+  .bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .grain { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, transparent 45%, rgba(0,0,0,.75) 100%); }
+  .title { font-family: "Cinzel"; font-weight: 900; color: var(--gold); line-height: .92; letter-spacing: 4px;
+    text-shadow: 0 6px 30px rgba(0,0,0,.9), 0 0 40px rgba(242,194,48,.35); }
+  .tag { font-family: "Courier Prime"; color: var(--cream); letter-spacing: 6px; text-transform: uppercase;
+    text-shadow: 0 2px 12px rgba(0,0,0,.95); }
+  .led { font-family: "DSEG7"; font-weight: 700; color: var(--led);
+    text-shadow: 0 0 14px rgba(255,42,26,.9), 0 0 50px rgba(255,42,26,.5); }
+  .am { font-family: "Courier Prime"; color: var(--led); text-shadow: 0 0 10px rgba(255,42,26,.8); }
+
+  /* A — the boy's face, title stacked left */
+  #a .bg { background-image: url("frames/boy.jpg"); background-size: 1708px 720px; background-position: 300px 0; background-repeat: no-repeat; filter: saturate(.9) brightness(1.3) contrast(1.1); }
+  #a .shade { position: absolute; inset: 0; background: linear-gradient(90deg, #000 0%, rgba(0,0,0,.9) 30%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%); }
+  #a .copy { position: absolute; left: 60px; top: 70px; width: 600px; display: flex; flex-direction: column; gap: 22px; }
+  #a .clock { display: flex; align-items: flex-end; gap: 12px; }
+  #a .led { font-size: 120px; line-height: 1; }
+  #a .am { font-size: 34px; margin-bottom: 12px; }
+  #a .title { font-size: 128px; }
+  #a .tag { font-size: 30px; line-height: 1.4; }
+  #a .tag b { color: var(--gold); font-weight: 400; }
+
+  /* B — the boy facing the light, title low */
+  #b .bg { background-image: url("frames/forest.jpg"); background-position: 60% 40%; filter: saturate(1.15) brightness(1.1); }
+  #b .shade { position: absolute; inset: 0; background: linear-gradient(0deg, #000 0%, rgba(0,0,0,.8) 26%, rgba(0,0,0,0) 55%), linear-gradient(180deg, rgba(0,0,0,.7) 0%, transparent 25%); }
+  #b .top { position: absolute; top: 40px; left: 0; right: 0; text-align: center; font-size: 34px; }
+  #b .title { position: absolute; left: 0; right: 0; bottom: 92px; text-align: center; font-size: 118px; white-space: nowrap; }
+  #b .tag { position: absolute; left: 0; right: 0; bottom: 44px; text-align: center; font-size: 30px; }
+
+  /* C — missing poster + the clock */
+  #c .bg { background-image: url("frames/poster.jpg"); background-size: 190%; background-position: 92% 52%; filter: saturate(.6) brightness(.85) contrast(1.1); }
+  #c .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.95) 68%, #000 100%); }
+  #c .tint { position: absolute; inset: 0; background: rgba(110,15,11,.25); mix-blend-mode: multiply; }
+  #c .copy { position: absolute; right: 60px; top: 0; bottom: 0; width: 560px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; text-align: right; gap: 26px; }
+  #c .clock { display: flex; align-items: flex-end; gap: 10px; }
+  #c .led { font-size: 96px; line-height: 1; }
+  #c .am { font-size: 28px; margin-bottom: 8px; }
+  #c .title { font-size: 116px; }
+  #c .tag { font-size: 28px; line-height: 1.4; }
+</style>
+</head>
+<body>
+  <div class="thumb" id="a">
+    <div class="bg"></div><div class="shade"></div><div class="grain"></div>
+    <div class="copy">
+      <div class="clock"><span class="led">3:17</span><span class="am">AM</span></div>
+      <div class="title">THE<br>LOST<br>HOUR</div>
+      <div class="tag">Every child came home.<br><b>Except one.</b></div>
+    </div>
+  </div>
+
+  <div class="thumb" id="b">
+    <div class="bg"></div><div class="shade"></div><div class="grain"></div>
+    <div class="tag top">“Dad? I’m still here.”</div>
+    <div class="title">THE LOST HOUR</div>
+    <div class="tag">One hour. One child. One lie.</div>
+  </div>
+
+  <div class="thumb" id="c">
+    <div class="bg"></div><div class="tint"></div><div class="shade"></div><div class="grain"></div>
+    <div class="copy">
+      <div class="clock"><span class="led">3:17</span><span class="am">AM</span></div>
+      <div class="title">THE<br>LOST<br>HOUR</div>
+      <div class="tag">No one remembers<br>where he went.</div>
+    </div>
+  </div>
+</body>
+</html>

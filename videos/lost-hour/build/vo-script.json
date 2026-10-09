@@ -1,0 +1,173 @@
+{
+ "voices": {
+  "narrator": {
+   "engine": "chatterbox",
+   "ref": "build/voice-refs/narrator.wav",
+   "ex": 0.5,
+   "cfg": 0.35,
+   "fx": "narrator"
+  },
+  "father_tender": {
+   "engine": "chatterbox",
+   "ref": "build/voice-refs/father_tender.wav",
+   "ex": 0.55,
+   "cfg": 0.4,
+   "fx": "close"
+  },
+  "father_grief": {
+   "engine": "chatterbox",
+   "ref": "build/voice-refs/father_grief.wav",
+   "ex": 0.95,
+   "cfg": 0.3,
+   "fx": "close"
+  },
+  "father_desperate": {
+   "engine": "chatterbox",
+   "ref": "build/voice-refs/father_desperate.wav",
+   "ex": 0.9,
+   "cfg": 0.3,
+   "fx": "close"
+  },
+  "sheriff": {
+   "engine": "chatterbox",
+   "ref": "build/voice-refs/sheriff.wav",
+   "ex": 0.55,
+   "cfg": 0.45,
+   "fx": "close"
+  },
+  "boyphone": {
+   "engine": "kokoro",
+   "voice": "af_nicole",
+   "speed": 0.95,
+   "fx": "child-phone"
+  },
+  "boy": {
+   "engine": "kokoro",
+   "voice": "af_nicole",
+   "speed": 0.9,
+   "fx": "child-whisper"
+  }
+ },
+ "lines": [
+  {
+   "id": "f1",
+   "role": "father_tender",
+   "start": 0.9,
+   "text": "When he was little... he was scared of the dark.",
+   "ex": 0.55,
+   "cfg": 0.4,
+   "seed": 21
+  },
+  {
+   "id": "f2",
+   "role": "father_tender",
+   "start": 5.0,
+   "text": "So I made him a promise.",
+   "ex": 0.55,
+   "cfg": 0.4,
+   "seed": 21
+  },
+  {
+   "id": "f3",
+   "role": "father_tender",
+   "start": 8.0,
+   "text": "Wherever you are... I'll find you.",
+   "ex": 0.65,
+   "cfg": 0.35,
+   "seed": 42
+  },
+  {
+   "id": "n1",
+   "role": "narrator",
+   "start": 10.9,
+   "text": "On October ninth, at three seventeen A.M., every clock in Hollow Creek stopped.",
+   "ex": 0.5,
+   "cfg": 0.35,
+   "seed": 42
+  },
+  {
+   "id": "n2",
+   "role": "narrator",
+   "start": 17.7,
+   "text": "For one hour.",
+   "ex": 0.5,
+   "cfg": 0.35,
+   "seed": 7
+  },
+  {
+   "id": "n3",
+   "role": "narrator",
+   "start": 19.4,
+   "text": "When time started again... every child came home.",
+   "ex": 0.5,
+   "cfg": 0.35,
+   "seed": 7
+  },
+  {
+   "id": "n4",
+   "role": "narrator",
+   "start": 24.05,
+   "text": "Except one.",
+   "ex": 0.6,
+   "cfg": 0.3,
+   "seed": 42
+  },
+  {
+   "id": "s1",
+   "role": "sheriff",
+   "start": 27.7,
+   "text": "Mister Harper. Where were you... at three seventeen?",
+   "ex": 0.55,
+   "cfg": 0.45,
+   "seed": 21
+  },
+  {
+   "id": "f4",
+   "role": "father_grief",
+   "start": 31.0,
+   "text": "I don't... I don't remember.",
+   "ex": 0.95,
+   "cfg": 0.3,
+   "seed": 7
+  },
+  {
+   "id": "n5",
+   "role": "narrator",
+   "start": 34.7,
+   "text": "No one remembers the lost hour.",
+   "ex": 0.5,
+   "cfg": 0.35,
+   "seed": 21
+  },
+  {
+   "id": "b1",
+   "role": "boyphone",
+   "start": 39.7,
+   "text": "Dad? I'm still here."
+  },
+  {
+   "id": "f5",
+   "role": "father_desperate",
+   "start": 41.3,
+   "text": "I'm coming, buddy!",
+   "ex": 0.9,
+   "cfg": 0.3,
+   "seed": 42
+  },
+  {
+   "id": "n6",
+   "role": "narrator",
+   "start": 54.7,
+   "text": "The Lost Hour.",
+   "ex": 0.55,
+   "cfg": 0.3,
+   "seed": 21
+  },
+  {
+   "id": "b2",
+   "role": "boy",
+   "start": 57.4,
+   "text": "Dad. Why did you leave me there?"
+  }
+ ]
+}
