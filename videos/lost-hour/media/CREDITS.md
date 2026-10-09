@@ -35,4 +35,4 @@ Watermarked Filmsupply preview clips (license required for final use). Ref = Fil
 | 28 | 57.3s | 134006 | A boy walks down a dimly lit hallway |
 
 Music: "Silent Descent" — Mixkit (free license). SFX: Mixkit (phone ring 1357, clock 1070, heartbeat 494, horror drums 559/565) and the HyperFrames library.
-Voices: Kokoro-82M (hexgrad, Apache-2.0) — am_onyx, am_liam, am_echo, af_nicole. Clock font: DSEG7 Classic (SIL OFL).
+Voices: Chatterbox (Resemble AI, MIT) seeded with public-domain LibriVox *Frankenstein* performances (see build/voice-refs/SOURCES.md); boy via Kokoro-82M (hexgrad, Apache-2.0) af_nicole. Clock font: DSEG7 Classic (SIL OFL).

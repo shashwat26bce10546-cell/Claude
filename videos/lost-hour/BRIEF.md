@@ -20,8 +20,11 @@ THE CLOCKS / WILL STOP / AGAIN (43–53.5s) → heartbeat silence → title → 
 
 ## Assets
 - Footage: watermarked Filmsupply previews (draft); refs in `media/CREDITS.md`.
-- Voices: Kokoro-82M (free, local). Narrator am_onyx, father am_liam, sheriff am_echo,
-  boy af_nicole pitched up (phone-filtered / whispered). Script: `build/vo-script.json`.
+- Voices (all free, local). Adults: Chatterbox (Resemble AI, MIT) cloning public-domain LibriVox
+  performances so the delivery carries real emotion (`build/voice-refs/SOURCES.md`) — narrator from
+  the Creature, father from Victor Frankenstein (tender / grieving / desperate), sheriff from
+  Mr. Kirwin. Boy: Kokoro-82M af_nicole pitched up (phone-filtered / whispered).
+  Script, chosen seeds and emotion settings: `build/vo-script.json`.
 - Music: "Silent Descent" (Mixkit). SFX: Mixkit (phone ring, clock tick, heartbeat, horror
   drums) + HyperFrames library hits. Clock font: DSEG7 (OFL).
 
@@ -29,5 +32,7 @@ THE CLOCKS / WILL STOP / AGAIN (43–53.5s) → heartbeat silence → title → 
 - 60s, narrator + character lines, English, captions in the lower letterbox bar (boy in italic blue).
 
 ## Notes
-- Rebuild: `bash build/preprocess.sh` → `python3 build/make-vo.py` → `node build/build.mjs` →
+- Voice feedback: "Mr. Harper's voice has no emotion" → adults re-voiced with Chatterbox, 2–3 takes
+  per line, picked after a speech-to-text check; middle section retimed to the new line lengths.
+- Rebuild: `bash build/preprocess.sh` → `CHATTERBOX_PY=<venv python> python3 build/make-vo.py` → `node build/build.mjs` →
   `npx hyperframes render -o renders/the-lost-hour.mp4`.

@@ -13,8 +13,8 @@ const r3 = (n) => Math.round(n * 1000) / 1000;
 // ---------------------------------------------------------------- plan
 // Title cards. "red" = gold serif on deep red (story beats); "black" = punch words in the montage.
 const cards = [
-  { start: 16.6, dur: 1.6, title: "FOR ONE HOUR", top: "HOLLOW CREEK · OCTOBER 9", bottom: "", style: "red" },
-  { start: 22.0, dur: 1.8, title: "EXCEPT ONE", top: "", bottom: "", style: "red" },
+  { start: 17.6, dur: 1.4, title: "FOR ONE HOUR", top: "HOLLOW CREEK · OCTOBER 9", bottom: "", style: "red" },
+  { start: 24.0, dur: 1.6, title: "EXCEPT ONE", top: "", bottom: "", style: "red" },
   { start: 46.7, dur: 0.6, title: "THE CLOCKS", style: "black" },
   { start: 47.9, dur: 0.6, title: "WILL STOP", style: "black" },
   { start: 49.7, dur: 0.7, title: "AGAIN", style: "black" },
@@ -31,10 +31,10 @@ const sfx = [
   ["deepImpact", 10.6, 0.6],
   ["clockTick", 11.0, 0.55, 5.6],
   ["hitShort", 12.3, 0.45],
-  ["trailerHit", 16.6, 0.8],
-  ["horrorDrum", 22.0, 0.9],
-  ["impact-bass-2", 26.8, 0.35],
-  ["phoneRing", 37.2, 0.8, 2.3],
+  ["trailerHit", 17.6, 0.8],
+  ["horrorDrum", 24.0, 0.9],
+  ["impact-bass-2", 28.0, 0.35],
+  ["phoneRing", 37.4, 0.8, 2.1],
   ["riser", 41.4, 0.5, 2.1],
   ["whooshImpact", 43.45, 0.8],
   ["zoomHit", 46.7, 0.6],
