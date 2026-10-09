@@ -857,14 +857,14 @@ def build_s08(sc, coll):
          shoulderL=(0, 0, 6), shoulderR=(0, 0, -6), elbowL=(-10, 0, 0), elbowR=(-15, 0, 0), head=(0, 0, 0),
          spine=(0, 0, 0))
     # buzz → raise phone → stunned
-    pose(J, 126, shoulderR=(-30, 0, -10), elbowR=(-110, 0, 0), handR=(0, 0, 0), head=(10, 0, 0))
+    pose(J, 126, shoulderR=(-30, 0, -10), elbowR=(-110, 0, 0), handR=(0, 0, 0), head=(10, 0, -20))
     for i, f in enumerate(range(124, 140, 2)):
         key(phone, f, loc=(0.004 * (1 if i % 2 else -1), -0.035, -0.07))
     key(phone, 142, loc=(0.0, -0.035, -0.07))
     key_socket(scr_es, 118, 0.3); key_socket(scr_es, 124, 2.0)
-    pose(J, 150, shoulderR=(-38, 0, -12), elbowR=(-118, 0, 0), head=(22, 0, 0), spine=(-6, 0, 0),
+    pose(J, 150, shoulderR=(-38, 0, -12), elbowR=(-118, 0, 0), head=(16, 0, -28), spine=(-6, 0, 0),
          shoulderL=(-10, 0, 25), elbowL=(-30, 0, 0))
-    pose(J, n, shoulderR=(-38, 0, -12), elbowR=(-120, 0, 0), head=(24, 0, 3), spine=(-8, 0, 0),
+    pose(J, n, shoulderR=(-38, 0, -12), elbowR=(-120, 0, 0), head=(18, 0, -30), spine=(-8, 0, 0),
          shoulderL=(-12, 0, 28), elbowL=(-32, 0, 0))
     sun = light(coll, "sun", "SUN", (0, 0, 10), 3.5, (1, 0.95, 0.85))
     sun.rotation_euler = (R(50), R(0), R(-35))
@@ -999,6 +999,7 @@ def main():
         for img in bpy.data.images:
             if img.filepath:
                 img.filepath = bpy.path.relpath(img.filepath, start=HERE)
+        bpy.context.preferences.filepaths.save_version = 0  # no .blend1 backups
         bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HERE, "rupee_short.blend"), relative_remap=True)
         print("saved", os.path.join(HERE, "rupee_short.blend"))
     if a.render:
