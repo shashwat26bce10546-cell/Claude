@@ -9,29 +9,40 @@
       @font-face { font-family: "Cinzel"; font-weight: 700; src: url("assets/fonts/cinzel-latin-700-normal.woff2") format("woff2"); }
       @font-face { font-family: "Cinzel"; font-weight: 900; src: url("assets/fonts/cinzel-latin-900-normal.woff2") format("woff2"); }
       @font-face { font-family: "Courier Prime"; font-weight: 400; src: url("assets/fonts/courier-prime-latin-400-normal.woff2") format("woff2"); }
+      @font-face { font-family: "EB Garamond"; font-weight: 500; src: url("assets/fonts/eb-garamond-latin-500-normal.woff2") format("woff2"); }
       @font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 400; src: url("assets/fonts/eb-garamond-latin-400-italic.woff2") format("woff2"); }
-      :root { --gold: #F2C230; --red: #3B0707; --red-hi: #6E0F0B; }
+      @font-face { font-family: "DSEG7"; font-weight: 700; src: url("assets/fonts/DSEG7Classic-Bold.woff2") format("woff2"); }
+      :root { --gold: #F2C230; --red: #3B0707; --red-hi: #6E0F0B; --led: #ff2a1a; --cream: #f3ead2; }
       body { margin: 0; background: #000; }
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; }
-      .shot, .card, #title-card, #whisper { position: absolute; left: 0; right: 0; top: 138px; height: 804px; overflow: hidden; }
+      .shot, .card, #title-card, #clock { position: absolute; left: 0; right: 0; top: 138px; height: 804px; overflow: hidden; }
       .push { position: absolute; inset: 0; transform-origin: 50% 50%; }
       .shot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-      .card, #title-card { z-index: 20; background: radial-gradient(ellipse at 50% 50%, var(--red-hi) 0%, var(--red) 55%, #120101 100%); }
-      .card-in, .title-in { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; }
-      .card-title { font-family: "Cinzel"; font-weight: 900; font-size: 104px; letter-spacing: 6px; color: var(--gold);
+      .card, #title-card, #clock { z-index: 20; }
+      .card-red, #title-card { background: radial-gradient(ellipse at 50% 50%, var(--red-hi) 0%, var(--red) 55%, #120101 100%); }
+      .card-black { background: #000; }
+      .card-in, .title-in, .clock-in { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 34px; }
+      .card-title { font-family: "Cinzel"; font-weight: 900; font-size: 112px; letter-spacing: 8px; color: var(--gold);
         text-shadow: 0 0 40px rgba(242,194,48,.25); text-align: center; }
-      .doc { font-family: "Courier Prime"; font-size: 24px; letter-spacing: 6px; color: rgba(242,194,48,.75); text-transform: uppercase; }
-      @font-face { font-family: "EB Garamond"; font-weight: 500; src: url("assets/fonts/eb-garamond-latin-500-normal.woff2") format("woff2"); }
+      .card-black .card-title { font-size: 150px; color: var(--cream); text-shadow: 0 0 50px rgba(255,255,255,.18); }
+      .doc { font-family: "Courier Prime"; font-size: 26px; letter-spacing: 8px; color: rgba(242,194,48,.8); text-transform: uppercase; }
+      #clock { background: radial-gradient(ellipse at 50% 55%, #1a0503 0%, #000 60%); }
+      .clock-in { flex-direction: row; gap: 28px; }
+      .clock-face { position: relative; width: 760px; height: 260px; }
+      .seg { position: absolute; right: 0; top: 0; font-family: "DSEG7"; font-weight: 700; font-size: 220px; line-height: 260px; }
+      .ghost { color: rgba(255,42,26,.07); }
+      .lit { color: var(--led); text-shadow: 0 0 18px rgba(255,42,26,.85), 0 0 60px rgba(255,42,26,.45); }
+      .clock-am { font-family: "Courier Prime"; font-size: 44px; color: var(--led); align-self: flex-end; margin-bottom: 40px;
+        text-shadow: 0 0 14px rgba(255,42,26,.8); }
       .cap { position: absolute; left: 0; right: 0; top: 946px; height: 128px; z-index: 60;
         display: flex; align-items: center; justify-content: center; }
       .cap-in { display: block; max-width: 1600px; text-align: center; font-family: "EB Garamond"; font-weight: 500;
-        font-size: 44px; line-height: 1.15; color: #f3ead2; letter-spacing: 0.5px; }
+        font-size: 44px; line-height: 1.15; color: var(--cream); letter-spacing: 0.5px; }
+      .cap-in.cap-boy { font-style: italic; font-weight: 400; color: #cfe3ff; }
       .cap-in .w { display: inline-block; }
-      #whisper { z-index: 25; display: flex; align-items: center; justify-content: center; }
-      #whisper span { display: block; font-family: "Courier Prime"; font-size: 38px; letter-spacing: 10px; color: var(--gold); }
       .t-main { font-family: "Cinzel"; font-weight: 900; font-size: 168px; letter-spacing: 14px; color: var(--gold); text-shadow: 0 0 60px rgba(242,194,48,.3); }
       .t-tag { font-family: "Courier Prime"; font-size: 30px; letter-spacing: 12px; color: rgba(242,194,48,.85); }
-      .t-soon { font-family: "Cinzel"; font-weight: 700; font-size: 44px; letter-spacing: 18px; color: #f3ead2; }
+      .t-soon { font-family: "Cinzel"; font-weight: 700; font-size: 44px; letter-spacing: 18px; color: var(--cream); }
       .bar { position: absolute; left: 0; right: 0; height: 138px; background: #000; z-index: 50; }
       #bar-top { top: 0; } #bar-bot { bottom: 0; }
       #flash { position: absolute; left: 0; right: 0; top: 138px; height: 804px; background: #fff; opacity: 0; z-index: 40; }
@@ -39,169 +50,161 @@
   </head>
   <body>
     <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="60">
-      <div class="shot" id="s0-wrap"><div class="push" id="s0-push">
-        <video id="s0" class="clip" src="media/shots/00-371.mp4" muted playsinline
-          data-start="2.5" data-duration="3.6" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh0-wrap"><div class="push" id="sh0-push">
+        <video id="sh0" class="clip" src="media/shots/00-fs854017.mp4" muted playsinline
+          data-start="0.6" data-duration="2.8" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s1-wrap"><div class="push" id="s1-push">
-        <video id="s1" class="clip" src="media/shots/01-270.mp4" muted playsinline
-          data-start="6.1" data-duration="3" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh1-wrap"><div class="push" id="sh1-push">
+        <video id="sh1" class="clip" src="media/shots/01-fs892849.mp4" muted playsinline
+          data-start="3.4" data-duration="2.2" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s2-wrap"><div class="push" id="s2-push">
-        <video id="s2" class="clip" src="media/shots/02-269.mp4" muted playsinline
-          data-start="9.1" data-duration="3.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh2-wrap"><div class="push" id="sh2-push">
+        <video id="sh2" class="clip" src="media/shots/02-fs652953.mp4" muted playsinline
+          data-start="5.6" data-duration="2.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s3-wrap"><div class="push" id="s3-push">
-        <video id="s3" class="clip" src="media/shots/03-144.mp4" muted playsinline
-          data-start="12.6" data-duration="2.4" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh3-wrap"><div class="push" id="sh3-push">
+        <video id="sh3" class="clip" src="media/shots/03-fs731849.mp4" muted playsinline
+          data-start="8.2" data-duration="2.4" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s4-wrap"><div class="push" id="s4-push">
-        <video id="s4" class="clip" src="media/shots/04-240.mp4" muted playsinline
-          data-start="17" data-duration="2" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh4-wrap"><div class="push" id="sh4-push">
+        <video id="sh4" class="clip" src="media/shots/04-fs122067.mp4" muted playsinline
+          data-start="13.6" data-duration="3" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s5-wrap"><div class="push" id="s5-push">
-        <video id="s5" class="clip" src="media/shots/05-079.mp4" muted playsinline
-          data-start="19" data-duration="2" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh5-wrap"><div class="push" id="sh5-push">
+        <video id="sh5" class="clip" src="media/shots/05-fs114409.mp4" muted playsinline
+          data-start="18.2" data-duration="2.2" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s6-wrap"><div class="push" id="s6-push">
-        <video id="s6" class="clip" src="media/shots/06-343.mp4" muted playsinline
-          data-start="23" data-duration="2.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh6-wrap"><div class="push" id="sh6-push">
+        <video id="sh6" class="clip" src="media/shots/06-fs114407.mp4" muted playsinline
+          data-start="20.4" data-duration="1.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s7-wrap"><div class="push" id="s7-push">
-        <video id="s7" class="clip" src="media/shots/07-129.mp4" muted playsinline
-          data-start="25.5" data-duration="2.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh7-wrap"><div class="push" id="sh7-push">
+        <video id="sh7" class="clip" src="media/shots/07-fs361909.mp4" muted playsinline
+          data-start="23.8" data-duration="1.8" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s8-wrap"><div class="push" id="s8-push">
-        <video id="s8" class="clip" src="media/shots/08-158.mp4" muted playsinline
-          data-start="28" data-duration="1.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh8-wrap"><div class="push" id="sh8-push">
+        <video id="sh8" class="clip" src="media/shots/08-fs850327.mp4" muted playsinline
+          data-start="25.6" data-duration="1.2" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s9-wrap"><div class="push" id="s9-push">
-        <video id="s9" class="clip" src="media/shots/09-289.mp4" muted playsinline
-          data-start="29.5" data-duration="1.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh9-wrap"><div class="push" id="sh9-push">
+        <video id="sh9" class="clip" src="media/shots/09-fs257628.mp4" muted playsinline
+          data-start="26.8" data-duration="2.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s10-wrap"><div class="push" id="s10-push">
-        <video id="s10" class="clip" src="media/shots/10-065.mp4" muted playsinline
-          data-start="31" data-duration="2" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh10-wrap"><div class="push" id="sh10-push">
+        <video id="sh10" class="clip" src="media/shots/10-fs397696.mp4" muted playsinline
+          data-start="29.4" data-duration="2.2" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s11-wrap"><div class="push" id="s11-push">
-        <video id="s11" class="clip" src="media/shots/11-037.mp4" muted playsinline
-          data-start="34.5" data-duration="1.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh11-wrap"><div class="push" id="sh11-push">
+        <video id="sh11" class="clip" src="media/shots/11-fs310106.mp4" muted playsinline
+          data-start="31.6" data-duration="1.8" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s12-wrap"><div class="push" id="s12-push">
-        <video id="s12" class="clip" src="media/shots/12-102.mp4" muted playsinline
-          data-start="36" data-duration="1" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh12-wrap"><div class="push" id="sh12-push">
+        <video id="sh12" class="clip" src="media/shots/12-fs157427.mp4" muted playsinline
+          data-start="33.4" data-duration="1.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s13-wrap"><div class="push" id="s13-push">
-        <video id="s13" class="clip" src="media/shots/13-324.mp4" muted playsinline
-          data-start="37" data-duration="1.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh13-wrap"><div class="push" id="sh13-push">
+        <video id="sh13" class="clip" src="media/shots/13-fs42442.mp4" muted playsinline
+          data-start="35" data-duration="1.8" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s14-wrap"><div class="push" id="s14-push">
-        <video id="s14" class="clip" src="media/shots/14-132.mp4" muted playsinline
-          data-start="38.5" data-duration="1.5" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh14-wrap"><div class="push" id="sh14-push">
+        <video id="sh14" class="clip" src="media/shots/14-fs37354.mp4" muted playsinline
+          data-start="37.2" data-duration="2.2" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s15-wrap"><div class="push" id="s15-push">
-        <video id="s15" class="clip" src="media/shots/15-189.mp4" muted playsinline
-          data-start="41.5" data-duration="2" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh15-wrap"><div class="push" id="sh15-push">
+        <video id="sh15" class="clip" src="media/shots/15-fs24795.mp4" muted playsinline
+          data-start="39.4" data-duration="2.4" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s16-wrap"><div class="push" id="s16-push">
-        <video id="s16" class="clip" src="media/shots/16-078.mp4" muted playsinline
+      <div class="shot" id="sh16-wrap"><div class="push" id="sh16-push">
+        <video id="sh16" class="clip" src="media/shots/16-fs340816.mp4" muted playsinline
+          data-start="41.8" data-duration="1.7" data-media-start="0" data-track-index="0"></video>
+      </div></div>
+      <div class="shot" id="sh17-wrap"><div class="push" id="sh17-push">
+        <video id="sh17" class="clip" src="media/shots/17-fs44933.mp4" muted playsinline
           data-start="43.5" data-duration="1" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s17-wrap"><div class="push" id="s17-push">
-        <video id="s17" class="clip" src="media/shots/17-091.mp4" muted playsinline
-          data-start="44.5" data-duration="1" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh18-wrap"><div class="push" id="sh18-push">
+        <video id="sh18" class="clip" src="media/shots/18-fs42909.mp4" muted playsinline
+          data-start="44.5" data-duration="0.7" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s18-wrap"><div class="push" id="s18-push">
-        <video id="s18" class="clip" src="media/shots/18-122.mp4" muted playsinline
-          data-start="45.5" data-duration="0.8" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh19-wrap"><div class="push" id="sh19-push">
+        <video id="sh19" class="clip" src="media/shots/19-fs332093.mp4" muted playsinline
+          data-start="45.2" data-duration="0.8" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s19-wrap"><div class="push" id="s19-push">
-        <video id="s19" class="clip" src="media/shots/19-336.mp4" muted playsinline
-          data-start="46.3" data-duration="0.8" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh20-wrap"><div class="push" id="sh20-push">
+        <video id="sh20" class="clip" src="media/shots/20-fs127006.mp4" muted playsinline
+          data-start="46" data-duration="0.7" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s20-wrap"><div class="push" id="s20-push">
-        <video id="s20" class="clip" src="media/shots/20-022.mp4" muted playsinline
-          data-start="47.1" data-duration="0.7" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh21-wrap"><div class="push" id="sh21-push">
+        <video id="sh21" class="clip" src="media/shots/21-fs257430.mp4" muted playsinline
+          data-start="47.3" data-duration="0.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s21-wrap"><div class="push" id="s21-push">
-        <video id="s21" class="clip" src="media/shots/21-010.mp4" muted playsinline
-          data-start="47.8" data-duration="0.8" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh22-wrap"><div class="push" id="sh22-push">
+        <video id="sh22" class="clip" src="media/shots/22-091.mp4" muted playsinline
+          data-start="48.5" data-duration="0.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s22-wrap"><div class="push" id="s22-push">
-        <video id="s22" class="clip" src="media/shots/22-090.mp4" muted playsinline
-          data-start="48.6" data-duration="0.6" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh23-wrap"><div class="push" id="sh23-push">
+        <video id="sh23" class="clip" src="media/shots/23-269.mp4" muted playsinline
+          data-start="49.1" data-duration="0.6" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s23-wrap"><div class="push" id="s23-push">
-        <video id="s23" class="clip" src="media/shots/23-218.mp4" muted playsinline
-          data-start="49.2" data-duration="0.6" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh24-wrap"><div class="push" id="sh24-push">
+        <video id="sh24" class="clip" src="media/shots/24-fs12187.mp4" muted playsinline
+          data-start="50.4" data-duration="0.7" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s24-wrap"><div class="push" id="s24-push">
-        <video id="s24" class="clip" src="media/shots/24-170.mp4" muted playsinline
-          data-start="49.8" data-duration="0.7" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh25-wrap"><div class="push" id="sh25-push">
+        <video id="sh25" class="clip" src="media/shots/25-fs428346.mp4" muted playsinline
+          data-start="51.1" data-duration="0.8" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s25-wrap"><div class="push" id="s25-push">
-        <video id="s25" class="clip" src="media/shots/25-213.mp4" muted playsinline
-          data-start="50.5" data-duration="1" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh26-wrap"><div class="push" id="sh26-push">
+        <video id="sh26" class="clip" src="media/shots/26-fs340810.mp4" muted playsinline
+          data-start="51.9" data-duration="0.9" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s26-wrap"><div class="push" id="s26-push">
-        <video id="s26" class="clip" src="media/shots/26-196.mp4" muted playsinline
-          data-start="51.5" data-duration="0.6" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh27-wrap"><div class="push" id="sh27-push">
+        <video id="sh27" class="clip" src="media/shots/27-fs523973.mp4" muted playsinline
+          data-start="52.8" data-duration="0.7" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s27-wrap"><div class="push" id="s27-push">
-        <video id="s27" class="clip" src="media/shots/27-109.mp4" muted playsinline
-          data-start="52.1" data-duration="0.8" data-media-start="0" data-track-index="0"></video>
+      <div class="shot" id="sh28-wrap"><div class="push" id="sh28-push">
+        <video id="sh28" class="clip" src="media/shots/28-fs134006.mp4" muted playsinline
+          data-start="57.3" data-duration="2.4" data-media-start="0" data-track-index="0"></video>
       </div></div>
-      <div class="shot" id="s28-wrap"><div class="push" id="s28-push">
-        <video id="s28" class="clip" src="media/shots/28-072.mp4" muted playsinline
-          data-start="52.9" data-duration="1.3" data-media-start="0" data-track-index="0"></video>
-      </div></div>
-      <div class="shot" id="s29-wrap"><div class="push" id="s29-push">
-        <video id="s29" class="clip" src="media/shots/29-346.mp4" muted playsinline
-          data-start="55" data-duration="1.6" data-media-start="0" data-track-index="0"></video>
-      </div></div>
-      <div class="card clip" id="c0" data-start="15" data-duration="2" data-track-index="2">
+      <div id="clock" class="clip" data-start="11" data-duration="2.6" data-track-index="2">
+        <div class="clock-in" id="clock-in">
+          <div class="clock-face">
+            <span class="seg ghost">88:88</span>
+            <span class="seg lit" id="clock-a">3:16</span>
+            <span class="seg lit" id="clock-b">3:17</span>
+          </div>
+          <div class="clock-am" id="clock-am">AM</div>
+        </div>
+      </div>
+      <div class="card card-red clip" id="c0" data-start="16.6" data-duration="1.6" data-track-index="2">
         <div class="card-in" id="c0-in">
-          <div class="doc doc-top">HOLLOW CREEK SHERIFF'S DEPT.</div>
-          <div class="card-title">AT 3:17 A.M.</div>
-          <div class="doc doc-bottom">CASE FILE 10-09 · STATEMENT 01</div>
+          <div class="doc">HOLLOW CREEK · OCTOBER 9</div>
+          <div class="card-title">FOR ONE HOUR</div>
         </div>
       </div>
-      <div class="card clip" id="c1" data-start="21" data-duration="2" data-track-index="2">
+      <div class="card card-red clip" id="c1" data-start="22" data-duration="1.8" data-track-index="2">
         <div class="card-in" id="c1-in">
-          <div class="doc doc-top">INCIDENT DURATION</div>
-          <div class="card-title">EVERY CLOCK STOPPED</div>
-          <div class="doc doc-bottom">60 MINUTES · 412 RESIDENTS</div>
+          <div class="card-title">EXCEPT ONE</div>
         </div>
       </div>
-      <div class="card clip" id="c2" data-start="33" data-duration="1.5" data-track-index="2">
+      <div class="card card-black clip" id="c2" data-start="46.7" data-duration="0.6" data-track-index="2">
         <div class="card-in" id="c2-in">
-          
-          <div class="card-title">SOMETHING CAME BACK</div>
-          
+          <div class="card-title">THE CLOCKS</div>
         </div>
       </div>
-      <div class="card clip" id="c3" data-start="40" data-duration="1.5" data-track-index="2">
+      <div class="card card-black clip" id="c3" data-start="47.9" data-duration="0.6" data-track-index="2">
         <div class="card-in" id="c3-in">
-          
-          <div class="card-title">NO ONE REMEMBERS</div>
-          
+          <div class="card-title">WILL STOP</div>
         </div>
       </div>
-      <div class="cap clip" id="v01-cap" data-start="2.7" data-duration="2.908" data-track-index="3"><div class="cap-in" id="v01-in"><span class="w" id="v01-w0">In</span> <span class="w" id="v01-w1">Hollow</span> <span class="w" id="v01-w2">Creek,</span> <span class="w" id="v01-w3">nothing</span> <span class="w" id="v01-w4">ever</span> <span class="w" id="v01-w5">happened.</span></div></div>
-      <div class="cap clip" id="v02-cap" data-start="6.3" data-duration="3.436" data-track-index="3"><div class="cap-in" id="v02-in"><span class="w" id="v02-w0">Every</span> <span class="w" id="v02-w1">night</span> <span class="w" id="v02-w2">was</span> <span class="w" id="v02-w3">quiet.</span> <span class="w" id="v02-w4">Every</span> <span class="w" id="v02-w5">road</span> <span class="w" id="v02-w6">was</span> <span class="w" id="v02-w7">empty.</span></div></div>
-      <div class="cap clip" id="v03-cap" data-start="9.75" data-duration="3.412" data-track-index="3"><div class="cap-in" id="v03-in"><span class="w" id="v03-w0">Until</span> <span class="w" id="v03-w1">the</span> <span class="w" id="v03-w2">night</span> <span class="w" id="v03-w3">a</span> <span class="w" id="v03-w4">light</span> <span class="w" id="v03-w5">appeared</span> <span class="w" id="v03-w6">above</span> <span class="w" id="v03-w7">the</span> <span class="w" id="v03-w8">trees.</span></div></div>
-      <div class="cap clip" id="v04-cap" data-start="12.95" data-duration="2.05" data-track-index="3"><div class="cap-in" id="v04-in"><span class="w" id="v04-w0">And</span> <span class="w" id="v04-w1">at</span> <span class="w" id="v04-w2">exactly</span> <span class="w" id="v04-w3">three</span> <span class="w" id="v04-w4">seventeen</span> <span class="w" id="v04-w5">A.M.</span></div></div>
-      <div class="cap clip" id="v05-cap" data-start="17.2" data-duration="3.436" data-track-index="3"><div class="cap-in" id="v05-in"><span class="w" id="v05-w0">every</span> <span class="w" id="v05-w1">clock</span> <span class="w" id="v05-w2">in</span> <span class="w" id="v05-w3">town</span> <span class="w" id="v05-w4">stopped.</span> <span class="w" id="v05-w5">For</span> <span class="w" id="v05-w6">one</span> <span class="w" id="v05-w7">hour.</span></div></div>
-      <div class="cap clip" id="v06-cap" data-start="23.2" data-duration="3.844" data-track-index="3"><div class="cap-in" id="v06-in"><span class="w" id="v06-w0">Four</span> <span class="w" id="v06-w1">hundred</span> <span class="w" id="v06-w2">and</span> <span class="w" id="v06-w3">twelve</span> <span class="w" id="v06-w4">people</span> <span class="w" id="v06-w5">vanished</span> <span class="w" id="v06-w6">from</span> <span class="w" id="v06-w7">their</span> <span class="w" id="v06-w8">homes.</span></div></div>
-      <div class="cap clip" id="v07-cap" data-start="27.1" data-duration="4.204" data-track-index="3"><div class="cap-in" id="v07-in"><span class="w" id="v07-w0">When</span> <span class="w" id="v07-w1">the</span> <span class="w" id="v07-w2">hour</span> <span class="w" id="v07-w3">ended,</span> <span class="w" id="v07-w4">they</span> <span class="w" id="v07-w5">came</span> <span class="w" id="v07-w6">back.</span> <span class="w" id="v07-w7">Exactly</span> <span class="w" id="v07-w8">where</span> <span class="w" id="v07-w9">they'd</span> <span class="w" id="v07-w10">been.</span></div></div>
-      <div class="cap clip" id="v08-cap" data-start="31.3" data-duration="1.7" data-track-index="3"><div class="cap-in" id="v08-in"><span class="w" id="v08-w0">But</span> <span class="w" id="v08-w1">something</span> <span class="w" id="v08-w2">came</span> <span class="w" id="v08-w3">back</span> <span class="w" id="v08-w4">with</span> <span class="w" id="v08-w5">them.</span></div></div>
-      <div class="cap clip" id="v09-cap" data-start="34.6" data-duration="3.244" data-track-index="3"><div class="cap-in" id="v09-in"><span class="w" id="v09-w0">Doctors</span> <span class="w" id="v09-w1">found</span> <span class="w" id="v09-w2">nothing.</span> <span class="w" id="v09-w3">Police</span> <span class="w" id="v09-w4">found</span> <span class="w" id="v09-w5">nothing.</span></div></div>
-      <div class="cap clip" id="v10-cap" data-start="37.8" data-duration="2.2" data-track-index="3"><div class="cap-in" id="v10-in"><span class="w" id="v10-w0">And</span> <span class="w" id="v10-w1">no</span> <span class="w" id="v10-w2">one</span> <span class="w" id="v10-w3">can</span> <span class="w" id="v10-w4">remember</span> <span class="w" id="v10-w5">where</span> <span class="w" id="v10-w6">they</span> <span class="w" id="v10-w7">went.</span></div></div>
-      <div class="cap clip" id="v11-cap" data-start="41.6" data-duration="2.116" data-track-index="3"><div class="cap-in" id="v11-in"><span class="w" id="v11-w0">Now</span> <span class="w" id="v11-w1">the</span> <span class="w" id="v11-w2">light</span> <span class="w" id="v11-w3">has</span> <span class="w" id="v11-w4">returned.</span></div></div>
-      <div id="whisper" class="clip" data-start="54.25" data-duration="0.75" data-track-index="4"><span id="whisper-t">3:16 A.M.</span></div>
-      <div id="title-card" class="clip" data-start="56.6" data-duration="3.4" data-track-index="2">
+      <div class="card card-black clip" id="c4" data-start="49.7" data-duration="0.7" data-track-index="2">
+        <div class="card-in" id="c4-in">
+          <div class="card-title">AGAIN</div>
+        </div>
+      </div>
+      <div id="title-card" class="clip" data-start="54.4" data-duration="2.9" data-track-index="2">
         <div class="title-in" id="title-in">
-          <div class="t-tag" id="t-tag">ONE HOUR. NO MEMORY.</div>
+          <div class="t-tag" id="t-tag">ONE HOUR. ONE CHILD. ONE LIE.</div>
           <div class="t-main" id="t-main">THE LOST HOUR</div>
           <div class="t-soon" id="t-soon">COMING SOON</div>
         </div>
@@ -209,237 +212,227 @@
       <div id="flash"></div>
       <div class="bar" id="bar-top"></div>
       <div class="bar" id="bar-bot"></div>
-      <audio id="music" src="assets/music/silent-descent.mp3" data-start="0" data-duration="54.2" data-media-start="26" data-track-index="10" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":1.5,"v":0.9},{"t":2.45,"v":0.9},{"t":2.7,"v":0.32},{"t":5.358,"v":0.32},{"t":5.608,"v":0.9},{"t":6.05,"v":0.9},{"t":6.3,"v":0.32},{"t":9.486,"v":0.32},{"t":9.736,"v":0.32},{"t":9.75,"v":0.32},{"t":12.912,"v":0.32},{"t":13.162,"v":0.32},{"t":13.172,"v":0.32},{"t":15.848,"v":0.32},{"t":16.098,"v":0.9},{"t":16.95,"v":0.9},{"t":17.2,"v":0.32},{"t":20.386,"v":0.32},{"t":20.636,"v":0.9},{"t":22.95,"v":0.9},{"t":23.2,"v":0.32},{"t":26.794,"v":0.32},{"t":27.044,"v":0.32},{"t":27.1,"v":0.32},{"t":31.054,"v":0.32},{"t":31.304,"v":0.32},{"t":31.314,"v":0.32},{"t":33.262,"v":0.32},{"t":33.512,"v":0.9},{"t":34.35,"v":0.9},{"t":34.6,"v":0.32},{"t":37.594,"v":0.32},{"t":37.844,"v":0.32},{"t":37.854,"v":0.32},{"t":40.338,"v":0.32},{"t":40.588,"v":0.9},{"t":41.35,"v":0.9},{"t":41.6,"v":0.32},{"t":43.466,"v":0.32},{"t":43.716,"v":0.9},{"t":54.08,"v":0.9},{"t":54.2,"v":0}]}]}'></audio>
-      <audio id="v01" src="assets/vo/v01.mp3" data-start="2.7" data-duration="2.808" data-track-index="9" data-volume="1"></audio>
-      <audio id="v02" src="assets/vo/v02.mp3" data-start="6.3" data-duration="3.336" data-track-index="9" data-volume="1"></audio>
-      <audio id="v03" src="assets/vo/v03.mp3" data-start="9.75" data-duration="3.312" data-track-index="9" data-volume="1"></audio>
-      <audio id="v04" src="assets/vo/v04.mp3" data-start="12.95" data-duration="3.048" data-track-index="9" data-volume="1"></audio>
-      <audio id="v05" src="assets/vo/v05.mp3" data-start="17.2" data-duration="3.336" data-track-index="9" data-volume="1"></audio>
-      <audio id="v06" src="assets/vo/v06.mp3" data-start="23.2" data-duration="3.744" data-track-index="9" data-volume="1"></audio>
-      <audio id="v07" src="assets/vo/v07.mp3" data-start="27.1" data-duration="4.104" data-track-index="9" data-volume="1"></audio>
-      <audio id="v08" src="assets/vo/v08.mp3" data-start="31.3" data-duration="2.112" data-track-index="9" data-volume="1"></audio>
-      <audio id="v09" src="assets/vo/v09.mp3" data-start="34.6" data-duration="3.144" data-track-index="9" data-volume="1"></audio>
-      <audio id="v10" src="assets/vo/v10.mp3" data-start="37.8" data-duration="2.688" data-track-index="9" data-volume="1"></audio>
-      <audio id="v11" src="assets/vo/v11.mp3" data-start="41.6" data-duration="2.016" data-track-index="9" data-volume="1"></audio>
-      <audio id="v12" src="assets/vo/v12.mp3" data-start="54.15" data-duration="1.752" data-track-index="9" data-volume="1"></audio>
-      <audio id="v13" src="assets/vo/v13.mp3" data-start="57" data-duration="1.584" data-track-index="9" data-volume="1"></audio>
-      <audio id="fx0" src="assets/sfx/impact-bass-2.mp3" data-start="2.5" data-duration="2.592" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.25},{"t":2.292,"v":0.25},{"t":2.592,"v":0}]}]}'></audio>
-      <audio id="fx1" src="assets/sfx/deepImpact.mp3" data-start="15" data-duration="1.75" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.9},{"t":1.45,"v":0.9},{"t":1.75,"v":0}]}]}'></audio>
-      <audio id="fx2" src="assets/sfx/clickClassic.mp3" data-start="17" data-duration="0.339" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx3" src="assets/sfx/clickClassic.mp3" data-start="17.5" data-duration="0.339" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx4" src="assets/sfx/clickClassic.mp3" data-start="18" data-duration="0.339" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx5" src="assets/sfx/clickClassic.mp3" data-start="18.5" data-duration="0.339" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx6" src="assets/sfx/clickClassic.mp3" data-start="19" data-duration="0.339" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx7" src="assets/sfx/clickClassic.mp3" data-start="19.5" data-duration="0.339" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx8" src="assets/sfx/clickClassic.mp3" data-start="20" data-duration="0.339" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx9" src="assets/sfx/clickClassic.mp3" data-start="20.5" data-duration="0.339" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.3},{"t":0.254,"v":0.3},{"t":0.339,"v":0}]}]}'></audio>
-      <audio id="fx10" src="assets/sfx/trailerHit.mp3" data-start="21" data-duration="2.507" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.85},{"t":2.207,"v":0.85},{"t":2.507,"v":0}]}]}'></audio>
-      <audio id="fx11" src="assets/sfx/glitch-1.mp3" data-start="28" data-duration="2.638" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.35},{"t":2.338,"v":0.35},{"t":2.638,"v":0}]}]}'></audio>
-      <audio id="fx12" src="assets/sfx/trailerHit.mp3" data-start="33" data-duration="2.507" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.8},{"t":2.207,"v":0.8},{"t":2.507,"v":0}]}]}'></audio>
-      <audio id="fx13" src="assets/sfx/hitShort.mp3" data-start="36" data-duration="0.966" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.5},{"t":0.724,"v":0.5},{"t":0.966,"v":0}]}]}'></audio>
-      <audio id="fx14" src="assets/sfx/trailerHit.mp3" data-start="40" data-duration="2.507" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.85},{"t":2.207,"v":0.85},{"t":2.507,"v":0}]}]}'></audio>
-      <audio id="fx15" src="assets/sfx/riser.mp3" data-start="41.5" data-duration="2" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.55},{"t":1.7,"v":0.55},{"t":2,"v":0}]}]}'></audio>
-      <audio id="fx16" src="assets/sfx/whooshImpact.mp3" data-start="43.4" data-duration="2.638" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.8},{"t":2.338,"v":0.8},{"t":2.638,"v":0}]}]}'></audio>
-      <audio id="fx17" src="assets/sfx/zoomHit.mp3" data-start="47.1" data-duration="0.94" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.6},{"t":0.705,"v":0.6},{"t":0.94,"v":0}]}]}'></audio>
-      <audio id="fx18" src="assets/sfx/hitShort.mp3" data-start="49.2" data-duration="0.966" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.7},{"t":0.724,"v":0.7},{"t":0.966,"v":0}]}]}'></audio>
-      <audio id="fx19" src="assets/sfx/zoomHit.mp3" data-start="50.5" data-duration="0.94" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.6},{"t":0.705,"v":0.6},{"t":0.94,"v":0}]}]}'></audio>
-      <audio id="fx20" src="assets/sfx/epicHit.mp3" data-start="55" data-duration="3.317" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.55},{"t":3.017,"v":0.55},{"t":3.317,"v":0}]}]}'></audio>
-      <audio id="fx21" src="assets/sfx/trailerHit.mp3" data-start="56.6" data-duration="2.507" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":1},{"t":2.207,"v":1},{"t":2.507,"v":0}]}]}'></audio>
+      <div class="cap clip" id="f1-cap" data-start="0.9" data-duration="2.622" data-track-index="3"><div class="cap-in" id="f1-in"><span class="w" id="f1-w0">When</span> <span class="w" id="f1-w1">he</span> <span class="w" id="f1-w2">was</span> <span class="w" id="f1-w3">little,</span> <span class="w" id="f1-w4">he</span> <span class="w" id="f1-w5">was</span> <span class="w" id="f1-w6">scared</span> <span class="w" id="f1-w7">of</span> <span class="w" id="f1-w8">the</span> <span class="w" id="f1-w9">dark.</span></div></div>
+      <div class="cap clip" id="f2-cap" data-start="5" data-duration="2.07" data-track-index="3"><div class="cap-in" id="f2-in"><span class="w" id="f2-w0">So</span> <span class="w" id="f2-w1">I</span> <span class="w" id="f2-w2">made</span> <span class="w" id="f2-w3">him</span> <span class="w" id="f2-w4">a</span> <span class="w" id="f2-w5">promise.</span></div></div>
+      <div class="cap clip" id="f3-cap" data-start="8" data-duration="2.334" data-track-index="3"><div class="cap-in" id="f3-in"><span class="w" id="f3-w0">Wherever</span> <span class="w" id="f3-w1">you</span> <span class="w" id="f3-w2">are,</span> <span class="w" id="f3-w3">I'll</span> <span class="w" id="f3-w4">find</span> <span class="w" id="f3-w5">you.</span></div></div>
+      <div class="cap clip" id="n1-cap" data-start="11" data-duration="5.6" data-track-index="3"><div class="cap-in" id="n1-in"><span class="w" id="n1-w0">On</span> <span class="w" id="n1-w1">October</span> <span class="w" id="n1-w2">ninth,</span> <span class="w" id="n1-w3">at</span> <span class="w" id="n1-w4">three</span> <span class="w" id="n1-w5">seventeen</span> <span class="w" id="n1-w6">A.M.,</span> <span class="w" id="n1-w7">every</span> <span class="w" id="n1-w8">clock</span> <span class="w" id="n1-w9">in</span> <span class="w" id="n1-w10">Hollow</span> <span class="w" id="n1-w11">Creek</span> <span class="w" id="n1-w12">stopped.</span></div></div>
+      <div class="cap clip" id="n3-cap" data-start="18.4" data-duration="3.582" data-track-index="3"><div class="cap-in" id="n3-in"><span class="w" id="n3-w0">When</span> <span class="w" id="n3-w1">time</span> <span class="w" id="n3-w2">started</span> <span class="w" id="n3-w3">again,</span> <span class="w" id="n3-w4">every</span> <span class="w" id="n3-w5">child</span> <span class="w" id="n3-w6">came</span> <span class="w" id="n3-w7">home.</span></div></div>
+      <div class="cap clip" id="s1-cap" data-start="26.4" data-duration="3.39" data-track-index="3"><div class="cap-in" id="s1-in"><span class="w" id="s1-w0">Mister</span> <span class="w" id="s1-w1">Harper.</span> <span class="w" id="s1-w2">Where</span> <span class="w" id="s1-w3">were</span> <span class="w" id="s1-w4">you</span> <span class="w" id="s1-w5">at</span> <span class="w" id="s1-w6">three</span> <span class="w" id="s1-w7">seventeen?</span></div></div>
+      <div class="cap clip" id="f4-cap" data-start="29.9" data-duration="2.07" data-track-index="3"><div class="cap-in" id="f4-in"><span class="w" id="f4-w0">I</span> <span class="w" id="f4-w1">don't.</span> <span class="w" id="f4-w2">I</span> <span class="w" id="f4-w3">don't</span> <span class="w" id="f4-w4">remember.</span></div></div>
+      <div class="cap clip" id="n5-cap" data-start="32" data-duration="2.886" data-track-index="3"><div class="cap-in" id="n5-in"><span class="w" id="n5-w0">No</span> <span class="w" id="n5-w1">one</span> <span class="w" id="n5-w2">remembers</span> <span class="w" id="n5-w3">the</span> <span class="w" id="n5-w4">lost</span> <span class="w" id="n5-w5">hour.</span></div></div>
+      <div class="cap clip" id="b1-cap" data-start="39.7" data-duration="1.782" data-track-index="3"><div class="cap-in cap-boy" id="b1-in"><span class="w" id="b1-w0">Dad?</span> <span class="w" id="b1-w1">I'm</span> <span class="w" id="b1-w2">still</span> <span class="w" id="b1-w3">here.</span></div></div>
+      <div class="cap clip" id="f5-cap" data-start="41.95" data-duration="1.83" data-track-index="3"><div class="cap-in" id="f5-in"><span class="w" id="f5-w0">I'm</span> <span class="w" id="f5-w1">coming,</span> <span class="w" id="f5-w2">buddy.</span></div></div>
+      <div class="cap clip" id="b2-cap" data-start="57.4" data-duration="2.6" data-track-index="3"><div class="cap-in cap-boy" id="b2-in"><span class="w" id="b2-w0">Dad.</span> <span class="w" id="b2-w1">Why</span> <span class="w" id="b2-w2">did</span> <span class="w" id="b2-w3">you</span> <span class="w" id="b2-w4">leave</span> <span class="w" id="b2-w5">me</span> <span class="w" id="b2-w6">there?</span></div></div>
+      <audio id="music" src="assets/music/silent-descent.mp3" data-start="0" data-duration="53.5" data-media-start="26" data-track-index="10" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0},{"t":2,"v":0.3},{"t":2.01,"v":0.3},{"t":3.222,"v":0.3},{"t":3.472,"v":0.9},{"t":4.75,"v":0.9},{"t":5,"v":0.3},{"t":6.77,"v":0.3},{"t":7.02,"v":0.9},{"t":7.75,"v":0.9},{"t":8,"v":0.3},{"t":10.034,"v":0.3},{"t":10.284,"v":0.9},{"t":10.75,"v":0.9},{"t":11,"v":0.3},{"t":16.346,"v":0.3},{"t":16.596,"v":0.3},{"t":16.7,"v":0.3},{"t":17.942,"v":0.3},{"t":18.192,"v":0.3},{"t":18.4,"v":0.3},{"t":21.682,"v":0.3},{"t":21.932,"v":0.9},{"t":22,"v":0.9},{"t":22.25,"v":0.3},{"t":23.42,"v":0.3},{"t":23.67,"v":0.9},{"t":26.15,"v":0.9},{"t":26.4,"v":0.3},{"t":29.49,"v":0.3},{"t":29.74,"v":0.3},{"t":29.9,"v":0.3},{"t":31.67,"v":0.3},{"t":31.92,"v":0.3},{"t":32,"v":0.3},{"t":34.586,"v":0.3},{"t":34.836,"v":0.9},{"t":39.45,"v":0.9},{"t":39.7,"v":0.3},{"t":41.182,"v":0.3},{"t":41.432,"v":0.9},{"t":41.7,"v":0.9},{"t":41.95,"v":0.3},{"t":43.48,"v":0.3},{"t":43.73,"v":0.9},{"t":53.4,"v":0.9},{"t":53.5,"v":0}]}]}'></audio>
+      <audio id="f1" src="assets/vo/f1.mp3" data-start="0.9" data-duration="2.472" data-track-index="9" data-volume="1"></audio>
+      <audio id="f2" src="assets/vo/f2.mp3" data-start="5" data-duration="1.92" data-track-index="9" data-volume="1"></audio>
+      <audio id="f3" src="assets/vo/f3.mp3" data-start="8" data-duration="2.184" data-track-index="9" data-volume="1"></audio>
+      <audio id="n1" src="assets/vo/n1.mp3" data-start="11" data-duration="5.496" data-track-index="9" data-volume="1"></audio>
+      <audio id="n2" src="assets/vo/n2.mp3" data-start="16.7" data-duration="1.392" data-track-index="9" data-volume="1"></audio>
+      <audio id="n3" src="assets/vo/n3.mp3" data-start="18.4" data-duration="3.432" data-track-index="9" data-volume="1"></audio>
+      <audio id="n4" src="assets/vo/n4.mp3" data-start="22.25" data-duration="1.32" data-track-index="9" data-volume="1"></audio>
+      <audio id="s1" src="assets/vo/s1.mp3" data-start="26.4" data-duration="3.24" data-track-index="9" data-volume="1"></audio>
+      <audio id="f4" src="assets/vo/f4.mp3" data-start="29.9" data-duration="1.92" data-track-index="9" data-volume="1"></audio>
+      <audio id="n5" src="assets/vo/n5.mp3" data-start="32" data-duration="2.736" data-track-index="9" data-volume="1"></audio>
+      <audio id="b1" src="assets/vo/b1.mp3" data-start="39.7" data-duration="1.632" data-track-index="9" data-volume="1"></audio>
+      <audio id="f5" src="assets/vo/f5.mp3" data-start="41.95" data-duration="1.68" data-track-index="9" data-volume="1"></audio>
+      <audio id="n6" src="assets/vo/n6.mp3" data-start="54.7" data-duration="1.584" data-track-index="9" data-volume="1"></audio>
+      <audio id="b2" src="assets/vo/b2.mp3" data-start="57.4" data-duration="2.496" data-track-index="9" data-volume="1"></audio>
+      <audio id="fx0" src="assets/sfx/deepImpact.mp3" data-start="10.6" data-duration="1.75" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.6},{"t":1.45,"v":0.6},{"t":1.75,"v":0}]}]}'></audio>
+      <audio id="fx1" src="assets/sfx/clockTick.mp3" data-start="11" data-duration="5.6" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.55},{"t":5.3,"v":0.55},{"t":5.6,"v":0}]}]}'></audio>
+      <audio id="fx2" src="assets/sfx/hitShort.mp3" data-start="12.3" data-duration="0.966" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.45},{"t":0.724,"v":0.45},{"t":0.966,"v":0}]}]}'></audio>
+      <audio id="fx3" src="assets/sfx/trailerHit.mp3" data-start="16.6" data-duration="2.507" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.8},{"t":2.207,"v":0.8},{"t":2.507,"v":0}]}]}'></audio>
+      <audio id="fx4" src="assets/sfx/horrorDrum.mp3" data-start="22" data-duration="4.344" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.9},{"t":4.044,"v":0.9},{"t":4.344,"v":0}]}]}'></audio>
+      <audio id="fx5" src="assets/sfx/impact-bass-2.mp3" data-start="26.8" data-duration="2.592" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.35},{"t":2.292,"v":0.35},{"t":2.592,"v":0}]}]}'></audio>
+      <audio id="fx6" src="assets/sfx/phoneRing.mp3" data-start="37.2" data-duration="2.3" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.8},{"t":2,"v":0.8},{"t":2.3,"v":0}]}]}'></audio>
+      <audio id="fx7" src="assets/sfx/riser.mp3" data-start="41.4" data-duration="2.1" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.5},{"t":1.8,"v":0.5},{"t":2.1,"v":0}]}]}'></audio>
+      <audio id="fx8" src="assets/sfx/whooshImpact.mp3" data-start="43.45" data-duration="2.638" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.8},{"t":2.338,"v":0.8},{"t":2.638,"v":0}]}]}'></audio>
+      <audio id="fx9" src="assets/sfx/zoomHit.mp3" data-start="46.7" data-duration="0.94" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.6},{"t":0.705,"v":0.6},{"t":0.94,"v":0}]}]}'></audio>
+      <audio id="fx10" src="assets/sfx/zoomHit.mp3" data-start="47.9" data-duration="0.94" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.6},{"t":0.705,"v":0.6},{"t":0.94,"v":0}]}]}'></audio>
+      <audio id="fx11" src="assets/sfx/trailerHit.mp3" data-start="49.7" data-duration="2.507" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.85},{"t":2.207,"v":0.85},{"t":2.507,"v":0}]}]}'></audio>
+      <audio id="fx12" src="assets/sfx/hitShort.mp3" data-start="51.1" data-duration="0.966" data-track-index="11" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.6},{"t":0.724,"v":0.6},{"t":0.966,"v":0}]}]}'></audio>
+      <audio id="fx13" src="assets/sfx/heartbeat.mp3" data-start="53.45" data-duration="1" data-track-index="12" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.85},{"t":0.75,"v":0.85},{"t":1,"v":0}]}]}'></audio>
+      <audio id="fx14" src="assets/sfx/epicHit.mp3" data-start="54.4" data-duration="3.317" data-track-index="13" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.75},{"t":3.017,"v":0.75},{"t":3.317,"v":0}]}]}'></audio>
+      <audio id="fx15" src="assets/sfx/horrorHit.mp3" data-start="59.72" data-duration="0.28" data-track-index="14" data-volume="1" data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":1},{"t":0.21,"v":1},{"t":0.28,"v":0}]}]}'></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      tl.fromTo("#s0-push", { scale: 1 }, { scale: 1.07, duration: 3.6, ease: "none" }, 2.5);
-      tl.fromTo("#s0-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 2.5);
-      tl.to("#s0-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 5.75);
-      tl.fromTo("#s1-push", { scale: 1 }, { scale: 1.07, duration: 3, ease: "none" }, 6.1);
-      tl.fromTo("#s1-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 6.1);
-      tl.to("#s1-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 8.75);
-      tl.fromTo("#s2-push", { scale: 1 }, { scale: 1.07, duration: 3.5, ease: "none" }, 9.1);
-      tl.fromTo("#s2-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 9.1);
-      tl.to("#s2-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 12.25);
-      tl.fromTo("#s3-push", { scale: 1 }, { scale: 1.07, duration: 2.4, ease: "none" }, 12.6);
-      tl.fromTo("#s3-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 12.6);
-      tl.to("#s3-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 14.65);
-      tl.fromTo("#s4-push", { scale: 1 }, { scale: 1.07, duration: 2, ease: "none" }, 17);
-      tl.fromTo("#s4-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 17);
-      tl.to("#s4-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 18.65);
-      tl.fromTo("#s5-push", { scale: 1 }, { scale: 1.07, duration: 2, ease: "none" }, 19);
-      tl.fromTo("#s5-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 19);
-      tl.to("#s5-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 20.65);
-      tl.fromTo("#s6-push", { scale: 1 }, { scale: 1.07, duration: 2.5, ease: "none" }, 23);
-      tl.fromTo("#s6-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 23);
-      tl.to("#s6-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 25.15);
-      tl.fromTo("#s7-push", { scale: 1 }, { scale: 1.07, duration: 2.5, ease: "none" }, 25.5);
-      tl.fromTo("#s7-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 25.5);
-      tl.to("#s7-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 27.65);
-      tl.fromTo("#s8-push", { scale: 1 }, { scale: 1.07, duration: 1.5, ease: "none" }, 28);
-      tl.fromTo("#s8-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 28);
-      tl.to("#s8-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 29.15);
-      tl.fromTo("#s9-push", { scale: 1 }, { scale: 1.07, duration: 1.5, ease: "none" }, 29.5);
-      tl.fromTo("#s9-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 29.5);
-      tl.to("#s9-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 30.65);
-      tl.fromTo("#s10-push", { scale: 1 }, { scale: 1.07, duration: 2, ease: "none" }, 31);
-      tl.fromTo("#s10-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 31);
-      tl.to("#s10-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 32.65);
-      tl.fromTo("#s11-push", { scale: 1 }, { scale: 1.07, duration: 1.5, ease: "none" }, 34.5);
-      tl.fromTo("#s11-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 34.5);
-      tl.to("#s11-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 35.65);
-      tl.fromTo("#s12-push", { scale: 1 }, { scale: 1.07, duration: 1, ease: "none" }, 36);
-      tl.fromTo("#s12-push", { opacity: 0 }, { opacity: 1, duration: 0.25, ease: "power1.out" }, 36);
-      tl.to("#s12-push", { opacity: 0, duration: 0.25, ease: "power1.in" }, 36.75);
-      tl.fromTo("#s13-push", { scale: 1 }, { scale: 1.07, duration: 1.5, ease: "none" }, 37);
-      tl.fromTo("#s13-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 37);
-      tl.to("#s13-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 38.15);
-      tl.fromTo("#s14-push", { scale: 1 }, { scale: 1.07, duration: 1.5, ease: "none" }, 38.5);
-      tl.fromTo("#s14-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 38.5);
-      tl.to("#s14-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 39.65);
-      tl.fromTo("#s15-push", { scale: 1 }, { scale: 1.07, duration: 2, ease: "none" }, 41.5);
-      tl.fromTo("#s15-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 41.5);
-      tl.to("#s15-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 43.15);
-      tl.fromTo("#s16-push", { scale: 1 }, { scale: 1.035, duration: 1, ease: "none" }, 43.5);
-      tl.fromTo("#s17-push", { scale: 1 }, { scale: 1.035, duration: 1, ease: "none" }, 44.5);
-      tl.fromTo("#s18-push", { scale: 1 }, { scale: 1.035, duration: 0.8, ease: "none" }, 45.5);
-      tl.fromTo("#s19-push", { scale: 1 }, { scale: 1.035, duration: 0.8, ease: "none" }, 46.3);
-      tl.fromTo("#s20-push", { scale: 1 }, { scale: 1.035, duration: 0.7, ease: "none" }, 47.1);
-      tl.fromTo("#s21-push", { scale: 1 }, { scale: 1.035, duration: 0.8, ease: "none" }, 47.8);
-      tl.fromTo("#s22-push", { scale: 1 }, { scale: 1.035, duration: 0.6, ease: "none" }, 48.6);
-      tl.fromTo("#s23-push", { scale: 1 }, { scale: 1.035, duration: 0.6, ease: "none" }, 49.2);
-      tl.fromTo("#s24-push", { scale: 1 }, { scale: 1.035, duration: 0.7, ease: "none" }, 49.8);
-      tl.fromTo("#s25-push", { scale: 1 }, { scale: 1.035, duration: 1, ease: "none" }, 50.5);
-      tl.fromTo("#s26-push", { scale: 1 }, { scale: 1.035, duration: 0.6, ease: "none" }, 51.5);
-      tl.fromTo("#s27-push", { scale: 1 }, { scale: 1.035, duration: 0.8, ease: "none" }, 52.1);
-      tl.fromTo("#s28-push", { scale: 1 }, { scale: 1.035, duration: 1.3, ease: "none" }, 52.9);
-      tl.fromTo("#s29-push", { scale: 1 }, { scale: 1.07, duration: 1.6, ease: "none" }, 55);
-      tl.fromTo("#s29-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 55);
-      tl.to("#s29-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 56.25);
-      tl.fromTo("#c0-in", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 15);
-      tl.to("#c0-in", { scale: 1.03, duration: 1.7, ease: "none" }, 15.3);
-      tl.to("#c0-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 16.8);
-      tl.fromTo("#c1-in", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 21);
-      tl.to("#c1-in", { scale: 1.03, duration: 1.7, ease: "none" }, 21.3);
-      tl.to("#c1-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 22.8);
-      tl.fromTo("#c2-in", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 33);
-      tl.to("#c2-in", { scale: 1.03, duration: 1.2, ease: "none" }, 33.3);
-      tl.to("#c2-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 34.3);
-      tl.fromTo("#c3-in", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 40);
-      tl.to("#c3-in", { scale: 1.03, duration: 1.2, ease: "none" }, 40.3);
-      tl.to("#c3-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 41.3);
-      tl.fromTo("#v01-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 2.7);
-      tl.fromTo("#v01-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.7);
-      tl.fromTo("#v01-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.899);
-      tl.fromTo("#v01-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 3.365);
-      tl.fromTo("#v01-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 3.83);
-      tl.fromTo("#v01-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 4.361);
-      tl.fromTo("#v01-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 4.694);
-      tl.to("#v01-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 5.408);
-      tl.fromTo("#v02-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 6.3);
-      tl.fromTo("#v02-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 6.3);
-      tl.fromTo("#v02-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 6.725);
-      tl.fromTo("#v02-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 7.15);
-      tl.fromTo("#v02-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 7.433);
-      tl.fromTo("#v02-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 7.928);
-      tl.fromTo("#v02-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 8.353);
-      tl.fromTo("#v02-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 8.707);
-      tl.fromTo("#v02-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 8.99);
-      tl.to("#v02-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 9.536);
-      tl.fromTo("#v03-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 9.75);
-      tl.fromTo("#v03-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 9.75);
-      tl.fromTo("#v03-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 10.129);
-      tl.fromTo("#v03-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 10.382);
-      tl.fromTo("#v03-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 10.762);
-      tl.fromTo("#v03-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 10.888);
-      tl.fromTo("#v03-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 11.268);
-      tl.fromTo("#v03-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 11.837);
-      tl.fromTo("#v03-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 12.216);
-      tl.fromTo("#v03-w8", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 12.469);
-      tl.to("#v03-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 12.962);
-      tl.fromTo("#v04-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 12.95);
-      tl.fromTo("#v04-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 12.95);
-      tl.fromTo("#v04-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 13.272);
-      tl.fromTo("#v04-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 13.513);
-      tl.fromTo("#v04-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 14.157);
-      tl.fromTo("#v04-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 14.641);
-      tl.fromTo("#v04-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 15.446);
-      tl.to("#v04-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 14.8);
-      tl.fromTo("#v05-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 17.2);
-      tl.fromTo("#v05-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 17.2);
-      tl.fromTo("#v05-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 17.645);
-      tl.fromTo("#v05-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 18.089);
-      tl.fromTo("#v05-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 18.311);
-      tl.fromTo("#v05-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 18.682);
-      tl.fromTo("#v05-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 19.349);
-      tl.fromTo("#v05-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 19.645);
-      tl.fromTo("#v05-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 19.941);
-      tl.to("#v05-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 20.436);
-      tl.fromTo("#v06-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 23.2);
-      tl.fromTo("#v06-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 23.2);
-      tl.fromTo("#v06-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 23.51);
-      tl.fromTo("#v06-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 24.006);
-      tl.fromTo("#v06-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 24.253);
-      tl.fromTo("#v06-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 24.687);
-      tl.fromTo("#v06-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 25.121);
-      tl.fromTo("#v06-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 25.679);
-      tl.fromTo("#v06-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 25.988);
-      tl.fromTo("#v06-w8", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 26.36);
-      tl.to("#v06-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 26.844);
-      tl.fromTo("#v07-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 27.1);
-      tl.fromTo("#v07-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 27.1);
-      tl.fromTo("#v07-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 27.409);
-      tl.fromTo("#v07-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 27.656);
-      tl.fromTo("#v07-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 27.965);
-      tl.fromTo("#v07-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 28.397);
-      tl.fromTo("#v07-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 28.706);
-      tl.fromTo("#v07-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 29.015);
-      tl.fromTo("#v07-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 29.386);
-      tl.fromTo("#v07-w8", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 29.88);
-      tl.fromTo("#v07-w9", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 30.251);
-      tl.fromTo("#v07-w10", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 30.683);
-      tl.to("#v07-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 31.104);
-      tl.fromTo("#v08-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 31.3);
-      tl.fromTo("#v08-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 31.3);
-      tl.fromTo("#v08-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 31.524);
-      tl.fromTo("#v08-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32.085);
-      tl.fromTo("#v08-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32.365);
-      tl.fromTo("#v08-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32.645);
-      tl.fromTo("#v08-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32.926);
-      tl.to("#v08-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 32.8);
-      tl.fromTo("#v09-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 34.6);
-      tl.fromTo("#v09-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 34.6);
-      tl.fromTo("#v09-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 35.132);
-      tl.fromTo("#v09-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 35.531);
-      tl.fromTo("#v09-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 36.13);
-      tl.fromTo("#v09-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 36.596);
-      tl.fromTo("#v09-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 36.995);
-      tl.to("#v09-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 37.644);
-      tl.fromTo("#v10-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 37.8);
-      tl.fromTo("#v10-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 37.8);
-      tl.fromTo("#v10-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 38.048);
-      tl.fromTo("#v10-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 38.233);
-      tl.fromTo("#v10-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 38.481);
-      tl.fromTo("#v10-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 38.729);
-      tl.fromTo("#v10-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 39.286);
-      tl.fromTo("#v10-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 39.657);
-      tl.fromTo("#v10-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 39.967);
-      tl.to("#v10-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 39.8);
-      tl.fromTo("#v11-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 41.6);
-      tl.fromTo("#v11-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 41.6);
-      tl.fromTo("#v11-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 41.867);
-      tl.fromTo("#v11-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 42.133);
-      tl.fromTo("#v11-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 42.533);
-      tl.fromTo("#v11-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 42.8);
-      tl.to("#v11-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 43.516);
+      tl.fromTo("#sh0-push", { scale: 1 }, { scale: 1.07, duration: 2.8, ease: "none" }, 0.6);
+      tl.fromTo("#sh0-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 0.6);
+      tl.to("#sh0-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 3.05);
+      tl.fromTo("#sh1-push", { scale: 1 }, { scale: 1.07, duration: 2.2, ease: "none" }, 3.4);
+      tl.fromTo("#sh1-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 3.4);
+      tl.to("#sh1-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 5.25);
+      tl.fromTo("#sh2-push", { scale: 1 }, { scale: 1.07, duration: 2.6, ease: "none" }, 5.6);
+      tl.fromTo("#sh2-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 5.6);
+      tl.to("#sh2-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 7.85);
+      tl.fromTo("#sh3-push", { scale: 1 }, { scale: 1.07, duration: 2.4, ease: "none" }, 8.2);
+      tl.fromTo("#sh3-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 8.2);
+      tl.to("#sh3-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 10.25);
+      tl.fromTo("#sh4-push", { scale: 1 }, { scale: 1.07, duration: 3, ease: "none" }, 13.6);
+      tl.fromTo("#sh4-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 13.6);
+      tl.to("#sh4-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 16.25);
+      tl.fromTo("#sh5-push", { scale: 1 }, { scale: 1.07, duration: 2.2, ease: "none" }, 18.2);
+      tl.fromTo("#sh5-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 18.2);
+      tl.to("#sh5-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 20.05);
+      tl.fromTo("#sh6-push", { scale: 1 }, { scale: 1.07, duration: 1.6, ease: "none" }, 20.4);
+      tl.fromTo("#sh6-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 20.4);
+      tl.to("#sh6-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 21.65);
+      tl.fromTo("#sh7-push", { scale: 1 }, { scale: 1.04, duration: 1.8, ease: "none" }, 23.8);
+      tl.fromTo("#sh8-push", { scale: 1 }, { scale: 1.04, duration: 1.2, ease: "none" }, 25.6);
+      tl.fromTo("#sh9-push", { scale: 1 }, { scale: 1.04, duration: 2.6, ease: "none" }, 26.8);
+      tl.fromTo("#sh10-push", { scale: 1 }, { scale: 1.04, duration: 2.2, ease: "none" }, 29.4);
+      tl.fromTo("#sh11-push", { scale: 1 }, { scale: 1.04, duration: 1.8, ease: "none" }, 31.6);
+      tl.fromTo("#sh12-push", { scale: 1 }, { scale: 1.04, duration: 1.6, ease: "none" }, 33.4);
+      tl.fromTo("#sh13-push", { scale: 1 }, { scale: 1.07, duration: 1.8, ease: "none" }, 35);
+      tl.fromTo("#sh13-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 35);
+      tl.to("#sh13-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 36.45);
+      tl.fromTo("#sh14-push", { scale: 1 }, { scale: 1.04, duration: 2.2, ease: "none" }, 37.2);
+      tl.fromTo("#sh15-push", { scale: 1 }, { scale: 1.04, duration: 2.4, ease: "none" }, 39.4);
+      tl.fromTo("#sh16-push", { scale: 1 }, { scale: 1.04, duration: 1.7, ease: "none" }, 41.8);
+      tl.fromTo("#sh17-push", { scale: 1 }, { scale: 1.04, duration: 1, ease: "none" }, 43.5);
+      tl.fromTo("#sh18-push", { scale: 1 }, { scale: 1.04, duration: 0.7, ease: "none" }, 44.5);
+      tl.fromTo("#sh19-push", { scale: 1 }, { scale: 1.04, duration: 0.8, ease: "none" }, 45.2);
+      tl.fromTo("#sh20-push", { scale: 1 }, { scale: 1.04, duration: 0.7, ease: "none" }, 46);
+      tl.fromTo("#sh21-push", { scale: 1 }, { scale: 1.04, duration: 0.6, ease: "none" }, 47.3);
+      tl.fromTo("#sh22-push", { scale: 1 }, { scale: 1.04, duration: 0.6, ease: "none" }, 48.5);
+      tl.fromTo("#sh23-push", { scale: 1 }, { scale: 1.04, duration: 0.6, ease: "none" }, 49.1);
+      tl.fromTo("#sh24-push", { scale: 1 }, { scale: 1.04, duration: 0.7, ease: "none" }, 50.4);
+      tl.fromTo("#sh25-push", { scale: 1 }, { scale: 1.04, duration: 0.8, ease: "none" }, 51.1);
+      tl.fromTo("#sh26-push", { scale: 1 }, { scale: 1.04, duration: 0.9, ease: "none" }, 51.9);
+      tl.fromTo("#sh27-push", { scale: 1 }, { scale: 1.04, duration: 0.7, ease: "none" }, 52.8);
+      tl.fromTo("#sh28-push", { scale: 1 }, { scale: 1.07, duration: 2.4, ease: "none" }, 57.3);
+      tl.fromTo("#sh28-push", { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, 57.3);
+      tl.to("#sh28-push", { opacity: 0, duration: 0.35, ease: "power1.in" }, 59.35);
+      tl.fromTo("#c0-in", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 16.6);
+      tl.to("#c0-in", { scale: 1.03, duration: 1.3, ease: "none" }, 16.9);
+      tl.to("#c0-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 18);
+      tl.fromTo("#c1-in", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, 22);
+      tl.to("#c1-in", { scale: 1.03, duration: 1.5, ease: "none" }, 22.3);
+      tl.to("#c1-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 23.6);
+      tl.fromTo("#c2-in", { scale: 1.25, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power3.out" }, 46.7);
+      tl.to("#c2-in", { scale: 0.96, duration: 0.48, ease: "none" }, 46.82);
+      tl.fromTo("#c3-in", { scale: 1.25, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power3.out" }, 47.9);
+      tl.to("#c3-in", { scale: 0.96, duration: 0.48, ease: "none" }, 48.02);
+      tl.fromTo("#c4-in", { scale: 1.25, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power3.out" }, 49.7);
+      tl.to("#c4-in", { scale: 0.96, duration: 0.58, ease: "none" }, 49.82);
+      tl.fromTo("#clock-in", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out" }, 11);
+      tl.fromTo("#clock-in", { scale: 1 }, { scale: 1.08, duration: 2.6, ease: "none" }, 11);
+      tl.fromTo("#clock-b", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 12.3);
+      tl.to("#clock-a", { opacity: 0, duration: 0.01 }, 12.3);
+      tl.to("#clock-b, #clock-am", { opacity: 0.3, duration: 0.03 }, 13.25);
+      tl.to("#clock-b, #clock-am", { opacity: 1, duration: 0.03 }, 13.33);
+      tl.to("#clock-b, #clock-am", { opacity: 0.2, duration: 0.03 }, 13.41);
+      tl.to("#clock-b, #clock-am", { opacity: 0.9, duration: 0.03 }, 13.47);
+      tl.to("#clock-b, #clock-am", { opacity: 0, duration: 0.03 }, 13.55);
+      tl.fromTo("#t-main", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.6, ease: "expo.out" }, 54.4);
+      tl.fromTo("#t-tag", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 54.9);
+      tl.fromTo("#t-soon", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 55.7);
+      tl.to("#title-in", { scale: 1.03, duration: 2.9, ease: "none" }, 54.4);
+      tl.to("#title-in", { opacity: 0, duration: 0.3 }, 57);
       tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 43.5);
-      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 47.1);
-      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 49.2);
-      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 50.5);
-      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 55);
-      tl.fromTo("#whisper-t", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 54.25);
-      tl.to("#whisper-t", { opacity: 0, duration: 0.15 }, 54.85);
-      tl.fromTo("#t-main", { opacity: 0, scale: 1.18 }, { opacity: 1, scale: 1, duration: 0.6, ease: "expo.out" }, 56.6);
-      tl.fromTo("#t-tag", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 57.0);
-      tl.fromTo("#t-soon", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 58.0);
-      tl.to("#title-in", { scale: 1.03, duration: 3.4, ease: "none" }, 56.6);
-      tl.to("#title-in", { opacity: 0, duration: 0.4 }, 59.6);
+      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 45.2);
+      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 47.3);
+      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 49.1);
+      tl.fromTo("#flash", { opacity: 0.85 }, { opacity: 0, duration: 0.12, ease: "power1.out", immediateRender: false }, 51.1);
+      tl.fromTo("#f1-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 0.9);
+      tl.fromTo("#f1-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 0.9);
+      tl.fromTo("#f1-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 1.147);
+      tl.fromTo("#f1-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 1.295);
+      tl.fromTo("#f1-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 1.493);
+      tl.fromTo("#f1-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 1.888);
+      tl.fromTo("#f1-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.036);
+      tl.fromTo("#f1-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.234);
+      tl.fromTo("#f1-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.58);
+      tl.fromTo("#f1-w8", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.728);
+      tl.fromTo("#f1-w9", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 2.926);
+      tl.to("#f1-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 3.322);
+      tl.fromTo("#f2-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 5);
+      tl.fromTo("#f2-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 5);
+      tl.fromTo("#f2-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 5.212);
+      tl.fromTo("#f2-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 5.354);
+      tl.fromTo("#f2-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 5.708);
+      tl.fromTo("#f2-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 5.991);
+      tl.fromTo("#f2-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 6.133);
+      tl.to("#f2-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 6.87);
+      tl.fromTo("#f3-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 8);
+      tl.fromTo("#f3-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 8);
+      tl.fromTo("#f3-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 8.555);
+      tl.fromTo("#f3-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 8.801);
+      tl.fromTo("#f3-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 9.109);
+      tl.fromTo("#f3-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 9.418);
+      tl.fromTo("#f3-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 9.726);
+      tl.to("#f3-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 10.134);
+      tl.fromTo("#n1-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 11);
+      tl.fromTo("#n1-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 11);
+      tl.fromTo("#n1-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 11.2);
+      tl.fromTo("#n1-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 11.735);
+      tl.fromTo("#n1-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 12.203);
+      tl.fromTo("#n1-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 12.403);
+      tl.fromTo("#n1-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 12.804);
+      tl.fromTo("#n1-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 13.473);
+      tl.fromTo("#n1-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 13.873);
+      tl.fromTo("#n1-w8", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 14.274);
+      tl.fromTo("#n1-w9", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 14.675);
+      tl.fromTo("#n1-w10", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 14.876);
+      tl.fromTo("#n1-w11", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 15.344);
+      tl.fromTo("#n1-w12", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 15.745);
+      tl.to("#n1-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 16.4);
+      tl.fromTo("#n3-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 18.4);
+      tl.fromTo("#n3-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 18.4);
+      tl.fromTo("#n3-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 18.742);
+      tl.fromTo("#n3-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 19.084);
+      tl.fromTo("#n3-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 19.631);
+      tl.fromTo("#n3-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 20.109);
+      tl.fromTo("#n3-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 20.52);
+      tl.fromTo("#n3-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 20.93);
+      tl.fromTo("#n3-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 21.272);
+      tl.to("#n3-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 21.782);
+      tl.fromTo("#s1-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 26.4);
+      tl.fromTo("#s1-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 26.4);
+      tl.fromTo("#s1-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 26.833);
+      tl.fromTo("#s1-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 27.327);
+      tl.fromTo("#s1-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 27.698);
+      tl.fromTo("#s1-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 28.007);
+      tl.fromTo("#s1-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 28.254);
+      tl.fromTo("#s1-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 28.439);
+      tl.fromTo("#s1-w7", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 28.81);
+      tl.to("#s1-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 29.59);
+      tl.fromTo("#f4-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 29.9);
+      tl.fromTo("#f4-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 29.9);
+      tl.fromTo("#f4-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 30.031);
+      tl.fromTo("#f4-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 30.49);
+      tl.fromTo("#f4-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 30.621);
+      tl.fromTo("#f4-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 31.014);
+      tl.to("#f4-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 31.77);
+      tl.fromTo("#n5-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 32);
+      tl.fromTo("#n5-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32);
+      tl.fromTo("#n5-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32.242);
+      tl.fromTo("#n5-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 32.566);
+      tl.fromTo("#n5-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 33.374);
+      tl.fromTo("#n5-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 33.697);
+      tl.fromTo("#n5-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 34.101);
+      tl.to("#n5-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 34.686);
+      tl.fromTo("#b1-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 39.7);
+      tl.fromTo("#b1-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 39.7);
+      tl.fromTo("#b1-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 40.053);
+      tl.fromTo("#b1-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 40.335);
+      tl.fromTo("#b1-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 40.759);
+      tl.to("#b1-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 41.282);
+      tl.fromTo("#f5-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 41.95);
+      tl.fromTo("#f5-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 41.95);
+      tl.fromTo("#f5-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 42.272);
+      tl.fromTo("#f5-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 42.916);
+      tl.to("#f5-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 43.58);
+      tl.fromTo("#b2-in", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 57.4);
+      tl.fromTo("#b2-w0", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 57.4);
+      tl.fromTo("#b2-w1", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 57.755);
+      tl.fromTo("#b2-w2", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 58.04);
+      tl.fromTo("#b2-w3", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 58.324);
+      tl.fromTo("#b2-w4", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 58.609);
+      tl.fromTo("#b2-w5", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 59.035);
+      tl.fromTo("#b2-w6", { opacity: 0.35 }, { opacity: 1, duration: 0.15, ease: "none" }, 59.248);
+      tl.to("#b2-in", { opacity: 0, duration: 0.2, ease: "power1.in" }, 59.8);
       window.__timelines["main"] = tl;
     </script>
   </body>

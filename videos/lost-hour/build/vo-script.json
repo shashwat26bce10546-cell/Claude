@@ -1,71 +1,115 @@
 {
- "voice": "am_michael",
- "speed": 0.9,
+ "voices": {
+  "narrator": {
+   "voice": "am_onyx",
+   "speed": 0.88,
+   "fx": "deep"
+  },
+  "father": {
+   "voice": "am_liam",
+   "speed": 0.92,
+   "fx": "close"
+  },
+  "sheriff": {
+   "voice": "am_echo",
+   "speed": 0.95,
+   "fx": "close"
+  },
+  "boyphone": {
+   "voice": "af_nicole",
+   "speed": 0.95,
+   "fx": "child-phone"
+  },
+  "boy": {
+   "voice": "af_nicole",
+   "speed": 0.9,
+   "fx": "child-whisper"
+  }
+ },
  "lines": [
   [
-   "v01",
-   2.7,
-   "In Hollow Creek, nothing ever happened."
+   "f1",
+   "father",
+   0.9,
+   "When he was little, he was scared of the dark."
   ],
   [
-   "v02",
-   6.3,
-   "Every night was quiet. Every road was empty."
+   "f2",
+   "father",
+   5.0,
+   "So I made him a promise."
   ],
   [
-   "v03",
-   9.75,
-   "Until the night a light appeared above the trees."
+   "f3",
+   "father",
+   8.0,
+   "Wherever you are, I'll find you."
   ],
   [
-   "v04",
-   12.95,
-   "And at exactly three seventeen A.M."
+   "n1",
+   "narrator",
+   11.0,
+   "On October ninth, at three seventeen A.M., every clock in Hollow Creek stopped."
   ],
   [
-   "v05",
-   17.2,
-   "every clock in town stopped. For one hour."
+   "n2",
+   "narrator",
+   16.7,
+   "For one hour."
   ],
   [
-   "v06",
-   23.2,
-   "Four hundred and twelve people vanished from their homes."
+   "n3",
+   "narrator",
+   18.4,
+   "When time started again, every child came home."
   ],
   [
-   "v07",
-   27.1,
-   "When the hour ended, they came back. Exactly where they'd been."
+   "n4",
+   "narrator",
+   22.25,
+   "Except one."
   ],
   [
-   "v08",
-   31.3,
-   "But something came back with them."
+   "s1",
+   "sheriff",
+   26.4,
+   "Mister Harper. Where were you at three seventeen?"
   ],
   [
-   "v09",
-   34.6,
-   "Doctors found nothing. Police found nothing."
+   "f4",
+   "father",
+   29.9,
+   "I don't. I don't remember."
   ],
   [
-   "v10",
-   37.8,
-   "And no one can remember where they went."
+   "n5",
+   "narrator",
+   32.0,
+   "No one remembers the lost hour."
   ],
   [
-   "v11",
-   41.6,
-   "Now the light has returned."
+   "b1",
+   "boyphone",
+   39.7,
+   "Dad? I'm still here."
   ],
   [
-   "v12",
-   54.15,
-   "It's three sixteen."
+   "f5",
+   "father",
+   41.95,
+   "I'm coming, buddy."
   ],
   [
-   "v13",
-   57.0,
+   "n6",
+   "narrator",
+   54.7,
    "The Lost Hour."
+  ],
+  [
+   "b2",
+   "boy",
+   57.4,
+   "Dad. Why did you leave me there?"
   ]
  ]
 }

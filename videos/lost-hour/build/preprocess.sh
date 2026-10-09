@@ -7,8 +7,8 @@ mkdir -p media/shots
 python3 - <<'PY'
 import json, glob, subprocess
 e = json.load(open('build/edl.json'))
-for i, (clip, src_in, _start, dur, gamma) in enumerate(e['shots']):
-    src = glob.glob(f'media/raw/{clip}-*.mp4')[0]
+for i, (clip, src_in, _start, dur, gamma, *_rest) in enumerate(e['shots']):
+    src = glob.glob(f'media/raw/{clip}*.mp4')[0]
     out = f'media/shots/{i:02d}-{clip}.mp4'
     vf = (f"fps=24,scale=1920:804:force_original_aspect_ratio=increase:flags=lanczos,crop=1920:804,"
           f"eq=contrast=1.08:saturation=0.88:gamma={gamma},"

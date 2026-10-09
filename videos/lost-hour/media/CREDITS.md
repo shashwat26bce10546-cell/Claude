@@ -1,40 +1,38 @@
 # Footage credits
 
-Watermarked Filmsupply preview clips (license required for final use). Footage reference → filmsupply.com/clips/…/<ref>.
+Watermarked Filmsupply preview clips (license required for final use). Ref = Filmsupply footage reference.
 
 | Shot | Timeline | Ref | Clip |
 |---|---|---|---|
-| 00 | 2.5s | 323526 | City skyline silhouetted against dark red sky |
-| 01 | 6.1s | 703556 | Vacant rocking chair rocking in an empty room near a sunlit window |
-| 02 | 9.1s | 426674 | Bright white light hovering over a road in a rural area at night search helicopter light |
-| 03 | 12.6s | 511101 | Silhouette of a man sitting down watching a large flock of birds flying across the sky |
-| 04 | 17.0s | 607908 | Close up view of a clock ticking is displayed |
-| 05 | 19.0s | 987092 | The days of the week flip by on a retro calendar, captured on grainy vintage film with spr |
-| 06 | 23.0s | 554076 | A television screen with static is displayed |
-| 07 | 25.5s | 986571 | A woman in a dark, smoky room slowly approaches an old television and reaches her hand out |
-| 08 | 28.0s | 975027 | A macro close-up shot shows the word 'Searching...' with a blinking ellipsis on a black di |
-| 09 | 29.5s | 956081 | A cinematic close-up of a suspicious person's eye looking through a door peephole in a dar |
-| 10 | 31.0s | 799602 | A shadowy motionless figure stands ominously at the end of a dim hallway as the lights bli |
-| 11 | 34.5s | 568514 | Red lights glow across a patients head and chest as he goes through a ct scan ring |
-| 12 | 36.0s | 941435 | A detailed MRI scan animates through the cross-sections of a human brain from a coronal vi |
-| 13 | 37.0s | 842579 | A persons shadow is pressed against glass in a dark room with flickering light |
-| 14 | 38.5s | 799608 | A dark hallway is illuminated by overhead lights and a blue light at the far end |
-| 15 | 41.5s | 216089 | A cries inside the dark car |
-| 16 | 43.5s | 230182 | A car is on fire at night |
-| 17 | 44.5s | 37432 | A car is lit up orange and a hand hits the window from the inside |
-| 18 | 45.5s | 58789 | A man runs fast through a forest with spotlights pointing in |
-| 19 | 46.3s | 594776 | A police car is traveling with the flashers on as it follows a car through town |
-| 20 | 47.1s | 668346 | Woman in distress screams under flashing lights |
-| 21 | 47.8s | 371144 | Flames reflect off of an eyeball |
-| 22 | 48.6s | 630863 | Black and white loading bar sign or message is displayed on futuristic retro TV or compute |
-| 23 | 49.2s | 189059 | A pistol is fired into the air |
-| 24 | 49.8s | 486510 | A vehicle rolls over and over in a field |
-| 25 | 50.5s | 216103 | The woman watches the car burn in the snow |
-| 26 | 51.5s | 91200 | Girl's right eye and long hair in dark |
-| 27 | 52.1s | 699076 | Three beings of light as specks of light circle above them |
-| 28 | 52.9s | 529340 | A woman walks towards the large glowing cube |
-| 29 | 55.0s | 571106 | Silhouette of a man wearing a trenchcoat raising his arms towards a giant glowing sunlike  |
+| 00 | 0.6s | 854017 | The silhouette of a father holding his son by the arms and spinning around and behind him  |
+| 01 | 3.4s | 892849 | A close view of a small childs hand tightly gripping a mans index finger as they walk outd |
+| 02 | 5.6s | 652953 | A man and a small boy are having dinner at a small table with light from a lamp |
+| 03 | 8.2s | 731849 | Father carries his sleepy child through the woods |
+| 04 | 13.6s | 122067 | A clock sits on a table in a dark room |
+| 05 | 18.2s | 114409 | A boy is walking alone on a dirt road at night |
+| 06 | 20.4s | 114407 | Child walks slowly outside at night |
+| 07 | 23.8s | 361909 | Automatic glass doors with missing child poster open for customers |
+| 08 | 25.6s | 850327 | A close shallow focus view shows a framed picture of a young boy with light colored hair a |
+| 09 | 26.8s | 257628 | Police Officers |
+| 10 | 29.4s | 397696 | A man at home runs his hands through his hair and sits with his face hidden in his hands |
+| 11 | 31.6s | 310106 | A group of person searching for something in the dark |
+| 12 | 33.4s | 157427 | People are frantically searching through the woods with a flashlight |
+| 13 | 35.0s | 42442 | A man is standing outside crying with his hands clasped tightly over his mouth |
+| 14 | 37.2s | 37354 | A person answers a black phone in a dark room, then hangs up |
+| 15 | 39.4s | 24795 | A man wakes up to answer the telephone |
+| 16 | 41.8s | 340816 | A boy in the forest looking at a blue light |
+| 17 | 43.5s | 44933 | Man In Search Of Child |
+| 18 | 44.5s | 42909 | A bright white light searches through a dark forest |
+| 19 | 45.2s | 332093 | A young boy runs in darkness |
+| 20 | 46.0s | 127006 | A flashlight is dropped on the ground |
+| 21 | 47.3s | 257430 | Police Officers |
+| 22 | 48.5s | 37432 | A car is lit up orange and a hand hits the window from the inside |
+| 23 | 49.1s | 426674 | Bright white light hovering over a road in a rural area at night search helicopter light |
+| 24 | 50.4s | 12187 | A person running in a dark area towards water |
+| 25 | 51.1s | 428346 | Close up of a man at home crying |
+| 26 | 51.9s | 340810 | A boy in the woods at night with a flashlight and in the foreground a tree trunk with a lu |
+| 27 | 52.8s | 523973 | A bright light shines on trees at night then dims to black |
+| 28 | 57.3s | 134006 | A boy walks down a dimly lit hallway |
 
-Music: "Silent Descent" — Mixkit (https://mixkit.co/license/#musicFree). SFX: Mixkit / Pixabay via the HyperFrames library.
-
-Narration: synthesized with Kokoro-82M (hexgrad, Apache-2.0) voice am_michael.
+Music: "Silent Descent" — Mixkit (free license). SFX: Mixkit (phone ring 1357, clock 1070, heartbeat 494, horror drums 559/565) and the HyperFrames library.
+Voices: Kokoro-82M (hexgrad, Apache-2.0) — am_onyx, am_liam, am_echo, af_nicole. Clock font: DSEG7 Classic (SIL OFL).

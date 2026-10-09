@@ -1,67 +1,86 @@
 {
- "v01": {
-  "start": 2.7,
-  "text": "In Hollow Creek, nothing ever happened.",
-  "dur": 2.808
+ "f1": {
+  "role": "father",
+  "start": 0.9,
+  "text": "When he was little, he was scared of the dark.",
+  "dur": 2.472
  },
- "v02": {
-  "start": 6.3,
-  "text": "Every night was quiet. Every road was empty.",
-  "dur": 3.336
+ "f2": {
+  "role": "father",
+  "start": 5.0,
+  "text": "So I made him a promise.",
+  "dur": 1.92
  },
- "v03": {
-  "start": 9.75,
-  "text": "Until the night a light appeared above the trees.",
-  "dur": 3.312
+ "f3": {
+  "role": "father",
+  "start": 8.0,
+  "text": "Wherever you are, I'll find you.",
+  "dur": 2.184
  },
- "v04": {
-  "start": 12.95,
-  "text": "And at exactly three seventeen A.M.",
-  "dur": 3.048
+ "n1": {
+  "role": "narrator",
+  "start": 11.0,
+  "text": "On October ninth, at three seventeen A.M., every clock in Hollow Creek stopped.",
+  "dur": 5.496
  },
- "v05": {
-  "start": 17.2,
-  "text": "every clock in town stopped. For one hour.",
-  "dur": 3.336
+ "n2": {
+  "role": "narrator",
+  "start": 16.7,
+  "text": "For one hour.",
+  "dur": 1.392
  },
- "v06": {
-  "start": 23.2,
-  "text": "Four hundred and twelve people vanished from their homes.",
-  "dur": 3.744
+ "n3": {
+  "role": "narrator",
+  "start": 18.4,
+  "text": "When time started again, every child came home.",
+  "dur": 3.432
  },
- "v07": {
-  "start": 27.1,
-  "text": "When the hour ended, they came back. Exactly where they'd been.",
-  "dur": 4.104
+ "n4": {
+  "role": "narrator",
+  "start": 22.25,
+  "text": "Except one.",
+  "dur": 1.32
  },
- "v08": {
-  "start": 31.3,
-  "text": "But something came back with them.",
-  "dur": 2.112
+ "s1": {
+  "role": "sheriff",
+  "start": 26.4,
+  "text": "Mister Harper. Where were you at three seventeen?",
+  "dur": 3.24
  },
- "v09": {
-  "start": 34.6,
-  "text": "Doctors found nothing. Police found nothing.",
-  "dur": 3.144
+ "f4": {
+  "role": "father",
+  "start": 29.9,
+  "text": "I don't. I don't remember.",
+  "dur": 1.92
  },
- "v10": {
-  "start": 37.8,
-  "text": "And no one can remember where they went.",
-  "dur": 2.688
+ "n5": {
+  "role": "narrator",
+  "start": 32.0,
+  "text": "No one remembers the lost hour.",
+  "dur": 2.736
  },
- "v11": {
-  "start": 41.6,
-  "text": "Now the light has returned.",
-  "dur": 2.016
+ "b1": {
+  "role": "boyphone",
+  "start": 39.7,
+  "text": "Dad? I'm still here.",
+  "dur": 1.632
  },
- "v12": {
-  "start": 54.15,
-  "text": "It's three sixteen.",
-  "dur": 1.752
+ "f5": {
+  "role": "father",
+  "start": 41.95,
+  "text": "I'm coming, buddy.",
+  "dur": 1.68
  },
- "v13": {
-  "start": 57.0,
+ "n6": {
+  "role": "narrator",
+  "start": 54.7,
   "text": "The Lost Hour.",
   "dur": 1.584
+ },
+ "b2": {
+  "role": "boy",
+  "start": 57.4,
+  "text": "Dad. Why did you leave me there?",
+  "dur": 2.496
  }
 }
