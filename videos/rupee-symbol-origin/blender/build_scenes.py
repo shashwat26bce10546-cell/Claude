@@ -796,7 +796,7 @@ def build_s06(sc, coll):
     cam, tgt = camera(sc, coll, (0.2, -3.6, 2.0), (-0.35, 0.4, 0.95), lens=24)
     key(cam, 1, loc=(0.2, -3.6, 2.0)); key(tgt, 1, loc=(-0.35, 0.4, 0.95))
     key(cam, 92, loc=(0.15, -3.3, 1.95)); key(tgt, 92, loc=(-0.3, 0.45, 0.95))
-    key(cam, n, loc=(0.36, -0.2, 1.25)); key(tgt, n, loc=(0.85, 0.7, 1.17))
+    key(cam, n, loc=(0.3, 0.08, 1.24)); key(tgt, n, loc=(0.85, 0.7, 1.17))
 
 
 def build_s07(sc, coll):
