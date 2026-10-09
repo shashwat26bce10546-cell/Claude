@@ -1,0 +1,3 @@
+snapshots/
+# Graded shots are regenerated from media/raw by build/preprocess.sh (~370 MB)
+media/shots/
