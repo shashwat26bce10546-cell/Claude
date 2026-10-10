@@ -1,63 +1,57 @@
-# SCRIPT — rupee-symbol-comic
+# SCRIPT — rupee-symbol-comic (Hinglish)
 
-**Voice:** Heart — `af_heart` (Kokoro, local)
-**Voice settings:** speed 1.0
-**Voice direction:** Warm, curious storyteller; lean into the question in the hook and the twist.
+**Voice:** Ayush M – Immersive, Dramatic Narrator (ElevenLabs `RksrIE201pKUKd36QYDn`, model eleven_v4)
+**Voice settings:** one continuous take with inline audio tags; take 1 used, take 2 kept at assets/voice-hi/take2.mp3
+**Voice direction:** Indian-accented Hinglish storyteller — curious hook, wry problem, excited contest, proud verdict, conspiratorial twist.
+
+The English narration (Kokoro af_heart) is preserved in renders/video.mp4.
 
 ---
 
 ## Line 1 — Hook (Frame 1)
 
-**Time:** 0.0 – 5.0s
-**Delivery:** Casual, then a playful question.
+**Delivery tags:** [curious]
 
-    You use this symbol every single day. But do you know who actually designed it?
+    Yeh symbol aap roz use karte ho... lekin kya aap jaante ho, isse banaya KISNE?
 
 ## Line 2 — Problem (Frame 2)
 
-**Time:** 5.0 – 11.0s
-**Delivery:** Matter-of-fact, a little wry on "R-S".
+**Delivery tags:** [dramatically] … [sarcastic] … [sighs]
 
-    Until 2010, the rupee didn't have a symbol of its own. The dollar had one. The pound had one. India just wrote R-S.
+    Do hazaar das tak, rupee ka apna koi symbol hi nahi tha! Dollar ka tha, pound ka tha... aur India? Bas "R-S" likh deta tha.
 
 ## Line 3 — Contest (Frame 3)
 
-**Time:** 11.0 – 17.0s
-**Delivery:** Building energy.
+**Delivery tags:** [excited]
 
-    So the government launched a nationwide contest, and more than three thousand designs poured in.
+    Toh sarkaar ne poore desh mein ek contest rakha... aur teen hazaar se zyada designs aa gaye!
 
 ## Line 4 — Hero (Frame 4)
 
-**Time:** 17.0 – 23.0s
-**Delivery:** Warm introduction; land the name.
+**Delivery tags:** [warmly]
 
-    One of them came from a young PhD student at IIT Bombay, D. Udaya Kumar.
+    Unmein se ek design aaya IIT Bombay ke ek young PhD student se... naam tha — D. Udaya Kumar.
 
 ## Line 5 — The idea (Frame 5)
 
-**Time:** 23.0 – 32.0s
-**Delivery:** Explaining, clear and delighted.
+**Delivery tags:** [curious] … [excited]
 
-    He blended the Devanagari letter Ra with the Roman R, and added two lines on top, a nod to the tricolour, and an equals sign for equality.
+    Unhone Devanagari ka "र" aur English ka "R" mila diya... aur upar do lines jodi — ek tirange ki nishaani, aur barabari ka "equal to" sign!
 
 ## Line 6 — Verdict (Frame 6)
 
-**Time:** 32.0 – 38.0s
-**Delivery:** Ceremonial.
+**Delivery tags:** [proudly]
 
-    On the fifteenth of July, twenty ten, the Union Cabinet picked his design from the final five.
+    Pandrah July, do hazaar das ko, Union Cabinet ne final paanch mein se... unka design chuna!
 
 ## Line 7 — Twist (Frame 7)
 
-**Time:** 38.0 – 45.0s
-**Delivery:** Conspiratorial lean-in, then surprise.
+**Delivery tags:** [mischievously] … [whispers] … [surprised]
 
-    And here's the twist. Around the same time, he was starting a brand new job, as a professor at IIT Guwahati.
+    Aur ab suniye twist... lagbhag usi waqt... woh IIT Guwahati mein professor ki nayi naukri shuru kar rahe the!
 
 ## Line 8 — Payoff (Frame 8)
 
-**Time:** 45.0 – 52.0s
-**Delivery:** Proud, then a soft close on the name.
+**Delivery tags:** [proudly] … [warmly]
 
-    Today, his symbol is on every price tag, keyboard and payment app in India. So next time you see it, remember Udaya Kumar.
+    Aaj unka symbol har price tag, har keyboard, har payment app par hai. Toh agli baar jab ₹ dekho... Udaya Kumar ko yaad karna!

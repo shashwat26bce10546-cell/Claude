@@ -34,7 +34,7 @@
   </svg>
   <div id="ID-tapwrap"></div>
   <div id="ID-tapword" class="cmc-shrik cmc-ink-outline">TAP!</div>
-  <div id="ID-big" class="cmc-shrik cmc-ink-outline cmc-stack-shadow">₹</div>
+  <div id="ID-big" class="cmc-shrik cmc-ink-outline cmc-stack-shadow" data-layout-allow-overlap>₹</div>
   <div id="ID-q1" class="cmc-bubble">?</div>
   <div id="ID-q2" class="cmc-bubble">?</div>
 </div>
@@ -57,7 +57,7 @@ popIn(tl, "#ID-tap", 0.74, { rotation: 20 }, 0.25);
 popIn(tl, "#ID-tapword", 0.78, { rotation: -20 }, 0.25);
 tl.to(["#ID-tap", "#ID-tapword"], { scale: 0, duration: 0.2, ease: "power2.in" }, 1.6);
 // the giant ₹ bursts out of the screen
-tl.fromTo("#ID-big", { y: 760, scale: 0.15, rotation: -30 }, { y: 0, scale: 1, rotation: -6, duration: 0.6, ease: "back.out(1.5)" }, 0.85);
+tl.fromTo("#ID-big", { y: 760, scale: 0.15, rotation: -30, opacity: 0 }, { y: 0, scale: 1, rotation: -6, opacity: 1, duration: 0.6, ease: "back.out(1.5)" }, 0.85);
 shake(tl, "#ID-world", 1.4, 16);
 tl.fromTo("#ID-big", { y: 0 }, { y: -18, duration: 0.6, yoyo: true, repeat: 2, ease: "sine.inOut", immediateRender: false }, 1.6);
 // the question: who designed it?

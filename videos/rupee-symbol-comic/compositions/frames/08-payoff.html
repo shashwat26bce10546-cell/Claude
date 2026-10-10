@@ -53,8 +53,8 @@
 #f08-remember { position: absolute; left: 130px; top: 760px; padding: 10px 26px; background: #FFD23F; border: 7px solid #1C1410; box-shadow: 8px 8px 0 #1C1410; font-size: 40px; }
 #f08-name { position: absolute; left: 0; right: 0; top: 1380px; text-align: center; font-size: 150px; color: #FFFFFF; }
   </style>
-  <div id="root" data-composition-id="08-payoff" data-width="1080" data-height="1920" data-duration="7.851">
-<div id="f08-bg" class="cmc-bg clip" data-start="0" data-duration="7.851" data-track-index="0"><div class="cmc-halftone-light"></div></div>
+  <div id="root" data-composition-id="08-payoff" data-width="1080" data-height="1920" data-duration="9.279">
+<div id="f08-bg" class="cmc-bg clip" data-start="0" data-duration="9.279" data-track-index="0"><div class="cmc-halftone-light"></div></div>
 <div id="f08-world" class="cmc-world">
   <div id="f08-burstwrap"></div>
   <div id="f08-p1" class="cmc-panel f08-p"><div id="f08-tag"></div><div id="f08-tagtx" class="cmc-shrik">₹499</div></div>
@@ -69,7 +69,7 @@
   <script>
     (function () {
       const ID = "08-payoff";
-      const DUR = 7.851;
+      const DUR = 9.279;
 // Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
 // Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
 // svgOrigin coordinates below are exact. Joint pivots:
@@ -256,7 +256,23 @@ function popIn(tl, sel, t, from = {}, dur = 0.38) {
   tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
 }
 
-      const tl = gsap.timeline({ paused: true });
+      const __RT = [[0, 0], [1.85, 0.95], [2.7, 2.25], [3.35, 3.55], [4.1, 4.3], [4.95, 5.2], [6.4, 7.0], [6.9, 7.9], [7.851, 9.28]];
+      const __m = (t) => {
+        if (typeof t !== "number") return t;
+        for (let i = 1; i < __RT.length; i++) {
+          const [o0, n0] = __RT[i - 1], [o1, n1] = __RT[i];
+          if (t <= o1) return n0 + ((t - o0) * (n1 - n0)) / (o1 - o0);
+        }
+        const [oL, nL] = __RT[__RT.length - 1];
+        return nL + (t - oL);
+      };
+      const __tl = gsap.timeline({ paused: true });
+      const tl = {
+        to: (a, b, p) => (__tl.to(a, b, __m(p)), tl),
+        from: (a, b, p) => (__tl.from(a, b, __m(p)), tl),
+        fromTo: (a, b, c, p) => (__tl.fromTo(a, b, c, __m(p)), tl),
+        set: (a, b, p) => (__tl.set(a, b, __m(p)), tl),
+      };
 document.getElementById("f08-burstwrap").outerHTML = burst("f08-burst", "#A8000B", 40, 0.15);
 document.getElementById("f08-pburstwrap").outerHTML = burst("f08-pburst", "#FFD23F", 30, 0.25);
 document.getElementById("f08-guywrap").innerHTML = `<div id="f08-guy">${person("f08-u", "udaya")}</div>`;
@@ -285,7 +301,7 @@ tl.fromTo("#f08-remember", { x: -1000, rotation: -4 }, { x: 0, rotation: -4, dur
 tl.fromTo("#f08-name", { scale: 0, rotation: -14 }, { scale: 1, rotation: -5, duration: 0.4, ease: "back.out(2)" }, 6.9);
 shake(tl, "#f08-world", 7.2, 12);
 blink(tl, "f08-u", [7.45]);
-      window.__timelines["08-payoff"] = tl;
+      window.__timelines["08-payoff"] = __tl;
     })();
   </script>
 </template>

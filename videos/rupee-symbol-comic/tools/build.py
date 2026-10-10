@@ -27,6 +27,32 @@ def block(text, tag):
     return m.group(1).strip() if m else ""
 
 
+def retime_js(name):
+    """Per-frame cue map (src/retime.json): wrap the timeline so every position goes through it."""
+    path = os.path.join(SRC, "retime.json")
+    rt = json.load(open(path)).get(name[:2]) if os.path.exists(path) else None
+    if not rt:
+        return "      const tl = gsap.timeline({ paused: true });\n      const __tl = tl;\n"
+    return f"""      const __RT = {json.dumps(rt)};
+      const __m = (t) => {{
+        if (typeof t !== "number") return t;
+        for (let i = 1; i < __RT.length; i++) {{
+          const [o0, n0] = __RT[i - 1], [o1, n1] = __RT[i];
+          if (t <= o1) return n0 + ((t - o0) * (n1 - n0)) / (o1 - o0);
+        }}
+        const [oL, nL] = __RT[__RT.length - 1];
+        return nL + (t - oL);
+      }};
+      const __tl = gsap.timeline({{ paused: true }});
+      const tl = {{
+        to: (a, b, p) => (__tl.to(a, b, __m(p)), tl),
+        from: (a, b, p) => (__tl.from(a, b, __m(p)), tl),
+        fromTo: (a, b, c, p) => (__tl.fromTo(a, b, c, __m(p)), tl),
+        set: (a, b, p) => (__tl.set(a, b, __m(p)), tl),
+      }};
+"""
+
+
 def build(name, dur, css, lib):
     raw = open(os.path.join(SRC, "frames", name + ".html")).read()
     fid = name
@@ -47,9 +73,8 @@ def build(name, dur, css, lib):
       const ID = "{fid}";
       const DUR = {dur};
 {lib}
-      const tl = gsap.timeline({{ paused: true }});
-{script}
-      window.__timelines["{fid}"] = tl;
+{retime_js(name)}{script}
+      window.__timelines["{fid}"] = __tl;
     }})();
   </script>
 </template>

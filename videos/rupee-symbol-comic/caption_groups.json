@@ -1,1625 +1,1607 @@
 {
-  "total_duration_s": 52.629,
+  "total_duration_s": 62.929,
   "width": 1080,
   "height": 1920,
   "groups": [
     {
       "id": "caption-group-0",
       "frame": 1,
-      "start": 0.06,
-      "end": 0.5,
-      "text": "You use",
+      "start": 0,
+      "end": 0.674,
+      "text": "Yeh symbol",
       "words": [
         {
           "id": "caption-word-0-0",
-          "text": "You",
-          "start": 0.06,
-          "end": 0.24
+          "text": "Yeh",
+          "start": 0,
+          "end": 0.253
         },
         {
           "id": "caption-word-0-1",
-          "text": "use",
-          "start": 0.24,
-          "end": 0.4
+          "text": "symbol",
+          "start": 0.253,
+          "end": 0.674
         }
       ]
     },
     {
       "id": "caption-group-1",
       "frame": 1,
-      "start": 0.5,
-      "end": 1.68,
-      "text": "this symbol every",
+      "start": 0.674,
+      "end": 1.179,
+      "text": "aap roz",
       "words": [
         {
           "id": "caption-word-1-0",
-          "text": "this",
-          "start": 0.5,
-          "end": 0.8
+          "text": "aap",
+          "start": 0.674,
+          "end": 0.926
         },
         {
           "id": "caption-word-1-1",
-          "text": "symbol",
-          "start": 0.8,
-          "end": 1.28
-        },
-        {
-          "id": "caption-word-1-2",
-          "text": "every",
-          "start": 1.28,
-          "end": 1.68
+          "text": "roz",
+          "start": 0.926,
+          "end": 1.179
         }
       ]
     },
     {
       "id": "caption-group-2",
       "frame": 1,
-      "start": 1.68,
-      "end": 2.18,
-      "text": "single",
+      "start": 1.179,
+      "end": 1.797,
+      "text": "use karte",
       "words": [
         {
           "id": "caption-word-2-0",
-          "text": "single",
-          "start": 1.68,
-          "end": 2.06
+          "text": "use",
+          "start": 1.179,
+          "end": 1.432
+        },
+        {
+          "id": "caption-word-2-1",
+          "text": "karte",
+          "start": 1.432,
+          "end": 1.797
         }
       ]
     },
     {
       "id": "caption-group-3",
       "frame": 1,
-      "start": 2.44,
-      "end": 2.51,
-      "text": "day.",
+      "start": 1.797,
+      "end": 1.993,
+      "text": "ho...",
       "words": [
         {
           "id": "caption-word-3-0",
-          "text": "day.",
-          "start": 2.44,
-          "end": 2.51
+          "text": "ho...",
+          "start": 1.797,
+          "end": 1.993
         }
       ]
     },
     {
       "id": "caption-group-4",
       "frame": 1,
-      "start": 2.51,
-      "end": 2.71,
-      "text": "But do",
+      "start": 1.993,
+      "end": 4.102,
+      "text": "lekin kya aap jaante",
       "words": [
         {
           "id": "caption-word-4-0",
-          "text": "But",
-          "start": 2.51,
-          "end": 2.63
+          "text": "lekin",
+          "start": 1.993,
+          "end": 2.358
         },
         {
           "id": "caption-word-4-1",
-          "text": "do",
-          "start": 2.63,
-          "end": 2.71
+          "text": "kya",
+          "start": 2.358,
+          "end": 3.2
+        },
+        {
+          "id": "caption-word-4-2",
+          "text": "aap",
+          "start": 3.2,
+          "end": 3.681
+        },
+        {
+          "id": "caption-word-4-3",
+          "text": "jaante",
+          "start": 3.681,
+          "end": 4.102
         }
       ]
     },
     {
       "id": "caption-group-5",
       "frame": 1,
-      "start": 2.71,
-      "end": 3,
-      "text": "you know",
+      "start": 4.102,
+      "end": 4.298,
+      "text": "ho,",
       "words": [
         {
           "id": "caption-word-5-0",
-          "text": "you",
-          "start": 2.71,
-          "end": 2.83
-        },
-        {
-          "id": "caption-word-5-1",
-          "text": "know",
-          "start": 2.83,
-          "end": 3
+          "text": "ho,",
+          "start": 4.102,
+          "end": 4.298
         }
       ]
     },
     {
       "id": "caption-group-6",
       "frame": 1,
-      "start": 3,
-      "end": 4.04,
-      "text": "who actually designed",
+      "start": 4.298,
+      "end": 5.877,
+      "text": "isse banaya KISNE?",
       "words": [
         {
           "id": "caption-word-6-0",
-          "text": "who",
-          "start": 3,
-          "end": 3.16
+          "text": "isse",
+          "start": 4.298,
+          "end": 4.971
         },
         {
           "id": "caption-word-6-1",
-          "text": "actually",
-          "start": 3.16,
-          "end": 3.6
+          "text": "banaya",
+          "start": 4.971,
+          "end": 5.392
         },
         {
           "id": "caption-word-6-2",
-          "text": "designed",
-          "start": 3.6,
-          "end": 4.04
+          "text": "KISNE?",
+          "start": 5.392,
+          "end": 5.757
         }
       ]
     },
     {
       "id": "caption-group-7",
-      "frame": 1,
-      "start": 4.04,
-      "end": 4.39,
-      "text": "it?",
+      "frame": 2,
+      "start": 6.318,
+      "end": 6.918,
+      "text": "Do hazaar",
       "words": [
         {
           "id": "caption-word-7-0",
-          "text": "it?",
-          "start": 4.04,
-          "end": 4.27
+          "text": "Do",
+          "start": 6.318,
+          "end": 6.509
+        },
+        {
+          "id": "caption-word-7-1",
+          "text": "hazaar",
+          "start": 6.509,
+          "end": 6.918
         }
       ]
     },
     {
       "id": "caption-group-8",
       "frame": 2,
-      "start": 4.403,
-      "end": 5.703,
-      "text": "Until 2010,",
+      "start": 6.918,
+      "end": 7.408,
+      "text": "das tak,",
       "words": [
         {
           "id": "caption-word-8-0",
-          "text": "Until",
-          "start": 4.403,
-          "end": 4.683
+          "text": "das",
+          "start": 6.918,
+          "end": 7.163
         },
         {
           "id": "caption-word-8-1",
-          "text": "2010,",
-          "start": 4.753,
-          "end": 5.703
+          "text": "tak,",
+          "start": 7.163,
+          "end": 7.408
         }
       ]
     },
     {
       "id": "caption-group-9",
       "frame": 2,
-      "start": 5.703,
-      "end": 6.253,
-      "text": "the rupee",
+      "start": 7.408,
+      "end": 8.44,
+      "text": "rupee ka apna",
       "words": [
         {
           "id": "caption-word-9-0",
-          "text": "the",
-          "start": 5.703,
-          "end": 5.743
+          "text": "rupee",
+          "start": 7.408,
+          "end": 7.95
         },
         {
           "id": "caption-word-9-1",
-          "text": "rupee",
-          "start": 5.923,
-          "end": 6.173
+          "text": "ka",
+          "start": 7.95,
+          "end": 8.14
+        },
+        {
+          "id": "caption-word-9-2",
+          "text": "apna",
+          "start": 8.14,
+          "end": 8.44
         }
       ]
     },
     {
       "id": "caption-group-10",
       "frame": 2,
-      "start": 6.253,
-      "end": 6.963,
-      "text": "didn't have",
+      "start": 8.44,
+      "end": 9.094,
+      "text": "koi symbol",
       "words": [
         {
           "id": "caption-word-10-0",
-          "text": "didn't",
-          "start": 6.253,
-          "end": 6.683
+          "text": "koi",
+          "start": 8.44,
+          "end": 8.686
         },
         {
           "id": "caption-word-10-1",
-          "text": "have",
-          "start": 6.683,
-          "end": 6.953
+          "text": "symbol",
+          "start": 8.686,
+          "end": 9.094
         }
       ]
     },
     {
       "id": "caption-group-11",
       "frame": 2,
-      "start": 6.963,
-      "end": 7.453,
-      "text": "a symbol",
+      "start": 9.094,
+      "end": 9.585,
+      "text": "hi nahi",
       "words": [
         {
           "id": "caption-word-11-0",
-          "text": "a",
-          "start": 6.963,
-          "end": 7.033
+          "text": "hi",
+          "start": 9.094,
+          "end": 9.285
         },
         {
           "id": "caption-word-11-1",
-          "text": "symbol",
-          "start": 7.033,
-          "end": 7.453
+          "text": "nahi",
+          "start": 9.285,
+          "end": 9.585
         }
       ]
     },
     {
       "id": "caption-group-12",
       "frame": 2,
-      "start": 7.453,
-      "end": 7.873,
-      "text": "of its",
+      "start": 9.585,
+      "end": 9.83,
+      "text": "tha!",
       "words": [
         {
           "id": "caption-word-12-0",
-          "text": "of",
-          "start": 7.453,
-          "end": 7.593
-        },
-        {
-          "id": "caption-word-12-1",
-          "text": "its",
-          "start": 7.593,
-          "end": 7.753
+          "text": "tha!",
+          "start": 9.585,
+          "end": 9.83
         }
       ]
     },
     {
       "id": "caption-group-13",
       "frame": 2,
-      "start": 8.013,
-      "end": 8.263,
-      "text": "own.",
+      "start": 9.83,
+      "end": 11,
+      "text": "Dollar ka tha,",
       "words": [
         {
           "id": "caption-word-13-0",
-          "text": "own.",
-          "start": 8.013,
-          "end": 8.233
+          "text": "Dollar",
+          "start": 9.83,
+          "end": 10.607
+        },
+        {
+          "id": "caption-word-13-1",
+          "text": "ka",
+          "start": 10.607,
+          "end": 10.779
+        },
+        {
+          "id": "caption-word-13-2",
+          "text": "tha,",
+          "start": 10.779,
+          "end": 11
         }
       ]
     },
     {
       "id": "caption-group-14",
       "frame": 2,
-      "start": 8.263,
-      "end": 8.873,
-      "text": "The dollar",
+      "start": 11,
+      "end": 11.623,
+      "text": "pound ka",
       "words": [
         {
           "id": "caption-word-14-0",
-          "text": "The",
-          "start": 8.263,
-          "end": 8.423
+          "text": "pound",
+          "start": 11,
+          "end": 11.476
         },
         {
           "id": "caption-word-14-1",
-          "text": "dollar",
-          "start": 8.443,
-          "end": 8.873
+          "text": "ka",
+          "start": 11.476,
+          "end": 11.623
         }
       ]
     },
     {
       "id": "caption-group-15",
       "frame": 2,
-      "start": 8.873,
-      "end": 9.473,
-      "text": "had one.",
+      "start": 11.623,
+      "end": 11.811,
+      "text": "tha...",
       "words": [
         {
           "id": "caption-word-15-0",
-          "text": "had",
-          "start": 8.873,
-          "end": 9.073
-        },
-        {
-          "id": "caption-word-15-1",
-          "text": "one.",
-          "start": 9.093,
-          "end": 9.473
+          "text": "tha...",
+          "start": 11.623,
+          "end": 11.811
         }
       ]
     },
     {
       "id": "caption-group-16",
       "frame": 2,
-      "start": 9.473,
-      "end": 10.113,
-      "text": "The pound",
+      "start": 11.811,
+      "end": 13.014,
+      "text": "aur India?",
       "words": [
         {
           "id": "caption-word-16-0",
-          "text": "The",
-          "start": 9.473,
-          "end": 9.603
+          "text": "aur",
+          "start": 11.811,
+          "end": 12
         },
         {
           "id": "caption-word-16-1",
-          "text": "pound",
-          "start": 9.783,
-          "end": 10.033
+          "text": "India?",
+          "start": 12,
+          "end": 13.014
         }
       ]
     },
     {
       "id": "caption-group-17",
       "frame": 2,
-      "start": 10.113,
-      "end": 10.883,
-      "text": "had one.",
+      "start": 13.014,
+      "end": 15.614,
+      "text": "Bas \"R-S\" likh deta",
       "words": [
         {
           "id": "caption-word-17-0",
-          "text": "had",
-          "start": 10.113,
-          "end": 10.353
+          "text": "Bas",
+          "start": 13.014,
+          "end": 14.113
         },
         {
           "id": "caption-word-17-1",
-          "text": "one.",
-          "start": 10.353,
-          "end": 10.853
+          "text": "\"R-S\"",
+          "start": 14.113,
+          "end": 14.476
+        },
+        {
+          "id": "caption-word-17-2",
+          "text": "likh",
+          "start": 14.476,
+          "end": 15.045
+        },
+        {
+          "id": "caption-word-17-3",
+          "text": "deta",
+          "start": 15.045,
+          "end": 15.614
         }
       ]
     },
     {
       "id": "caption-group-18",
       "frame": 2,
-      "start": 10.883,
-      "end": 12.592,
-      "text": "India just wrote R-S.",
+      "start": 15.614,
+      "end": 16.2,
+      "text": "tha.",
       "words": [
         {
           "id": "caption-word-18-0",
-          "text": "India",
-          "start": 10.883,
-          "end": 11.393
-        },
-        {
-          "id": "caption-word-18-1",
-          "text": "just",
-          "start": 11.463,
-          "end": 11.873
-        },
-        {
-          "id": "caption-word-18-2",
-          "text": "wrote",
-          "start": 11.913,
-          "end": 12.453
-        },
-        {
-          "id": "caption-word-18-3",
-          "text": "R-S.",
-          "start": 12.453,
-          "end": 13.053
+          "text": "tha.",
+          "start": 15.614,
+          "end": 16.08
         }
       ]
     },
     {
       "id": "caption-group-19",
       "frame": 3,
-      "start": 12.592,
-      "end": 12.852,
-      "text": "So the",
+      "start": 16.672,
+      "end": 17.167,
+      "text": "Toh sarkaar",
       "words": [
         {
           "id": "caption-word-19-0",
-          "text": "So",
-          "start": 12.592,
-          "end": 12.652
+          "text": "Toh",
+          "start": 16.672,
+          "end": 16.843
         },
         {
           "id": "caption-word-19-1",
-          "text": "the",
-          "start": 12.652,
-          "end": 12.852
+          "text": "sarkaar",
+          "start": 16.843,
+          "end": 17.167
         }
       ]
     },
     {
       "id": "caption-group-20",
       "frame": 3,
-      "start": 12.852,
-      "end": 14.842,
-      "text": "government launched a nationwide",
+      "start": 17.167,
+      "end": 17.548,
+      "text": "ne poore",
       "words": [
         {
           "id": "caption-word-20-0",
-          "text": "government",
-          "start": 12.852,
-          "end": 13.512
+          "text": "ne",
+          "start": 17.167,
+          "end": 17.3
         },
         {
           "id": "caption-word-20-1",
-          "text": "launched",
-          "start": 13.552,
-          "end": 14.092
-        },
-        {
-          "id": "caption-word-20-2",
-          "text": "a",
-          "start": 14.092,
-          "end": 14.152
-        },
-        {
-          "id": "caption-word-20-3",
-          "text": "nationwide",
-          "start": 14.152,
-          "end": 14.782
+          "text": "poore",
+          "start": 17.3,
+          "end": 17.548
         }
       ]
     },
     {
       "id": "caption-group-21",
       "frame": 3,
-      "start": 14.842,
-      "end": 15.112,
-      "text": "contest,",
+      "start": 17.548,
+      "end": 17.967,
+      "text": "desh mein",
       "words": [
         {
           "id": "caption-word-21-0",
-          "text": "contest,",
-          "start": 14.842,
-          "end": 14.992
+          "text": "desh",
+          "start": 17.548,
+          "end": 17.757
+        },
+        {
+          "id": "caption-word-21-1",
+          "text": "mein",
+          "start": 17.757,
+          "end": 17.967
         }
       ]
     },
     {
       "id": "caption-group-22",
       "frame": 3,
-      "start": 15.402,
-      "end": 15.672,
-      "text": "and more",
+      "start": 17.967,
+      "end": 18.571,
+      "text": "ek contest",
       "words": [
         {
           "id": "caption-word-22-0",
-          "text": "and",
-          "start": 15.402,
-          "end": 15.502
+          "text": "ek",
+          "start": 17.967,
+          "end": 18.1
         },
         {
           "id": "caption-word-22-1",
-          "text": "more",
-          "start": 15.502,
-          "end": 15.672
+          "text": "contest",
+          "start": 18.1,
+          "end": 18.571
         }
       ]
     },
     {
       "id": "caption-group-23",
       "frame": 3,
-      "start": 15.672,
-      "end": 16.187,
-      "text": "than three",
+      "start": 18.571,
+      "end": 18.931,
+      "text": "rakha...",
       "words": [
         {
           "id": "caption-word-23-0",
-          "text": "than",
-          "start": 15.672,
-          "end": 15.822
-        },
-        {
-          "id": "caption-word-23-1",
-          "text": "three",
-          "start": 15.822,
-          "end": 16.187
+          "text": "rakha...",
+          "start": 18.571,
+          "end": 18.931
         }
       ]
     },
     {
       "id": "caption-group-24",
       "frame": 3,
-      "start": 16.187,
-      "end": 17.412,
-      "text": "thousand designs poured",
+      "start": 18.931,
+      "end": 20.446,
+      "text": "aur teen hazaar",
       "words": [
         {
           "id": "caption-word-24-0",
-          "text": "thousand",
-          "start": 16.187,
-          "end": 16.552
+          "text": "aur",
+          "start": 18.931,
+          "end": 19.181
         },
         {
           "id": "caption-word-24-1",
-          "text": "designs",
-          "start": 16.562,
-          "end": 17.012
+          "text": "teen",
+          "start": 19.181,
+          "end": 19.836
         },
         {
           "id": "caption-word-24-2",
-          "text": "poured",
-          "start": 17.102,
-          "end": 17.412
+          "text": "hazaar",
+          "start": 19.836,
+          "end": 20.446
         }
       ]
     },
     {
       "id": "caption-group-25",
       "frame": 3,
-      "start": 17.412,
-      "end": 17.692,
-      "text": "in.",
+      "start": 20.446,
+      "end": 21.559,
+      "text": "se zyada designs",
       "words": [
         {
           "id": "caption-word-25-0",
-          "text": "in.",
-          "start": 17.412,
-          "end": 17.572
+          "text": "se",
+          "start": 20.446,
+          "end": 20.64
+        },
+        {
+          "id": "caption-word-25-1",
+          "text": "zyada",
+          "start": 20.64,
+          "end": 21
+        },
+        {
+          "id": "caption-word-25-2",
+          "text": "designs",
+          "start": 21,
+          "end": 21.559
         }
       ]
     },
     {
       "id": "caption-group-26",
-      "frame": 4,
-      "start": 17.735,
-      "end": 17.965,
-      "text": "One of",
+      "frame": 3,
+      "start": 21.559,
+      "end": 22.27,
+      "text": "aa gaye!",
       "words": [
         {
           "id": "caption-word-26-0",
-          "text": "One",
-          "start": 17.735,
-          "end": 17.855
+          "text": "aa",
+          "start": 21.559,
+          "end": 21.789
         },
         {
           "id": "caption-word-26-1",
-          "text": "of",
-          "start": 17.855,
-          "end": 17.965
+          "text": "gaye!",
+          "start": 21.789,
+          "end": 22.15
         }
       ]
     },
     {
       "id": "caption-group-27",
       "frame": 4,
-      "start": 17.965,
-      "end": 18.475,
-      "text": "them came",
+      "start": 22.611,
+      "end": 23.086,
+      "text": "Unmein se",
       "words": [
         {
           "id": "caption-word-27-0",
-          "text": "them",
-          "start": 17.965,
-          "end": 18.135
+          "text": "Unmein",
+          "start": 22.611,
+          "end": 22.935
         },
         {
           "id": "caption-word-27-1",
-          "text": "came",
-          "start": 18.195,
-          "end": 18.395
+          "text": "se",
+          "start": 22.935,
+          "end": 23.086
         }
       ]
     },
     {
       "id": "caption-group-28",
       "frame": 4,
-      "start": 18.475,
-      "end": 18.705,
-      "text": "from a",
+      "start": 23.086,
+      "end": 23.562,
+      "text": "ek design",
       "words": [
         {
           "id": "caption-word-28-0",
-          "text": "from",
-          "start": 18.475,
-          "end": 18.655
+          "text": "ek",
+          "start": 23.086,
+          "end": 23.238
         },
         {
           "id": "caption-word-28-1",
-          "text": "a",
-          "start": 18.655,
-          "end": 18.695
+          "text": "design",
+          "start": 23.238,
+          "end": 23.562
         }
       ]
     },
     {
       "id": "caption-group-29",
       "frame": 4,
-      "start": 18.705,
-      "end": 20.015,
-      "text": "young PhD student",
+      "start": 23.562,
+      "end": 24.754,
+      "text": "aaya IIT Bombay",
       "words": [
         {
           "id": "caption-word-29-0",
-          "text": "young",
-          "start": 18.705,
-          "end": 18.955
+          "text": "aaya",
+          "start": 23.562,
+          "end": 23.8
         },
         {
           "id": "caption-word-29-1",
-          "text": "PhD",
-          "start": 19.015,
-          "end": 19.495
+          "text": "IIT",
+          "start": 23.8,
+          "end": 24.058
         },
         {
           "id": "caption-word-29-2",
-          "text": "student",
-          "start": 19.495,
-          "end": 19.945
+          "text": "Bombay",
+          "start": 24.058,
+          "end": 24.754
         }
       ]
     },
     {
       "id": "caption-group-30",
       "frame": 4,
-      "start": 20.015,
-      "end": 21.445,
-      "text": "at IIT Bombay,",
+      "start": 24.754,
+      "end": 25.2,
+      "text": "ke ek",
       "words": [
         {
           "id": "caption-word-30-0",
-          "text": "at",
-          "start": 20.015,
-          "end": 20.245
+          "text": "ke",
+          "start": 24.754,
+          "end": 24.977
         },
         {
           "id": "caption-word-30-1",
-          "text": "IIT",
-          "start": 20.245,
-          "end": 20.585
-        },
-        {
-          "id": "caption-word-30-2",
-          "text": "Bombay,",
-          "start": 20.605,
-          "end": 21.385
+          "text": "ek",
+          "start": 24.977,
+          "end": 25.2
         }
       ]
     },
     {
       "id": "caption-group-31",
       "frame": 4,
-      "start": 21.445,
-      "end": 22.225,
-      "text": "D.",
+      "start": 25.2,
+      "end": 26.562,
+      "text": "young PhD student",
       "words": [
         {
           "id": "caption-word-31-0",
-          "text": "D.",
-          "start": 21.445,
-          "end": 22.225
+          "text": "young",
+          "start": 25.2,
+          "end": 25.6
+        },
+        {
+          "id": "caption-word-31-1",
+          "text": "PhD",
+          "start": 25.6,
+          "end": 25.9
+        },
+        {
+          "id": "caption-word-31-2",
+          "text": "student",
+          "start": 25.9,
+          "end": 26.562
         }
       ]
     },
     {
       "id": "caption-group-32",
       "frame": 4,
-      "start": 22.225,
-      "end": 23.155,
-      "text": "Udaya Kumar.",
+      "start": 26.562,
+      "end": 26.834,
+      "text": "se...",
       "words": [
         {
           "id": "caption-word-32-0",
-          "text": "Udaya",
-          "start": 22.225,
-          "end": 22.585
-        },
-        {
-          "id": "caption-word-32-1",
-          "text": "Kumar.",
-          "start": 22.645,
-          "end": 23.035
+          "text": "se...",
+          "start": 26.562,
+          "end": 26.834
         }
       ]
     },
     {
       "id": "caption-group-33",
-      "frame": 5,
-      "start": 23.215,
-      "end": 23.735,
-      "text": "He blended",
+      "frame": 4,
+      "start": 26.834,
+      "end": 28.146,
+      "text": "naam tha",
       "words": [
         {
           "id": "caption-word-33-0",
-          "text": "He",
-          "start": 23.215,
-          "end": 23.255
+          "text": "naam",
+          "start": 26.834,
+          "end": 27.676
         },
         {
           "id": "caption-word-33-1",
-          "text": "blended",
-          "start": 23.255,
-          "end": 23.645
+          "text": "tha",
+          "start": 27.676,
+          "end": 28.026
         }
       ]
     },
     {
       "id": "caption-group-34",
-      "frame": 5,
-      "start": 23.735,
-      "end": 24.995,
-      "text": "the Devanagari letter",
+      "frame": 4,
+      "start": 28.39,
+      "end": 28.584,
+      "text": "D.",
       "words": [
         {
           "id": "caption-word-34-0",
-          "text": "the",
-          "start": 23.735,
-          "end": 23.925
-        },
-        {
-          "id": "caption-word-34-1",
-          "text": "Devanagari",
-          "start": 23.925,
-          "end": 24.585
-        },
-        {
-          "id": "caption-word-34-2",
-          "text": "letter",
-          "start": 24.585,
-          "end": 24.995
+          "text": "D.",
+          "start": 28.39,
+          "end": 28.584
         }
       ]
     },
     {
       "id": "caption-group-35",
-      "frame": 5,
-      "start": 24.995,
-      "end": 25.645,
-      "text": "Ra with",
+      "frame": 4,
+      "start": 28.584,
+      "end": 29.716,
+      "text": "Udaya Kumar.",
       "words": [
         {
           "id": "caption-word-35-0",
-          "text": "Ra",
-          "start": 24.995,
-          "end": 25.245
+          "text": "Udaya",
+          "start": 28.584,
+          "end": 29.09
         },
         {
           "id": "caption-word-35-1",
-          "text": "with",
-          "start": 25.245,
-          "end": 25.645
+          "text": "Kumar.",
+          "start": 29.09,
+          "end": 29.596
         }
       ]
     },
     {
       "id": "caption-group-36",
       "frame": 5,
-      "start": 25.645,
-      "end": 26.305,
-      "text": "the Roman",
+      "start": 30.158,
+      "end": 31.528,
+      "text": "Unhone Devanagari ka \"र\"",
       "words": [
         {
           "id": "caption-word-36-0",
-          "text": "the",
-          "start": 25.645,
-          "end": 25.935
+          "text": "Unhone",
+          "start": 30.158,
+          "end": 30.569
         },
         {
           "id": "caption-word-36-1",
-          "text": "Roman",
-          "start": 25.935,
-          "end": 26.185
+          "text": "Devanagari",
+          "start": 30.569,
+          "end": 31.199
+        },
+        {
+          "id": "caption-word-36-2",
+          "text": "ka",
+          "start": 31.199,
+          "end": 31.391
+        },
+        {
+          "id": "caption-word-36-3",
+          "text": "\"र\"",
+          "start": 31.391,
+          "end": 31.528
         }
       ]
     },
     {
       "id": "caption-group-37",
       "frame": 5,
-      "start": 26.565,
-      "end": 26.685,
-      "text": "R,",
+      "start": 31.528,
+      "end": 32.651,
+      "text": "aur English ka",
       "words": [
         {
           "id": "caption-word-37-0",
-          "text": "R,",
-          "start": 26.565,
-          "end": 26.685
+          "text": "aur",
+          "start": 31.528,
+          "end": 31.774
+        },
+        {
+          "id": "caption-word-37-1",
+          "text": "English",
+          "start": 31.774,
+          "end": 32.459
+        },
+        {
+          "id": "caption-word-37-2",
+          "text": "ka",
+          "start": 32.459,
+          "end": 32.651
         }
       ]
     },
     {
       "id": "caption-group-38",
       "frame": 5,
-      "start": 26.685,
-      "end": 27.205,
-      "text": "and added",
+      "start": 32.651,
+      "end": 33.089,
+      "text": "\"R\" mila",
       "words": [
         {
           "id": "caption-word-38-0",
-          "text": "and",
-          "start": 26.685,
-          "end": 26.805
+          "text": "\"R\"",
+          "start": 32.651,
+          "end": 32.788
         },
         {
           "id": "caption-word-38-1",
-          "text": "added",
-          "start": 26.805,
-          "end": 27.205
+          "text": "mila",
+          "start": 32.788,
+          "end": 33.089
         }
       ]
     },
     {
       "id": "caption-group-39",
       "frame": 5,
-      "start": 27.205,
-      "end": 27.855,
-      "text": "two lines",
+      "start": 33.089,
+      "end": 33.39,
+      "text": "diya...",
       "words": [
         {
           "id": "caption-word-39-0",
-          "text": "two",
-          "start": 27.205,
-          "end": 27.445
-        },
-        {
-          "id": "caption-word-39-1",
-          "text": "lines",
-          "start": 27.445,
-          "end": 27.795
+          "text": "diya...",
+          "start": 33.089,
+          "end": 33.39
         }
       ]
     },
     {
       "id": "caption-group-40",
       "frame": 5,
-      "start": 27.855,
-      "end": 28.445,
-      "text": "on top,",
+      "start": 33.39,
+      "end": 34.503,
+      "text": "aur upar do",
       "words": [
         {
           "id": "caption-word-40-0",
-          "text": "on",
-          "start": 27.855,
-          "end": 28.005
+          "text": "aur",
+          "start": 33.39,
+          "end": 33.637
         },
         {
           "id": "caption-word-40-1",
-          "text": "top,",
-          "start": 28.005,
-          "end": 28.445
+          "text": "upar",
+          "start": 33.637,
+          "end": 34.312
+        },
+        {
+          "id": "caption-word-40-2",
+          "text": "do",
+          "start": 34.312,
+          "end": 34.503
         }
       ]
     },
     {
       "id": "caption-group-41",
       "frame": 5,
-      "start": 28.445,
-      "end": 28.885,
-      "text": "a nod",
+      "start": 34.503,
+      "end": 35.868,
+      "text": "lines jodi ek",
       "words": [
         {
           "id": "caption-word-41-0",
-          "text": "a",
-          "start": 28.445,
-          "end": 28.555
+          "text": "lines",
+          "start": 34.503,
+          "end": 34.859
         },
         {
           "id": "caption-word-41-1",
-          "text": "nod",
-          "start": 28.555,
-          "end": 28.875
+          "text": "jodi",
+          "start": 34.859,
+          "end": 35.161
+        },
+        {
+          "id": "caption-word-41-2",
+          "text": "ek",
+          "start": 35.243,
+          "end": 35.868
         }
       ]
     },
     {
       "id": "caption-group-42",
       "frame": 5,
-      "start": 28.885,
-      "end": 30.055,
-      "text": "to the tricolour,",
+      "start": 35.868,
+      "end": 37.352,
+      "text": "tirange ki nishaani,",
       "words": [
         {
           "id": "caption-word-42-0",
-          "text": "to",
-          "start": 28.885,
-          "end": 29.035
+          "text": "tirange",
+          "start": 35.868,
+          "end": 36.334
         },
         {
           "id": "caption-word-42-1",
-          "text": "the",
-          "start": 29.035,
-          "end": 29.265
+          "text": "ki",
+          "start": 36.334,
+          "end": 36.525
         },
         {
           "id": "caption-word-42-2",
-          "text": "tricolour,",
-          "start": 29.265,
-          "end": 29.965
+          "text": "nishaani,",
+          "start": 36.525,
+          "end": 37.352
         }
       ]
     },
     {
       "id": "caption-group-43",
       "frame": 5,
-      "start": 30.055,
-      "end": 30.315,
-      "text": "and an",
+      "start": 37.352,
+      "end": 38.119,
+      "text": "aur barabari",
       "words": [
         {
           "id": "caption-word-43-0",
-          "text": "and",
-          "start": 30.055,
-          "end": 30.165
+          "text": "aur",
+          "start": 37.352,
+          "end": 37.598
         },
         {
           "id": "caption-word-43-1",
-          "text": "an",
-          "start": 30.175,
-          "end": 30.315
+          "text": "barabari",
+          "start": 37.598,
+          "end": 38.119
         }
       ]
     },
     {
       "id": "caption-group-44",
       "frame": 5,
-      "start": 30.315,
-      "end": 30.935,
-      "text": "equals sign",
+      "start": 38.119,
+      "end": 38.666,
+      "text": "ka \"equal",
       "words": [
         {
           "id": "caption-word-44-0",
-          "text": "equals",
-          "start": 30.315,
-          "end": 30.635
+          "text": "ka",
+          "start": 38.119,
+          "end": 38.31
         },
         {
           "id": "caption-word-44-1",
-          "text": "sign",
-          "start": 30.715,
-          "end": 30.935
+          "text": "\"equal",
+          "start": 38.31,
+          "end": 38.666
         }
       ]
     },
     {
       "id": "caption-group-45",
       "frame": 5,
-      "start": 30.935,
-      "end": 31.859,
-      "text": "for equality.",
+      "start": 38.666,
+      "end": 39.279,
+      "text": "to\" sign!",
       "words": [
         {
           "id": "caption-word-45-0",
-          "text": "for",
-          "start": 30.935,
-          "end": 31.145
+          "text": "to\"",
+          "start": 38.666,
+          "end": 38.858
         },
         {
           "id": "caption-word-45-1",
-          "text": "equality.",
-          "start": 31.145,
-          "end": 31.925
+          "text": "sign!",
+          "start": 38.858,
+          "end": 39.159
         }
       ]
     },
     {
       "id": "caption-group-46",
       "frame": 6,
-      "start": 31.859,
-      "end": 32.279,
-      "text": "On the",
+      "start": 39.765,
+      "end": 40.517,
+      "text": "Pandrah July,",
       "words": [
         {
           "id": "caption-word-46-0",
-          "text": "On",
-          "start": 31.859,
-          "end": 31.969
+          "text": "Pandrah",
+          "start": 39.765,
+          "end": 40.222
         },
         {
           "id": "caption-word-46-1",
-          "text": "the",
-          "start": 31.969,
-          "end": 32.169
+          "text": "July,",
+          "start": 40.222,
+          "end": 40.517
         }
       ]
     },
     {
       "id": "caption-group-47",
       "frame": 6,
-      "start": 32.279,
-      "end": 33.399,
-      "text": "fifteenth of July,",
+      "start": 40.517,
+      "end": 41.108,
+      "text": "do hazaar",
       "words": [
         {
           "id": "caption-word-47-0",
-          "text": "fifteenth",
-          "start": 32.279,
-          "end": 32.769
+          "text": "do",
+          "start": 40.517,
+          "end": 40.705
         },
         {
           "id": "caption-word-47-1",
-          "text": "of",
-          "start": 32.769,
-          "end": 32.909
-        },
-        {
-          "id": "caption-word-47-2",
-          "text": "July,",
-          "start": 32.909,
-          "end": 33.339
+          "text": "hazaar",
+          "start": 40.705,
+          "end": 41.108
         }
       ]
     },
     {
       "id": "caption-group-48",
       "frame": 6,
-      "start": 33.399,
-      "end": 34.489,
-      "text": "twenty ten,",
+      "start": 41.108,
+      "end": 41.538,
+      "text": "das ko,",
       "words": [
         {
           "id": "caption-word-48-0",
-          "text": "twenty",
-          "start": 33.399,
-          "end": 33.914
+          "text": "das",
+          "start": 41.108,
+          "end": 41.35
         },
         {
           "id": "caption-word-48-1",
-          "text": "ten,",
-          "start": 33.914,
-          "end": 34.429
+          "text": "ko,",
+          "start": 41.35,
+          "end": 41.538
         }
       ]
     },
     {
       "id": "caption-group-49",
       "frame": 6,
-      "start": 34.489,
-      "end": 34.969,
-      "text": "the Union",
+      "start": 41.538,
+      "end": 43.119,
+      "text": "Union Cabinet ne final",
       "words": [
         {
           "id": "caption-word-49-0",
-          "text": "the",
-          "start": 34.489,
-          "end": 34.629
+          "text": "Union",
+          "start": 41.538,
+          "end": 42.125
         },
         {
           "id": "caption-word-49-1",
-          "text": "Union",
-          "start": 34.629,
-          "end": 34.939
+          "text": "Cabinet",
+          "start": 42.125,
+          "end": 42.582
+        },
+        {
+          "id": "caption-word-49-2",
+          "text": "ne",
+          "start": 42.582,
+          "end": 42.77
+        },
+        {
+          "id": "caption-word-49-3",
+          "text": "final",
+          "start": 42.77,
+          "end": 43.119
         }
       ]
     },
     {
       "id": "caption-group-50",
       "frame": 6,
-      "start": 34.969,
-      "end": 35.689,
-      "text": "Cabinet picked",
+      "start": 43.119,
+      "end": 43.818,
+      "text": "paanch mein",
       "words": [
         {
           "id": "caption-word-50-0",
-          "text": "Cabinet",
-          "start": 34.969,
-          "end": 35.329
+          "text": "paanch",
+          "start": 43.119,
+          "end": 43.522
         },
         {
           "id": "caption-word-50-1",
-          "text": "picked",
-          "start": 35.459,
-          "end": 35.689
+          "text": "mein",
+          "start": 43.522,
+          "end": 43.818
         }
       ]
     },
     {
       "id": "caption-group-51",
       "frame": 6,
-      "start": 35.689,
-      "end": 36.329,
-      "text": "his design",
+      "start": 43.818,
+      "end": 44.006,
+      "text": "se...",
       "words": [
         {
           "id": "caption-word-51-0",
-          "text": "his",
-          "start": 35.689,
-          "end": 35.829
-        },
-        {
-          "id": "caption-word-51-1",
-          "text": "design",
-          "start": 35.889,
-          "end": 36.329
+          "text": "se...",
+          "start": 43.818,
+          "end": 44.006
         }
       ]
     },
     {
       "id": "caption-group-52",
       "frame": 6,
-      "start": 36.329,
-      "end": 36.749,
-      "text": "from the",
+      "start": 44.006,
+      "end": 45.428,
+      "text": "unka design chuna!",
       "words": [
         {
           "id": "caption-word-52-0",
-          "text": "from",
-          "start": 36.329,
-          "end": 36.569
+          "text": "unka",
+          "start": 44.006,
+          "end": 44.556
         },
         {
           "id": "caption-word-52-1",
-          "text": "the",
-          "start": 36.569,
-          "end": 36.749
+          "text": "design",
+          "start": 44.556,
+          "end": 44.959
+        },
+        {
+          "id": "caption-word-52-2",
+          "text": "chuna!",
+          "start": 44.959,
+          "end": 45.308
         }
       ]
     },
     {
       "id": "caption-group-53",
-      "frame": 6,
-      "start": 36.749,
-      "end": 37.559,
-      "text": "final five.",
+      "frame": 7,
+      "start": 45.82,
+      "end": 47.3,
+      "text": "Aur ab suniye",
       "words": [
         {
           "id": "caption-word-53-0",
-          "text": "final",
-          "start": 36.749,
-          "end": 36.989
+          "text": "Aur",
+          "start": 45.82,
+          "end": 46.25
         },
         {
           "id": "caption-word-53-1",
-          "text": "five.",
-          "start": 37.099,
-          "end": 37.439
+          "text": "ab",
+          "start": 46.25,
+          "end": 46.584
+        },
+        {
+          "id": "caption-word-53-2",
+          "text": "suniye",
+          "start": 46.584,
+          "end": 47.3
         }
       ]
     },
     {
       "id": "caption-group-54",
       "frame": 7,
-      "start": 37.616,
-      "end": 38.286,
-      "text": "And here's",
+      "start": 47.3,
+      "end": 48.194,
+      "text": "twist...",
       "words": [
         {
           "id": "caption-word-54-0",
-          "text": "And",
-          "start": 37.616,
-          "end": 37.736
-        },
-        {
-          "id": "caption-word-54-1",
-          "text": "here's",
-          "start": 37.836,
-          "end": 38.216
+          "text": "twist...",
+          "start": 47.3,
+          "end": 48.194
         }
       ]
     },
     {
       "id": "caption-group-55",
       "frame": 7,
-      "start": 38.286,
-      "end": 39.216,
-      "text": "the twist.",
+      "start": 48.194,
+      "end": 49.696,
+      "text": "lagbhag usi waqt...",
       "words": [
         {
           "id": "caption-word-55-0",
-          "text": "the",
-          "start": 38.286,
-          "end": 38.466
+          "text": "lagbhag",
+          "start": 48.194,
+          "end": 48.692
         },
         {
           "id": "caption-word-55-1",
-          "text": "twist.",
-          "start": 38.466,
-          "end": 39.146
+          "text": "usi",
+          "start": 48.692,
+          "end": 48.955
+        },
+        {
+          "id": "caption-word-55-2",
+          "text": "waqt...",
+          "start": 48.955,
+          "end": 49.696
         }
       ]
     },
     {
       "id": "caption-group-56",
       "frame": 7,
-      "start": 39.216,
-      "end": 39.726,
-      "text": "Around the",
+      "start": 49.696,
+      "end": 50.778,
+      "text": "woh IIT Guwahati",
       "words": [
         {
           "id": "caption-word-56-0",
-          "text": "Around",
-          "start": 39.216,
-          "end": 39.536
+          "text": "woh",
+          "start": 49.696,
+          "end": 49.959
         },
         {
           "id": "caption-word-56-1",
-          "text": "the",
-          "start": 39.536,
-          "end": 39.726
+          "text": "IIT",
+          "start": 49.959,
+          "end": 50.223
+        },
+        {
+          "id": "caption-word-56-2",
+          "text": "Guwahati",
+          "start": 50.223,
+          "end": 50.778
         }
       ]
     },
     {
       "id": "caption-group-57",
       "frame": 7,
-      "start": 39.726,
-      "end": 40.246,
-      "text": "same time,",
+      "start": 50.778,
+      "end": 51.591,
+      "text": "mein professor",
       "words": [
         {
           "id": "caption-word-57-0",
-          "text": "same",
-          "start": 39.726,
-          "end": 39.986
+          "text": "mein",
+          "start": 50.778,
+          "end": 51.1
         },
         {
           "id": "caption-word-57-1",
-          "text": "time,",
-          "start": 39.986,
-          "end": 40.246
+          "text": "professor",
+          "start": 51.1,
+          "end": 51.591
         }
       ]
     },
     {
       "id": "caption-group-58",
       "frame": 7,
-      "start": 40.246,
-      "end": 40.756,
-      "text": "he was",
+      "start": 51.591,
+      "end": 52.012,
+      "text": "ki nayi",
       "words": [
         {
           "id": "caption-word-58-0",
-          "text": "he",
-          "start": 40.246,
-          "end": 40.496
+          "text": "ki",
+          "start": 51.591,
+          "end": 51.755
         },
         {
           "id": "caption-word-58-1",
-          "text": "was",
-          "start": 40.496,
-          "end": 40.636
+          "text": "nayi",
+          "start": 51.755,
+          "end": 52.012
         }
       ]
     },
     {
       "id": "caption-group-59",
       "frame": 7,
-      "start": 40.816,
-      "end": 41.096,
-      "text": "starting a",
+      "start": 52.012,
+      "end": 52.667,
+      "text": "naukri shuru",
       "words": [
         {
           "id": "caption-word-59-0",
-          "text": "starting",
-          "start": 40.816,
-          "end": 41.026
+          "text": "naukri",
+          "start": 52.012,
+          "end": 52.363
         },
         {
           "id": "caption-word-59-1",
-          "text": "a",
-          "start": 41.026,
-          "end": 41.096
+          "text": "shuru",
+          "start": 52.363,
+          "end": 52.667
         }
       ]
     },
     {
       "id": "caption-group-60",
       "frame": 7,
-      "start": 41.096,
-      "end": 41.996,
-      "text": "brand new",
+      "start": 52.667,
+      "end": 53.465,
+      "text": "kar rahe the!",
       "words": [
         {
           "id": "caption-word-60-0",
-          "text": "brand",
-          "start": 41.096,
-          "end": 41.466
+          "text": "kar",
+          "start": 52.667,
+          "end": 52.877
         },
         {
           "id": "caption-word-60-1",
-          "text": "new",
-          "start": 41.466,
-          "end": 41.876
+          "text": "rahe",
+          "start": 52.877,
+          "end": 53.134
+        },
+        {
+          "id": "caption-word-60-2",
+          "text": "the!",
+          "start": 53.134,
+          "end": 53.345
         }
       ]
     },
     {
       "id": "caption-group-61",
-      "frame": 7,
-      "start": 42.136,
-      "end": 42.376,
-      "text": "job,",
+      "frame": 8,
+      "start": 53.963,
+      "end": 54.298,
+      "text": "Aaj unka",
       "words": [
         {
           "id": "caption-word-61-0",
-          "text": "job,",
-          "start": 42.136,
-          "end": 42.306
+          "text": "Aaj",
+          "start": 53.963,
+          "end": 54.113
+        },
+        {
+          "id": "caption-word-61-1",
+          "text": "unka",
+          "start": 54.113,
+          "end": 54.298
         }
       ]
     },
     {
       "id": "caption-group-62",
-      "frame": 7,
-      "start": 42.376,
-      "end": 42.596,
-      "text": "as a",
+      "frame": 8,
+      "start": 54.298,
+      "end": 55.3,
+      "text": "symbol har price",
       "words": [
         {
           "id": "caption-word-62-0",
-          "text": "as",
-          "start": 42.376,
-          "end": 42.446
+          "text": "symbol",
+          "start": 54.298,
+          "end": 54.549
         },
         {
           "id": "caption-word-62-1",
-          "text": "a",
-          "start": 42.446,
-          "end": 42.496
+          "text": "har",
+          "start": 54.549,
+          "end": 54.7
+        },
+        {
+          "id": "caption-word-62-2",
+          "text": "price",
+          "start": 54.7,
+          "end": 55.3
         }
       ]
     },
     {
       "id": "caption-group-63",
-      "frame": 7,
-      "start": 42.596,
-      "end": 43.526,
-      "text": "professor at IIT",
+      "frame": 8,
+      "start": 55.3,
+      "end": 55.65,
+      "text": "tag,",
       "words": [
         {
           "id": "caption-word-63-0",
-          "text": "professor",
-          "start": 42.596,
-          "end": 43.146
-        },
-        {
-          "id": "caption-word-63-1",
-          "text": "at",
-          "start": 43.196,
-          "end": 43.306
-        },
-        {
-          "id": "caption-word-63-2",
-          "text": "IIT",
-          "start": 43.306,
-          "end": 43.406
+          "text": "tag,",
+          "start": 55.3,
+          "end": 55.65
         }
       ]
     },
     {
       "id": "caption-group-64",
-      "frame": 7,
-      "start": 43.656,
-      "end": 44.426,
-      "text": "Guwahati.",
+      "frame": 8,
+      "start": 55.65,
+      "end": 56.882,
+      "text": "har keyboard,",
       "words": [
         {
           "id": "caption-word-64-0",
-          "text": "Guwahati.",
-          "start": 43.656,
-          "end": 44.306
+          "text": "har",
+          "start": 55.65,
+          "end": 56
+        },
+        {
+          "id": "caption-word-64-1",
+          "text": "keyboard,",
+          "start": 56,
+          "end": 56.882
         }
       ]
     },
     {
       "id": "caption-group-65",
       "frame": 8,
-      "start": 44.808,
-      "end": 45.338,
-      "text": "Today,",
+      "start": 56.882,
+      "end": 57.961,
+      "text": "har payment app",
       "words": [
         {
           "id": "caption-word-65-0",
-          "text": "Today,",
-          "start": 44.808,
-          "end": 45.228
+          "text": "har",
+          "start": 56.882,
+          "end": 57.3
+        },
+        {
+          "id": "caption-word-65-1",
+          "text": "payment",
+          "start": 57.3,
+          "end": 57.7
+        },
+        {
+          "id": "caption-word-65-2",
+          "text": "app",
+          "start": 57.7,
+          "end": 57.961
         }
       ]
     },
     {
       "id": "caption-group-66",
       "frame": 8,
-      "start": 45.338,
-      "end": 46.018,
-      "text": "his symbol",
+      "start": 57.961,
+      "end": 58.962,
+      "text": "par hai.",
       "words": [
         {
           "id": "caption-word-66-0",
-          "text": "his",
-          "start": 45.338,
-          "end": 45.548
+          "text": "par",
+          "start": 57.961,
+          "end": 58.221
         },
         {
           "id": "caption-word-66-1",
-          "text": "symbol",
-          "start": 45.548,
-          "end": 46.018
+          "text": "hai.",
+          "start": 58.221,
+          "end": 58.962
         }
       ]
     },
     {
       "id": "caption-group-67",
       "frame": 8,
-      "start": 46.018,
-      "end": 46.358,
-      "text": "is on",
+      "start": 58.962,
+      "end": 59.541,
+      "text": "Toh agli",
       "words": [
         {
           "id": "caption-word-67-0",
-          "text": "is",
-          "start": 46.018,
-          "end": 46.128
+          "text": "Toh",
+          "start": 58.962,
+          "end": 59.222
         },
         {
           "id": "caption-word-67-1",
-          "text": "on",
-          "start": 46.208,
-          "end": 46.308
+          "text": "agli",
+          "start": 59.222,
+          "end": 59.541
         }
       ]
     },
     {
       "id": "caption-group-68",
       "frame": 8,
-      "start": 46.358,
-      "end": 47.548,
-      "text": "every price tag,",
+      "start": 59.541,
+      "end": 60.12,
+      "text": "baar jab",
       "words": [
         {
           "id": "caption-word-68-0",
-          "text": "every",
-          "start": 46.358,
-          "end": 46.708
+          "text": "baar",
+          "start": 59.541,
+          "end": 59.859
         },
         {
           "id": "caption-word-68-1",
-          "text": "price",
-          "start": 46.708,
-          "end": 47.098
-        },
-        {
-          "id": "caption-word-68-2",
-          "text": "tag,",
-          "start": 47.098,
-          "end": 47.538
+          "text": "jab",
+          "start": 59.859,
+          "end": 60.12
         }
       ]
     },
     {
       "id": "caption-group-69",
       "frame": 8,
-      "start": 47.548,
-      "end": 48.188,
-      "text": "keyboard and",
+      "start": 60.12,
+      "end": 60.583,
+      "text": "₹ dekho...",
       "words": [
         {
           "id": "caption-word-69-0",
-          "text": "keyboard",
-          "start": 47.548,
-          "end": 48.088
+          "text": "₹",
+          "start": 60.12,
+          "end": 60.207
         },
         {
           "id": "caption-word-69-1",
-          "text": "and",
-          "start": 48.088,
-          "end": 48.148
+          "text": "dekho...",
+          "start": 60.207,
+          "end": 60.583
         }
       ]
     },
     {
       "id": "caption-group-70",
       "frame": 8,
-      "start": 48.188,
-      "end": 48.778,
-      "text": "payment app",
+      "start": 60.583,
+      "end": 62.313,
+      "text": "Udaya Kumar ko yaad",
       "words": [
         {
           "id": "caption-word-70-0",
-          "text": "payment",
-          "start": 48.188,
-          "end": 48.538
+          "text": "Udaya",
+          "start": 60.583,
+          "end": 60.959
         },
         {
           "id": "caption-word-70-1",
-          "text": "app",
-          "start": 48.538,
-          "end": 48.778
+          "text": "Kumar",
+          "start": 60.959,
+          "end": 61.791
+        },
+        {
+          "id": "caption-word-70-2",
+          "text": "ko",
+          "start": 61.791,
+          "end": 61.994
+        },
+        {
+          "id": "caption-word-70-3",
+          "text": "yaad",
+          "start": 61.994,
+          "end": 62.313
         }
       ]
     },
     {
       "id": "caption-group-71",
       "frame": 8,
-      "start": 48.778,
-      "end": 49.828,
-      "text": "in India.",
+      "start": 62.313,
+      "end": 62.809,
+      "text": "karna!",
       "words": [
         {
           "id": "caption-word-71-0",
-          "text": "in",
-          "start": 48.778,
-          "end": 48.978
-        },
-        {
-          "id": "caption-word-71-1",
-          "text": "India.",
-          "start": 48.978,
-          "end": 49.798
-        }
-      ]
-    },
-    {
-      "id": "caption-group-72",
-      "frame": 8,
-      "start": 49.828,
-      "end": 50.218,
-      "text": "So next",
-      "words": [
-        {
-          "id": "caption-word-72-0",
-          "text": "So",
-          "start": 49.828,
-          "end": 49.918
-        },
-        {
-          "id": "caption-word-72-1",
-          "text": "next",
-          "start": 49.938,
-          "end": 50.218
-        }
-      ]
-    },
-    {
-      "id": "caption-group-73",
-      "frame": 8,
-      "start": 50.218,
-      "end": 50.708,
-      "text": "time you",
-      "words": [
-        {
-          "id": "caption-word-73-0",
-          "text": "time",
-          "start": 50.218,
-          "end": 50.448
-        },
-        {
-          "id": "caption-word-73-1",
-          "text": "you",
-          "start": 50.578,
-          "end": 50.708
-        }
-      ]
-    },
-    {
-      "id": "caption-group-74",
-      "frame": 8,
-      "start": 50.708,
-      "end": 51.228,
-      "text": "see it,",
-      "words": [
-        {
-          "id": "caption-word-74-0",
-          "text": "see",
-          "start": 50.708,
-          "end": 50.908
-        },
-        {
-          "id": "caption-word-74-1",
-          "text": "it,",
-          "start": 50.918,
-          "end": 51.148
-        }
-      ]
-    },
-    {
-      "id": "caption-group-75",
-      "frame": 8,
-      "start": 51.228,
-      "end": 52.718,
-      "text": "remember Udaya Kumar.",
-      "words": [
-        {
-          "id": "caption-word-75-0",
-          "text": "remember",
-          "start": 51.228,
-          "end": 51.718
-        },
-        {
-          "id": "caption-word-75-1",
-          "text": "Udaya",
-          "start": 51.718,
-          "end": 52.078
-        },
-        {
-          "id": "caption-word-75-2",
-          "text": "Kumar.",
-          "start": 52.078,
-          "end": 52.598
+          "text": "karna!",
+          "start": 62.313,
+          "end": 62.689
         }
       ]
     }

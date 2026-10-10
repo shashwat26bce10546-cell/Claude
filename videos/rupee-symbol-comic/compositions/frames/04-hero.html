@@ -46,8 +46,8 @@
 #f04-name { position: absolute; left: 60px; right: 60px; top: 1300px; padding: 26px 20px 34px; background: #D8000F; border: 10px solid #1C1410; box-shadow: 14px 14px 0 #1C1410; text-align: center; color: #FFFFFF; font-size: 116px; }
 #f04-meet { position: absolute; left: 90px; top: 1250px; padding: 6px 22px; background: #FFD23F; border: 6px solid #1C1410; font-size: 40px; }
   </style>
-  <div id="root" data-composition-id="04-hero" data-width="1080" data-height="1920" data-duration="5.44">
-<div id="f04-bg" class="cmc-bg clip" data-start="0" data-duration="5.44" data-track-index="0"><div id="f04-wall"></div><div class="cmc-halftone-light" style="opacity: 0.35"></div></div>
+  <div id="root" data-composition-id="04-hero" data-width="1080" data-height="1920" data-duration="7.5">
+<div id="f04-bg" class="cmc-bg clip" data-start="0" data-duration="7.5" data-track-index="0"><div id="f04-wall"></div><div class="cmc-halftone-light" style="opacity: 0.35"></div></div>
 <div id="f04-world" class="cmc-world">
   <div id="f04-window"><div id="f04-stars"></div><div id="f04-moon"></div></div>
   <svg id="f04-cone" viewBox="0 0 700 500"><path d="M520 0 L700 500 L0 500 L430 0 Z" fill="#FFD23F" opacity="0.28"/></svg>
@@ -61,8 +61,8 @@
     <ellipse cx="170" cy="150" rx="40" ry="16" fill="#FFF6C8" transform="rotate(22 170 150)"/>
   </svg>
   <div id="f04-balls"></div>
-  <div id="f04-cap1" class="cmc-cap">A young PhD student</div>
-  <div id="f04-cap2" class="cmc-cap">IIT Bombay</div>
+  <div id="f04-cap1" class="cmc-cap">IIT Bombay</div>
+  <div id="f04-cap2" class="cmc-cap">A young PhD student</div>
   <div id="f04-meet" class="cmc-label">Meet</div>
   <div id="f04-name" class="cmc-shrik cmc-stack-shadow">D. Udaya Kumar</div>
 </div>
@@ -70,7 +70,7 @@
   <script>
     (function () {
       const ID = "04-hero";
-      const DUR = 5.44;
+      const DUR = 7.5;
 // Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
 // Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
 // svgOrigin coordinates below are exact. Joint pivots:
@@ -257,7 +257,23 @@ function popIn(tl, sel, t, from = {}, dur = 0.38) {
   tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
 }
 
-      const tl = gsap.timeline({ paused: true });
+      const __RT = [[0, 0], [1.33, 1.42], [2.56, 3.0], [3.6, 5.0], [3.85, 5.6], [4.54, 6.4], [5.44, 7.5]];
+      const __m = (t) => {
+        if (typeof t !== "number") return t;
+        for (let i = 1; i < __RT.length; i++) {
+          const [o0, n0] = __RT[i - 1], [o1, n1] = __RT[i];
+          if (t <= o1) return n0 + ((t - o0) * (n1 - n0)) / (o1 - o0);
+        }
+        const [oL, nL] = __RT[__RT.length - 1];
+        return nL + (t - oL);
+      };
+      const __tl = gsap.timeline({ paused: true });
+      const tl = {
+        to: (a, b, p) => (__tl.to(a, b, __m(p)), tl),
+        from: (a, b, p) => (__tl.from(a, b, __m(p)), tl),
+        fromTo: (a, b, c, p) => (__tl.fromTo(a, b, c, __m(p)), tl),
+        set: (a, b, p) => (__tl.set(a, b, __m(p)), tl),
+      };
 const pencil = `<g><path d="M262 616 L332 540 L346 552 L276 628 Z" fill="#FFD23F" stroke="#1C1410" stroke-width="6" stroke-linejoin="round"/><path d="M262 616 L276 628 L254 640 Z" fill="#1C1410"/></g>`;
 document.getElementById("f04-guywrap").innerHTML = `<div id="f04-guy">${person("f04-u", "udaya", { seated: true, propR: pencil })}</div>`;
 // writing pose: both forearms across the desk
@@ -300,7 +316,7 @@ popIn(tl, "#f04-meet", 3.76, { rotation: -10 }, 0.3);
 tl.fromTo("#f04-name", { y: 900, rotation: 4 }, { y: 0, rotation: -2, duration: 0.45, ease: "back.out(1.5)" }, 3.85);
 tl.fromTo("#f04-name", { scale: 1 }, { scale: 1.07, duration: 0.14, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 4.54);
 shake(tl, "#f04-world", 4.56, 10);
-      window.__timelines["04-hero"] = tl;
+      window.__timelines["04-hero"] = __tl;
     })();
   </script>
 </template>

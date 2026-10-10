@@ -43,8 +43,8 @@
 #f06-stamp { position: absolute; left: 280px; top: 1290px; width: 520px; padding: 6px 0; border: 12px solid #D8000F; color: #D8000F; text-align: center; font-size: 96px; background: rgba(255, 255, 255, 0.86); }
 #f06-five { position: absolute; left: 0; right: 0; top: 1460px; text-align: center; font-size: 46px; color: #1C1410; }
   </style>
-  <div id="root" data-composition-id="06-verdict" data-width="1080" data-height="1920" data-duration="5.717">
-<div id="f06-bg" class="cmc-bg clip" data-start="0" data-duration="5.717" data-track-index="0"><div class="cmc-halftone"></div></div>
+  <div id="root" data-composition-id="06-verdict" data-width="1080" data-height="1920" data-duration="6.73">
+<div id="f06-bg" class="cmc-bg clip" data-start="0" data-duration="6.73" data-track-index="0"><div class="cmc-halftone"></div></div>
 <div id="f06-world" class="cmc-world">
   <div id="f06-cal"><div id="f06-rings"></div><div id="f06-calhead" class="cmc-shrik">July</div><div id="f06-day" class="cmc-shrik">15</div><div id="f06-year" class="cmc-label">2010</div></div>
   <div id="f06-offs"></div>
@@ -59,7 +59,7 @@
   <script>
     (function () {
       const ID = "06-verdict";
-      const DUR = 5.717;
+      const DUR = 6.13;
 // Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
 // Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
 // svgOrigin coordinates below are exact. Joint pivots:
@@ -246,7 +246,23 @@ function popIn(tl, sel, t, from = {}, dur = 0.38) {
   tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
 }
 
-      const tl = gsap.timeline({ paused: true });
+      const __RT = [[0, 0], [0.45, 0.4], [1.08, 1.0], [1.6, 1.6], [2.6, 2.3], [3.55, 3.4], [4.06, 4.6], [4.3, 5.0], [4.9, 5.5], [5.717, 6.13]];
+      const __m = (t) => {
+        if (typeof t !== "number") return t;
+        for (let i = 1; i < __RT.length; i++) {
+          const [o0, n0] = __RT[i - 1], [o1, n1] = __RT[i];
+          if (t <= o1) return n0 + ((t - o0) * (n1 - n0)) / (o1 - o0);
+        }
+        const [oL, nL] = __RT[__RT.length - 1];
+        return nL + (t - oL);
+      };
+      const __tl = gsap.timeline({ paused: true });
+      const tl = {
+        to: (a, b, p) => (__tl.to(a, b, __m(p)), tl),
+        from: (a, b, p) => (__tl.from(a, b, __m(p)), tl),
+        fromTo: (a, b, c, p) => (__tl.fromTo(a, b, c, __m(p)), tl),
+        set: (a, b, p) => (__tl.set(a, b, __m(p)), tl),
+      };
 document.getElementById("f06-glowwrap").outerHTML = burst("f06-glow", "#FFD23F", 30, 0.2);
 // three officials behind the cabinet table
 const offs = document.getElementById("f06-offs");
@@ -294,7 +310,7 @@ tl.fromTo("#f06-stamp", { scale: 3, rotation: -28, opacity: 0 }, { scale: 1, rot
 shake(tl, "#f06-world", 4.5, 16);
 [0, 1, 2].forEach((i) => mouth(tl, "f06-o" + i, 4.55, "mOpen"));
 tl.fromTo("#f06-five", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, 4.9);
-      window.__timelines["06-verdict"] = tl;
+      window.__timelines["06-verdict"] = __tl;
     })();
   </script>
 </template>

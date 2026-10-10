@@ -40,8 +40,8 @@
 .f03-env { position: absolute; left: 0; top: 0; width: 130px; height: 86px; background: #FFFFFF; border: 6px solid #1C1410; }
 .f03-env::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 52px; background: linear-gradient(to bottom right, transparent 48%, #1C1410 48%, #1C1410 52%, transparent 52%) left / 50% 100% no-repeat, linear-gradient(to bottom left, transparent 48%, #1C1410 48%, #1C1410 52%, transparent 52%) right / 50% 100% no-repeat; }
   </style>
-  <div id="root" data-composition-id="03-contest" data-width="1080" data-height="1920" data-duration="5.163">
-<div id="f03-bg" class="cmc-bg clip" data-start="0" data-duration="5.163" data-track-index="0"><div class="cmc-halftone-light"></div></div>
+  <div id="root" data-composition-id="03-contest" data-width="1080" data-height="1920" data-duration="6.01">
+<div id="f03-bg" class="cmc-bg clip" data-start="0" data-duration="6.01" data-track-index="0"><div class="cmc-halftone-light"></div></div>
 <div id="f03-world" class="cmc-world">
   <div id="f03-burstwrap"></div>
   <div id="f03-envs"></div>
@@ -62,7 +62,7 @@
   <script>
     (function () {
       const ID = "03-contest";
-      const DUR = 5.163;
+      const DUR = 6.01;
 // Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
 // Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
 // svgOrigin coordinates below are exact. Joint pivots:
@@ -249,7 +249,23 @@ function popIn(tl, sel, t, from = {}, dur = 0.38) {
   tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
 }
 
-      const tl = gsap.timeline({ paused: true });
+      const __RT = [[0, 0], [1.03, 1.35], [1.63, 1.9], [2.85, 2.8], [3.0, 3.2], [3.75, 4.2], [5.163, 6.01]];
+      const __m = (t) => {
+        if (typeof t !== "number") return t;
+        for (let i = 1; i < __RT.length; i++) {
+          const [o0, n0] = __RT[i - 1], [o1, n1] = __RT[i];
+          if (t <= o1) return n0 + ((t - o0) * (n1 - n0)) / (o1 - o0);
+        }
+        const [oL, nL] = __RT[__RT.length - 1];
+        return nL + (t - oL);
+      };
+      const __tl = gsap.timeline({ paused: true });
+      const tl = {
+        to: (a, b, p) => (__tl.to(a, b, __m(p)), tl),
+        from: (a, b, p) => (__tl.from(a, b, __m(p)), tl),
+        fromTo: (a, b, c, p) => (__tl.fromTo(a, b, c, __m(p)), tl),
+        set: (a, b, p) => (__tl.set(a, b, __m(p)), tl),
+      };
 document.getElementById("f03-burstwrap").outerHTML = burst("f03-burst", "#A8000B", 36, 0.12);
 // shout balloon: jagged white star
 document.getElementById("f03-shoutwrap").outerHTML = star("f03-shout", "#FFFFFF", 16, 330, 470).replace('viewBox="0 0 1000 1000"', 'viewBox="0 0 1000 1000" preserveAspectRatio="none"');
@@ -304,7 +320,7 @@ popIn(tl, "#f03-entries", 3.8, { rotation: 6 });
 tl.fromTo("#f03-bag", { scaleY: 1 }, { scaleY: 1.06, svgOrigin: "240 450", duration: 0.12, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, 3.5);
 pose(tl, "f03-o", 4.0, { head: 4 }, 0.3);
 mouth(tl, "f03-o", 4.0, "mOpen");
-      window.__timelines["03-contest"] = tl;
+      window.__timelines["03-contest"] = __tl;
     })();
   </script>
 </template>

@@ -43,8 +43,8 @@
 #f05-plus { position: absolute; left: 480px; top: 560px; width: 120px; text-align: center; font-size: 170px; color: #D8000F; }
 #f05-pencil { position: absolute; left: 0; top: 0; width: 120px; height: 360px; overflow: visible; }
   </style>
-  <div id="root" data-composition-id="05-idea" data-width="1080" data-height="1920" data-duration="8.704">
-<div id="f05-bg" class="cmc-bg clip" data-start="0" data-duration="8.704" data-track-index="0"><div id="f05-lines"></div><div id="f05-margin"></div><div id="f05-rings"></div></div>
+  <div id="root" data-composition-id="05-idea" data-width="1080" data-height="1920" data-duration="9.55">
+<div id="f05-bg" class="cmc-bg clip" data-start="0" data-duration="9.55" data-track-index="0"><div id="f05-lines"></div><div id="f05-margin"></div><div id="f05-rings"></div></div>
 <div id="f05-world" class="cmc-world">
   <div id="f05-tag" class="cmc-cap">The design</div>
   <svg id="f05-draw" viewBox="0 0 1080 1600">
@@ -68,7 +68,7 @@
   <script>
     (function () {
       const ID = "05-idea";
-      const DUR = 8.704;
+      const DUR = 9.55;
 // Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
 // Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
 // svgOrigin coordinates below are exact. Joint pivots:
@@ -255,7 +255,23 @@ function popIn(tl, sel, t, from = {}, dur = 0.38) {
   tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
 }
 
-      const tl = gsap.timeline({ paused: true });
+      const __RT = [[0, 0], [1.87, 1.95], [3.44, 3.55], [4.08, 5.0], [4.32, 5.3], [6.14, 6.9], [7.19, 8.1], [8.02, 8.8], [8.704, 9.55]];
+      const __m = (t) => {
+        if (typeof t !== "number") return t;
+        for (let i = 1; i < __RT.length; i++) {
+          const [o0, n0] = __RT[i - 1], [o1, n1] = __RT[i];
+          if (t <= o1) return n0 + ((t - o0) * (n1 - n0)) / (o1 - o0);
+        }
+        const [oL, nL] = __RT[__RT.length - 1];
+        return nL + (t - oL);
+      };
+      const __tl = gsap.timeline({ paused: true });
+      const tl = {
+        to: (a, b, p) => (__tl.to(a, b, __m(p)), tl),
+        from: (a, b, p) => (__tl.from(a, b, __m(p)), tl),
+        fromTo: (a, b, c, p) => (__tl.fromTo(a, b, c, __m(p)), tl),
+        set: (a, b, p) => (__tl.set(a, b, __m(p)), tl),
+      };
 // measure the ₹ strokes once at setup for the draw-on reveal
 const bowl = document.getElementById("f05-bowl"), leg = document.getElementById("f05-leg");
 const Lb = bowl.getTotalLength ? bowl.getTotalLength() : 900, Ll = leg.getTotalLength ? leg.getTotalLength() : 540;
@@ -299,7 +315,7 @@ tl.fromTo("#f05-arrow", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, dura
 tl.fromTo("#f05-eq", { y: -900, scale: 0.6, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 7.15);
 shake(tl, "#f05-world", 7.6, 10);
 tl.fromTo("#f05-eqword", { scale: 0, rotation: -12 }, { scale: 1, rotation: -5, duration: 0.35, ease: "back.out(2.2)" }, 7.95);
-      window.__timelines["05-idea"] = tl;
+      window.__timelines["05-idea"] = __tl;
     })();
   </script>
 </template>
