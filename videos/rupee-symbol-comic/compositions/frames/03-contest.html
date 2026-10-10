@@ -1,0 +1,310 @@
+<template>
+  <style>
+@font-face { font-family: "Shrikhand"; src: url("assets/fonts/Shrikhand-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Shrikhand"; src: url("assets/fonts/Shrikhand-400-ext.woff2") format("woff2"); font-weight: 400; unicode-range: U+20B9; }
+@font-face { font-family: "Space Grotesk"; src: url("assets/fonts/SpaceGrotesk-700.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Space Grotesk"; src: url("assets/fonts/SpaceGrotesk-700-ext.woff2") format("woff2"); font-weight: 700; unicode-range: U+20B9; }
+@font-face { font-family: "Space Grotesk"; src: url("assets/fonts/SpaceGrotesk-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "Libre Baskerville"; src: url("assets/fonts/LibreBaskerville-700.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Noto Sans Devanagari"; src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; container-type: size; font-family: "Space Grotesk", sans-serif; color: #1C1410; }
+.cmc-bg { position: absolute; inset: 0; }
+.cmc-world { position: absolute; inset: 0; }
+.cmc-abs { position: absolute; }
+.cmc-person { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; }
+/* print textures */
+.cmc-halftone { position: absolute; inset: 0; background: radial-gradient(circle, rgba(28, 20, 16, 0.22) 2.4px, transparent 2.9px) 0 0 / 16px 16px; }
+.cmc-halftone-light { position: absolute; inset: 0; background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 2.4px, transparent 2.9px) 0 0 / 16px 16px; }
+/* comic panel */
+.cmc-panel { position: absolute; border: 9px solid #1C1410; background: #FFFFFF; overflow: hidden; box-shadow: 12px 12px 0 #1C1410; }
+/* yellow narration box */
+.cmc-cap { position: absolute; background: #FFD23F; border: 7px solid #1C1410; box-shadow: 10px 10px 0 #1C1410; padding: 18px 30px; font-family: "Space Grotesk", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 44px; line-height: 1.1; }
+/* speech bubble */
+.cmc-bubble { position: absolute; background: #FFFFFF; border: 8px solid #1C1410; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: "Shrikhand", sans-serif; color: #1C1410; box-shadow: 10px 10px 0 #1C1410; }
+.cmc-tail { position: absolute; overflow: visible; }
+/* poster display */
+.cmc-shrik { font-family: "Shrikhand", sans-serif; font-weight: 400; line-height: 0.9; }
+.cmc-label { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+.cmc-stack-shadow { text-shadow: 4px 4px 0 rgba(28, 20, 16, 0.35), 8px 8px 0 rgba(28, 20, 16, 0.25), 12px 12px 0 rgba(28, 20, 16, 0.15); }
+.cmc-ink-outline { -webkit-text-stroke: 8px #1C1410; paint-order: stroke fill; }
+
+#f03-bg { background: #D8000F; }
+#f03-burst { position: absolute; left: -700px; top: -300px; width: 1700px; height: 1700px; }
+#f03-man { position: absolute; left: -10px; top: 560px; width: 450px; height: 1012px; }
+#f03-shout { position: absolute; left: 330px; top: 300px; width: 640px; height: 420px; }
+#f03-shoutword { position: absolute; left: 330px; top: 450px; width: 640px; text-align: center; font-size: 84px; color: #D8000F; transform-origin: 50% 50%; }
+#f03-nation { position: absolute; left: 470px; top: 600px; padding: 10px 26px; background: #1C1410; color: #FFFFFF; font-size: 38px; }
+#f03-count { position: absolute; left: 360px; top: 90px; width: 700px; text-align: center; font-size: 180px; color: #FFFFFF; }
+#f03-entries { position: absolute; left: 560px; top: 300px; width: 340px; text-align: center; font-size: 44px; color: #FFD23F; }
+#f03-bag { position: absolute; left: 560px; top: 1150px; width: 480px; height: 450px; overflow: visible; }
+.f03-env { position: absolute; left: 0; top: 0; width: 130px; height: 86px; background: #FFFFFF; border: 6px solid #1C1410; }
+.f03-env::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 52px; background: linear-gradient(to bottom right, transparent 48%, #1C1410 48%, #1C1410 52%, transparent 52%) left / 50% 100% no-repeat, linear-gradient(to bottom left, transparent 48%, #1C1410 48%, #1C1410 52%, transparent 52%) right / 50% 100% no-repeat; }
+  </style>
+  <div id="root" data-composition-id="03-contest" data-width="1080" data-height="1920" data-duration="5.163">
+<div id="f03-bg" class="cmc-bg clip" data-start="0" data-duration="5.163" data-track-index="0"><div class="cmc-halftone-light"></div></div>
+<div id="f03-world" class="cmc-world">
+  <div id="f03-burstwrap"></div>
+  <div id="f03-envs"></div>
+  <svg id="f03-bag" viewBox="0 0 480 450">
+    <path d="M90 120 C40 200 20 330 70 410 C130 460 350 460 410 410 C460 330 440 200 390 120 Z" fill="#C9A66B" stroke="#1C1410" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M360 140 C420 230 430 330 400 400 C380 420 350 430 320 434 C370 360 380 260 340 150 Z" fill="#A5854F"/>
+    <path d="M70 120 C120 90 360 90 410 120 C360 150 120 150 70 120 Z" fill="#7A5A30" stroke="#1C1410" stroke-width="10"/>
+    <text x="240" y="320" text-anchor="middle" font-family="Shrikhand" font-size="64" fill="#1C1410">DESIGNS</text>
+  </svg>
+  <div id="f03-manwrap"></div>
+  <div id="f03-shoutwrap"></div>
+  <div id="f03-shoutword" class="cmc-shrik">CONTEST!</div>
+  <div id="f03-nation" class="cmc-label">Nationwide</div>
+  <div id="f03-count" class="cmc-shrik cmc-ink-outline cmc-stack-shadow">0</div>
+  <div id="f03-entries" class="cmc-label">entries</div>
+</div>
+  </div>
+  <script>
+    (function () {
+      const ID = "03-contest";
+      const DUR = 5.163;
+// Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
+// Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
+// svgOrigin coordinates below are exact. Joint pivots:
+//   head (200,300) · shoulders L(138,345) R(262,345) · elbows L(131,478) R(269,478) · hips L(173,590) R(227,590)
+const INK = "#1C1410";
+const RED = "#D8000F";
+const PAPER = "#F5F2EF";
+const YELLOW = "#FFD23F";
+const SAFFRON = "#FF9933";
+const GREEN = "#138808";
+
+// mirror an absolute-coordinate path (M/L/C/Q/S/T only) across x = 200
+function mir(d) {
+  let i = 0;
+  return d.replace(/-?\d+(\.\d+)?/g, (n) => (i++ % 2 === 0 ? String(400 - parseFloat(n)) : n));
+}
+
+function shape(d, fill, opts = {}) {
+  const sw = opts.sw == null ? 7 : opts.sw;
+  const stroke = opts.noStroke ? "none" : INK;
+  return `<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"${opts.extra || ""}/>`;
+}
+
+function shade(d, fill) {
+  return `<path d="${d}" fill="${fill}" stroke="none"/>`;
+}
+
+const PEOPLE = {
+  udaya: {
+    skin: "#B9774E", skinShade: "#8C5232", hair: "#1E1612", shirt: "#2F6F99", shirtShade: "#22536F",
+    check: "rgba(255,255,255,0.22)", pants: "#C9A66B", pantsShade: "#A5854F", shoes: "#3A2618",
+    glasses: true, mustache: true, style: "young",
+  },
+  official: {
+    skin: "#A86A43", skinShade: "#7E4A2C", hair: "#D9D4CC", shirt: "#F3EFE6", shirtShade: "#D6CFC0",
+    check: null, pants: "#F3EFE6", pantsShade: "#D6CFC0", shoes: "#3A2618", jacket: "#7A3E1D", jacketShade: "#5C2D14",
+    glasses: true, mustache: true, style: "grey", kurta: true,
+  },
+};
+
+// Returns an <svg> string for a rigged character. p = id prefix (unique per instance).
+function person(p, who, o = {}) {
+  const c = PEOPLE[who];
+  const parts = [];
+  parts.push(`<defs><pattern id="${p}-chk" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="26" height="26" fill="none"/><path d="M0 0 V26 M13 0 V26 M0 0 H26 M0 13 H26" stroke="${c.check || "transparent"}" stroke-width="4"/></pattern></defs>`);
+  // legs
+  const legL = "M150 585 L197 585 L193 838 L157 838 Z";
+  const shoeL = "M146 836 L200 836 L202 858 Q202 872 186 872 L150 872 Q138 872 140 858 Z";
+  const leg = (side, d, s) =>
+    `<g id="${p}-leg${side}">${shape(d, c.pants)}${shade(side === "L" ? "M180 590 L197 585 L193 838 L178 838 Z" : mir("M180 590 L197 585 L193 838 L178 838 Z"), c.pantsShade)}${shape(d, "none")}${shape(s, c.shoes)}</g>`;
+  if (!o.seated) {
+    parts.push(leg("L", legL, shoeL));
+    parts.push(leg("R", mir(legL), mir(shoeL)));
+  }
+  // torso
+  const torsoEnd = c.kurta ? 720 : 600;
+  const torso = `M140 338 Q200 320 260 338 L276 470 L266 ${torsoEnd} L134 ${torsoEnd} L124 470 Z`;
+  parts.push(`<g id="${p}-torso">`);
+  parts.push(shape(torso, c.shirt));
+  if (c.check) parts.push(`<path d="${torso}" fill="url(#${p}-chk)" stroke="none"/>`);
+  parts.push(shade(`M214 332 Q244 330 260 338 L276 470 L266 ${torsoEnd} L222 ${torsoEnd} Q236 470 214 332 Z`, c.shirtShade));
+  if (c.jacket) {
+    const jk = `M146 342 Q170 332 186 334 L200 420 L196 ${torsoEnd - 90} L136 ${torsoEnd - 90} L128 470 Z`;
+    parts.push(shape(jk, c.jacket) + shape(mir(jk), c.jacket));
+    parts.push(shade(mir(`M146 342 Q160 336 170 335 L180 420 L170 ${torsoEnd - 90} L136 ${torsoEnd - 90} L128 470 Z`), c.jacketShade));
+    parts.push(`<circle cx="210" cy="440" r="5" fill="${INK}"/><circle cx="210" cy="480" r="5" fill="${INK}"/><circle cx="210" cy="520" r="5" fill="${INK}"/>`);
+  } else {
+    parts.push(shape("M170 334 L200 380 L186 336 Z", PAPER, { sw: 5 }) + shape(mir("M170 334 L200 380 L186 336 Z"), PAPER, { sw: 5 }));
+    for (const y of [404, 444, 484, 524]) parts.push(`<circle cx="200" cy="${y}" r="5" fill="${PAPER}" stroke="${INK}" stroke-width="3"/>`);
+    parts.push(`<rect x="134" y="584" width="132" height="18" fill="${INK}"/><rect x="190" y="586" width="20" height="14" fill="#C9A227"/>`);
+  }
+  parts.push(shape(torso, "none"));
+  parts.push(`</g>`);
+  // neck
+  parts.push(shape("M182 288 L218 288 L220 342 L180 342 Z", c.skin) + shade("M204 290 L218 288 L220 342 L206 342 Z", c.skinShade));
+  // head
+  const face = "M200 92 C262 92 280 140 278 200 C276 262 244 300 200 304 C156 300 124 262 122 200 C120 140 138 92 200 92 Z";
+  parts.push(`<g id="${p}-head">`);
+  parts.push(shape("M114 214 C106 186 136 180 138 214 C140 246 118 244 114 214 Z", c.skin) + shape(mir("M114 214 C106 186 136 180 138 214 C140 246 118 244 114 214 Z"), c.skin));
+  parts.push(shape(face, c.skin));
+  parts.push(shade("M238 112 C268 132 280 172 276 212 C272 258 246 292 206 302 C236 270 252 230 248 180 C246 150 242 128 238 112 Z", c.skinShade));
+  parts.push(shape(face, "none"));
+  if (c.style === "young") {
+    parts.push(shape("M116 196 C104 112 158 60 214 64 C266 68 296 106 286 182 C278 154 262 132 238 124 C208 116 166 120 140 142 C126 156 120 174 116 196 Z", c.hair));
+    parts.push(shape("M146 104 C168 58 236 52 270 88 C240 78 204 82 180 106 Z", c.hair, { sw: 5 }));
+    parts.push(`<path d="M196 76 C220 70 244 76 258 90" stroke="#5A4A40" stroke-width="5" fill="none" stroke-linecap="round"/>`);
+  } else {
+    parts.push(shape("M118 186 C110 136 140 96 176 94 C150 112 138 140 136 176 Z", c.hair, { sw: 5 }) + shape(mir("M118 186 C110 136 140 96 176 94 C150 112 138 140 136 176 Z"), c.hair, { sw: 5 }));
+    parts.push(`<path d="M150 104 C176 90 224 90 250 104" stroke="${INK}" stroke-width="4" fill="none" opacity="0.5"/>`);
+  }
+  parts.push(`<g id="${p}-brows"><path d="M148 166 Q168 154 188 164" stroke="${INK}" stroke-width="10" fill="none" stroke-linecap="round"/><path d="${mir("M148 166 Q168 154 188 164")}" stroke="${INK}" stroke-width="10" fill="none" stroke-linecap="round"/></g>`);
+  parts.push(`<g id="${p}-eyes">`);
+  for (const cx of [172, 228]) {
+    parts.push(`<ellipse cx="${cx}" cy="198" rx="16" ry="12" fill="#FFFFFF" stroke="${INK}" stroke-width="4"/><circle cx="${cx + 2}" cy="199" r="7.5" fill="${INK}"/><circle cx="${cx + 5}" cy="196" r="2.4" fill="#FFFFFF"/>`);
+  }
+  parts.push(`</g>`);
+  if (c.glasses) {
+    parts.push(`<g fill="rgba(255,255,255,0.10)" stroke="${INK}" stroke-width="5"><rect x="144" y="180" width="54" height="38" rx="9"/><rect x="202" y="180" width="54" height="38" rx="9"/></g><path d="M198 196 L202 196 M144 192 L124 186 M256 192 L276 186" stroke="${INK}" stroke-width="5"/>`);
+  }
+  parts.push(`<path d="M200 206 Q192 232 206 238" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`);
+  if (c.mustache) parts.push(shape("M176 254 Q200 242 224 254 Q212 264 200 259 Q188 264 176 254 Z", c.style === "grey" ? "#CFC8BD" : c.hair, { sw: 4 }));
+  parts.push(`<g id="${p}-mSmile"><path d="M180 270 Q200 288 220 270" stroke="${INK}" stroke-width="6" fill="none" stroke-linecap="round"/></g>`);
+  parts.push(`<g id="${p}-mOpen" opacity="0">${shape("M178 266 Q200 300 222 266 Z", "#6B1F1A", { sw: 5 })}<path d="M186 284 Q200 296 214 284" fill="#E0605A"/></g>`);
+  parts.push(`<g id="${p}-mShock" opacity="0">${`<ellipse cx="200" cy="278" rx="12" ry="16" fill="#6B1F1A" stroke="${INK}" stroke-width="5"/>`}</g>`);
+  parts.push(`</g>`);
+  // arms: armX (pivot shoulder) > foreX (pivot elbow) > handX
+  const upper = "M118 340 Q138 328 158 342 L150 482 L112 482 Z";
+  const fore = c.kurta ? "M112 476 L150 476 L146 592 L118 592 Z" : "M114 476 L148 476 L144 590 L118 590 Z";
+  const hand = "M110 586 C104 628 154 632 150 588 Z";
+  const thumb = "M146 594 C162 592 164 606 150 612";
+  const sleeveFill = c.jacket ? c.shirt : c.shirt;
+  const arm = (side, m) => {
+    const t = (d) => (m ? mir(d) : d);
+    return `<g id="${p}-arm${side}">${shape(t(upper), sleeveFill)}${c.check ? `<path d="${t(upper)}" fill="url(#${p}-chk)" stroke="none"/>` : ""}${shape(t(upper), "none")}
+      <g id="${p}-fore${side}">${shape(t(fore), c.kurta ? sleeveFill : c.skin)}${shape(t("M112 474 L152 474 L152 492 L112 492 Z"), c.shirt, { sw: 5 })}
+        <g id="${p}-hand${side}">${shape(t(hand), c.skin)}<path d="${t(thumb)}" fill="${c.skin}" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>${o["prop" + side] || ""}</g>
+      </g></g>`;
+  };
+  parts.push(arm("L", false));
+  parts.push(arm("R", true));
+  if (o.overlay) parts.push(o.overlay);
+  return `<svg id="${p}" class="cmc-person" viewBox="0 0 400 900" overflow="visible">${parts.join("")}</svg>`;
+}
+
+// pivots for gsap svgOrigin
+const PIV = {
+  head: "200 300", armL: "138 345", armR: "262 345", foreL: "131 478", foreR: "269 478",
+  handL: "131 590", handR: "269 590", legL: "173 590", legR: "227 590", eyes: "200 198", brows: "200 162", torso: "200 600",
+};
+
+// Pose helper: tl, prefix, time, {joint: rotationDeg}, duration, ease
+function pose(tl, p, t, joints, dur = 0.35, ease = "back.out(1.6)") {
+  for (const [j, r] of Object.entries(joints)) {
+    tl.to(`#${p}-${j}`, { rotation: r, svgOrigin: PIV[j], duration: dur, ease }, t);
+  }
+}
+function setPose(tl, p, joints) {
+  for (const [j, r] of Object.entries(joints)) tl.set(`#${p}-${j}`, { rotation: r, svgOrigin: PIV[j] }, 0);
+}
+function blink(tl, p, times) {
+  for (const t of times) {
+    tl.to(`#${p}-eyes`, { scaleY: 0.08, svgOrigin: PIV.eyes, duration: 0.06, ease: "none" }, t);
+    tl.to(`#${p}-eyes`, { scaleY: 1, svgOrigin: PIV.eyes, duration: 0.08, ease: "none" }, t + 0.09);
+  }
+}
+function mouth(tl, p, t, which) {
+  for (const m of ["mSmile", "mOpen", "mShock"]) tl.set(`#${p}-${m}`, { opacity: m === which ? 1 : 0 }, t);
+}
+
+// radial action lines (comic "speed burst"), as an <svg> string sized by CSS
+function burst(id, color = INK, n = 36, inner = 0.32, opacity = 1) {
+  let d = "";
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2, w = (Math.PI * 2) / n * (0.28 + (i % 3) * 0.12);
+    const r0 = 500 * (inner + (i % 4) * 0.035), r1 = 760;
+    const p = (r, ang) => `${(500 + Math.cos(ang) * r).toFixed(1)} ${(500 + Math.sin(ang) * r).toFixed(1)}`;
+    d += `M${p(r0, a)} L${p(r1, a - w / 2)} L${p(r1, a + w / 2)} Z `;
+  }
+  return `<svg id="${id}" viewBox="0 0 1000 1000" overflow="visible"><path d="${d}" fill="${color}" opacity="${opacity}"/></svg>`;
+}
+
+// spiky starburst behind a sound-effect word
+function star(id, fill = YELLOW, spikes = 14, r0 = 300, r1 = 480) {
+  let d = "";
+  for (let i = 0; i < spikes * 2; i++) {
+    const a = (i / (spikes * 2)) * Math.PI * 2 - Math.PI / 2;
+    const r = i % 2 ? r0 * (0.92 + (i % 3) * 0.05) : r1 * (0.9 + (i % 5) * 0.04);
+    d += `${i ? "L" : "M"}${(500 + Math.cos(a) * r).toFixed(1)} ${(500 + Math.sin(a) * r).toFixed(1)} `;
+  }
+  return `<svg id="${id}" viewBox="0 0 1000 1000" overflow="visible"><path d="${d}Z" fill="${fill}" stroke="${INK}" stroke-width="16" stroke-linejoin="round"/></svg>`;
+}
+
+// screen shake on a wrapper (three frames, deterministic)
+function shake(tl, sel, t, amp = 14) {
+  tl.to(sel, { x: amp, y: -amp * 0.6, duration: 0.033, ease: "none" }, t);
+  tl.to(sel, { x: -amp * 0.7, y: amp * 0.5, duration: 0.033, ease: "none" }, t + 0.033);
+  tl.to(sel, { x: amp * 0.4, y: -amp * 0.2, duration: 0.033, ease: "none" }, t + 0.066);
+  tl.to(sel, { x: 0, y: 0, duration: 0.05, ease: "none" }, t + 0.1);
+}
+
+// pop-in entrance with overshoot
+function popIn(tl, sel, t, from = {}, dur = 0.38) {
+  tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
+}
+
+      const tl = gsap.timeline({ paused: true });
+document.getElementById("f03-burstwrap").outerHTML = burst("f03-burst", "#A8000B", 36, 0.12);
+// shout balloon: jagged white star
+document.getElementById("f03-shoutwrap").outerHTML = star("f03-shout", "#FFFFFF", 16, 330, 470).replace('viewBox="0 0 1000 1000"', 'viewBox="0 0 1000 1000" preserveAspectRatio="none"');
+// megaphone held at the mouth (character space)
+const mega = `<g id="f03-mega"><path d="M226 258 L246 248 L470 170 L500 330 L246 292 L226 284 Z" fill="#FFD23F" stroke="#1C1410" stroke-width="9" stroke-linejoin="round"/>
+  <ellipse cx="486" cy="250" rx="26" ry="82" fill="#D8000F" stroke="#1C1410" stroke-width="9"/>
+  <g id="f03-waves" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"><path d="M540 190 Q570 250 540 310"/><path d="M580 160 Q624 250 580 340"/><path d="M620 130 Q680 250 620 370"/></g></g>`;
+document.getElementById("f03-manwrap").innerHTML = `<div id="f03-man">${person("f03-o", "official", { overlay: mega })}</div>`;
+setPose(tl, "f03-o", { armR: -60, foreR: -80, armL: 12, foreL: 30 });
+// envelopes: deterministic rain into the sack
+const envs = document.getElementById("f03-envs");
+const N = 16;
+for (let i = 0; i < N; i++) {
+  const e = document.createElement("div");
+  e.className = "f03-env";
+  e.id = "f03-env" + i;
+  envs.appendChild(e);
+  const x0 = 560 + ((i * 137) % 420), r0 = ((i * 53) % 60) - 30;
+  const t0 = 2.85 + i * 0.12;
+  tl.fromTo(e, { x: x0, y: -200, rotation: r0, opacity: 1 },
+    { x: 740 + ((i * 29) % 80), y: 1180, rotation: r0 + 180, duration: 0.55, ease: "power2.in" }, t0);
+  tl.to(e, { opacity: 0, duration: 0.05 }, t0 + 0.55);
+}
+tl.fromTo("#f03-world", { scale: 1 }, { scale: 1.05, duration: DUR, ease: "none" }, 0);
+tl.fromTo("#f03-burst", { rotation: 0 }, { rotation: -15, duration: DUR, ease: "none" }, 0);
+// official strides in
+tl.fromTo("#f03-man", { x: -500 }, { x: 0, duration: 0.45, ease: "back.out(1.4)" }, 0);
+blink(tl, "f03-o", [0.6, 3.4]);
+// "launched" — he shouts through the megaphone
+const talk = [1.0, 1.15, 1.3, 1.45, 1.6, 1.75, 1.9, 2.05, 2.2];
+talk.forEach((t, i) => mouth(tl, "f03-o", t, i % 2 ? "mSmile" : "mOpen"));
+mouth(tl, "f03-o", 2.35, "mSmile");
+tl.fromTo("#f03-waves", { opacity: 0 }, { opacity: 1, duration: 0.1 }, 1.0);
+tl.fromTo("#f03-waves", { x: 0 }, { x: 18, duration: 0.18, yoyo: true, repeat: 7, ease: "sine.inOut", immediateRender: false }, 1.0);
+tl.to("#f03-waves", { opacity: 0, duration: 0.2 }, 2.5);
+pose(tl, "f03-o", 0.95, { head: -6, armL: 25 }, 0.25);
+popIn(tl, "#f03-shout", 1.03, { rotation: -10 });
+popIn(tl, "#f03-shoutword", 1.1, { rotation: 10 });
+tl.fromTo("#f03-nation", { scaleX: 0, rotation: -3 }, { scaleX: 1, rotation: -3, duration: 0.3, ease: "back.out(2)" }, 1.63);
+// shout shrinks away as the envelopes start
+tl.to(["#f03-shout", "#f03-shoutword", "#f03-nation"], { scale: 0.55, x: 120, y: -40, opacity: 0, duration: 0.3, ease: "power2.in" }, 2.75);
+tl.fromTo("#f03-bag", { y: 500 }, { y: 0, duration: 0.4, ease: "back.out(1.6)" }, 2.6);
+// "three thousand" counter slams
+const counter = { v: 0 };
+const el = document.getElementById("f03-count");
+tl.set(el, { textContent: "0" }, 0);
+tl.fromTo("#f03-count", { scale: 0, rotation: 15 }, { scale: 1, rotation: -6, duration: 0.35, ease: "back.out(2)" }, 2.95);
+tl.fromTo(counter, { v: 0 }, { v: 3000, duration: 0.75, ease: "power2.out", immediateRender: false,
+  onUpdate: () => { el.textContent = Math.round(counter.v).toLocaleString("en-IN") + (counter.v > 2999 ? "+" : ""); } }, 3.0);
+shake(tl, "#f03-world", 3.75, 14);
+popIn(tl, "#f03-entries", 3.8, { rotation: 6 });
+tl.fromTo("#f03-bag", { scaleY: 1 }, { scaleY: 1.06, svgOrigin: "240 450", duration: 0.12, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, 3.5);
+pose(tl, "f03-o", 4.0, { head: 4 }, 0.3);
+mouth(tl, "f03-o", 4.0, "mOpen");
+      window.__timelines["03-contest"] = tl;
+    })();
+  </script>
+</template>
