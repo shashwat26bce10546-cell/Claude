@@ -1,0 +1,27 @@
+@font-face { font-family: "Shrikhand"; src: url("assets/fonts/Shrikhand-400.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Shrikhand"; src: url("assets/fonts/Shrikhand-400-ext.woff2") format("woff2"); font-weight: 400; unicode-range: U+20B9; }
+@font-face { font-family: "Space Grotesk"; src: url("assets/fonts/SpaceGrotesk-700.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Space Grotesk"; src: url("assets/fonts/SpaceGrotesk-700-ext.woff2") format("woff2"); font-weight: 700; unicode-range: U+20B9; }
+@font-face { font-family: "Space Grotesk"; src: url("assets/fonts/SpaceGrotesk-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "Libre Baskerville"; src: url("assets/fonts/LibreBaskerville-700.woff2") format("woff2"); font-weight: 700; }
+@font-face { font-family: "Noto Sans Devanagari"; src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype"); font-weight: 700; }
+#root { position: absolute; inset: 0; overflow: hidden; container-type: size; font-family: "Space Grotesk", sans-serif; color: #1C1410; }
+.cmc-bg { position: absolute; inset: 0; }
+.cmc-world { position: absolute; inset: 0; }
+.cmc-abs { position: absolute; }
+.cmc-person { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; }
+/* print textures */
+.cmc-halftone { position: absolute; inset: 0; background: radial-gradient(circle, rgba(28, 20, 16, 0.22) 2.4px, transparent 2.9px) 0 0 / 16px 16px; }
+.cmc-halftone-light { position: absolute; inset: 0; background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 2.4px, transparent 2.9px) 0 0 / 16px 16px; }
+/* comic panel */
+.cmc-panel { position: absolute; border: 9px solid #1C1410; background: #FFFFFF; overflow: hidden; box-shadow: 12px 12px 0 #1C1410; }
+/* yellow narration box */
+.cmc-cap { position: absolute; background: #FFD23F; border: 7px solid #1C1410; box-shadow: 10px 10px 0 #1C1410; padding: 18px 30px; font-family: "Space Grotesk", sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 44px; line-height: 1.1; }
+/* speech bubble */
+.cmc-bubble { position: absolute; background: #FFFFFF; border: 8px solid #1C1410; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-family: "Shrikhand", sans-serif; color: #1C1410; box-shadow: 10px 10px 0 #1C1410; }
+.cmc-tail { position: absolute; overflow: visible; }
+/* poster display */
+.cmc-shrik { font-family: "Shrikhand", sans-serif; font-weight: 400; line-height: 0.9; }
+.cmc-label { font-family: "Space Grotesk", sans-serif; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+.cmc-stack-shadow { text-shadow: 4px 4px 0 rgba(28, 20, 16, 0.35), 8px 8px 0 rgba(28, 20, 16, 0.25), 12px 12px 0 rgba(28, 20, 16, 0.15); }
+.cmc-ink-outline { -webkit-text-stroke: 8px #1C1410; paint-order: stroke fill; }

@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- Scene H (4s): the headline-slam component carries "15 JULY 2010" above this scene;
+     here a ₹ design card rises in (3d tilt settle) and an APPROVED stamp slams onto it. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype");
+          font-weight: 800;
+        }
+        @font-face {
+          font-family: "Noto Sans Devanagari";
+          src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+          font-weight: 700;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: radial-gradient(circle at 50% 50%, #2a1410 0%, #0a0606 75%);
+          font-family: "Inter", "Noto Sans Devanagari", sans-serif;
+          perspective: 1400px;
+        }
+        .ap-rays {
+          position: absolute;
+          left: 540px;
+          top: 1000px;
+          width: 1800px;
+          height: 1800px;
+          margin: -900px 0 0 -900px;
+          background: repeating-conic-gradient(rgba(255, 154, 31, 0.13) 0deg 8deg, rgba(255, 154, 31, 0) 8deg 20deg);
+          border-radius: 50%;
+        }
+        .ap-card {
+          position: absolute;
+          left: 540px;
+          top: 1000px;
+          width: 520px;
+          height: 650px;
+          margin: -325px 0 0 -260px;
+          background: #f7f4ec;
+          border-radius: 22px;
+          box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .ap-card b {
+          font-family: "Noto Sans Devanagari", sans-serif;
+          font-size: 380px;
+          line-height: 1;
+          color: #1d2230;
+          margin-top: 40px;
+        }
+        .ap-card span {
+          font-weight: 800;
+          font-size: 36px;
+          letter-spacing: 0.14em;
+          color: #8a857a;
+        }
+        .ap-stamp {
+          position: absolute;
+          left: 540px;
+          top: 1080px;
+          width: 620px;
+          height: 170px;
+          margin: -85px 0 0 -310px;
+          border: 12px solid #e53935;
+          border-radius: 20px;
+          color: #e53935;
+          font-weight: 800;
+          font-size: 112px;
+          letter-spacing: 0.06em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(229, 57, 53, 0.08);
+        }
+        .ap-label {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 590px;
+          text-align: center;
+          font-weight: 800;
+          font-size: 50px;
+          letter-spacing: 0.3em;
+          color: #ff9a1f;
+        }
+      </style>
+
+      <div id="root" data-composition-id="mg-approved" data-width="1080" data-height="1920">
+        <div class="ap-rays" id="ap-rays"></div>
+        <div class="ap-label" id="ap-label">UNION CABINET</div>
+        <div class="ap-card" id="ap-card"><b>₹</b><span>INDIAN RUPEE</span></div>
+        <div class="ap-stamp" id="ap-stamp" data-layout-allow-overlap>APPROVED</div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          tl.fromTo("#ap-rays", { rotation: 0, opacity: 0 }, { rotation: 40, opacity: 1, duration: 4, ease: "none" }, 0);
+          tl.fromTo("#ap-card", { y: 700, rotationX: 50, rotationY: -20, opacity: 0 }, { y: 0, rotationX: 0, rotationY: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, 0.4);
+          tl.fromTo("#ap-label", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, 0.9);
+          // stamp slam: big + transparent -> lands rotated with a three-frame shake
+          tl.fromTo("#ap-stamp", { scale: 3.2, rotation: -24, opacity: 0 }, { scale: 1, rotation: -12, opacity: 1, duration: 0.22, ease: "power4.in" }, 1.6);
+          tl.to("#ap-card", { x: 12, y: 8, duration: 0.033 }, 1.82);
+          tl.to("#ap-card", { x: -8, y: -4, duration: 0.033 }, 1.853);
+          tl.to("#ap-card", { x: 0, y: 0, duration: 0.033 }, 1.886);
+          tl.fromTo("#ap-card", { scale: 1 }, { scale: 1.04, duration: 0.9, yoyo: true, repeat: 1, ease: "sine.inOut" }, 2.0);
+          window.__timelines["mg-approved"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,1042 @@
+{
+  "bgm": {
+    "path": "assets/audio/bed.m4a",
+    "source": "host",
+    "volume": 0.2
+  },
+  "bgm_pending": false,
+  "voices": [
+    {
+      "frame": 1,
+      "path": "assets/voice/01.wav",
+      "duration_s": 6.03,
+      "words": [
+        {
+          "id": "f1w0",
+          "text": "Yeh",
+          "start": 0.0,
+          "end": 0.253
+        },
+        {
+          "id": "f1w1",
+          "text": "symbol",
+          "start": 0.253,
+          "end": 0.674
+        },
+        {
+          "id": "f1w2",
+          "text": "aap",
+          "start": 0.674,
+          "end": 0.926
+        },
+        {
+          "id": "f1w3",
+          "text": "roz",
+          "start": 0.926,
+          "end": 1.179
+        },
+        {
+          "id": "f1w4",
+          "text": "use",
+          "start": 1.179,
+          "end": 1.432
+        },
+        {
+          "id": "f1w5",
+          "text": "karte",
+          "start": 1.432,
+          "end": 1.797
+        },
+        {
+          "id": "f1w6",
+          "text": "ho...",
+          "start": 1.797,
+          "end": 1.993
+        },
+        {
+          "id": "f1w7",
+          "text": "lekin",
+          "start": 1.993,
+          "end": 2.358
+        },
+        {
+          "id": "f1w8",
+          "text": "kya",
+          "start": 2.358,
+          "end": 3.2
+        },
+        {
+          "id": "f1w9",
+          "text": "aap",
+          "start": 3.2,
+          "end": 3.681
+        },
+        {
+          "id": "f1w10",
+          "text": "jaante",
+          "start": 3.681,
+          "end": 4.102
+        },
+        {
+          "id": "f1w11",
+          "text": "ho,",
+          "start": 4.102,
+          "end": 4.298
+        },
+        {
+          "id": "f1w12",
+          "text": "isse",
+          "start": 4.298,
+          "end": 4.971
+        },
+        {
+          "id": "f1w13",
+          "text": "banaya",
+          "start": 4.971,
+          "end": 5.392
+        },
+        {
+          "id": "f1w14",
+          "text": "KISNE?",
+          "start": 5.392,
+          "end": 5.757
+        }
+      ]
+    },
+    {
+      "frame": 2,
+      "path": "assets/voice/02.wav",
+      "duration_s": 10.34,
+      "words": [
+        {
+          "id": "f2w0",
+          "text": "Do",
+          "start": 0.288,
+          "end": 0.479
+        },
+        {
+          "id": "f2w1",
+          "text": "hazaar",
+          "start": 0.479,
+          "end": 0.888
+        },
+        {
+          "id": "f2w2",
+          "text": "das",
+          "start": 0.888,
+          "end": 1.133
+        },
+        {
+          "id": "f2w3",
+          "text": "tak,",
+          "start": 1.133,
+          "end": 1.378
+        },
+        {
+          "id": "f2w4",
+          "text": "rupee",
+          "start": 1.378,
+          "end": 1.92
+        },
+        {
+          "id": "f2w5",
+          "text": "ka",
+          "start": 1.92,
+          "end": 2.11
+        },
+        {
+          "id": "f2w6",
+          "text": "apna",
+          "start": 2.11,
+          "end": 2.41
+        },
+        {
+          "id": "f2w7",
+          "text": "koi",
+          "start": 2.41,
+          "end": 2.656
+        },
+        {
+          "id": "f2w8",
+          "text": "symbol",
+          "start": 2.656,
+          "end": 3.064
+        },
+        {
+          "id": "f2w9",
+          "text": "hi",
+          "start": 3.064,
+          "end": 3.255
+        },
+        {
+          "id": "f2w10",
+          "text": "nahi",
+          "start": 3.255,
+          "end": 3.555
+        },
+        {
+          "id": "f2w11",
+          "text": "tha!",
+          "start": 3.555,
+          "end": 3.8
+        },
+        {
+          "id": "f2w12",
+          "text": "Dollar",
+          "start": 3.8,
+          "end": 4.577
+        },
+        {
+          "id": "f2w13",
+          "text": "ka",
+          "start": 4.577,
+          "end": 4.749
+        },
+        {
+          "id": "f2w14",
+          "text": "tha,",
+          "start": 4.749,
+          "end": 4.97
+        },
+        {
+          "id": "f2w15",
+          "text": "pound",
+          "start": 4.97,
+          "end": 5.446
+        },
+        {
+          "id": "f2w16",
+          "text": "ka",
+          "start": 5.446,
+          "end": 5.593
+        },
+        {
+          "id": "f2w17",
+          "text": "tha...",
+          "start": 5.593,
+          "end": 5.781
+        },
+        {
+          "id": "f2w18",
+          "text": "aur",
+          "start": 5.781,
+          "end": 5.97
+        },
+        {
+          "id": "f2w19",
+          "text": "India?",
+          "start": 5.97,
+          "end": 6.984
+        },
+        {
+          "id": "f2w20",
+          "text": "Bas",
+          "start": 6.984,
+          "end": 8.083
+        },
+        {
+          "id": "f2w21",
+          "text": "\"R-S\"",
+          "start": 8.083,
+          "end": 8.446
+        },
+        {
+          "id": "f2w22",
+          "text": "likh",
+          "start": 8.446,
+          "end": 9.015
+        },
+        {
+          "id": "f2w23",
+          "text": "deta",
+          "start": 9.015,
+          "end": 9.584
+        },
+        {
+          "id": "f2w24",
+          "text": "tha.",
+          "start": 9.584,
+          "end": 10.05
+        }
+      ]
+    },
+    {
+      "frame": 3,
+      "path": "assets/voice/03.wav",
+      "duration_s": 6.01,
+      "words": [
+        {
+          "id": "f3w0",
+          "text": "Toh",
+          "start": 0.302,
+          "end": 0.473
+        },
+        {
+          "id": "f3w1",
+          "text": "sarkaar",
+          "start": 0.473,
+          "end": 0.797
+        },
+        {
+          "id": "f3w2",
+          "text": "ne",
+          "start": 0.797,
+          "end": 0.93
+        },
+        {
+          "id": "f3w3",
+          "text": "poore",
+          "start": 0.93,
+          "end": 1.178
+        },
+        {
+          "id": "f3w4",
+          "text": "desh",
+          "start": 1.178,
+          "end": 1.387
+        },
+        {
+          "id": "f3w5",
+          "text": "mein",
+          "start": 1.387,
+          "end": 1.597
+        },
+        {
+          "id": "f3w6",
+          "text": "ek",
+          "start": 1.597,
+          "end": 1.73
+        },
+        {
+          "id": "f3w7",
+          "text": "contest",
+          "start": 1.73,
+          "end": 2.201
+        },
+        {
+          "id": "f3w8",
+          "text": "rakha...",
+          "start": 2.201,
+          "end": 2.561
+        },
+        {
+          "id": "f3w9",
+          "text": "aur",
+          "start": 2.561,
+          "end": 2.811
+        },
+        {
+          "id": "f3w10",
+          "text": "teen",
+          "start": 2.811,
+          "end": 3.466
+        },
+        {
+          "id": "f3w11",
+          "text": "hazaar",
+          "start": 3.466,
+          "end": 4.076
+        },
+        {
+          "id": "f3w12",
+          "text": "se",
+          "start": 4.076,
+          "end": 4.27
+        },
+        {
+          "id": "f3w13",
+          "text": "zyada",
+          "start": 4.27,
+          "end": 4.63
+        },
+        {
+          "id": "f3w14",
+          "text": "designs",
+          "start": 4.63,
+          "end": 5.189
+        },
+        {
+          "id": "f3w15",
+          "text": "aa",
+          "start": 5.189,
+          "end": 5.419
+        },
+        {
+          "id": "f3w16",
+          "text": "gaye!",
+          "start": 5.419,
+          "end": 5.78
+        }
+      ]
+    },
+    {
+      "frame": 4,
+      "path": "assets/voice/04.wav",
+      "duration_s": 7.5,
+      "words": [
+        {
+          "id": "f4w0",
+          "text": "Unmein",
+          "start": 0.231,
+          "end": 0.555
+        },
+        {
+          "id": "f4w1",
+          "text": "se",
+          "start": 0.555,
+          "end": 0.706
+        },
+        {
+          "id": "f4w2",
+          "text": "ek",
+          "start": 0.706,
+          "end": 0.858
+        },
+        {
+          "id": "f4w3",
+          "text": "design",
+          "start": 0.858,
+          "end": 1.182
+        },
+        {
+          "id": "f4w4",
+          "text": "aaya",
+          "start": 1.182,
+          "end": 1.42
+        },
+        {
+          "id": "f4w5",
+          "text": "IIT",
+          "start": 1.42,
+          "end": 1.678
+        },
+        {
+          "id": "f4w6",
+          "text": "Bombay",
+          "start": 1.678,
+          "end": 2.374
+        },
+        {
+          "id": "f4w7",
+          "text": "ke",
+          "start": 2.374,
+          "end": 2.597
+        },
+        {
+          "id": "f4w8",
+          "text": "ek",
+          "start": 2.597,
+          "end": 2.82
+        },
+        {
+          "id": "f4w9",
+          "text": "young",
+          "start": 2.82,
+          "end": 3.22
+        },
+        {
+          "id": "f4w10",
+          "text": "PhD",
+          "start": 3.22,
+          "end": 3.52
+        },
+        {
+          "id": "f4w11",
+          "text": "student",
+          "start": 3.52,
+          "end": 4.182
+        },
+        {
+          "id": "f4w12",
+          "text": "se...",
+          "start": 4.182,
+          "end": 4.454
+        },
+        {
+          "id": "f4w13",
+          "text": "naam",
+          "start": 4.454,
+          "end": 5.296
+        },
+        {
+          "id": "f4w14",
+          "text": "tha",
+          "start": 5.296,
+          "end": 5.646
+        },
+        {
+          "id": "f4w15",
+          "text": "\u2014",
+          "start": 5.646,
+          "end": 6.01
+        },
+        {
+          "id": "f4w16",
+          "text": "D.",
+          "start": 6.01,
+          "end": 6.204
+        },
+        {
+          "id": "f4w17",
+          "text": "Udaya",
+          "start": 6.204,
+          "end": 6.71
+        },
+        {
+          "id": "f4w18",
+          "text": "Kumar.",
+          "start": 6.71,
+          "end": 7.216
+        }
+      ]
+    },
+    {
+      "frame": 5,
+      "path": "assets/voice/05.wav",
+      "duration_s": 9.55,
+      "words": [
+        {
+          "id": "f5w0",
+          "text": "Unhone",
+          "start": 0.278,
+          "end": 0.689
+        },
+        {
+          "id": "f5w1",
+          "text": "Devanagari",
+          "start": 0.689,
+          "end": 1.319
+        },
+        {
+          "id": "f5w2",
+          "text": "ka",
+          "start": 1.319,
+          "end": 1.511
+        },
+        {
+          "id": "f5w3",
+          "text": "\"\u0930\"",
+          "start": 1.511,
+          "end": 1.648
+        },
+        {
+          "id": "f5w4",
+          "text": "aur",
+          "start": 1.648,
+          "end": 1.894
+        },
+        {
+          "id": "f5w5",
+          "text": "English",
+          "start": 1.894,
+          "end": 2.579
+        },
+        {
+          "id": "f5w6",
+          "text": "ka",
+          "start": 2.579,
+          "end": 2.771
+        },
+        {
+          "id": "f5w7",
+          "text": "\"R\"",
+          "start": 2.771,
+          "end": 2.908
+        },
+        {
+          "id": "f5w8",
+          "text": "mila",
+          "start": 2.908,
+          "end": 3.209
+        },
+        {
+          "id": "f5w9",
+          "text": "diya...",
+          "start": 3.209,
+          "end": 3.51
+        },
+        {
+          "id": "f5w10",
+          "text": "aur",
+          "start": 3.51,
+          "end": 3.757
+        },
+        {
+          "id": "f5w11",
+          "text": "upar",
+          "start": 3.757,
+          "end": 4.432
+        },
+        {
+          "id": "f5w12",
+          "text": "do",
+          "start": 4.432,
+          "end": 4.623
+        },
+        {
+          "id": "f5w13",
+          "text": "lines",
+          "start": 4.623,
+          "end": 4.979
+        },
+        {
+          "id": "f5w14",
+          "text": "jodi",
+          "start": 4.979,
+          "end": 5.281
+        },
+        {
+          "id": "f5w15",
+          "text": "\u2014",
+          "start": 5.281,
+          "end": 5.363
+        },
+        {
+          "id": "f5w16",
+          "text": "ek",
+          "start": 5.363,
+          "end": 5.988
+        },
+        {
+          "id": "f5w17",
+          "text": "tirange",
+          "start": 5.988,
+          "end": 6.454
+        },
+        {
+          "id": "f5w18",
+          "text": "ki",
+          "start": 6.454,
+          "end": 6.645
+        },
+        {
+          "id": "f5w19",
+          "text": "nishaani,",
+          "start": 6.645,
+          "end": 7.472
+        },
+        {
+          "id": "f5w20",
+          "text": "aur",
+          "start": 7.472,
+          "end": 7.718
+        },
+        {
+          "id": "f5w21",
+          "text": "barabari",
+          "start": 7.718,
+          "end": 8.239
+        },
+        {
+          "id": "f5w22",
+          "text": "ka",
+          "start": 8.239,
+          "end": 8.43
+        },
+        {
+          "id": "f5w23",
+          "text": "\"equal",
+          "start": 8.43,
+          "end": 8.786
+        },
+        {
+          "id": "f5w24",
+          "text": "to\"",
+          "start": 8.786,
+          "end": 8.978
+        },
+        {
+          "id": "f5w25",
+          "text": "sign!",
+          "start": 8.978,
+          "end": 9.279
+        }
+      ]
+    },
+    {
+      "frame": 6,
+      "path": "assets/voice/06.wav",
+      "duration_s": 6.13,
+      "words": [
+        {
+          "id": "f6w0",
+          "text": "Pandrah",
+          "start": 0.335,
+          "end": 0.792
+        },
+        {
+          "id": "f6w1",
+          "text": "July,",
+          "start": 0.792,
+          "end": 1.087
+        },
+        {
+          "id": "f6w2",
+          "text": "do",
+          "start": 1.087,
+          "end": 1.275
+        },
+        {
+          "id": "f6w3",
+          "text": "hazaar",
+          "start": 1.275,
+          "end": 1.678
+        },
+        {
+          "id": "f6w4",
+          "text": "das",
+          "start": 1.678,
+          "end": 1.92
+        },
+        {
+          "id": "f6w5",
+          "text": "ko,",
+          "start": 1.92,
+          "end": 2.108
+        },
+        {
+          "id": "f6w6",
+          "text": "Union",
+          "start": 2.108,
+          "end": 2.695
+        },
+        {
+          "id": "f6w7",
+          "text": "Cabinet",
+          "start": 2.695,
+          "end": 3.152
+        },
+        {
+          "id": "f6w8",
+          "text": "ne",
+          "start": 3.152,
+          "end": 3.34
+        },
+        {
+          "id": "f6w9",
+          "text": "final",
+          "start": 3.34,
+          "end": 3.689
+        },
+        {
+          "id": "f6w10",
+          "text": "paanch",
+          "start": 3.689,
+          "end": 4.092
+        },
+        {
+          "id": "f6w11",
+          "text": "mein",
+          "start": 4.092,
+          "end": 4.388
+        },
+        {
+          "id": "f6w12",
+          "text": "se...",
+          "start": 4.388,
+          "end": 4.576
+        },
+        {
+          "id": "f6w13",
+          "text": "unka",
+          "start": 4.576,
+          "end": 5.126
+        },
+        {
+          "id": "f6w14",
+          "text": "design",
+          "start": 5.126,
+          "end": 5.529
+        },
+        {
+          "id": "f6w15",
+          "text": "chuna!",
+          "start": 5.529,
+          "end": 5.878
+        }
+      ]
+    },
+    {
+      "frame": 7,
+      "path": "assets/voice/07.wav",
+      "duration_s": 8.09,
+      "words": [
+        {
+          "id": "f7w0",
+          "text": "Aur",
+          "start": 0.26,
+          "end": 0.69
+        },
+        {
+          "id": "f7w1",
+          "text": "ab",
+          "start": 0.69,
+          "end": 1.024
+        },
+        {
+          "id": "f7w2",
+          "text": "suniye",
+          "start": 1.024,
+          "end": 1.74
+        },
+        {
+          "id": "f7w3",
+          "text": "twist...",
+          "start": 1.74,
+          "end": 2.634
+        },
+        {
+          "id": "f7w4",
+          "text": "lagbhag",
+          "start": 2.634,
+          "end": 3.132
+        },
+        {
+          "id": "f7w5",
+          "text": "usi",
+          "start": 3.132,
+          "end": 3.395
+        },
+        {
+          "id": "f7w6",
+          "text": "waqt...",
+          "start": 3.395,
+          "end": 4.136
+        },
+        {
+          "id": "f7w7",
+          "text": "woh",
+          "start": 4.136,
+          "end": 4.399
+        },
+        {
+          "id": "f7w8",
+          "text": "IIT",
+          "start": 4.399,
+          "end": 4.663
+        },
+        {
+          "id": "f7w9",
+          "text": "Guwahati",
+          "start": 4.663,
+          "end": 5.218
+        },
+        {
+          "id": "f7w10",
+          "text": "mein",
+          "start": 5.218,
+          "end": 5.54
+        },
+        {
+          "id": "f7w11",
+          "text": "professor",
+          "start": 5.54,
+          "end": 6.031
+        },
+        {
+          "id": "f7w12",
+          "text": "ki",
+          "start": 6.031,
+          "end": 6.195
+        },
+        {
+          "id": "f7w13",
+          "text": "nayi",
+          "start": 6.195,
+          "end": 6.452
+        },
+        {
+          "id": "f7w14",
+          "text": "naukri",
+          "start": 6.452,
+          "end": 6.803
+        },
+        {
+          "id": "f7w15",
+          "text": "shuru",
+          "start": 6.803,
+          "end": 7.107
+        },
+        {
+          "id": "f7w16",
+          "text": "kar",
+          "start": 7.107,
+          "end": 7.317
+        },
+        {
+          "id": "f7w17",
+          "text": "rahe",
+          "start": 7.317,
+          "end": 7.574
+        },
+        {
+          "id": "f7w18",
+          "text": "the!",
+          "start": 7.574,
+          "end": 7.785
+        }
+      ]
+    },
+    {
+      "frame": 8,
+      "path": "assets/voice/08.wav",
+      "duration_s": 9.279,
+      "words": [
+        {
+          "id": "f8w0",
+          "text": "Aaj",
+          "start": 0.313,
+          "end": 0.463
+        },
+        {
+          "id": "f8w1",
+          "text": "unka",
+          "start": 0.463,
+          "end": 0.648
+        },
+        {
+          "id": "f8w2",
+          "text": "symbol",
+          "start": 0.648,
+          "end": 0.899
+        },
+        {
+          "id": "f8w3",
+          "text": "har",
+          "start": 0.899,
+          "end": 1.05
+        },
+        {
+          "id": "f8w4",
+          "text": "price",
+          "start": 1.05,
+          "end": 1.65
+        },
+        {
+          "id": "f8w5",
+          "text": "tag,",
+          "start": 1.65,
+          "end": 2.0
+        },
+        {
+          "id": "f8w6",
+          "text": "har",
+          "start": 2.0,
+          "end": 2.35
+        },
+        {
+          "id": "f8w7",
+          "text": "keyboard,",
+          "start": 2.35,
+          "end": 3.232
+        },
+        {
+          "id": "f8w8",
+          "text": "har",
+          "start": 3.232,
+          "end": 3.65
+        },
+        {
+          "id": "f8w9",
+          "text": "payment",
+          "start": 3.65,
+          "end": 4.05
+        },
+        {
+          "id": "f8w10",
+          "text": "app",
+          "start": 4.05,
+          "end": 4.311
+        },
+        {
+          "id": "f8w11",
+          "text": "par",
+          "start": 4.311,
+          "end": 4.571
+        },
+        {
+          "id": "f8w12",
+          "text": "hai.",
+          "start": 4.571,
+          "end": 5.312
+        },
+        {
+          "id": "f8w13",
+          "text": "Toh",
+          "start": 5.312,
+          "end": 5.572
+        },
+        {
+          "id": "f8w14",
+          "text": "agli",
+          "start": 5.572,
+          "end": 5.891
+        },
+        {
+          "id": "f8w15",
+          "text": "baar",
+          "start": 5.891,
+          "end": 6.209
+        },
+        {
+          "id": "f8w16",
+          "text": "jab",
+          "start": 6.209,
+          "end": 6.47
+        },
+        {
+          "id": "f8w17",
+          "text": "\u20b9",
+          "start": 6.47,
+          "end": 6.557
+        },
+        {
+          "id": "f8w18",
+          "text": "dekho...",
+          "start": 6.557,
+          "end": 6.933
+        },
+        {
+          "id": "f8w19",
+          "text": "Udaya",
+          "start": 6.933,
+          "end": 7.309
+        },
+        {
+          "id": "f8w20",
+          "text": "Kumar",
+          "start": 7.309,
+          "end": 8.141
+        },
+        {
+          "id": "f8w21",
+          "text": "ko",
+          "start": 8.141,
+          "end": 8.344
+        },
+        {
+          "id": "f8w22",
+          "text": "yaad",
+          "start": 8.344,
+          "end": 8.663
+        },
+        {
+          "id": "f8w23",
+          "text": "karna!",
+          "start": 8.663,
+          "end": 9.039
+        }
+      ]
+    }
+  ],
+  "sfx": [
+    {
+      "frame": 1,
+      "file": "assets/audio/sfx.m4a",
+      "offset_s": 0,
+      "duration_s": 62.929,
+      "source": "host",
+      "volume": 0.7
+    }
+  ]
+}

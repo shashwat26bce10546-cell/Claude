@@ -1,0 +1,168 @@
+<!doctype html>
+<!-- Scene K (4s): blurred tricolour sweeps in (flag blur), a ₹ medallion + name card,
+     and a "NEXT" video card slides up — the reference's end-card beat. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype");
+          font-weight: 800;
+        }
+        @font-face {
+          font-family: "Noto Sans Devanagari";
+          src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+          font-weight: 700;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #0b0f1a;
+          font-family: "Inter", "Noto Sans Devanagari", sans-serif;
+          color: #fff;
+        }
+        .ec-flag {
+          position: absolute;
+          inset: -240px;
+          display: flex;
+          flex-direction: column;
+        }
+        .ec-flag div {
+          flex: 1;
+        }
+        .ec-chakra {
+          position: absolute;
+          left: 540px;
+          top: 960px;
+          width: 330px;
+          height: 330px;
+          margin: -165px 0 0 -165px;
+          border-radius: 50%;
+          border: 14px solid #0b3d91;
+          background: repeating-conic-gradient(#0b3d91 0deg 2deg, transparent 2deg 15deg);
+        }
+        .ec-shade {
+          position: absolute;
+          inset: 0;
+          background: rgba(6, 9, 16, 0.55);
+        }
+        .ec-medal {
+          position: absolute;
+          left: 540px;
+          top: 470px;
+          width: 300px;
+          height: 300px;
+          margin: -150px 0 0 -150px;
+          border-radius: 50%;
+          border: 10px solid #ff9a1f;
+          background: rgba(10, 8, 4, 0.6);
+          box-shadow: 0 0 60px rgba(255, 154, 31, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Noto Sans Devanagari", sans-serif;
+          font-size: 200px;
+          line-height: 1;
+          padding-top: 24px;
+        }
+        .ec-name {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 680px;
+          text-align: center;
+        }
+        .ec-name b {
+          display: block;
+          font-weight: 800;
+          font-size: 104px;
+          letter-spacing: -0.02em;
+        }
+        .ec-name span {
+          display: block;
+          font-weight: 800;
+          font-size: 44px;
+          letter-spacing: 0.2em;
+          color: #ffb14a;
+          margin-top: 8px;
+        }
+        .ec-next {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 960px;
+          height: 330px;
+          border-radius: 28px;
+          background: #ffffff;
+          color: #111;
+          box-shadow: 0 30px 70px rgba(0, 0, 0, 0.6);
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+        }
+        .ec-thumb {
+          width: 300px;
+          height: 100%;
+          background: linear-gradient(180deg, #ff9a1f 0 33.3%, #fff 33.3% 66.6%, #138808 66.6% 100%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 800;
+          font-size: 120px;
+          color: #0b3d91;
+        }
+        .ec-next div:last-child {
+          padding: 0 34px;
+        }
+        .ec-next em {
+          display: block;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 34px;
+          letter-spacing: 0.2em;
+          color: #e53935;
+        }
+        .ec-next strong {
+          display: block;
+          font-weight: 800;
+          font-size: 52px;
+          line-height: 1.12;
+          margin-top: 10px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="mg-endcard" data-width="1080" data-height="1920">
+        <div class="ec-flag" id="ec-flag"><div style="background: #ff9a1f"></div><div style="background: #ffffff"></div><div style="background: #138808"></div></div>
+        <div class="ec-chakra" id="ec-chakra"></div>
+        <div class="ec-shade" id="ec-shade"></div>
+        <div class="ec-medal" id="ec-medal">₹</div>
+        <div class="ec-name" id="ec-name"><b>D. Udaya Kumar</b><span>THE MAN BEHIND ₹</span></div>
+        <div class="ec-next" id="ec-next">
+          <div class="ec-thumb">?</div>
+          <div><em>NEXT VIDEO</em><strong>Tirange ka design kisne banaya?</strong></div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          // flag sweeps in sharp, then blurs back behind the cards
+          tl.fromTo("#ec-flag", { x: 1300, skewX: -20, filter: "blur(30px)" }, { x: 0, skewX: 0, filter: "blur(0px)", duration: 0.45, ease: "power3.out" }, 0);
+          tl.fromTo("#ec-chakra", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(1.6)" }, 0.2);
+          tl.fromTo("#ec-chakra", { rotation: 0 }, { rotation: 120, duration: 3.3, ease: "none", immediateRender: false }, 0.65);
+          tl.to(["#ec-flag", "#ec-chakra"], { filter: "blur(36px)", duration: 0.5, ease: "power2.inOut" }, 0.9);
+          tl.fromTo("#ec-shade", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.9);
+          tl.fromTo("#ec-medal", { scale: 0, rotation: -120 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)" }, 1.1);
+          tl.fromTo("#ec-name", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 1.35);
+          tl.fromTo("#ec-next", { y: 500, rotation: 4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: "back.out(1.4)" }, 1.9);
+          window.__timelines["mg-endcard"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

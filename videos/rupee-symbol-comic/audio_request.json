@@ -1,0 +1,42 @@
+{
+  "provider": "auto",
+  "speed": "1.0",
+  "lines": [
+    {
+      "id": "01",
+      "text": "You use this symbol every single day. But do you know who actually designed it?"
+    },
+    {
+      "id": "02",
+      "text": "Until 2010, the rupee didn't have a symbol of its own. The dollar had one. The pound had one. India just wrote R-S."
+    },
+    {
+      "id": "03",
+      "text": "So the government launched a nationwide contest, and more than three thousand designs poured in."
+    },
+    {
+      "id": "04",
+      "text": "One of them came from a young PhD student at IIT Bombay, D. Udaya Kumar."
+    },
+    {
+      "id": "05",
+      "text": "He blended the Devanagari letter Ra with the Roman R, and added two lines on top, a nod to the tricolour, and an equals sign for equality."
+    },
+    {
+      "id": "06",
+      "text": "On the fifteenth of July, twenty ten, the Union Cabinet picked his design from the final five."
+    },
+    {
+      "id": "07",
+      "text": "And here's the twist. Around the same time, he was starting a brand new job, as a professor at IIT Guwahati."
+    },
+    {
+      "id": "08",
+      "text": "Today, his symbol is on every price tag, keyboard and payment app in India. So next time you see it, remember Udaya Kumar."
+    }
+  ],
+  "bgm": {
+    "mode": "none"
+  },
+  "voice": "af_heart"
+}

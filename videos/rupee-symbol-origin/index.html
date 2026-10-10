@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="hi-Latn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>₹ Symbol Kisne Banaya?</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype");
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-Bold.otf") format("opentype");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Noto Sans Devanagari";
+        src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+        font-weight: 700;
+      }
+      :root {
+        --red: #e53935;
+        --saffron: #ff9a1f;
+        --cap-y: 1210px;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: #0a0a0a;
+        overflow: hidden;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Inter", "Noto Sans Devanagari", sans-serif;
+      }
+      /* 3D shots rendered in Blender */
+      .shot {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* captions: white, lower-middle, max 2 lines */
+      .cap {
+        position: absolute;
+        left: 60px;
+        right: 60px;
+        top: var(--cap-y);
+        display: flex;
+        justify-content: center;
+      }
+      .cap span {
+        display: block;
+        max-width: 900px;
+        text-align: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 66px;
+        line-height: 1.12;
+        letter-spacing: -0.01em;
+        background: rgba(8, 8, 12, 0.62);
+        padding: 10px 28px 14px;
+        border-radius: 22px;
+        text-shadow: 0 3px 0 #000;
+      }
+      .cap span span {
+        background: none;
+        padding: 0;
+      }
+      .cap.low {
+        top: 1330px;
+      }
+      .deva {
+        font-family: "Noto Sans Devanagari", sans-serif;
+      }
+      /* big red stat / year cards */
+      .card {
+        position: absolute;
+        left: 40px;
+        right: 40px;
+        display: flex;
+        justify-content: center;
+      }
+      .card b {
+        display: block;
+        color: var(--red);
+        font-weight: 800;
+        font-size: 190px;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+        -webkit-text-stroke: 6px #fff;
+        paint-order: stroke fill;
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      }
+      .card.sm b {
+        font-size: 120px;
+      }
+      .top {
+        top: 250px;
+      }
+      /* pill tag (scene 4) */
+      .tag {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 250px;
+        display: flex;
+        justify-content: center;
+      }
+      .tag span {
+        display: block;
+        background: var(--red);
+        color: #fff;
+        font-weight: 800;
+        font-size: 54px;
+        padding: 18px 40px;
+        border-radius: 999px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      }
+      /* glowing ₹ badge (hook + loop) */
+      .badge {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 200px;
+        display: flex;
+        justify-content: center;
+      }
+      .badge div {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        border: 10px solid var(--saffron);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(20, 12, 4, 0.35);
+        box-shadow:
+          0 0 40px var(--saffron),
+          inset 0 0 30px rgba(255, 154, 31, 0.6);
+      }
+      .badge i {
+        font-style: normal;
+        font-family: "Noto Sans Devanagari", sans-serif;
+        font-weight: 700;
+        font-size: 170px;
+        line-height: 1;
+        color: #fff;
+        text-shadow: 0 0 24px var(--saffron);
+        margin-top: 18px;
+      }
+      /* red arrow pointing at the hero (scene 4) */
+      .arrow {
+        position: absolute;
+        inset: 0;
+      }
+      .arrow svg {
+        position: absolute;
+        left: 610px;
+        top: 380px;
+        width: 220px;
+        height: 220px;
+        overflow: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="56"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- track 0: shots -->
+      <video id="s01" class="shot clip" src="assets/shots/s01.mp4" muted playsinline data-start="0" data-duration="3" data-track-index="0"></video>
+      <video id="s02" class="shot clip" src="assets/shots/s02.mp4" muted playsinline data-start="3" data-duration="5" data-track-index="0"></video>
+      <video id="s03" class="shot clip" src="assets/shots/s03.mp4" muted playsinline data-start="8" data-duration="5" data-track-index="0"></video>
+      <video id="s04" class="shot clip" src="assets/shots/s04.mp4" muted playsinline data-start="13" data-duration="6" data-track-index="0"></video>
+      <video id="s05" class="shot clip" src="assets/shots/s05.mp4" muted playsinline data-start="19" data-duration="8" data-track-index="0"></video>
+      <video id="s06" class="shot clip" src="assets/shots/s06.mp4" muted playsinline data-start="27" data-duration="6" data-track-index="0"></video>
+      <video id="s07" class="shot clip" src="assets/shots/s07.mp4" muted playsinline data-start="33" data-duration="6" data-track-index="0"></video>
+      <video id="s08" class="shot clip" src="assets/shots/s08.mp4" muted playsinline data-start="39" data-duration="8" data-track-index="0"></video>
+      <video id="s09" class="shot clip" src="assets/shots/s09.mp4" muted playsinline data-start="47" data-duration="6" data-track-index="0"></video>
+      <video id="s10" class="shot clip" src="assets/shots/s10.mp4" muted playsinline data-start="53" data-duration="3" data-track-index="0"></video>
+
+      <!-- track 1: graphics (badges, cards, arrow) -->
+      <div id="g-badge1" class="badge clip" data-start="0.2" data-duration="2.7" data-track-index="1"><div><i>₹</i></div></div>
+      <div id="g-2009" class="card clip" style="top: 960px" data-start="3.3" data-duration="2.7" data-track-index="1"><b>2009</b></div>
+      <div id="g-3000" class="card sm top clip" data-start="8.8" data-duration="4.0" data-track-index="1"><b>3000+ entries</b></div>
+      <div id="g-arrow" class="arrow clip" data-start="13.8" data-duration="5.0" data-track-index="1">
+        <svg viewBox="0 0 100 100"><path d="M92 8 L38 62 L50 74 L8 92 L26 50 L38 62" fill="#e53935" stroke="#fff" stroke-width="4" stroke-linejoin="round" /></svg>
+      </div>
+      <div id="g-tag" class="tag clip" data-start="14.4" data-duration="4.4" data-track-index="1"><span>IIT Bombay · PhD student</span></div>
+      <div id="g-eq" class="card sm top clip" data-start="23.0" data-duration="3.8" data-track-index="1"><b class="deva">र + R = ₹</b></div>
+      <div id="g-top5" class="card sm top clip" data-start="27.4" data-duration="3.4" data-track-index="1"><b>TOP 5 → 1</b></div>
+      <div id="g-date" class="card sm clip" style="top: 1060px" data-start="33.1" data-duration="5.8" data-track-index="1"><b>15 July 2010</b></div>
+      <div id="g-usidin" class="card sm top clip" data-start="42.2" data-duration="2.6" data-track-index="1"><b>Usi din…</b></div>
+      <div id="g-badge2" class="badge clip" data-start="53.2" data-duration="2.8" data-track-index="1"><div><i>₹</i></div></div>
+
+      <!-- track 2: captions -->
+      <div id="cap-01" class="cap clip" data-start="0.2" data-duration="1.45" data-track-index="2"><span>Yeh <span class="deva" style="display: inline">₹</span> ka symbol… roz dekhte ho na?</span></div>
+      <div id="cap-02" class="cap clip" data-start="1.65" data-duration="1.35" data-track-index="2"><span>Par yeh banaya kisne?</span></div>
+      <div id="cap-03" class="cap clip" data-start="3.1" data-duration="1.3" data-track-index="2"><span>2009 mein sarkaar ne</span></div>
+      <div id="cap-04" class="cap clip" data-start="4.4" data-duration="1.3" data-track-index="2"><span>ek competition rakha</span></div>
+      <div id="cap-05" class="cap clip" data-start="5.7" data-duration="1.2" data-track-index="2"><span>Rupee ko bhi chahiye thi</span></div>
+      <div id="cap-06" class="cap clip" data-start="6.9" data-duration="1.1" data-track-index="2"><span>dollar jaisi pehchaan</span></div>
+      <div id="cap-07" class="cap clip" data-start="8.1" data-duration="1.2" data-track-index="2"><span>Hazaaron logon ne</span></div>
+      <div id="cap-08" class="cap clip" data-start="9.3" data-duration="1.3" data-track-index="2"><span>apne designs bheje</span></div>
+      <div id="cap-09" class="cap clip" data-start="10.6" data-duration="1.2" data-track-index="2"><span>Designers, students, artists…</span></div>
+      <div id="cap-10" class="cap clip" data-start="11.8" data-duration="1.2" data-track-index="2"><span>sab!</span></div>
+      <div id="cap-11" class="cap clip" data-start="13.1" data-duration="1.3" data-track-index="2"><span>Unmein ek tha</span></div>
+      <div id="cap-12" class="cap clip" data-start="14.4" data-duration="1.8" data-track-index="2"><span>IIT Bombay ka ek PhD student</span></div>
+      <div id="cap-13" class="cap clip" data-start="16.2" data-duration="1.0" data-track-index="2"><span>Naam?</span></div>
+      <div id="cap-14" class="cap clip" data-start="17.2" data-duration="1.8" data-track-index="2"><span>D. Udaya Kumar</span></div>
+      <div id="cap-15" class="cap clip" data-start="19.1" data-duration="1.9" data-track-index="2"><span>Unhone Hindi ka '<span class="deva" style="display: inline">र</span>'</span></div>
+      <div id="cap-16" class="cap clip" data-start="21.0" data-duration="2.0" data-track-index="2"><span>aur English ka 'R' mila diya</span></div>
+      <div id="cap-17" class="cap clip" data-start="23.0" data-duration="2.0" data-track-index="2"><span>Upar do lines — tirange jaisi</span></div>
+      <div id="cap-18" class="cap clip" data-start="25.0" data-duration="2.0" data-track-index="2"><span>aur barabari ka nishaan</span></div>
+      <div id="cap-19" class="cap clip" data-start="27.1" data-duration="1.2" data-track-index="2"><span>Hazaaron mein se</span></div>
+      <div id="cap-20" class="cap clip" data-start="28.3" data-duration="1.7" data-track-index="2"><span>sirf 5 shortlist hue</span></div>
+      <div id="cap-21" class="cap clip" data-start="30.0" data-duration="1.5" data-track-index="2"><span>Final faisla…</span></div>
+      <div id="cap-22" class="cap clip" data-start="31.5" data-duration="1.5" data-track-index="2"><span>cabinet ke haath mein tha</span></div>
+      <div id="cap-23" class="cap low clip" data-start="34.2" data-duration="2.3" data-track-index="2"><span>Cabinet ne chuna</span></div>
+      <div id="cap-24" class="cap low clip" data-start="36.5" data-duration="2.5" data-track-index="2"><span>Udaya Kumar ka design!</span></div>
+      <div id="cap-25" class="cap clip" data-start="39.1" data-duration="1.5" data-track-index="2"><span>Aur twist suno…</span></div>
+      <div id="cap-26" class="cap clip" data-start="40.6" data-duration="1.8" data-track-index="2"><span>jis din design select hua</span></div>
+      <div id="cap-27" class="cap clip" data-start="42.4" data-duration="1.4" data-track-index="2"><span>lagbhag usi din</span></div>
+      <div id="cap-28" class="cap clip" data-start="43.8" data-duration="1.6" data-track-index="2"><span>woh IIT Guwahati mein</span></div>
+      <div id="cap-29" class="cap clip" data-start="45.4" data-duration="1.6" data-track-index="2"><span>professor ban rahe the!</span></div>
+      <div id="cap-30" class="cap clip" data-start="47.1" data-duration="1.4" data-track-index="2"><span>Aaj woh symbol</span></div>
+      <div id="cap-31" class="cap clip" data-start="48.5" data-duration="2.0" data-track-index="2"><span>har keyboard, har price tag</span></div>
+      <div id="cap-32" class="cap clip" data-start="50.5" data-duration="2.5" data-track-index="2"><span>har UPI payment pe hai</span></div>
+      <div id="cap-33" class="cap clip" data-start="53.1" data-duration="1.4" data-track-index="2"><span>Agli baar <span class="deva" style="display: inline">₹</span> dekho…</span></div>
+      <div id="cap-34" class="cap clip" data-start="54.5" data-duration="1.5" data-track-index="2"><span>Udaya Kumar ko yaad karna</span></div>
+
+      <!-- audio -->
+      <audio id="music" src="audio/bed.m4a" data-start="0" data-duration="56" data-track-index="3" data-volume="0.55"></audio>
+      <audio id="sfx" src="audio/sfx.m4a" data-start="0" data-duration="56" data-track-index="4" data-volume="0.9"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const at = (el) => parseFloat(el.dataset.start);
+
+      // captions pop in
+      document.querySelectorAll(".cap").forEach((c) => {
+        tl.fromTo(c.firstElementChild, { scale: 0.86, opacity: 0, y: 14 }, { scale: 1, opacity: 1, y: 0, duration: 0.18, ease: "back.out(2.2)" }, at(c));
+      });
+
+      // red cards slam in, then hold
+      document.querySelectorAll(".card").forEach((c) => {
+        tl.fromTo(c.firstElementChild, { scale: 1.6, opacity: 0, rotation: -4 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.3, ease: "back.out(1.8)" }, at(c));
+        tl.to(c.firstElementChild, { scale: 1.04, duration: parseFloat(c.dataset.duration) - 0.6, ease: "none" }, at(c) + 0.3);
+        tl.to(c.firstElementChild, { opacity: 0, duration: 0.2 }, at(c) + parseFloat(c.dataset.duration) - 0.2);
+      });
+
+      // glowing ₹ badges
+      document.querySelectorAll(".badge").forEach((b) => {
+        const d = b.firstElementChild;
+        tl.fromTo(d, { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.45, ease: "back.out(2)" }, at(b));
+        tl.to(d, { scale: 1.08, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 3 }, at(b) + 0.5);
+        tl.to(d, { opacity: 0, scale: 0.8, duration: 0.25 }, at(b) + parseFloat(b.dataset.duration) - 0.25);
+      });
+
+      // pill tag
+      const tag = document.querySelector("#g-tag span");
+      tl.fromTo(tag, { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 14.4);
+      tl.to(tag, { opacity: 0, duration: 0.2 }, 18.6);
+
+      // arrow pops and bobs toward the hero
+      const arrow = document.querySelector("#g-arrow svg");
+      tl.fromTo(arrow, { scale: 0, opacity: 0, transformOrigin: "10% 90%" }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.5)" }, 13.8);
+      tl.to(arrow, { x: -18, y: 18, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 9 }, 14.1);
+      tl.to(arrow, { opacity: 0, duration: 0.2 }, 18.6);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
