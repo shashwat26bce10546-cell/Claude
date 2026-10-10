@@ -84,8 +84,8 @@
       }
       .arrow svg {
         position: absolute;
-        width: 190px;
-        height: 190px;
+        width: 250px;
+        height: 250px;
         overflow: visible;
         filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.55));
       }
@@ -151,13 +151,13 @@
 
       <!-- track 4: arrows (positions matched to the rendered shots) -->
       <div id="arrow-a" class="arrow clip" data-start="0.5" data-duration="2.7" data-track-index="4">
-        <svg style="left: 640px; top: 420px" viewBox="0 0 100 100"><path d="M90 10 L40 60 L54 74 L8 92 L26 46 L40 60" fill="#ffc814" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" /></svg>
+        <svg style="left: 546px; top: 694px" viewBox="0 0 100 100"><g transform="rotate(225 50 50)"><path d="M50 4 L94 48 L66 48 L66 96 L34 96 L34 48 L6 48 Z" fill="#ffc814" stroke="#111" stroke-width="5" stroke-linejoin="round" /></g></svg>
       </div>
       <div id="arrow-e" class="arrow clip" data-start="19.2" data-duration="4.5" data-track-index="4">
-        <svg style="left: 600px; top: 520px" viewBox="0 0 100 100"><path d="M90 10 L40 60 L54 74 L8 92 L26 46 L40 60" fill="#2b8cff" stroke="#0a0a0a" stroke-width="4" stroke-linejoin="round" /></svg>
+        <svg style="left: 576px; top: 554px" viewBox="0 0 100 100"><g transform="rotate(225 50 50)"><path d="M50 4 L94 48 L66 48 L66 96 L34 96 L34 48 L6 48 Z" fill="#2b8cff" stroke="#111" stroke-width="5" stroke-linejoin="round" /></g></svg>
       </div>
-      <div id="arrow-g" class="arrow clip" data-start="34.2" data-duration="1.7" data-track-index="4">
-        <svg style="left: 690px; top: 380px" viewBox="0 0 100 100"><path d="M90 10 L40 60 L54 74 L8 92 L26 46 L40 60" fill="#ffc814" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" /></svg>
+      <div id="arrow-g" class="arrow clip" data-start="35.0" data-duration="0.95" data-track-index="4">
+        <svg style="left: 676px; top: 494px" viewBox="0 0 100 100"><g transform="rotate(225 50 50)"><path d="M50 4 L94 48 L66 48 L66 96 L34 96 L34 48 L6 48 Z" fill="#ffc814" stroke="#111" stroke-width="5" stroke-linejoin="round" /></g></svg>
       </div>
 
       <!-- track 5: captions -->
@@ -215,7 +215,7 @@
       // arrows pop in, then bob toward their target
       document.querySelectorAll(".arrow").forEach((a) => {
         const s = a.firstElementChild;
-        tl.fromTo(s, { scale: 0, opacity: 0, transformOrigin: "8% 92%" }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(2.6)" }, at(a));
+        tl.fromTo(s, { scale: 0, opacity: 0, transformOrigin: "17% 83%" }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(2.6)" }, at(a));
         const n = Math.max(1, Math.floor((dur(a) - 0.6) / 0.4));
         tl.fromTo(s, { x: 0, y: 0 }, { x: -20, y: 20, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: n % 2 ? n : n - 1, immediateRender: false }, at(a) + 0.3);
         tl.to(s, { opacity: 0, duration: 0.15 }, at(a) + dur(a) - 0.15);

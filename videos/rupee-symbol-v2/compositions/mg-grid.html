@@ -63,7 +63,7 @@
         .mg-glow {
           position: absolute;
           left: 540px;
-          top: 880px;
+          top: 840px;
           width: 700px;
           height: 700px;
           margin: -350px 0 0 -350px;
@@ -84,7 +84,7 @@
           // 6 x 8 grid of entries; glyph variety is index-derived (deterministic)
           const COLS = 6, ROWS = 7, W = 136, GAP = 22;
           const x0 = 540 - (COLS * W + (COLS - 1) * GAP) / 2;
-          const y0 = 880 - (ROWS * W + (ROWS - 1) * GAP) / 2;
+          const y0 = 840 - (ROWS * W + (ROWS - 1) * GAP) / 2;
           const glyphs = ["Rs", "R", "र", "Rp", "R=", "₨", "रु", "Ɍ", "R̶", "रू"];
           const top5 = [8, 15, 20, 27, 34];
           const winner = 20;
@@ -97,7 +97,9 @@
             const col = i % COLS, row = Math.floor(i / COLS);
             c.style.left = x0 + col * (W + GAP) + "px";
             c.style.top = y0 + row * (W + GAP) + "px";
-            c.textContent = i === winner ? "₹" : glyphs[(i * 7 + row) % glyphs.length];
+            const g = document.createElement("span");
+            g.textContent = i === winner ? "₹" : glyphs[(i * 7 + row) % glyphs.length];
+            c.appendChild(g);
             if (i === winner) c.style.fontFamily = '"Noto Sans Devanagari", sans-serif';
             holder.appendChild(c);
             const dx = col - (COLS - 1) / 2, dy = row - (ROWS - 1) / 2;
@@ -114,18 +116,22 @@
               tl.to(c.el, { scale: 1.18, duration: 0.25, ease: "back.out(2)" }, 2.0);
               tl.set(c.el, { className: "mg-cell hl" }, 2.0);
             } else {
-              tl.to(c.el, { opacity: 0.12, scale: 0.85, duration: 0.3, ease: "power2.out" }, 2.0 + (i % 7) * 0.015);
+              tl.to(c.el, { opacity: 0.18, scale: 0.85, duration: 0.3, ease: "power2.out" }, 2.0 + (i % 7) * 0.015);
+              tl.to(c.el.firstChild, { opacity: 0, duration: 0.2 }, 2.0 + (i % 7) * 0.015);
             }
           });
           tl.fromTo("#mg-l5", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 2.1);
           tl.to("#mg-l5", { opacity: 0, duration: 0.2 }, 3.25);
           // 5 -> 1: losers drop, winner flies to the centre and grows
           top5.forEach((i) => {
-            if (i !== winner) tl.to(cells[i].el, { opacity: 0.08, scale: 0.8, duration: 0.25 }, 3.3);
+            if (i !== winner) {
+              tl.to(cells[i].el, { opacity: 0.12, scale: 0.8, duration: 0.25 }, 3.3);
+              tl.to(cells[i].el.firstChild, { opacity: 0, duration: 0.15 }, 3.3);
+            }
           });
           const w = cells[winner];
           const wx = 540 - (x0 + w.col * (W + GAP) + W / 2);
-          const wy = 880 - (y0 + w.row * (W + GAP) + W / 2);
+          const wy = 840 - (y0 + w.row * (W + GAP) + W / 2);
           tl.set(w.el, { zIndex: 0 }, 0);
           tl.set(w.el, { zIndex: 50 }, 3.35);
           tl.to(w.el, { x: wx, y: wy, scale: 3.1, duration: 0.6, ease: "power3.inOut" }, 3.4);
