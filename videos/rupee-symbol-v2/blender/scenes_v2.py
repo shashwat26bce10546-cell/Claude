@@ -410,7 +410,7 @@ def build_I(sc, coll):
          shoulderL=(-10, 0, 25), elbowL=(-30, 0, 0))
     pose(J, n, shoulderR=(-38, 0, -12), elbowR=(-120, 0, 0), head=(18, 0, -30), spine=(-8, 0, 0),
          shoulderL=(-12, 0, 28), elbowL=(-32, 0, 0))
-    lb = label3d(coll, "sameday", "SAME DAY?!", 0.2, (0.05, 1.2, 2.2), rot=(90, 0, -6), color=YELLOW, emit=2.4)
+    lb = label3d(coll, "sameday", "SAME DAY?!", 0.2, (-0.2, 1.2, 2.2), rot=(90, 0, -2), color=YELLOW, emit=2.4)
     pop(lb, 128)
     sun = light(coll, "sun", "SUN", (0, 0, 10), 4.0, (1, 0.62, 0.32))
     sun.rotation_euler = (R(76), R(0), R(-150))
