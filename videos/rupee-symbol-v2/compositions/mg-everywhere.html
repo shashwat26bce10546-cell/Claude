@@ -1,0 +1,181 @@
+<!doctype html>
+<!-- Scene J (5s): "₹ everywhere" — four tilted UI cards snap in one after another
+     (split-tilt-cards entrance + idle float), then pull back as a glowing ₹ lands centre. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype");
+          font-weight: 800;
+        }
+        @font-face {
+          font-family: "Noto Sans Devanagari";
+          src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+          font-weight: 700;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: linear-gradient(160deg, #10172b 0%, #05070d 100%);
+          font-family: "Inter", "Noto Sans Devanagari", sans-serif;
+          perspective: 1600px;
+          color: #fff;
+        }
+        .ev-card {
+          position: absolute;
+          width: 440px;
+          height: 440px;
+          border-radius: 34px;
+          box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .ev-r {
+          font-family: "Noto Sans Devanagari", sans-serif;
+          font-weight: 700;
+        }
+        #ev-kbd {
+          left: 70px;
+          top: 260px;
+          background: #1f2330;
+        }
+        .ev-keys {
+          display: grid;
+          grid-template-columns: repeat(3, 110px);
+          gap: 16px;
+        }
+        .ev-keys div {
+          height: 110px;
+          border-radius: 18px;
+          background: #3a3f4f;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 800;
+          font-size: 46px;
+        }
+        .ev-keys .hot {
+          background: #ff9a1f;
+          font-size: 64px;
+        }
+        #ev-tag {
+          left: 570px;
+          top: 260px;
+          background: #ffd23f;
+          color: #1a1a1a;
+        }
+        #ev-tag b {
+          font-size: 140px;
+          line-height: 1;
+        }
+        #ev-tag span {
+          font-weight: 800;
+          font-size: 40px;
+          letter-spacing: 0.1em;
+          margin-top: 14px;
+        }
+        #ev-upi {
+          left: 70px;
+          top: 780px;
+          background: #f5f7fa;
+          color: #14181f;
+        }
+        .ev-tick {
+          width: 130px;
+          height: 130px;
+          border-radius: 50%;
+          background: #1aa05a;
+          color: #fff;
+          font-size: 84px;
+          font-weight: 800;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 20px;
+        }
+        #ev-upi b {
+          font-size: 104px;
+          line-height: 1;
+        }
+        #ev-upi span {
+          font-weight: 800;
+          font-size: 34px;
+          color: #59606c;
+          margin-top: 10px;
+        }
+        #ev-fuel {
+          left: 570px;
+          top: 780px;
+          background: #12161f;
+          border: 6px solid #e53935;
+        }
+        #ev-fuel span {
+          font-weight: 800;
+          font-size: 46px;
+          letter-spacing: 0.12em;
+          color: #fff;
+        }
+        #ev-fuel b {
+          font-size: 92px;
+          color: #ffc23a;
+          line-height: 1.1;
+        }
+        .ev-big {
+          position: absolute;
+          left: 540px;
+          top: 760px;
+          width: 420px;
+          height: 420px;
+          margin: -210px 0 0 -210px;
+          border-radius: 50%;
+          background: radial-gradient(circle, #ffb14a 0%, #ff8a00 60%, #c75a00 100%);
+          box-shadow: 0 0 120px rgba(255, 154, 31, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 290px;
+          color: #fff;
+          line-height: 1;
+          padding-top: 40px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="mg-everywhere" data-width="1080" data-height="1920">
+        <div class="ev-card" id="ev-kbd"><div class="ev-keys"><div>3</div><div class="hot ev-r">₹</div><div>5</div><div>E</div><div>R</div><div>T</div></div></div>
+        <div class="ev-card" id="ev-tag"><b class="ev-r">₹499</b><span>SALE • KURTA</span></div>
+        <div class="ev-card" id="ev-upi"><div class="ev-tick">✓</div><b class="ev-r">₹1,250</b><span>Paid to Chai Corner</span></div>
+        <div class="ev-card" id="ev-fuel"><span>PETROL</span><b class="ev-r">₹102.50</b></div>
+        <div class="ev-big ev-r" id="ev-big">₹</div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          const cards = [["#ev-kbd", -600, -8], ["#ev-tag", 600, 7], ["#ev-upi", -600, 6], ["#ev-fuel", 600, -7]];
+          cards.forEach(([id, fromX, r], i) => {
+            const t = 0.05 + i * 0.45;
+            tl.fromTo(id, { x: fromX, rotationY: fromX > 0 ? -60 : 60, rotation: 0, opacity: 0 },
+              { x: 0, rotationY: 0, rotation: r, opacity: 1, duration: 0.42, ease: "back.out(1.6)" }, t);
+            tl.fromTo(id, { y: 0 }, { y: i % 2 ? 14 : -14, duration: 1.2, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, t + 0.45);
+          });
+          // pull back, big ₹ lands
+          cards.forEach(([id], i) => {
+            tl.to(id, { scale: 0.78, opacity: 0.45, duration: 0.4, ease: "power2.inOut" }, 3.2);
+          });
+          tl.fromTo("#ev-big", { scale: 0, rotation: -180 }, { scale: 1, rotation: 0, duration: 0.55, ease: "back.out(1.8)" }, 3.3);
+          tl.fromTo("#ev-big", { y: 0 }, { y: -12, duration: 0.5, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, 3.9);
+          window.__timelines["mg-everywhere"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

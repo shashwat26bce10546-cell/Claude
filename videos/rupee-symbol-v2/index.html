@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="hi-Latn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>₹ Symbol Kisne Banaya? (v2)</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype");
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "Noto Sans Devanagari";
+        src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+        font-weight: 700;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        background: #000;
+        overflow: hidden;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Inter", "Noto Sans Devanagari", sans-serif;
+      }
+      .shot {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+      }
+      .counter {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        width: 1080px;
+        height: 300px;
+      }
+      .dateslam {
+        position: absolute;
+        left: 0;
+        top: 160px;
+        width: 1080px;
+        height: 380px;
+      }
+      /* tricolour whoosh hiding a cut */
+      .flagwipe {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      .flagwipe div {
+        position: absolute;
+        left: -400px;
+        top: -400px;
+        width: 1900px;
+        height: 2700px;
+        display: flex;
+        flex-direction: column;
+        filter: blur(18px);
+      }
+      .flagwipe i {
+        flex: 1;
+      }
+      /* chunky reference-style arrows */
+      .arrow {
+        position: absolute;
+        inset: 0;
+      }
+      .arrow svg {
+        position: absolute;
+        width: 190px;
+        height: 190px;
+        overflow: visible;
+        filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.55));
+      }
+      /* captions */
+      .cap {
+        position: absolute;
+        left: 50px;
+        right: 50px;
+        top: 1420px;
+        display: flex;
+        justify-content: center;
+      }
+      .cap span {
+        display: block;
+        max-width: 940px;
+        text-align: center;
+        color: #fff;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 1.12;
+        background: rgba(8, 8, 12, 0.66);
+        padding: 10px 28px 14px;
+        border-radius: 22px;
+        text-shadow: 0 3px 0 #000;
+      }
+      .cap span em {
+        font-style: normal;
+        color: #ffc814;
+      }
+      .deva {
+        font-family: "Noto Sans Devanagari", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="56" data-width="1080" data-height="1920">
+      <!-- track 0: Blender 3D shots -->
+      <video id="shot-a" class="shot clip" src="assets/shots/a.mp4" muted playsinline data-start="0" data-duration="3.5" data-track-index="0"></video>
+      <video id="shot-c" class="shot clip" src="assets/shots/c.mp4" muted playsinline data-start="8" data-duration="5" data-track-index="0"></video>
+      <video id="shot-e" class="shot clip" src="assets/shots/e.mp4" muted playsinline data-start="18" data-duration="6" data-track-index="0"></video>
+      <video id="shot-f" class="shot clip" src="assets/shots/f.mp4" muted playsinline data-start="24" data-duration="7" data-track-index="0"></video>
+      <video id="shot-g" class="shot clip" src="assets/shots/g.mp4" muted playsinline data-start="31" data-duration="5" data-track-index="0"></video>
+      <video id="shot-i" class="shot clip" src="assets/shots/i.mp4" muted playsinline data-start="40" data-duration="7" data-track-index="0"></video>
+
+      <!-- track 1: motion-graphics scenes -->
+      <div id="mg-currencies" class="scene clip" data-composition-id="mg-currencies" data-composition-src="compositions/mg-currencies.html" data-start="3.5" data-duration="4.5" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="mg-grid" class="scene clip" data-composition-id="mg-grid" data-composition-src="compositions/mg-grid.html" data-start="13" data-duration="5" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="mg-approved" class="scene clip" data-composition-id="mg-approved" data-composition-src="compositions/mg-approved.html" data-start="36" data-duration="4" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="mg-everywhere" class="scene clip" data-composition-id="mg-everywhere" data-composition-src="compositions/mg-everywhere.html" data-start="47" data-duration="5" data-track-index="1" data-width="1080" data-height="1920"></div>
+      <div id="mg-endcard" class="scene clip" data-composition-id="mg-endcard" data-composition-src="compositions/mg-endcard.html" data-start="52" data-duration="4" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <!-- track 2: registry components layered on scenes -->
+      <div id="count-up" class="counter clip" data-composition-id="count-up" data-composition-src="compositions/components/count-up.html" data-start="13.1" data-duration="2.4" data-track-index="2" data-width="1080" data-height="300"
+        data-variable-values='{"start":0,"end":3000,"prefix":"","suffix":"+ entries","accent":"saffron","glow":true,"exit":"up"}'></div>
+      <div id="headline-slam" class="dateslam clip" data-composition-id="headline-slam" data-composition-src="compositions/components/headline-slam.html" data-start="36" data-duration="4" data-track-index="2" data-width="1080" data-height="380"
+        data-variable-values='{"text":"15 JULY 2010","accent_word_index":2,"accent":"red","shadow":true}'></div>
+
+      <!-- track 3: tricolour whooshes over cuts -->
+      <div id="wipe-1" class="flagwipe clip" data-start="3.2" data-duration="0.6" data-track-index="3"><div><i style="background: #ff9a1f"></i><i style="background: #fff"></i><i style="background: #138808"></i></div></div>
+      <div id="wipe-2" class="flagwipe clip" data-start="12.7" data-duration="0.6" data-track-index="3"><div><i style="background: #ff9a1f"></i><i style="background: #fff"></i><i style="background: #138808"></i></div></div>
+      <div id="wipe-3" class="flagwipe clip" data-start="35.7" data-duration="0.6" data-track-index="3"><div><i style="background: #ff9a1f"></i><i style="background: #fff"></i><i style="background: #138808"></i></div></div>
+      <div id="wipe-4" class="flagwipe clip" data-start="46.7" data-duration="0.6" data-track-index="3"><div><i style="background: #ff9a1f"></i><i style="background: #fff"></i><i style="background: #138808"></i></div></div>
+
+      <!-- track 4: arrows (positions matched to the rendered shots) -->
+      <div id="arrow-a" class="arrow clip" data-start="0.5" data-duration="2.7" data-track-index="4">
+        <svg style="left: 640px; top: 420px" viewBox="0 0 100 100"><path d="M90 10 L40 60 L54 74 L8 92 L26 46 L40 60" fill="#ffc814" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" /></svg>
+      </div>
+      <div id="arrow-e" class="arrow clip" data-start="19.2" data-duration="4.5" data-track-index="4">
+        <svg style="left: 600px; top: 520px" viewBox="0 0 100 100"><path d="M90 10 L40 60 L54 74 L8 92 L26 46 L40 60" fill="#2b8cff" stroke="#0a0a0a" stroke-width="4" stroke-linejoin="round" /></svg>
+      </div>
+      <div id="arrow-g" class="arrow clip" data-start="34.2" data-duration="1.7" data-track-index="4">
+        <svg style="left: 690px; top: 380px" viewBox="0 0 100 100"><path d="M90 10 L40 60 L54 74 L8 92 L26 46 L40 60" fill="#ffc814" stroke="#1a1a1a" stroke-width="4" stroke-linejoin="round" /></svg>
+      </div>
+
+      <!-- track 5: captions -->
+      <div id="cap-01" class="cap clip" data-start="0.2" data-duration="1.6" data-track-index="5"><span>Yeh <span class="deva" style="display: inline; background: none; padding: 0">₹</span> symbol…</span></div>
+      <div id="cap-02" class="cap clip" data-start="1.8" data-duration="1.6" data-track-index="5"><span>kisne <em>banaya?</em></span></div>
+      <div id="cap-03" class="cap clip" data-start="3.7" data-duration="1.7" data-track-index="5"><span>2009 tak dollar, euro, pound…</span></div>
+      <div id="cap-04" class="cap clip" data-start="5.4" data-duration="1.3" data-track-index="5"><span>sabka apna symbol tha</span></div>
+      <div id="cap-05" class="cap clip" data-start="6.7" data-duration="1.3" data-track-index="5"><span>India ke paas? <em>Kuch nahi!</em></span></div>
+      <div id="cap-06" class="cap clip" data-start="8.1" data-duration="1.5" data-track-index="5"><span>Sarkaar ne competition rakha</span></div>
+      <div id="cap-07" class="cap clip" data-start="9.6" data-duration="1.6" data-track-index="5"><span>poore desh se designs aaye</span></div>
+      <div id="cap-08" class="cap clip" data-start="11.2" data-duration="1.6" data-track-index="5"><span>designers, students, artists…</span></div>
+      <div id="cap-09" class="cap clip" data-start="13.6" data-duration="1.7" data-track-index="5"><span><em>3000</em> se zyada entries!</span></div>
+      <div id="cap-10" class="cap clip" data-start="15.3" data-duration="1.5" data-track-index="5"><span>sirf 5 shortlist hue…</span></div>
+      <div id="cap-11" class="cap clip" data-start="16.8" data-duration="1.2" data-track-index="5"><span>aur jeeta sirf <em>ek</em></span></div>
+      <div id="cap-12" class="cap clip" data-start="18.1" data-duration="1.4" data-track-index="5"><span>Jeetne wala tha</span></div>
+      <div id="cap-13" class="cap clip" data-start="19.5" data-duration="2.0" data-track-index="5"><span>IIT Bombay ka PhD student</span></div>
+      <div id="cap-14" class="cap clip" data-start="21.5" data-duration="2.5" data-track-index="5"><span><em>D. Udaya Kumar</em></span></div>
+      <div id="cap-15" class="cap clip" data-start="24.2" data-duration="1.8" data-track-index="5"><span>Hindi ka '<span class="deva" style="display: inline; background: none; padding: 0">र</span>'…</span></div>
+      <div id="cap-16" class="cap clip" data-start="26.0" data-duration="1.8" data-track-index="5"><span>+ English ka 'R'</span></div>
+      <div id="cap-17" class="cap clip" data-start="27.8" data-duration="1.6" data-track-index="5"><span>upar do lines: <em>tiranga</em></span></div>
+      <div id="cap-18" class="cap clip" data-start="29.4" data-duration="1.6" data-track-index="5"><span>aur barabari ka nishaan</span></div>
+      <div id="cap-19" class="cap clip" data-start="31.1" data-duration="1.9" data-track-index="5"><span>Committee ne 5 designs dekhe…</span></div>
+      <div id="cap-20" class="cap clip" data-start="33.0" data-duration="1.6" data-track-index="5"><span>ek-ek karke sab bahar…</span></div>
+      <div id="cap-21" class="cap clip" data-start="34.6" data-duration="1.4" data-track-index="5"><span>bacha sirf <em>ek!</em></span></div>
+      <div id="cap-22" class="cap clip" data-start="37.0" data-duration="3.0" data-track-index="5"><span>Cabinet ne kiya <em>approve!</em></span></div>
+      <div id="cap-23" class="cap clip" data-start="40.1" data-duration="1.5" data-track-index="5"><span>Aur twist suno…</span></div>
+      <div id="cap-24" class="cap clip" data-start="41.6" data-duration="2.0" data-track-index="5"><span>usi waqt woh IIT Guwahati mein</span></div>
+      <div id="cap-25" class="cap clip" data-start="43.6" data-duration="1.8" data-track-index="5"><span>professor ban rahe the!</span></div>
+      <div id="cap-26" class="cap clip" data-start="45.4" data-duration="1.6" data-track-index="5"><span>lagbhag <em>usi din!</em></span></div>
+      <div id="cap-27" class="cap clip" data-start="47.3" data-duration="2.2" data-track-index="5"><span>Aaj yeh <span class="deva" style="display: inline; background: none; padding: 0">₹</span> har jagah hai</span></div>
+      <div id="cap-28" class="cap clip" data-start="49.5" data-duration="2.5" data-track-index="5"><span>keyboard, price tag, UPI…</span></div>
+      <div id="cap-29" class="cap clip" data-start="52.2" data-duration="1.8" data-track-index="5"><span>Agli baar <span class="deva" style="display: inline; background: none; padding: 0">₹</span> dekho…</span></div>
+      <div id="cap-30" class="cap clip" data-start="54.0" data-duration="2.0" data-track-index="5"><span>Udaya Kumar ko <em>yaad karna!</em></span></div>
+
+      <!-- audio -->
+      <audio id="music" src="audio/bed.m4a" data-start="0" data-duration="56" data-track-index="6" data-volume="0.55"></audio>
+      <audio id="sfx" src="audio/sfx.m4a" data-start="0" data-duration="56" data-track-index="7" data-volume="0.9"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      const at = (el) => parseFloat(el.dataset.start);
+      const dur = (el) => parseFloat(el.dataset.duration);
+
+      // captions pop
+      document.querySelectorAll(".cap").forEach((c) => {
+        tl.fromTo(c.firstElementChild, { scale: 0.8, opacity: 0, y: 18 }, { scale: 1, opacity: 1, y: 0, duration: 0.18, ease: "back.out(2.4)" }, at(c));
+      });
+
+      // tricolour whoosh: bands fly diagonally across the cut with motion blur
+      document.querySelectorAll(".flagwipe").forEach((w) => {
+        const band = w.firstElementChild;
+        tl.fromTo(band, { x: -2200, rotation: -18 }, { x: 2200, rotation: -18, duration: dur(w), ease: "power2.inOut" }, at(w));
+      });
+
+      // arrows pop in, then bob toward their target
+      document.querySelectorAll(".arrow").forEach((a) => {
+        const s = a.firstElementChild;
+        tl.fromTo(s, { scale: 0, opacity: 0, transformOrigin: "8% 92%" }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(2.6)" }, at(a));
+        const n = Math.max(1, Math.floor((dur(a) - 0.6) / 0.4));
+        tl.fromTo(s, { x: 0, y: 0 }, { x: -20, y: 20, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: n % 2 ? n : n - 1, immediateRender: false }, at(a) + 0.3);
+        tl.to(s, { opacity: 0, duration: 0.15 }, at(a) + dur(a) - 0.15);
+      });
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

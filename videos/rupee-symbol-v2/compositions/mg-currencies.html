@@ -1,0 +1,174 @@
+<!doctype html>
+<!-- Scene B (4.5s): blurred tricolour, "2009" slam, $ € £ ¥ cards burst from centre
+     (center-outward-expansion), then India's "₹ ?" card glitches in (chromatic-glitch). -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Inter";
+          src: url("assets/fonts/Inter-ExtraBold.otf") format("opentype");
+          font-weight: 800;
+        }
+        @font-face {
+          font-family: "Noto Sans Devanagari";
+          src: url("assets/fonts/NotoSansDevanagari-Bold.ttf") format("truetype");
+          font-weight: 700;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          background: #0b0f1a;
+          font-family: "Inter", "Noto Sans Devanagari", sans-serif;
+          color: #fff;
+        }
+        .mc-flag {
+          position: absolute;
+          inset: -200px;
+          display: flex;
+          flex-direction: column;
+          filter: blur(60px);
+          opacity: 0.55;
+        }
+        .mc-flag div {
+          flex: 1;
+        }
+        .mc-vignette {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle at 50% 45%, rgba(11, 15, 26, 0.2) 0%, rgba(11, 15, 26, 0.85) 75%);
+        }
+        .mc-year {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 190px;
+          text-align: center;
+          font-weight: 800;
+          font-size: 230px;
+          letter-spacing: -0.04em;
+          color: #fff;
+          -webkit-text-stroke: 8px #e53935;
+          paint-order: stroke fill;
+          text-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+        }
+        .mc-card {
+          position: absolute;
+          left: 540px;
+          top: 860px;
+          width: 330px;
+          height: 330px;
+          margin: -165px 0 0 -165px;
+          border-radius: 36px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 4px solid rgba(255, 255, 255, 0.35);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        }
+        .mc-card b {
+          font-size: 170px;
+          line-height: 1;
+          font-weight: 800;
+        }
+        .mc-card span {
+          margin-top: 12px;
+          font-size: 40px;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          color: rgba(255, 255, 255, 0.75);
+        }
+        .mc-india {
+          position: absolute;
+          left: 540px;
+          top: 860px;
+          width: 470px;
+          height: 470px;
+          margin: -235px 0 0 -235px;
+          border-radius: 48px;
+          background: linear-gradient(180deg, #ff9a1f 0%, #ffffff 50%, #138808 100%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 0 80px rgba(255, 154, 31, 0.5);
+        }
+        .mc-india b {
+          font-size: 290px;
+          line-height: 1;
+          font-weight: 800;
+          color: #0b0f1a;
+        }
+        .mc-india span {
+          font-size: 54px;
+          font-weight: 800;
+          letter-spacing: 0.16em;
+          color: #0b0f1a;
+        }
+        .mc-ghost {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 290px;
+          font-weight: 800;
+          line-height: 1;
+          padding-bottom: 54px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="mg-currencies" data-width="1080" data-height="1920">
+        <div class="mc-flag"><div style="background: #ff9a1f"></div><div style="background: #ffffff"></div><div style="background: #138808"></div></div>
+        <div class="mc-vignette"></div>
+        <div class="mc-year" id="mc-year">2009</div>
+        <div class="mc-card" id="mc-usd"><b>$</b><span>USA</span></div>
+        <div class="mc-card" id="mc-eur"><b>€</b><span>EUROPE</span></div>
+        <div class="mc-card" id="mc-gbp"><b>£</b><span>UK</span></div>
+        <div class="mc-card" id="mc-jpy"><b>¥</b><span>JAPAN</span></div>
+        <div class="mc-india" id="mc-india">
+          <div class="mc-ghost" id="mc-ghost-r" style="color: rgba(229, 57, 53, 0.8)">?</div>
+          <div class="mc-ghost" id="mc-ghost-b" style="color: rgba(43, 140, 255, 0.8)">?</div>
+          <b id="mc-q">?</b><span>INDIA</span>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const tl = gsap.timeline({ paused: true });
+          // drifting flag
+          tl.fromTo("#root .mc-flag", { y: -60, rotation: -4 }, { y: 60, rotation: 4, duration: 4.5, ease: "sine.inOut" }, 0);
+          // 2009 slam
+          tl.fromTo("#mc-year", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "expo.out" }, 0.05);
+          tl.fromTo("#mc-year", { x: 0 }, { x: 10, duration: 0.04, yoyo: true, repeat: 3, ease: "none" }, 0.4);
+          // cards burst from the centre into a 2x2 grid
+          const spots = [["#mc-usd", -190, -190, -8], ["#mc-eur", 190, -190, 6], ["#mc-gbp", -190, 190, 5], ["#mc-jpy", 190, 190, -6]];
+          spots.forEach(([id, x, y, r], i) => {
+            tl.fromTo(id, { x: 0, y: 0, scale: 0, rotation: 0 }, { x, y, scale: 1, rotation: r, duration: 0.5, ease: "back.out(1.7)" }, 0.55 + i * 0.1);
+          });
+          // cards dim and shrink back as India's card arrives
+          spots.forEach(([id, x, y], i) => {
+            tl.to(id, { x: x * 1.55, y: y * 1.55, scale: 0.7, opacity: 0.35, duration: 0.45, ease: "power3.inOut" }, 2.1);
+          });
+          tl.fromTo("#mc-india", { scale: 0, rotation: -12 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(2)" }, 2.3);
+          // chromatic glitch on the question mark (deterministic offsets)
+          const jit = [[14, -6], [-10, 8], [8, 4], [-12, -4], [6, -8], [0, 0]];
+          jit.forEach(([dx, dy], k) => {
+            const t = 2.85 + k * 0.06;
+            tl.set("#mc-ghost-r", { x: dx, y: dy, opacity: k < 5 ? 1 : 0 }, t);
+            tl.set("#mc-ghost-b", { x: -dx, y: -dy, opacity: k < 5 ? 1 : 0 }, t);
+          });
+          tl.set(["#mc-ghost-r", "#mc-ghost-b"], { opacity: 0 }, 0);
+          tl.fromTo("#mc-india", { scale: 1 }, { scale: 1.06, duration: 0.4, yoyo: true, repeat: 2, ease: "sine.inOut", immediateRender: false }, 3.3);
+          window.__timelines["mg-currencies"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
