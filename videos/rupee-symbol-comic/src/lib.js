@@ -1,0 +1,185 @@
+// Comic toolkit shared by every frame (inlined into each frame's IIFE by tools/build.py).
+// Characters are hand-built vector rigs: each lives in its own <svg viewBox="0 0 400 900"> so GSAP
+// svgOrigin coordinates below are exact. Joint pivots:
+//   head (200,300) · shoulders L(138,345) R(262,345) · elbows L(131,478) R(269,478) · hips L(173,590) R(227,590)
+const INK = "#1C1410";
+const RED = "#D8000F";
+const PAPER = "#F5F2EF";
+const YELLOW = "#FFD23F";
+const SAFFRON = "#FF9933";
+const GREEN = "#138808";
+
+// mirror an absolute-coordinate path (M/L/C/Q/S/T only) across x = 200
+function mir(d) {
+  let i = 0;
+  return d.replace(/-?\d+(\.\d+)?/g, (n) => (i++ % 2 === 0 ? String(400 - parseFloat(n)) : n));
+}
+
+function shape(d, fill, opts = {}) {
+  const sw = opts.sw == null ? 7 : opts.sw;
+  const stroke = opts.noStroke ? "none" : INK;
+  return `<path d="${d}" fill="${fill}" stroke="${stroke}" stroke-width="${sw}" stroke-linejoin="round" stroke-linecap="round"${opts.extra || ""}/>`;
+}
+
+function shade(d, fill) {
+  return `<path d="${d}" fill="${fill}" stroke="none"/>`;
+}
+
+const PEOPLE = {
+  udaya: {
+    skin: "#B9774E", skinShade: "#8C5232", hair: "#1E1612", shirt: "#2F6F99", shirtShade: "#22536F",
+    check: "rgba(255,255,255,0.22)", pants: "#C9A66B", pantsShade: "#A5854F", shoes: "#3A2618",
+    glasses: true, mustache: true, style: "young",
+  },
+  official: {
+    skin: "#A86A43", skinShade: "#7E4A2C", hair: "#D9D4CC", shirt: "#F3EFE6", shirtShade: "#D6CFC0",
+    check: null, pants: "#F3EFE6", pantsShade: "#D6CFC0", shoes: "#3A2618", jacket: "#7A3E1D", jacketShade: "#5C2D14",
+    glasses: true, mustache: true, style: "grey", kurta: true,
+  },
+};
+
+// Returns an <svg> string for a rigged character. p = id prefix (unique per instance).
+function person(p, who, o = {}) {
+  const c = PEOPLE[who];
+  const parts = [];
+  parts.push(`<defs><pattern id="${p}-chk" width="26" height="26" patternUnits="userSpaceOnUse">
+      <rect width="26" height="26" fill="none"/><path d="M0 0 V26 M13 0 V26 M0 0 H26 M0 13 H26" stroke="${c.check || "transparent"}" stroke-width="4"/></pattern></defs>`);
+  // legs
+  const legL = "M150 585 L197 585 L193 838 L157 838 Z";
+  const shoeL = "M146 836 L200 836 L202 858 Q202 872 186 872 L150 872 Q138 872 140 858 Z";
+  const leg = (side, d, s) =>
+    `<g id="${p}-leg${side}">${shape(d, c.pants)}${shade(side === "L" ? "M180 590 L197 585 L193 838 L178 838 Z" : mir("M180 590 L197 585 L193 838 L178 838 Z"), c.pantsShade)}${shape(d, "none")}${shape(s, c.shoes)}</g>`;
+  if (!o.seated) {
+    parts.push(leg("L", legL, shoeL));
+    parts.push(leg("R", mir(legL), mir(shoeL)));
+  }
+  // torso
+  const torsoEnd = c.kurta ? 720 : 600;
+  const torso = `M140 338 Q200 320 260 338 L276 470 L266 ${torsoEnd} L134 ${torsoEnd} L124 470 Z`;
+  parts.push(`<g id="${p}-torso">`);
+  parts.push(shape(torso, c.shirt));
+  if (c.check) parts.push(`<path d="${torso}" fill="url(#${p}-chk)" stroke="none"/>`);
+  parts.push(shade(`M214 332 Q244 330 260 338 L276 470 L266 ${torsoEnd} L222 ${torsoEnd} Q236 470 214 332 Z`, c.shirtShade));
+  if (c.jacket) {
+    const jk = `M146 342 Q170 332 186 334 L200 420 L196 ${torsoEnd - 90} L136 ${torsoEnd - 90} L128 470 Z`;
+    parts.push(shape(jk, c.jacket) + shape(mir(jk), c.jacket));
+    parts.push(shade(mir(`M146 342 Q160 336 170 335 L180 420 L170 ${torsoEnd - 90} L136 ${torsoEnd - 90} L128 470 Z`), c.jacketShade));
+    parts.push(`<circle cx="210" cy="440" r="5" fill="${INK}"/><circle cx="210" cy="480" r="5" fill="${INK}"/><circle cx="210" cy="520" r="5" fill="${INK}"/>`);
+  } else {
+    parts.push(shape("M170 334 L200 380 L186 336 Z", PAPER, { sw: 5 }) + shape(mir("M170 334 L200 380 L186 336 Z"), PAPER, { sw: 5 }));
+    for (const y of [404, 444, 484, 524]) parts.push(`<circle cx="200" cy="${y}" r="5" fill="${PAPER}" stroke="${INK}" stroke-width="3"/>`);
+    parts.push(`<rect x="134" y="584" width="132" height="18" fill="${INK}"/><rect x="190" y="586" width="20" height="14" fill="#C9A227"/>`);
+  }
+  parts.push(shape(torso, "none"));
+  parts.push(`</g>`);
+  // neck
+  parts.push(shape("M182 288 L218 288 L220 342 L180 342 Z", c.skin) + shade("M204 290 L218 288 L220 342 L206 342 Z", c.skinShade));
+  // head
+  const face = "M200 92 C262 92 280 140 278 200 C276 262 244 300 200 304 C156 300 124 262 122 200 C120 140 138 92 200 92 Z";
+  parts.push(`<g id="${p}-head">`);
+  parts.push(shape("M114 214 C106 186 136 180 138 214 C140 246 118 244 114 214 Z", c.skin) + shape(mir("M114 214 C106 186 136 180 138 214 C140 246 118 244 114 214 Z"), c.skin));
+  parts.push(shape(face, c.skin));
+  parts.push(shade("M238 112 C268 132 280 172 276 212 C272 258 246 292 206 302 C236 270 252 230 248 180 C246 150 242 128 238 112 Z", c.skinShade));
+  parts.push(shape(face, "none"));
+  if (c.style === "young") {
+    parts.push(shape("M116 196 C104 112 158 60 214 64 C266 68 296 106 286 182 C278 154 262 132 238 124 C208 116 166 120 140 142 C126 156 120 174 116 196 Z", c.hair));
+    parts.push(shape("M146 104 C168 58 236 52 270 88 C240 78 204 82 180 106 Z", c.hair, { sw: 5 }));
+    parts.push(`<path d="M196 76 C220 70 244 76 258 90" stroke="#5A4A40" stroke-width="5" fill="none" stroke-linecap="round"/>`);
+  } else {
+    parts.push(shape("M118 186 C110 136 140 96 176 94 C150 112 138 140 136 176 Z", c.hair, { sw: 5 }) + shape(mir("M118 186 C110 136 140 96 176 94 C150 112 138 140 136 176 Z"), c.hair, { sw: 5 }));
+    parts.push(`<path d="M150 104 C176 90 224 90 250 104" stroke="${INK}" stroke-width="4" fill="none" opacity="0.5"/>`);
+  }
+  parts.push(`<g id="${p}-brows"><path d="M148 166 Q168 154 188 164" stroke="${INK}" stroke-width="10" fill="none" stroke-linecap="round"/><path d="${mir("M148 166 Q168 154 188 164")}" stroke="${INK}" stroke-width="10" fill="none" stroke-linecap="round"/></g>`);
+  parts.push(`<g id="${p}-eyes">`);
+  for (const cx of [172, 228]) {
+    parts.push(`<ellipse cx="${cx}" cy="198" rx="16" ry="12" fill="#FFFFFF" stroke="${INK}" stroke-width="4"/><circle cx="${cx + 2}" cy="199" r="7.5" fill="${INK}"/><circle cx="${cx + 5}" cy="196" r="2.4" fill="#FFFFFF"/>`);
+  }
+  parts.push(`</g>`);
+  if (c.glasses) {
+    parts.push(`<g fill="rgba(255,255,255,0.10)" stroke="${INK}" stroke-width="5"><rect x="144" y="180" width="54" height="38" rx="9"/><rect x="202" y="180" width="54" height="38" rx="9"/></g><path d="M198 196 L202 196 M144 192 L124 186 M256 192 L276 186" stroke="${INK}" stroke-width="5"/>`);
+  }
+  parts.push(`<path d="M200 206 Q192 232 206 238" stroke="${INK}" stroke-width="5" fill="none" stroke-linecap="round"/>`);
+  if (c.mustache) parts.push(shape("M176 254 Q200 242 224 254 Q212 264 200 259 Q188 264 176 254 Z", c.style === "grey" ? "#CFC8BD" : c.hair, { sw: 4 }));
+  parts.push(`<g id="${p}-mSmile"><path d="M180 270 Q200 288 220 270" stroke="${INK}" stroke-width="6" fill="none" stroke-linecap="round"/></g>`);
+  parts.push(`<g id="${p}-mOpen" opacity="0">${shape("M178 266 Q200 300 222 266 Z", "#6B1F1A", { sw: 5 })}<path d="M186 284 Q200 296 214 284" fill="#E0605A"/></g>`);
+  parts.push(`<g id="${p}-mShock" opacity="0">${`<ellipse cx="200" cy="278" rx="12" ry="16" fill="#6B1F1A" stroke="${INK}" stroke-width="5"/>`}</g>`);
+  parts.push(`</g>`);
+  // arms: armX (pivot shoulder) > foreX (pivot elbow) > handX
+  const upper = "M118 340 Q138 328 158 342 L150 482 L112 482 Z";
+  const fore = c.kurta ? "M112 476 L150 476 L146 592 L118 592 Z" : "M114 476 L148 476 L144 590 L118 590 Z";
+  const hand = "M110 586 C104 628 154 632 150 588 Z";
+  const thumb = "M146 594 C162 592 164 606 150 612";
+  const sleeveFill = c.jacket ? c.shirt : c.shirt;
+  const arm = (side, m) => {
+    const t = (d) => (m ? mir(d) : d);
+    return `<g id="${p}-arm${side}">${shape(t(upper), sleeveFill)}${c.check ? `<path d="${t(upper)}" fill="url(#${p}-chk)" stroke="none"/>` : ""}${shape(t(upper), "none")}
+      <g id="${p}-fore${side}">${shape(t(fore), c.kurta ? sleeveFill : c.skin)}${shape(t("M112 474 L152 474 L152 492 L112 492 Z"), c.shirt, { sw: 5 })}
+        <g id="${p}-hand${side}">${shape(t(hand), c.skin)}<path d="${t(thumb)}" fill="${c.skin}" stroke="${INK}" stroke-width="5" stroke-linecap="round"/>${o["prop" + side] || ""}</g>
+      </g></g>`;
+  };
+  parts.push(arm("L", false));
+  parts.push(arm("R", true));
+  if (o.overlay) parts.push(o.overlay);
+  return `<svg id="${p}" class="cmc-person" viewBox="0 0 400 900" overflow="visible">${parts.join("")}</svg>`;
+}
+
+// pivots for gsap svgOrigin
+const PIV = {
+  head: "200 300", armL: "138 345", armR: "262 345", foreL: "131 478", foreR: "269 478",
+  handL: "131 590", handR: "269 590", legL: "173 590", legR: "227 590", eyes: "200 198", brows: "200 162", torso: "200 600",
+};
+
+// Pose helper: tl, prefix, time, {joint: rotationDeg}, duration, ease
+function pose(tl, p, t, joints, dur = 0.35, ease = "back.out(1.6)") {
+  for (const [j, r] of Object.entries(joints)) {
+    tl.to(`#${p}-${j}`, { rotation: r, svgOrigin: PIV[j], duration: dur, ease }, t);
+  }
+}
+function setPose(tl, p, joints) {
+  for (const [j, r] of Object.entries(joints)) tl.set(`#${p}-${j}`, { rotation: r, svgOrigin: PIV[j] }, 0);
+}
+function blink(tl, p, times) {
+  for (const t of times) {
+    tl.to(`#${p}-eyes`, { scaleY: 0.08, svgOrigin: PIV.eyes, duration: 0.06, ease: "none" }, t);
+    tl.to(`#${p}-eyes`, { scaleY: 1, svgOrigin: PIV.eyes, duration: 0.08, ease: "none" }, t + 0.09);
+  }
+}
+function mouth(tl, p, t, which) {
+  for (const m of ["mSmile", "mOpen", "mShock"]) tl.set(`#${p}-${m}`, { opacity: m === which ? 1 : 0 }, t);
+}
+
+// radial action lines (comic "speed burst"), as an <svg> string sized by CSS
+function burst(id, color = INK, n = 36, inner = 0.32, opacity = 1) {
+  let d = "";
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2, w = (Math.PI * 2) / n * (0.28 + (i % 3) * 0.12);
+    const r0 = 500 * (inner + (i % 4) * 0.035), r1 = 760;
+    const p = (r, ang) => `${(500 + Math.cos(ang) * r).toFixed(1)} ${(500 + Math.sin(ang) * r).toFixed(1)}`;
+    d += `M${p(r0, a)} L${p(r1, a - w / 2)} L${p(r1, a + w / 2)} Z `;
+  }
+  return `<svg id="${id}" viewBox="0 0 1000 1000" overflow="visible"><path d="${d}" fill="${color}" opacity="${opacity}"/></svg>`;
+}
+
+// spiky starburst behind a sound-effect word
+function star(id, fill = YELLOW, spikes = 14, r0 = 300, r1 = 480) {
+  let d = "";
+  for (let i = 0; i < spikes * 2; i++) {
+    const a = (i / (spikes * 2)) * Math.PI * 2 - Math.PI / 2;
+    const r = i % 2 ? r0 * (0.92 + (i % 3) * 0.05) : r1 * (0.9 + (i % 5) * 0.04);
+    d += `${i ? "L" : "M"}${(500 + Math.cos(a) * r).toFixed(1)} ${(500 + Math.sin(a) * r).toFixed(1)} `;
+  }
+  return `<svg id="${id}" viewBox="0 0 1000 1000" overflow="visible"><path d="${d}Z" fill="${fill}" stroke="${INK}" stroke-width="16" stroke-linejoin="round"/></svg>`;
+}
+
+// screen shake on a wrapper (three frames, deterministic)
+function shake(tl, sel, t, amp = 14) {
+  tl.to(sel, { x: amp, y: -amp * 0.6, duration: 0.033, ease: "none" }, t);
+  tl.to(sel, { x: -amp * 0.7, y: amp * 0.5, duration: 0.033, ease: "none" }, t + 0.033);
+  tl.to(sel, { x: amp * 0.4, y: -amp * 0.2, duration: 0.033, ease: "none" }, t + 0.066);
+  tl.to(sel, { x: 0, y: 0, duration: 0.05, ease: "none" }, t + 0.1);
+}
+
+// pop-in entrance with overshoot
+function popIn(tl, sel, t, from = {}, dur = 0.38) {
+  tl.fromTo(sel, Object.assign({ scale: 0, rotation: -12, opacity: 0 }, from), { scale: 1, rotation: 0, opacity: 1, duration: dur, ease: "back.out(2.2)" }, t);
+}

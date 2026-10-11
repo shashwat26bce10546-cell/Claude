@@ -1,0 +1,84 @@
+<style>
+#ID-bg { background: #241A15; }
+#ID-wall { position: absolute; left: 0; right: 0; top: 0; height: 1100px; background: #33251E; }
+#ID-window { position: absolute; left: 70px; top: 300px; width: 330px; height: 430px; background: #16253F; border: 10px solid #1C1410; box-shadow: 10px 10px 0 #120c09; overflow: hidden; }
+#ID-window::after { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 10px; margin-left: -5px; background: #1C1410; }
+#ID-moon { position: absolute; left: 170px; top: 60px; width: 110px; height: 110px; border-radius: 50%; background: #F5F2EF; box-shadow: inset -26px -10px 0 #D6CFC0; }
+#ID-stars { position: absolute; inset: 0; background: radial-gradient(circle, #F5F2EF 2.5px, transparent 3px) 20px 30px / 90px 80px; opacity: 0.6; }
+#ID-cone { position: absolute; left: 330px; top: 760px; width: 700px; height: 500px; overflow: visible; }
+#ID-lamp { position: absolute; left: 760px; top: 600px; width: 300px; height: 420px; overflow: visible; }
+#ID-guy { position: absolute; left: 240px; top: 300px; width: 600px; height: 1350px; }
+#ID-desk { position: absolute; left: -40px; right: -40px; top: 1010px; height: 620px; background: #7A4A2A; border-top: 12px solid #1C1410; }
+#ID-desk::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 40px; background: #94603A; border-bottom: 8px solid #1C1410; }
+#ID-paper { position: absolute; left: 380px; top: 1000px; width: 300px; height: 60px; background: #FFFFFF; border: 6px solid #1C1410; transform-origin: 50% 50%; }
+.ID-ball { position: absolute; left: 480px; top: 960px; width: 90px; height: 90px; overflow: visible; }
+#ID-cap1 { left: 60px; top: 100px; }
+#ID-cap2 { left: 150px; top: 205px; background: #FFFFFF; }
+#ID-name { position: absolute; left: 60px; right: 60px; top: 1300px; padding: 26px 20px 34px; background: #D8000F; border: 10px solid #1C1410; box-shadow: 14px 14px 0 #1C1410; text-align: center; color: #FFFFFF; font-size: 116px; }
+#ID-meet { position: absolute; left: 90px; top: 1250px; padding: 6px 22px; background: #FFD23F; border: 6px solid #1C1410; font-size: 40px; }
+</style>
+<markup>
+<div id="ID-bg" class="cmc-bg clip" data-start="0" data-duration="{DUR}" data-track-index="0"><div id="ID-wall"></div><div class="cmc-halftone-light" style="opacity: 0.35"></div></div>
+<div id="ID-world" class="cmc-world">
+  <div id="ID-window"><div id="ID-stars"></div><div id="ID-moon"></div></div>
+  <svg id="ID-cone" viewBox="0 0 700 500"><path d="M520 0 L700 500 L0 500 L430 0 Z" fill="#FFD23F" opacity="0.28"/></svg>
+  <div id="ID-guywrap"></div>
+  <div id="ID-desk"></div>
+  <div id="ID-paper"></div>
+  <svg id="ID-lamp" viewBox="0 0 300 420">
+    <path d="M150 400 L250 400 L240 380 L160 380 Z" fill="#1C1410"/>
+    <path d="M200 382 L120 200 L210 90" fill="none" stroke="#1C1410" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M150 40 L280 90 L230 170 L110 120 Z" fill="#D8000F" stroke="#1C1410" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="170" cy="150" rx="40" ry="16" fill="#FFF6C8" transform="rotate(22 170 150)"/>
+  </svg>
+  <div id="ID-balls"></div>
+  <div id="ID-cap1" class="cmc-cap">IIT Bombay</div>
+  <div id="ID-cap2" class="cmc-cap">A young PhD student</div>
+  <div id="ID-meet" class="cmc-label">Meet</div>
+  <div id="ID-name" class="cmc-shrik cmc-stack-shadow">D. Udaya Kumar</div>
+</div>
+</markup>
+<script>
+const pencil = `<g><path d="M262 616 L332 540 L346 552 L276 628 Z" fill="#FFD23F" stroke="#1C1410" stroke-width="6" stroke-linejoin="round"/><path d="M262 616 L276 628 L254 640 Z" fill="#1C1410"/></g>`;
+document.getElementById("ID-guywrap").innerHTML = `<div id="ID-guy">${person("ID-u", "udaya", { seated: true, propR: pencil })}</div>`;
+// writing pose: both forearms across the desk
+setPose(tl, "ID-u", { armR: 12, foreR: 74, armL: -8, foreL: -62, head: 12 });
+// crumpled paper balls (rejected sketches) thrown off the desk
+const balls = document.getElementById("ID-balls");
+const throws = [[0.55, -1], [1.7, 1], [2.75, -1]];
+throws.forEach(([t, dir], i) => {
+  const b = document.createElement("div");
+  b.className = "ID-ball";
+  b.id = "ID-ball" + i;
+  b.innerHTML = `<svg viewBox="0 0 90 90" width="90" height="90"><path d="M45 4 L70 14 L86 40 L78 70 L52 86 L20 80 L4 54 L10 22 Z" fill="#FFFFFF" stroke="#1C1410" stroke-width="6" stroke-linejoin="round"/><path d="M24 30 L46 44 L66 28 M30 62 L48 46 L62 64" stroke="#1C1410" stroke-width="4" fill="none"/></svg>`;
+  balls.appendChild(b);
+  tl.fromTo(b, { x: 0, y: 0, rotation: 0, scale: 0.5, opacity: 0 }, { opacity: 1, scale: 1, duration: 0.05 }, t);
+  tl.to(b, { x: dir * 380, duration: 0.7, ease: "none" }, t);
+  tl.to(b, { y: -520, duration: 0.35, ease: "power2.out" }, t);
+  tl.to(b, { y: -120, duration: 0.35, ease: "power2.in" }, t + 0.35);
+  tl.to(b, { rotation: dir * 540, duration: 0.7, ease: "none" }, t);
+  tl.to(b, { opacity: 0, duration: 0.1 }, t + 0.62);
+});
+tl.fromTo("#ID-world", { scale: 1.08, y: 60 }, { scale: 1, y: 0, duration: DUR, ease: "power1.out" }, 0);
+tl.fromTo("#ID-cone", { opacity: 0.6 }, { opacity: 1, duration: 0.15, yoyo: true, repeat: 3, ease: "none" }, 0.1);
+// scribble scribble
+for (let k = 0; k < 14; k++) {
+  const t = 0.1 + k * 0.24;
+  tl.to("#ID-u-foreR", { rotation: 74 + (k % 2 ? 7 : -5), svgOrigin: PIV.foreR, duration: 0.12, ease: "sine.inOut" }, t);
+}
+pose(tl, "ID-u", 0.5, { foreL: -60 }, 0.2);
+blink(tl, "ID-u", [1.1, 2.9, 4.9]);
+// paper sheets swap as he discards drafts
+throws.forEach(([t]) => tl.fromTo("#ID-paper", { scaleX: 0.6, rotation: -4 }, { scaleX: 1, rotation: 2, duration: 0.2, ease: "back.out(2)", immediateRender: false }, t + 0.1));
+// caption boxes on "PhD student" and "IIT Bombay"
+tl.fromTo("#ID-cap1", { x: -700, rotation: -3 }, { x: 0, rotation: -3, duration: 0.4, ease: "back.out(1.6)" }, 1.33);
+tl.fromTo("#ID-cap2", { x: 1100, rotation: 2 }, { x: 0, rotation: 2, duration: 0.4, ease: "back.out(1.6)" }, 2.56);
+// he looks up at us and grins as his name lands
+pose(tl, "ID-u", 3.6, { head: -4, foreR: 40, armR: -6 }, 0.35);
+mouth(tl, "ID-u", 3.7, "mOpen");
+tl.to("#ID-u-brows", { y: -10, duration: 0.2, ease: "back.out(2)" }, 3.7);
+popIn(tl, "#ID-meet", 3.76, { rotation: -10 }, 0.3);
+tl.fromTo("#ID-name", { y: 900, rotation: 4 }, { y: 0, rotation: -2, duration: 0.45, ease: "back.out(1.5)" }, 3.85);
+tl.fromTo("#ID-name", { scale: 1 }, { scale: 1.07, duration: 0.14, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, 4.54);
+shake(tl, "#ID-world", 4.56, 10);
+</script>

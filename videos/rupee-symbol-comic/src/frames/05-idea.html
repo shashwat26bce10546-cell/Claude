@@ -1,0 +1,83 @@
+<style>
+#ID-bg { background: #FBF8F1; }
+#ID-lines { position: absolute; inset: 0; background: repeating-linear-gradient(to bottom, transparent 0 78px, rgba(47, 111, 153, 0.25) 78px 81px); }
+#ID-margin { position: absolute; top: 0; bottom: 0; left: 120px; width: 5px; background: rgba(216, 0, 15, 0.45); }
+#ID-rings { position: absolute; left: 0; right: 0; top: 18px; height: 70px; background: radial-gradient(circle at 50% 50%, #FBF8F1 0 13px, #1C1410 14px 20px, transparent 21px) 0 0 / 90px 70px repeat-x; }
+#ID-tag { left: 170px; top: 130px; }
+#ID-draw { position: absolute; left: 0; top: 0; width: 1080px; height: 1600px; overflow: visible; }
+#ID-rupee { position: absolute; left: 240px; top: 330px; width: 600px; height: 760px; overflow: visible; }
+#ID-tri { position: absolute; left: 40px; top: 300px; padding: 14px 22px; background: #FFFFFF; border: 7px solid #1C1410; box-shadow: 10px 10px 0 #1C1410; font-size: 40px; }
+#ID-tri i { display: inline-block; width: 26px; height: 54px; margin-left: 12px; vertical-align: middle; border: 4px solid #1C1410; background: linear-gradient(#FF9933 0 33%, #FFFFFF 33% 66%, #138808 66%); }
+#ID-arrow { position: absolute; left: 300px; top: 330px; width: 160px; height: 160px; overflow: visible; }
+#ID-eq { position: absolute; left: 340px; top: 1180px; width: 400px; height: 220px; overflow: visible; }
+#ID-eqword { position: absolute; left: 0; right: 0; top: 1410px; text-align: center; font-size: 110px; color: #D8000F; }
+#ID-plus { position: absolute; left: 480px; top: 560px; width: 120px; text-align: center; font-size: 170px; color: #D8000F; }
+#ID-pencil { position: absolute; left: 0; top: 0; width: 120px; height: 360px; overflow: visible; }
+</style>
+<markup>
+<div id="ID-bg" class="cmc-bg clip" data-start="0" data-duration="{DUR}" data-track-index="0"><div id="ID-lines"></div><div id="ID-margin"></div><div id="ID-rings"></div></div>
+<div id="ID-world" class="cmc-world">
+  <div id="ID-tag" class="cmc-cap">The design</div>
+  <svg id="ID-draw" viewBox="0 0 1080 1600">
+    <text id="ID-ra" x="300" y="800" text-anchor="middle" font-family="Noto Sans Devanagari" font-weight="700" font-size="420" fill="#1C1410" fill-opacity="0" stroke="#1C1410" stroke-width="6" stroke-dasharray="2600" stroke-dashoffset="2600">र</text>
+    <text id="ID-r" x="790" y="790" text-anchor="middle" font-family="Libre Baskerville" font-weight="700" font-size="400" fill="#1C1410" fill-opacity="0" stroke="#1C1410" stroke-width="6" stroke-dasharray="2600" stroke-dashoffset="2600">R</text>
+  </svg>
+  <div id="ID-plus" class="cmc-shrik">+</div>
+  <svg id="ID-rupee" viewBox="0 0 600 760">
+    <path id="ID-bowl" d="M100 72 C480 72 480 330 110 330" fill="none" stroke="#1C1410" stroke-width="74" stroke-linecap="butt"/>
+    <path id="ID-leg" d="M140 300 L470 720" fill="none" stroke="#1C1410" stroke-width="80" stroke-linecap="butt"/>
+    <rect id="ID-bar1" x="60" y="40" width="480" height="66" fill="#1C1410"/>
+    <rect id="ID-bar2" x="60" y="172" width="480" height="66" fill="#1C1410"/>
+  </svg>
+  <svg id="ID-arrow" viewBox="0 0 160 160"><path d="M10 20 Q90 10 120 90" fill="none" stroke="#1C1410" stroke-width="10" stroke-linecap="round"/><path d="M96 84 L124 112 L138 72 Z" fill="#1C1410"/></svg>
+  <div id="ID-tri" class="cmc-label">Tricolour<i></i></div>
+  <svg id="ID-eq" viewBox="0 0 400 220"><rect id="ID-eq1" x="20" y="30" width="360" height="60" fill="#FF9933" stroke="#1C1410" stroke-width="8"/><rect id="ID-eq2" x="20" y="130" width="360" height="60" fill="#138808" stroke="#1C1410" stroke-width="8"/></svg>
+  <div id="ID-eqword" class="cmc-shrik cmc-stack-shadow">Equality</div>
+  <svg id="ID-pencil" viewBox="0 0 120 360"><path d="M30 20 L90 20 L90 280 L60 340 L30 280 Z" fill="#FFD23F" stroke="#1C1410" stroke-width="8" stroke-linejoin="round"/><path d="M30 280 L90 280 L60 340 Z" fill="#E9C9A0" stroke="#1C1410" stroke-width="8" stroke-linejoin="round"/><path d="M52 324 L68 324 L60 340 Z" fill="#1C1410"/><rect x="30" y="0" width="60" height="30" fill="#E0605A" stroke="#1C1410" stroke-width="8"/></svg>
+</div>
+</markup>
+<script>
+// measure the ₹ strokes once at setup for the draw-on reveal
+const bowl = document.getElementById("ID-bowl"), leg = document.getElementById("ID-leg");
+const Lb = bowl.getTotalLength ? bowl.getTotalLength() : 900, Ll = leg.getTotalLength ? leg.getTotalLength() : 540;
+tl.set(bowl, { strokeDasharray: Lb, strokeDashoffset: Lb }, 0);
+tl.set(leg, { strokeDasharray: Ll, strokeDashoffset: Ll }, 0);
+tl.set(["#ID-bar1", "#ID-bar2"], { scaleX: 0, transformOrigin: "0% 50%" }, 0);
+tl.fromTo("#ID-world", { scale: 1.06 }, { scale: 1, duration: DUR, ease: "power1.out" }, 0);
+popIn(tl, "#ID-tag", 0.1, { rotation: -8 }, 0.35);
+tl.to("#ID-tag", { rotation: -3, duration: 0.2 }, 0.45);
+// pencil draws र ("Devanagari letter Ra")
+tl.fromTo("#ID-pencil", { x: 140, y: 380, rotation: 25, opacity: 0 }, { x: 160, y: 380, opacity: 1, duration: 0.2 }, 0.6);
+tl.to("#ID-ra", { strokeDashoffset: 0, duration: 1.2, ease: "power1.inOut" }, 0.75);
+tl.to("#ID-pencil", { x: 380, y: 330, duration: 0.4, ease: "sine.inOut" }, 0.8);
+tl.to("#ID-pencil", { x: 220, y: 470, duration: 0.4, ease: "sine.inOut" }, 1.2);
+tl.to("#ID-pencil", { x: 330, y: 560, duration: 0.4, ease: "sine.inOut" }, 1.6);
+tl.to("#ID-ra", { fillOpacity: 1, duration: 0.25 }, 1.87);
+popIn(tl, "#ID-plus", 2.2, { rotation: 45 }, 0.3);
+// pencil draws R ("the Roman R")
+tl.to("#ID-pencil", { x: 700, y: 330, duration: 0.3, ease: "power2.inOut" }, 2.3);
+tl.to("#ID-r", { strokeDashoffset: 0, duration: 0.9, ease: "power1.inOut" }, 2.5);
+tl.to("#ID-pencil", { x: 860, y: 420, duration: 0.45, ease: "sine.inOut" }, 2.6);
+tl.to("#ID-pencil", { x: 760, y: 560, duration: 0.4, ease: "sine.inOut" }, 3.05);
+tl.to("#ID-r", { fillOpacity: 1, duration: 0.25 }, 3.4);
+tl.to("#ID-pencil", { x: 1100, y: 200, rotation: 45, opacity: 0, duration: 0.35, ease: "power2.in" }, 3.5);
+// fuse: both letters slide into the middle and dissolve into ₹ ("and added")
+tl.to("#ID-ra", { x: 230, opacity: 0, duration: 0.45, ease: "power3.in" }, 3.56);
+tl.to("#ID-r", { x: -240, opacity: 0, duration: 0.45, ease: "power3.in" }, 3.56);
+tl.to("#ID-plus", { scale: 0, rotation: 90, duration: 0.25 }, 3.56);
+tl.to(bowl, { strokeDashoffset: 0, duration: 0.4, ease: "power2.out" }, 3.85);
+tl.to(leg, { strokeDashoffset: 0, duration: 0.3, ease: "power2.out" }, 4.1);
+// "two lines on top"
+tl.to("#ID-bar1", { scaleX: 1, duration: 0.25, ease: "back.out(1.6)" }, 4.08);
+tl.to("#ID-bar2", { scaleX: 1, duration: 0.25, ease: "back.out(1.6)" }, 4.32);
+tl.fromTo("#ID-rupee", { scale: 1 }, { scale: 1.06, transformOrigin: "50% 50%", duration: 0.12, yoyo: true, repeat: 1, immediateRender: false }, 4.6);
+// "a nod to the tricolour": the bars take saffron and green, white gap between
+tl.to("#ID-bar1", { fill: SAFFRON, duration: 0.25 }, 5.9);
+tl.to("#ID-bar2", { fill: GREEN, duration: 0.25 }, 6.05);
+popIn(tl, "#ID-tri", 6.14, { rotation: -12 }, 0.35);
+tl.fromTo("#ID-arrow", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 6.3);
+// "an equals sign for equality": the bars lift out as a big "="
+tl.fromTo("#ID-eq", { y: -900, scale: 0.6, opacity: 0 }, { y: 0, scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.6)" }, 7.15);
+shake(tl, "#ID-world", 7.6, 10);
+tl.fromTo("#ID-eqword", { scale: 0, rotation: -12 }, { scale: 1, rotation: -5, duration: 0.35, ease: "back.out(2.2)" }, 7.95);
+</script>

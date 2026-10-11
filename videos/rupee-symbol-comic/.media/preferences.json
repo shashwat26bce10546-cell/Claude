@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "preferences": {
+    "voice": {
+      "value": "af_heart",
+      "confirmed_in": [
+        "rupee-symbol-comic"
+      ],
+      "updated_at": "2026-10-10T12:35:04.608Z"
+    },
+    "style_preset.faceless-explainer": {
+      "value": "bold-poster",
+      "confirmed_in": [
+        "rupee-symbol-comic"
+      ],
+      "updated_at": "2026-10-10T12:35:04.656Z"
+    }
+  },
+  "sightings": {}
+}

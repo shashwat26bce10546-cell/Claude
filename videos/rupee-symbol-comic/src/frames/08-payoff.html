@@ -1,0 +1,69 @@
+<style>
+#ID-bg { background: #D8000F; }
+#ID-burst { position: absolute; left: -300px; top: -100px; width: 1700px; height: 1700px; }
+.ID-p { width: 450px; height: 360px; }
+#ID-p1 { left: 60px; top: 150px; background: #FFF6D8; }
+#ID-p2 { left: 570px; top: 170px; background: #FFFFFF; }
+#ID-p3 { left: 60px; top: 570px; background: #FFFFFF; }
+#ID-p4 { left: 570px; top: 550px; background: #EFE7F6; }
+#ID-tag { position: absolute; left: 70px; top: 80px; width: 300px; height: 190px; background: #FFD23F; border: 8px solid #1C1410; clip-path: polygon(16% 0, 100% 0, 100% 100%, 16% 100%, 0 50%); }
+#ID-tagtx { position: absolute; left: 110px; top: 115px; font-size: 104px; color: #1C1410; }
+#ID-keys { position: absolute; left: 35px; top: 60px; display: grid; grid-template-columns: repeat(3, 110px); gap: 16px; }
+#ID-keys div { height: 100px; background: #3A3F4F; border: 6px solid #1C1410; border-radius: 16px; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+#ID-keys .hot { background: #FF9933; font-size: 70px; color: #1C1410; }
+#ID-ph { position: absolute; left: 140px; top: 30px; width: 170px; height: 300px; background: #1C1410; border-radius: 26px; }
+#ID-phs { position: absolute; left: 12px; top: 24px; right: 12px; bottom: 24px; background: #F5F2EF; border-radius: 10px; text-align: center; }
+#ID-tick { margin: 30px auto 10px; width: 80px; height: 80px; border-radius: 50%; background: #138808; border: 5px solid #1C1410; display: flex; align-items: center; justify-content: center; }
+#ID-phs span { font-size: 44px; }
+#ID-note { position: absolute; left: 40px; top: 90px; width: 370px; height: 180px; background: #C9B6E4; border: 8px solid #1C1410; }
+#ID-note::before { content: ""; position: absolute; left: 30px; top: 30px; width: 104px; height: 104px; border-radius: 50%; border: 6px solid #6E5A93; }
+#ID-notetx { position: absolute; right: 26px; top: 40px; font-size: 92px; color: #3E2D63; }
+#ID-portrait { left: 90px; top: 800px; width: 900px; height: 780px; background: #FFF6D8; }
+#ID-pburst { position: absolute; left: -200px; top: -260px; width: 1300px; height: 1300px; }
+#ID-guy { position: absolute; left: 210px; top: 60px; width: 480px; height: 1080px; }
+#ID-remember { position: absolute; left: 130px; top: 760px; padding: 10px 26px; background: #FFD23F; border: 7px solid #1C1410; box-shadow: 8px 8px 0 #1C1410; font-size: 40px; }
+#ID-name { position: absolute; left: 0; right: 0; top: 1380px; text-align: center; font-size: 150px; color: #FFFFFF; }
+</style>
+<markup>
+<div id="ID-bg" class="cmc-bg clip" data-start="0" data-duration="{DUR}" data-track-index="0"><div class="cmc-halftone-light"></div></div>
+<div id="ID-world" class="cmc-world">
+  <div id="ID-burstwrap"></div>
+  <div id="ID-p1" class="cmc-panel ID-p"><div id="ID-tag"></div><div id="ID-tagtx" class="cmc-shrik">₹499</div></div>
+  <div id="ID-p2" class="cmc-panel ID-p"><div id="ID-keys"><div>3</div><div class="hot cmc-shrik">₹</div><div>5</div><div>E</div><div>R</div><div>T</div></div></div>
+  <div id="ID-p3" class="cmc-panel ID-p"><div id="ID-ph"><div id="ID-phs"><div id="ID-tick"><svg viewBox="0 0 80 80" width="70" height="70"><path d="M18 42 L34 56 L62 24" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="cmc-shrik">₹50</span></div></div></div>
+  <div id="ID-p4" class="cmc-panel ID-p"><div id="ID-note"><div id="ID-notetx" class="cmc-shrik">₹100</div></div></div>
+  <div id="ID-portrait" class="cmc-panel"><div id="ID-pburstwrap"></div><div id="ID-guywrap"></div></div>
+  <div id="ID-remember" class="cmc-label">Remember the name</div>
+  <div id="ID-name" class="cmc-shrik cmc-ink-outline cmc-stack-shadow">Udaya Kumar</div>
+</div>
+</markup>
+<script>
+document.getElementById("ID-burstwrap").outerHTML = burst("ID-burst", "#A8000B", 40, 0.15);
+document.getElementById("ID-pburstwrap").outerHTML = burst("ID-pburst", "#FFD23F", 30, 0.25);
+document.getElementById("ID-guywrap").innerHTML = `<div id="ID-guy">${person("ID-u", "udaya")}</div>`;
+tl.fromTo("#ID-world", { scale: 1 }, { scale: 1.04, duration: DUR, ease: "none" }, 0);
+tl.fromTo("#ID-burst", { rotation: 0 }, { rotation: 18, duration: DUR, ease: "none" }, 0);
+// "price tag, keyboard, payment app ... in India"
+[["#ID-p1", 1.85, -14], ["#ID-p2", 2.7, 12], ["#ID-p3", 3.35, -10], ["#ID-p4", 4.1, 10]].forEach(([s, t, r]) => {
+  popIn(tl, s, t, { rotation: r }, 0.35);
+  tl.to(s, { rotation: r / 5, duration: 0.25, ease: "power2.out" }, t + 0.35);
+});
+tl.fromTo("#ID-keys .hot", { y: 0 }, { y: 10, duration: 0.08, yoyo: true, repeat: 1, immediateRender: false }, 3.0);
+tl.fromTo("#ID-tick", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(3)" }, 3.55);
+// "So next time you see it": the panels shrink into a strip, the portrait rises
+const strip = [["#ID-p1", 165, 300], ["#ID-p2", 415, 300], ["#ID-p3", 665, 300], ["#ID-p4", 915, 300]];
+const orig = { "#ID-p1": [285, 330], "#ID-p2": [795, 350], "#ID-p3": [285, 750], "#ID-p4": [795, 730] };
+strip.forEach(([s, x, y], i) => {
+  tl.to(s, { x: x - orig[s][0], y: y - orig[s][1], scale: 0.48, rotation: i % 2 ? 3 : -3, duration: 0.5, ease: "power3.inOut" }, 4.95);
+});
+tl.fromTo("#ID-portrait", { y: 1200, opacity: 0, rotation: 4 }, { y: 0, opacity: 1, rotation: -1.5, duration: 0.55, ease: "back.out(1.3)" }, 5.05);
+tl.fromTo("#ID-pburst", { rotation: 0 }, { rotation: 30, duration: 2.8, ease: "none" }, 5.05);
+mouth(tl, "ID-u", 5.3, "mOpen");
+pose(tl, "ID-u", 5.6, { armR: -150, foreR: -25 }, 0.35);
+for (let k = 0; k < 4; k++) tl.to("#ID-u-foreR", { rotation: k % 2 ? -50 : -10, svgOrigin: PIV.foreR, duration: 0.2, ease: "sine.inOut" }, 5.95 + k * 0.2);
+// "remember Udaya Kumar"
+tl.fromTo("#ID-remember", { x: -1000, rotation: -4 }, { x: 0, rotation: -4, duration: 0.35, ease: "back.out(1.7)" }, 6.4);
+tl.fromTo("#ID-name", { scale: 0, rotation: -14 }, { scale: 1, rotation: -5, duration: 0.4, ease: "back.out(2)" }, 6.9);
+shake(tl, "#ID-world", 7.2, 12);
+blink(tl, "ID-u", [7.45]);
+</script>

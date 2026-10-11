@@ -1,0 +1,67 @@
+<style>
+#ID-bg { background: #F5F2EF; }
+#ID-title { position: absolute; left: 60px; top: 90px; font-size: 130px; color: #1C1410; }
+#ID-title span { color: #D8000F; }
+.ID-cur { width: 450px; height: 330px; }
+.ID-cur .ID-glyph { position: absolute; left: 0; right: 0; top: 46px; text-align: center; font-size: 180px; color: #1C1410; }
+.ID-cur .ID-name { position: absolute; left: 0; right: 0; bottom: 18px; text-align: center; font-size: 36px; color: #D8000F; }
+#ID-p1 { left: 60px; top: 330px; }
+#ID-p2 { left: 570px; top: 350px; }
+#ID-p3 { left: 60px; top: 710px; }
+#ID-p4 { left: 570px; top: 690px; }
+#ID-big { left: 60px; top: 1080px; width: 960px; height: 500px; background: #FFFFFF; }
+#ID-coin { position: absolute; left: 70px; top: 60px; width: 380px; height: 380px; border-radius: 50%; background: #E9C46A; border: 10px solid #1C1410; box-shadow: inset -26px -20px 0 #C9A227; }
+#ID-coinq { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 240px; color: #1C1410; padding-top: 30px; }
+#ID-coinrs { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: "Libre Baskerville", serif; font-weight: 700; font-size: 130px; color: #1C1410; opacity: 0; }
+#ID-india { position: absolute; left: 500px; top: 70px; font-size: 96px; color: #1C1410; }
+#ID-plain { position: absolute; left: 500px; top: 210px; width: 420px; font-size: 40px; line-height: 1.25; color: #D8000F; }
+#ID-cloud { position: absolute; left: 140px; top: -20px; width: 260px; height: 140px; overflow: visible; }
+#ID-sweat { position: absolute; left: 400px; top: 90px; width: 50px; height: 80px; overflow: visible; }
+#ID-stamp { position: absolute; left: 500px; top: 300px; padding: 6px 24px; border: 8px solid #D8000F; color: #D8000F; font-size: 58px; background: rgba(255, 255, 255, 0.9); }
+</style>
+<markup>
+<div id="ID-bg" class="cmc-bg clip" data-start="0" data-duration="{DUR}" data-track-index="0"><div class="cmc-halftone"></div></div>
+<div id="ID-world" class="cmc-world">
+  <div id="ID-title" class="cmc-shrik">Before <span>2010</span></div>
+  <div id="ID-p1" class="cmc-panel ID-cur"><div class="ID-glyph cmc-shrik">$</div><div class="ID-name cmc-label">Dollar</div></div>
+  <div id="ID-p2" class="cmc-panel ID-cur"><div class="ID-glyph cmc-shrik">£</div><div class="ID-name cmc-label">Pound</div></div>
+  <div id="ID-p3" class="cmc-panel ID-cur"><div class="ID-glyph cmc-shrik">€</div><div class="ID-name cmc-label">Euro</div></div>
+  <div id="ID-p4" class="cmc-panel ID-cur"><div class="ID-glyph cmc-shrik">¥</div><div class="ID-name cmc-label">Yen</div></div>
+  <div id="ID-big" class="cmc-panel">
+    <svg id="ID-cloud" viewBox="0 0 260 140"><path d="M40 120 C0 120 0 70 40 66 C40 20 100 10 120 44 C140 0 220 10 214 60 C260 60 260 120 220 120 Z" fill="#9AA3AD" stroke="#1C1410" stroke-width="8"/><path d="M70 130 L60 160 M130 130 L120 166 M190 130 L180 160" stroke="#2F6F99" stroke-width="8" stroke-linecap="round"/></svg>
+    <div id="ID-coin"><div id="ID-coinq" class="cmc-shrik">?</div><div id="ID-coinrs">Rs.</div></div>
+    <svg id="ID-sweat" viewBox="0 0 50 80"><path d="M25 0 C35 30 50 45 50 58 C50 72 38 80 25 80 C12 80 0 72 0 58 C0 45 15 30 25 0 Z" fill="#7FC8F8" stroke="#1C1410" stroke-width="6"/></svg>
+    <div id="ID-india" class="cmc-shrik">India</div>
+    <div id="ID-plain" class="cmc-label">no symbol of its own</div>
+    <div id="ID-stamp" class="cmc-shrik" data-layout-allow-overlap>just Rs.</div>
+  </div>
+</div>
+</markup>
+<script>
+tl.fromTo("#ID-world", { scale: 1.04 }, { scale: 1, duration: DUR, ease: "none" }, 0);
+// "Until 2010"
+tl.fromTo("#ID-title", { x: -700, rotation: -4 }, { x: 0, rotation: -4, duration: 0.45, ease: "back.out(1.6)" }, 0.0);
+// India's panel first: a blank coin with a question mark (rupee had no symbol)
+tl.fromTo("#ID-big", { y: 700, rotation: 3 }, { y: 0, rotation: -1, duration: 0.5, ease: "back.out(1.4)" }, 1.3);
+popIn(tl, "#ID-coin", 1.55, { rotation: -90 });
+popIn(tl, "#ID-india", 1.9, { rotation: 8 });
+tl.fromTo("#ID-plain", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3 }, 2.66);
+tl.fromTo("#ID-coinq", { rotation: 0 }, { rotation: 14, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, 2.7);
+// the confident currencies slam in on their names
+popIn(tl, "#ID-p1", 4.07, { rotation: -14 });
+tl.to("#ID-p1", { rotation: -3, duration: 0.2 }, 4.45);
+popIn(tl, "#ID-p2", 5.41, { rotation: 14 });
+tl.to("#ID-p2", { rotation: 2, duration: 0.2 }, 5.79);
+popIn(tl, "#ID-p3", 5.98, { rotation: -10 }, 0.3);
+tl.to("#ID-p3", { rotation: 2, duration: 0.2 }, 6.28);
+popIn(tl, "#ID-p4", 6.12, { rotation: 10 }, 0.3);
+tl.to("#ID-p4", { rotation: -2, duration: 0.2 }, 6.42);
+// "India just wrote R-S": the coin turns into plain text, gloom
+tl.to("#ID-coinq", { opacity: 0, scale: 0.4, duration: 0.15 }, 6.9);
+tl.fromTo("#ID-coinrs", { opacity: 0, scale: 1.6 }, { opacity: 1, scale: 1, duration: 0.25, ease: "back.out(2)" }, 7.0);
+tl.fromTo("#ID-cloud", { y: -200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.4)" }, 7.1);
+tl.fromTo("#ID-sweat", { y: -40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power2.out" }, 7.3);
+tl.to("#ID-plain", { opacity: 0, duration: 0.15 }, 7.4);
+tl.fromTo("#ID-stamp", { scale: 3, rotation: -25, opacity: 0 }, { scale: 1, rotation: -8, opacity: 1, duration: 0.22, ease: "power4.in" }, 7.76);
+shake(tl, "#ID-big", 7.98, 10);
+</script>
