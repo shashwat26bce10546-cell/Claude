@@ -1,0 +1,8 @@
+{
+  "1": {"method":"gold","roi":[150,500,620,1150],"mode":"light","inset":0.12,"gold_lo":[18,140,160],"gold_hi":[28,200,255],"close":9,"min_area":300},
+  "4": {"method":"white","roi":[0,0,720,1000],"mode":"full","vanish":40},
+  "5": {"method":"static","roi":[250,1000,450,1250],"mode":"nored"},
+  "6": {"method":"hole","mode":"full"},
+  "7": {"method":"gold","mode":"full","inset":0.15,"gold_lo":[18,130,160],"gold_hi":[28,200,255],"close":7,"fill":true},
+  "8": {"method":"gold","roi":[380,200,700,560],"mode":"full","inset":0.16,"gold_lo":[18,110,150],"gold_hi":[28,210,255],"close":9,"min_area":400}
+}

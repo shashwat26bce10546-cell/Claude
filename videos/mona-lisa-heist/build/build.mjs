@@ -101,6 +101,11 @@ gfx("g4", 19.4, 22.4, "g-low", `<div class="stamp" id="g4-s">EMPTY WALL</div><di
     ${popIn("#g4-n", 20.56, 4)}${out("#g4-s, #g4-n", T, D)}`);
 sfx.push(["impact-bass-1", 19.4, 0.4], ["pop", 20.56, 0.3]);
 
+// 4b — the Mona Lisa vanishes from the wall frame (composited clip 4, frame 40 -> output 19.27s)
+gfx("g4p", 19.2, 19.95, "g-poof", `<div class="poof">${[[0,0,150],[-90,-60,110],[95,-50,120],[-70,80,100],[80,90,110],[0,-120,90]].map(([x,y,r],k) => `<i id="g4p-${k}" style="left:${540 + x - r / 2}px;top:${800 + y - r / 2}px;width:${r}px;height:${r}px"></i>`).join("")}</div>`,
+  (T, D) => `tl.fromTo("#g4p .poof i", {scale:.2, opacity:.95}, {scale:1.6, opacity:0, duration:.7, ease:"power2.out", stagger:.03}, ${T});`);
+sfx.push(["whoosh-short", 19.1, 0.4], ["sparkle", 19.25, 0.35]);
+
 // 5 — painting gone
 gfx("g5", 25.9, 26.75, "g-low", `<div class="stamp stamp-sm" id="g5-s">STILL MISSING</div>`,
   (T, D) => `${stampIn("#g5-s", T, 5)}${out("#g5-s", T, D, 0.15)}`);
@@ -245,6 +250,9 @@ const html = `<!doctype html>
       .chip-x { position: relative; display: block; padding: 12px 26px; background: #fff; border: 4px solid var(--ink); border-radius: 14px; font-weight: 900; font-size: 44px; box-shadow: 6px 8px 0 rgba(0,0,0,.18); }
       .chip-x span { display: block; }
       .chip-x i { position: absolute; left: 10px; right: 10px; top: 50%; height: 8px; margin-top: -4px; background: var(--red); border-radius: 4px; transform-origin: 0 50%; }
+      .g-poof { top: 0; height: 1920px; }
+      .poof { position: absolute; inset: 0; }
+      .poof i { position: absolute; display: block; border-radius: 50%; background: radial-gradient(circle, #ffffff 0%, #e9e9e9 55%, rgba(220,220,220,0) 72%); }
       .steps { display: flex; align-items: center; gap: 14px; justify-content: center; }
       .steps .note { font-size: 48px; padding: 14px 26px; }
       .note-sm { font-size: 40px; padding: 12px 24px; }
