@@ -1,0 +1,824 @@
+[
+{
+"text": "Ek",
+"hi": "एक",
+"start": 0.14,
+"end": 0.3
+},
+{
+"text": "Rani",
+"hi": "रानी",
+"start": 0.38,
+"end": 0.78
+},
+{
+"text": "jisne",
+"hi": "जिसने",
+"start": 1.24,
+"end": 1.56
+},
+{
+"text": "Mughal",
+"hi": "मुग़ल",
+"start": 1.68,
+"end": 1.92
+},
+{
+"text": "sena",
+"hi": "सेना",
+"start": 2.02,
+"end": 2.24
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 2.32,
+"end": 2.44
+},
+{
+"text": "saamne",
+"hi": "सामने",
+"start": 2.5,
+"end": 2.9
+},
+{
+"text": "jhukna",
+"hi": "झुकना",
+"start": 2.96,
+"end": 3.3
+},
+{
+"text": "kabhi",
+"hi": "कभी",
+"start": 3.58,
+"end": 3.82
+},
+{
+"text": "nahi",
+"hi": "नहीं",
+"start": 3.86,
+"end": 4.059
+},
+{
+"text": "seekha.",
+"hi": "सीखा।",
+"start": 4.12,
+"end": 4.86
+},
+{
+"text": "Rani",
+"hi": "रानी",
+"start": 4.94,
+"end": 5.18
+},
+{
+"text": "Durgavati",
+"hi": "दुर्गावती",
+"start": 5.32,
+"end": 5.82
+},
+{
+"text": "ka",
+"hi": "का",
+"start": 5.9,
+"end": 6.02
+},
+{
+"text": "janm",
+"hi": "जन्म",
+"start": 6.08,
+"end": 6.36
+},
+{
+"text": "1524",
+"hi": "1524",
+"start": 6.62,
+"end": 7.58
+},
+{
+"text": "mein",
+"hi": "में",
+"start": 7.62,
+"end": 7.92
+},
+{
+"text": "Kalinjar",
+"hi": "कलिंजर",
+"start": 7.96,
+"end": 8.42
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 8.54,
+"end": 8.8
+},
+{
+"text": "Chandel",
+"hi": "चंदेल",
+"start": 8.86,
+"end": 9.2
+},
+{
+"text": "raaj",
+"hi": "राज",
+"start": 9.26,
+"end": 9.44
+},
+{
+"text": "parivaar",
+"hi": "परिवार",
+"start": 9.52,
+"end": 9.84
+},
+{
+"text": "mein",
+"hi": "में",
+"start": 9.92,
+"end": 10
+},
+{
+"text": "hua.",
+"hi": "हुआ।",
+"start": 10.06,
+"end": 10.62
+},
+{
+"text": "Shaadi",
+"hi": "शादी",
+"start": 10.7,
+"end": 11
+},
+{
+"text": "hui",
+"hi": "हुई",
+"start": 11.04,
+"end": 11.4
+},
+{
+"text": "Gondwana",
+"hi": "गोंडवाना",
+"start": 11.46,
+"end": 11.94
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 12.06,
+"end": 12.2
+},
+{
+"text": "Dalpat",
+"hi": "दलपत",
+"start": 12.36,
+"end": 12.76
+},
+{
+"text": "Shah",
+"hi": "शाह",
+"start": 12.84,
+"end": 12.98
+},
+{
+"text": "se",
+"hi": "से",
+"start": 13.1,
+"end": 13.5
+},
+{
+"text": "aur",
+"hi": "और",
+"start": 13.6,
+"end": 13.76
+},
+{
+"text": "woh",
+"hi": "वो",
+"start": 13.84,
+"end": 14.04
+},
+{
+"text": "Gond",
+"hi": "गोंड",
+"start": 14.46,
+"end": 14.72
+},
+{
+"text": "raaj",
+"hi": "राज",
+"start": 14.8,
+"end": 15.06
+},
+{
+"text": "ki",
+"hi": "की",
+"start": 15.12,
+"end": 15.28
+},
+{
+"text": "Rani",
+"hi": "रानी",
+"start": 15.4,
+"end": 15.64
+},
+{
+"text": "bani.",
+"hi": "बनी।",
+"start": 15.72,
+"end": 16.26
+},
+{
+"text": "Pati",
+"hi": "पति",
+"start": 16.3,
+"end": 16.5
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 16.6,
+"end": 16.7
+},
+{
+"text": "baad",
+"hi": "बाद",
+"start": 16.76,
+"end": 17.02
+},
+{
+"text": "unhone",
+"hi": "उन्होंने",
+"start": 17.24,
+"end": 17.62
+},
+{
+"text": "apne",
+"hi": "अपने",
+"start": 17.68,
+"end": 17.92
+},
+{
+"text": "bete",
+"hi": "बेटे",
+"start": 18,
+"end": 18.28
+},
+{
+"text": "Veer",
+"hi": "वीर",
+"start": 18.52,
+"end": 18.72
+},
+{
+"text": "Narayan",
+"hi": "नारायण",
+"start": 18.8,
+"end": 19.16
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 19.24,
+"end": 19.32
+},
+{
+"text": "naam",
+"hi": "नाम",
+"start": 19.4,
+"end": 19.56
+},
+{
+"text": "par",
+"hi": "पर",
+"start": 19.68,
+"end": 19.98
+},
+{
+"text": "khud",
+"hi": "खुद",
+"start": 20.08,
+"end": 20.26
+},
+{
+"text": "raaj",
+"hi": "राज",
+"start": 20.32,
+"end": 20.5
+},
+{
+"text": "sambhala.",
+"hi": "संभाला।",
+"start": 20.56,
+"end": 21.22
+},
+{
+"text": "Unke",
+"hi": "उनके",
+"start": 21.26,
+"end": 21.52
+},
+{
+"text": "raaj",
+"hi": "राज",
+"start": 21.58,
+"end": 21.82
+},
+{
+"text": "mein",
+"hi": "में",
+"start": 21.9,
+"end": 22.02
+},
+{
+"text": "Gondwana",
+"hi": "गोंडवाना",
+"start": 22.32,
+"end": 22.84
+},
+{
+"text": "khushhaal",
+"hi": "खुशहाल",
+"start": 22.94,
+"end": 23.36
+},
+{
+"text": "raha",
+"hi": "रहा",
+"start": 23.42,
+"end": 23.62
+},
+{
+"text": "aur",
+"hi": "और",
+"start": 23.92,
+"end": 24.06
+},
+{
+"text": "Singaurgarh",
+"hi": "सिंगौरगढ़",
+"start": 24.14,
+"end": 24.74
+},
+{
+"text": "jaisa",
+"hi": "जैसा",
+"start": 24.8,
+"end": 25.02
+},
+{
+"text": "kila",
+"hi": "किला",
+"start": 25.14,
+"end": 25.4
+},
+{
+"text": "mazboot",
+"hi": "मजबूत",
+"start": 25.76,
+"end": 26.22
+},
+{
+"text": "khada",
+"hi": "खड़ा",
+"start": 26.28,
+"end": 26.46
+},
+{
+"text": "raha.",
+"hi": "रहा।",
+"start": 26.52,
+"end": 27.06
+},
+{
+"text": "Phir",
+"hi": "फिर",
+"start": 27.14,
+"end": 27.52
+},
+{
+"text": "1564",
+"hi": "1564",
+"start": 27.58,
+"end": 28.56
+},
+{
+"text": "mein",
+"hi": "में",
+"start": 28.62,
+"end": 28.76
+},
+{
+"text": "Mughal",
+"hi": "मुग़ल",
+"start": 29.06,
+"end": 29.28
+},
+{
+"text": "senapati",
+"hi": "सेनापति",
+"start": 29.4,
+"end": 30.02
+},
+{
+"text": "Asaf",
+"hi": "असफ",
+"start": 30.1,
+"end": 30.38
+},
+{
+"text": "Khan",
+"hi": "खान",
+"start": 30.46,
+"end": 30.7
+},
+{
+"text": "ne",
+"hi": "ने",
+"start": 30.78,
+"end": 30.9
+},
+{
+"text": "Gondwana",
+"hi": "गोंडवाना",
+"start": 31.14,
+"end": 31.58
+},
+{
+"text": "par",
+"hi": "पर",
+"start": 31.68,
+"end": 31.88
+},
+{
+"text": "hamla",
+"hi": "हमला",
+"start": 31.94,
+"end": 32.18
+},
+{
+"text": "kar",
+"hi": "कर",
+"start": 32.28,
+"end": 32.36
+},
+{
+"text": "diya.",
+"hi": "दिया।",
+"start": 32.439,
+"end": 32.92
+},
+{
+"text": "Rani",
+"hi": "रानी",
+"start": 33.02,
+"end": 33.24
+},
+{
+"text": "ne",
+"hi": "ने",
+"start": 33.34,
+"end": 33.56
+},
+{
+"text": "haathi",
+"hi": "हाथी",
+"start": 33.66,
+"end": 33.98
+},
+{
+"text": "par",
+"hi": "पर",
+"start": 34.02,
+"end": 34.16
+},
+{
+"text": "savaar",
+"hi": "सवार",
+"start": 34.22,
+"end": 34.5
+},
+{
+"text": "hokar",
+"hi": "होकर",
+"start": 34.56,
+"end": 34.84
+},
+{
+"text": "khud",
+"hi": "खुद",
+"start": 35.1,
+"end": 35.28
+},
+{
+"text": "sena",
+"hi": "सेना",
+"start": 35.36,
+"end": 35.58
+},
+{
+"text": "sambhali",
+"hi": "संभाली",
+"start": 35.64,
+"end": 36.16
+},
+{
+"text": "aur",
+"hi": "और",
+"start": 36.26,
+"end": 36.5
+},
+{
+"text": "pehle",
+"hi": "पहले",
+"start": 36.56,
+"end": 36.82
+},
+{
+"text": "din",
+"hi": "दिन",
+"start": 36.94,
+"end": 37.08
+},
+{
+"text": "dushman",
+"hi": "दुश्मन",
+"start": 37.36,
+"end": 37.68
+},
+{
+"text": "ko",
+"hi": "को",
+"start": 37.78,
+"end": 37.98
+},
+{
+"text": "peeche",
+"hi": "पीछे",
+"start": 38.06,
+"end": 38.32
+},
+{
+"text": "dhakela.",
+"hi": "धकेला।",
+"start": 38.38,
+"end": 39.04
+},
+{
+"text": "Agle",
+"hi": "अगले",
+"start": 39.1,
+"end": 39.32
+},
+{
+"text": "din",
+"hi": "दिन",
+"start": 39.42,
+"end": 39.64
+},
+{
+"text": "ghayal",
+"hi": "घायल",
+"start": 39.74,
+"end": 40.04
+},
+{
+"text": "hone",
+"hi": "होने",
+"start": 40.12,
+"end": 40.3
+},
+{
+"text": "par",
+"hi": "पर",
+"start": 40.4,
+"end": 40.54
+},
+{
+"text": "bhi",
+"hi": "भी",
+"start": 40.6,
+"end": 40.88
+},
+{
+"text": "unhone",
+"hi": "उन्होंने",
+"start": 40.94,
+"end": 41.4
+},
+{
+"text": "aakhri",
+"hi": "आखिरी",
+"start": 41.54,
+"end": 41.84
+},
+{
+"text": "dum",
+"hi": "दम",
+"start": 42.04,
+"end": 42.18
+},
+{
+"text": "tak",
+"hi": "तक",
+"start": 42.28,
+"end": 42.6
+},
+{
+"text": "haar",
+"hi": "हार",
+"start": 42.68,
+"end": 42.9
+},
+{
+"text": "nahi",
+"hi": "नहीं",
+"start": 42.96,
+"end": 43.14
+},
+{
+"text": "maani.",
+"hi": "मानी।",
+"start": 43.18,
+"end": 43.72
+},
+{
+"text": "Dushman",
+"hi": "दुश्मन",
+"start": 43.76,
+"end": 44.14
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 44.18,
+"end": 44.3
+},
+{
+"text": "haath",
+"hi": "हाथ",
+"start": 44.38,
+"end": 44.7
+},
+{
+"text": "na",
+"hi": "न",
+"start": 44.82,
+"end": 44.98
+},
+{
+"text": "aane",
+"hi": "आने",
+"start": 45.08,
+"end": 45.22
+},
+{
+"text": "ke",
+"hi": "के",
+"start": 45.32,
+"end": 45.38
+},
+{
+"text": "liye",
+"hi": "लिए",
+"start": 45.44,
+"end": 45.78
+},
+{
+"text": "unhone",
+"hi": "उन्होंने",
+"start": 45.86,
+"end": 46.24
+},
+{
+"text": "balidaan",
+"hi": "बलिदान",
+"start": 46.5,
+"end": 46.98
+},
+{
+"text": "chuna.",
+"hi": "चुना।",
+"start": 47.02,
+"end": 47.56
+},
+{
+"text": "Woh",
+"hi": "वो",
+"start": 47.6,
+"end": 47.7
+},
+{
+"text": "din",
+"hi": "दिन",
+"start": 47.8,
+"end": 47.94
+},
+{
+"text": "tha",
+"hi": "था",
+"start": 48.04,
+"end": 48.22
+},
+{
+"text": "24",
+"hi": "24",
+"start": 48.48,
+"end": 48.9
+},
+{
+"text": "June",
+"hi": "जून",
+"start": 48.96,
+"end": 49.18
+},
+{
+"text": "1564.",
+"hi": "1564।",
+"start": 49.36,
+"end": 50.64
+},
+{
+"text": "Aaj",
+"hi": "आज",
+"start": 50.72,
+"end": 50.94
+},
+{
+"text": "bhi",
+"hi": "भी",
+"start": 51,
+"end": 51.34
+},
+{
+"text": "24",
+"hi": "24",
+"start": 51.38,
+"end": 51.78
+},
+{
+"text": "June",
+"hi": "जून",
+"start": 51.84,
+"end": 52
+},
+{
+"text": "ko",
+"hi": "को",
+"start": 52.1,
+"end": 52.3
+},
+{
+"text": "Balidaan",
+"hi": "बलिदान",
+"start": 52.34,
+"end": 52.74
+},
+{
+"text": "Diwas",
+"hi": "दिवस",
+"start": 52.82,
+"end": 53.06
+},
+{
+"text": "par",
+"hi": "पर",
+"start": 53.14,
+"end": 53.42
+},
+{
+"text": "unki",
+"hi": "उनकी",
+"start": 53.48,
+"end": 53.72
+},
+{
+"text": "veerta",
+"hi": "वीरता",
+"start": 53.86,
+"end": 54.24
+},
+{
+"text": "yaad",
+"hi": "याद",
+"start": 54.54,
+"end": 54.78
+},
+{
+"text": "ki",
+"hi": "की",
+"start": 54.82,
+"end": 54.92
+},
+{
+"text": "jaati",
+"hi": "जाती",
+"start": 54.96,
+"end": 55.22
+},
+{
+"text": "hai.",
+"hi": "है।",
+"start": 55.3,
+"end": 55.52
+}
+]
