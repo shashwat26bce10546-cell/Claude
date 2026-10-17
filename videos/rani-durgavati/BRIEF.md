@@ -17,3 +17,8 @@ length: "56.6s (follows the voiceover)"
   Clip 8 is a square shot padded inside 9:16; shown full-width over a blurred copy so the face is visible.
 - Music: original synthesized score (build/music.sh). SFX: bundled library (Pixabay license).
 - Rebuild: `python3 build/preprocess.py` → `bash build/music.sh` → `node build/build.mjs` → `npx hyperframes render`.
+
+## Revision 2
+- Opening now clip 1 (queen on her elephant, slow motion) with the title over the sky, Maurya-style; clip 8 removed entirely.
+- Second half: clip 1 (army surge) → clip 7 (charge) → clip 9 (sunset, darkening, 39.1–46.4s) → clip 5 statue (Balidaan) → clip 10.
+- Sound effects cut to 4 deep impacts (title, 1564 attack, Balidaan, finale); score + voiceover unchanged.

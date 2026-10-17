@@ -10,12 +10,12 @@ const words = JSON.parse(readFileSync(join(here, "words.json"), "utf8"));
 const fmt = (n) => +(+n).toFixed(3);
 
 // Scene starts (output seconds) — must match build/preprocess.sh
-const S = [0, 4.94, 10.7, 16.3, 21.26, 23.0, 27.14, 32.98, 36.2, 39.1, 43.76, 50.72, 53.0];
+const S = [0, 4.94, 10.7, 16.3, 21.26, 23.0, 27.14, 32.98, 36.2, 39.1, 46.4, 50.72];
 const END = 56.6;
 const HANDLE = 0.3; // each prepped clip starts 0.3s before its scene (crossfade handle)
 
 // transition INTO scene i (i >= 1)
-const TRANS = [null, "goldflash", "zoom", "fade", "lightleak", "whip", "darkdip", "zoom", "whip", "zoom", "darkdip", "goldflash", "lightleak"];
+const TRANS = [null, "goldflash", "zoom", "fade", "lightleak", "whip", "darkdip", "zoom", "whip", "zoom", "lightleak", "goldflash"];
 
 const tl = [];
 const sfx = []; // [file, time, volume, mediaStart?, duration?]
@@ -85,7 +85,7 @@ const outT = (sel, T, D, d = 0.3) => `tl.to("${sel}", {opacity:0, y:-24, duratio
 const pop = (sel, t) => `tl.fromTo("${sel}", {opacity:0, y:30, scale:.9}, {opacity:1, y:0, scale:1, duration:.4, ease:"back.out(1.8)", immediateRender:false}, ${fmt(t)});`;
 
 // 1 — hook title
-gfx("g-title", 0.3, 4.85, "g-hook", `<div class="title-wrap"><div class="kicker">THE QUEEN WHO NEVER BOWED</div><div class="title">RANI</div><div class="title title2">DURGAVATI</div><div class="rule"></div></div>`,
+gfx("g-title", 0.3, 4.85, "g-top", `<div class="title-wrap"><div class="kicker">THE QUEEN WHO NEVER BOWED</div><div class="title">RANI</div><div class="title title2">DURGAVATI</div><div class="rule"></div></div>`,
   (T, D) => `
     tl.fromTo("#g-title .kicker", {opacity:0, y:20}, {opacity:1, y:0, duration:.5, ease:"power3.out"}, ${T});
     tl.fromTo("#g-title .title", {opacity:0, scale:1.6, filter:"blur(10px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:.6, ease:"power4.out", stagger:.18}, ${T + 0.15});
@@ -157,8 +157,8 @@ gfx("g-bal", 46.5, 50.6, "g-top2 col", `<div class="name-big name-glow">BALIDAAN
   (T, D) => `tl.fromTo("#g-bal .name-big", {opacity:0, scale:1.4}, {opacity:1, scale:1, duration:.9, ease:"power2.out"}, ${T});
     tl.fromTo("#g-date", {opacity:0, y:20}, {opacity:1, y:0, duration:.5, ease:"power3.out", immediateRender:false}, 48.48);${outT("#g-bal .name-big, #g-date", T, D, 0.4)}`);
 tl.push(`tl.fromTo("#cold", {opacity:0}, {opacity:.3, duration:1.0, immediateRender:false}, 43.76);`);
-tl.push(`tl.to("#cold", {opacity:0, duration:.8}, 50.4);`);
-sfx.push(["chime", 46.5, 0.3]);
+tl.push(`tl.to("#cold", {opacity:0, duration:.5}, 46.1);`);
+sfx.push(["impact-bass-2", 46.5, 0.4]);
 
 // 10 — remembered every 24 June
 gfx("g-fin", 51.38, END, "g-top2", `<div class="finale"><div class="fin-k">24 JUNE · BALIDAAN DIWAS</div><div class="fin-t" id="g-fin-t" style="opacity:0">VEERANGANA<br>RANI DURGAVATI</div></div>`,
@@ -203,7 +203,9 @@ const caps = groups.map((g, gi) => {
 
 // ---------- audio ----------
 const SFX_LEN = { whoosh: 1.2, "whoosh-cinematic": 1.6, "impact-bass-1": 2.12, "impact-bass-2": 2.59, riser: 4, sparkle: 1.5, chime: 2.5, "glitch-3": 1.5 };
-const sfxHtml = sfx
+const KEEP_SFX = [[0.3, "impact-bass-1"], [27.58, "impact-bass-1"], [46.5, "impact-bass-2"], [53.5, "impact-bass-2"]];
+const sfxKept = sfx.filter(([f, t]) => KEEP_SFX.some(([kt, kf]) => Math.abs(kt - t) < 0.05 && kf === f));
+const sfxHtml = sfxKept
   .sort((a, b) => a[1] - b[1])
   .map(([f, t, v, ms, d], i) => {
     const start = Math.max(0, fmt(t));
@@ -303,9 +305,7 @@ const html = `<!doctype html>
       .cap-in { display: block; max-width: 960px; text-align: center; font-weight: 900; font-size: 78px; line-height: 1.1; letter-spacing: -1px;
         -webkit-text-stroke: 10px #120C06; paint-order: stroke fill; text-shadow: 0 8px 24px rgba(0,0,0,.7); }
       .g-hook { top: 10px; height: 430px; align-items: flex-start; }
-      #g-title .title { font-size: 120px; }
-      #g-title .title2 { font-size: 92px; }
-      #g-title .title-wrap { padding: 18px 50px; }
+      #g-title .title2 { font-size: 118px; }
       .col { flex-direction: column; align-items: center; gap: 18px; }
       .year-sm { font-size: 96px; }
       .name-mid { font-size: 92px; margin-top: 10px; }

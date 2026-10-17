@@ -6,19 +6,18 @@ os.chdir(os.path.join(os.path.dirname(__file__), ".."))
 END = 56.6
 SEG = [
     # clip, src_in, src_out, out_in, max_speed, extra
-    (8, 0.0, 5.0, 0.0, 1.3, "crop8"),
+    (1, 0.0, 2.4, 0.0, 2.3, ""),             # hook: queen on her elephant before the army (slow motion)
     (2, 0.0, 4.01, 4.94, 1.3, ""),
     (3, 0.0, 4.01, 10.7, 1.4, ""),
     (4, 0.0, 4.01, 16.3, 1.3, ""),
     (5, 0.0, 1.10, 21.26, 1.7, ""),          # prosperous Gondwana (before the statue dissolve)
-    (7, 1.60, 4.01, 23.0, 1.4, ""),          # Singaurgarh-style hill fort (after the dissolve)
+    (7, 1.60, 4.01, 23.0, 1.4, ""),          # hill fort (after the dissolve)
     (6, 0.0, 4.01, 27.14, 1.5, ""),
-    (1, 0.0, 4.01, 32.98, 1.0, ""),
+    (1, 2.4, 4.01, 32.98, 2.4, ""),          # the army surges behind her
     (7, 0.0, 1.15, 36.2, 2.0, ""),           # battle charge on the elephant
-    (9, 0.0, 4.01, 39.1, 1.3, ""),
-    (8, 5.0, 10.0, 43.76, 1.4, "crop8,dark"),# sacrifice — same portrait, darker grade
-    (5, 1.65, 4.01, 50.72, 1.3, ""),         # golden statue
-    (10, 0.0, 4.01, 53.0, 1.3, ""),
+    (9, 0.0, 4.01, 39.1, 2.0, ""),           # wounded, sword raised at sunset
+    (5, 1.65, 4.01, 46.4, 2.1, ""),          # balidaan: the golden statue rises
+    (10, 0.0, 4.01, 50.72, 1.7, ""),         # memorial
 ]
 os.makedirs("media/prepped", exist_ok=True)
 starts = [s[3] for s in SEG]
