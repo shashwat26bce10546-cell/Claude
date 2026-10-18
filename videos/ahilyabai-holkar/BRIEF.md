@@ -19,3 +19,7 @@ length: "61.4s (follows the voiceover)"
 - Music: original synthesized score (build/music.sh), minor → major at Maheshwar (28.3s).
   SFX: only 4 deep impacts (title, 1754 loss, 1767 loss, finale), bundled Pixabay library.
 - Rebuild: `python3 build/preprocess.py` → `bash build/music.sh` → `node build/build.mjs` → `npx hyperframes render`.
+
+## Thumbnail
+- thumbnail/ahilyabai-holkar-thumbnail.jpg (1080x1920), built from thumbnail/thumbnail.html over a clip 1 frame (bg.jpg).
+- Hook: VIDHWA (struck out) -> MAHARANI, "Pati gaya, beta gaya... phir poore Malwa par raj? KAISE?"

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: "Cinzel"; font-weight: 900; src: url(../assets/fonts/cinzel-latin-900-normal.woff2); }
+  @font-face { font-family: "Montserrat"; font-weight: 900; src: url(../assets/fonts/montserrat-latin-900-normal.woff2); }
+  @font-face { font-family: "Anton"; src: url(../assets/fonts/anton-latin-400-normal.woff2); }
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0b0703; }
+  .bg { position: absolute; inset: 0; background: url(bg.jpg) center / cover;
+        filter: contrast(1.12) saturate(1.1) brightness(.95); }
+  /* top darkening for the headline, bottom for the question */
+  .shade { position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(8,5,2,.92) 0%, rgba(8,5,2,.75) 18%, rgba(8,5,2,0) 34%),
+      linear-gradient(0deg, rgba(8,5,2,.95) 0%, rgba(8,5,2,.7) 16%, rgba(8,5,2,0) 32%),
+      radial-gradient(ellipse at 55% 45%, rgba(0,0,0,0) 45%, rgba(0,0,0,.55) 100%); }
+
+  .top { position: absolute; left: 0; right: 0; top: 70px; display: flex; flex-direction: column; align-items: center; }
+  .vidhwa { position: relative; font-family: "Anton"; font-size: 150px; line-height: 1; letter-spacing: 6px;
+    color: #d9d4cc; text-shadow: 0 6px 24px rgba(0,0,0,.9); }
+  .vidhwa::after { content: ""; position: absolute; left: -16px; right: -16px; top: 50%; height: 10px;
+    background: #d12a1f; transform: rotate(-4deg); box-shadow: 0 4px 14px rgba(0,0,0,.6); }
+  .arrow { margin: 18px 0 22px; font-family: "Montserrat"; font-weight: 900; font-size: 70px; line-height: 1; color: #F2C14E;
+    text-shadow: 0 4px 16px rgba(0,0,0,.9); }
+  .maharani { font-family: "Cinzel"; font-weight: 900; font-size: 168px; line-height: 1;
+    background: linear-gradient(180deg, #FFF1C4 0%, #F2C14E 45%, #B57A1A 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.95)); }
+
+  .bottom { position: absolute; left: 0; right: 0; bottom: 120px; display: flex; flex-direction: column; align-items: center; }
+  .sub { font-family: "Montserrat"; font-weight: 900; font-size: 50px; color: #fff; letter-spacing: 1px;
+    -webkit-text-stroke: 8px #120C06; paint-order: stroke fill; text-align: center; line-height: 1.15; }
+  .sub b { color: #F2C14E; }
+  .q { margin-top: 26px; padding: 10px 56px 18px; font-family: "Anton"; font-size: 150px; line-height: 1; color: #fff;
+    background: #c4241a; border-radius: 18px; transform: rotate(-3deg); box-shadow: 0 14px 40px rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="shade"></div>
+  <div class="top">
+    <div class="vidhwa">VIDHWA</div>
+    <div class="arrow">&#9660;</div>
+    <div class="maharani">MAHARANI</div>
+  </div>
+  <div class="bottom">
+    <div class="sub">Pati gaya, beta gaya&hellip;<br>phir <b>poore Malwa</b> par raj?</div>
+    <div class="q">KAISE?</div>
+  </div>
+</body>
+</html>
