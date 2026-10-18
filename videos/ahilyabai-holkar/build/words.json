@@ -1,0 +1,767 @@
+[
+{
+"text": "Ek",
+"start": 0.12,
+"end": 0.28
+},
+{
+"text": "gaon",
+"start": 0.4,
+"end": 0.6
+},
+{
+"text": "ki",
+"start": 0.68,
+"end": 0.8
+},
+{
+"text": "ladki",
+"start": 0.84,
+"end": 1.26
+},
+{
+"text": "jo",
+"start": 1.72,
+"end": 1.94
+},
+{
+"text": "poore",
+"start": 2,
+"end": 2.26
+},
+{
+"text": "Malwa",
+"start": 2.4,
+"end": 2.74
+},
+{
+"text": "ki",
+"start": 2.84,
+"end": 2.96
+},
+{
+"text": "'Maa'",
+"start": 3.24,
+"end": 3.4
+},
+{
+"text": "ban",
+"start": 3.48,
+"end": 3.6
+},
+{
+"text": "gayi.",
+"start": 3.68,
+"end": 4.38
+},
+{
+"text": "Chondi",
+"start": 4.44,
+"end": 4.72
+},
+{
+"text": "gaon",
+"start": 4.82,
+"end": 5.04
+},
+{
+"text": "mein",
+"start": 5.08,
+"end": 5.38
+},
+{
+"text": "1725",
+"start": 5.44,
+"end": 6.48
+},
+{
+"text": "mein",
+"start": 6.52,
+"end": 6.62
+},
+{
+"text": "janmi",
+"start": 6.66,
+"end": 7.1
+},
+{
+"text": "Ahilyabai.",
+"start": 7.16,
+"end": 8.06
+},
+{
+"text": "Unki",
+"start": 8.1,
+"end": 8.34
+},
+{
+"text": "seva",
+"start": 8.5,
+"end": 8.94
+},
+{
+"text": "aur",
+"start": 9,
+"end": 9.16
+},
+{
+"text": "sadgi",
+"start": 9.26,
+"end": 9.62
+},
+{
+"text": "dekh-kar",
+"start": 9.72,
+"end": 10.18
+},
+{
+"text": "Malhar",
+"start": 10.44,
+"end": 10.8
+},
+{
+"text": "Rao",
+"start": 10.86,
+"end": 11.02
+},
+{
+"text": "Holkar",
+"start": 11.14,
+"end": 11.52
+},
+{
+"text": "ne",
+"start": 11.56,
+"end": 11.82
+},
+{
+"text": "unhe",
+"start": 11.88,
+"end": 12.1
+},
+{
+"text": "chuna.",
+"start": 12.14,
+"end": 12.58
+},
+{
+"text": "Khande",
+"start": 12.62,
+"end": 12.9
+},
+{
+"text": "Rao",
+"start": 12.96,
+"end": 13.12
+},
+{
+"text": "Holkar",
+"start": 13.18,
+"end": 13.5
+},
+{
+"text": "se",
+"start": 13.6,
+"end": 13.74
+},
+{
+"text": "shaadi",
+"start": 13.8,
+"end": 14.1
+},
+{
+"text": "hui",
+"start": 14.14,
+"end": 14.32
+},
+{
+"text": "aur",
+"start": 14.56,
+"end": 14.7
+},
+{
+"text": "woh",
+"start": 14.76,
+"end": 15.1
+},
+{
+"text": "Holkar",
+"start": 15.2,
+"end": 15.54
+},
+{
+"text": "parivar",
+"start": 15.64,
+"end": 16
+},
+{
+"text": "ki",
+"start": 16.12,
+"end": 16.239
+},
+{
+"text": "bahu",
+"start": 16.379,
+"end": 16.56
+},
+{
+"text": "bani.",
+"start": 16.64,
+"end": 17.06
+},
+{
+"text": "Phir",
+"start": 17.1,
+"end": 17.28
+},
+{
+"text": "1754",
+"start": 17.34,
+"end": 18.26
+},
+{
+"text": "mein",
+"start": 18.3,
+"end": 18.64
+},
+{
+"text": "pati",
+"start": 18.7,
+"end": 18.98
+},
+{
+"text": "Khande",
+"start": 19.06,
+"end": 19.36
+},
+{
+"text": "Rao",
+"start": 19.42,
+"end": 19.6
+},
+{
+"text": "yuddh",
+"start": 19.88,
+"end": 20.1
+},
+{
+"text": "mein",
+"start": 20.16,
+"end": 20.26
+},
+{
+"text": "chale",
+"start": 20.32,
+"end": 20.48
+},
+{
+"text": "gaye.",
+"start": 20.58,
+"end": 20.94
+},
+{
+"text": "Sasur",
+"start": 21.02,
+"end": 21.32
+},
+{
+"text": "Malhar",
+"start": 21.4,
+"end": 21.76
+},
+{
+"text": "Rao",
+"start": 21.84,
+"end": 21.98
+},
+{
+"text": "ne",
+"start": 22.06,
+"end": 22.18
+},
+{
+"text": "unhe",
+"start": 22.38,
+"end": 22.62
+},
+{
+"text": "raj",
+"start": 22.72,
+"end": 22.94
+},
+{
+"text": "ke",
+"start": 23.04,
+"end": 23.2
+},
+{
+"text": "kaam",
+"start": 23.26,
+"end": 23.42
+},
+{
+"text": "sikhaye.",
+"start": 23.52,
+"end": 24.12
+},
+{
+"text": "1767",
+"start": 24.16,
+"end": 25.16
+},
+{
+"text": "mein",
+"start": 25.22,
+"end": 25.52
+},
+{
+"text": "unka",
+"start": 25.58,
+"end": 25.8
+},
+{
+"text": "jawan",
+"start": 25.96,
+"end": 26.26
+},
+{
+"text": "beta",
+"start": 26.34,
+"end": 26.62
+},
+{
+"text": "Male",
+"start": 26.92,
+"end": 27.18
+},
+{
+"text": "Rao",
+"start": 27.24,
+"end": 27.4
+},
+{
+"text": "bhi",
+"start": 27.46,
+"end": 27.56
+},
+{
+"text": "chala",
+"start": 27.62,
+"end": 27.8
+},
+{
+"text": "gaya.",
+"start": 27.9,
+"end": 28.24
+},
+{
+"text": "Itne",
+"start": 28.3,
+"end": 28.58
+},
+{
+"text": "dukh",
+"start": 28.76,
+"end": 28.92
+},
+{
+"text": "ke",
+"start": 29.02,
+"end": 29.18
+},
+{
+"text": "baad",
+"start": 29.24,
+"end": 29.48
+},
+{
+"text": "bhi",
+"start": 29.56,
+"end": 29.72
+},
+{
+"text": "unhone",
+"start": 29.94,
+"end": 30.28
+},
+{
+"text": "raj",
+"start": 30.38,
+"end": 30.62
+},
+{
+"text": "ki",
+"start": 30.7,
+"end": 30.8
+},
+{
+"text": "bagdor",
+"start": 30.86,
+"end": 31.26
+},
+{
+"text": "khud",
+"start": 31.48,
+"end": 31.66
+},
+{
+"text": "sambhali.",
+"start": 31.72,
+"end": 32.28
+},
+{
+"text": "Unhone",
+"start": 32.34,
+"end": 32.659
+},
+{
+"text": "Narmada",
+"start": 32.8,
+"end": 33.16
+},
+{
+"text": "ke",
+"start": 33.26,
+"end": 33.36
+},
+{
+"text": "kinare",
+"start": 33.4,
+"end": 33.78
+},
+{
+"text": "Maheshwar",
+"start": 34.06,
+"end": 34.54
+},
+{
+"text": "ko",
+"start": 34.66,
+"end": 34.9
+},
+{
+"text": "apni",
+"start": 34.96,
+"end": 35.22
+},
+{
+"text": "rajdhani",
+"start": 35.32,
+"end": 35.84
+},
+{
+"text": "banaya.",
+"start": 35.9,
+"end": 36.4
+},
+{
+"text": "Woh",
+"start": 36.48,
+"end": 36.62
+},
+{
+"text": "roz",
+"start": 36.72,
+"end": 37.02
+},
+{
+"text": "darbar",
+"start": 37.08,
+"end": 37.46
+},
+{
+"text": "mein",
+"start": 37.5,
+"end": 37.62
+},
+{
+"text": "baith-kar",
+"start": 37.68,
+"end": 38.1
+},
+{
+"text": "khud",
+"start": 38.36,
+"end": 38.56
+},
+{
+"text": "nyay",
+"start": 38.62,
+"end": 38.8
+},
+{
+"text": "karti",
+"start": 38.9,
+"end": 39.14
+},
+{
+"text": "thi.",
+"start": 39.22,
+"end": 39.54
+},
+{
+"text": "Kisano",
+"start": 39.58,
+"end": 40
+},
+{
+"text": "ke",
+"start": 40.04,
+"end": 40.12
+},
+{
+"text": "liye",
+"start": 40.18,
+"end": 40.46
+},
+{
+"text": "kuen,",
+"start": 40.54,
+"end": 40.82
+},
+{
+"text": "sadkein",
+"start": 41.12,
+"end": 41.66
+},
+{
+"text": "aur",
+"start": 41.72,
+"end": 41.86
+},
+{
+"text": "dharamshalayein",
+"start": 41.92,
+"end": 42.56
+},
+{
+"text": "banwayi",
+"start": 42.62,
+"end": 42.94
+},
+{
+"text": "gayi.",
+"start": 43,
+"end": 43.34
+},
+{
+"text": "Kashi",
+"start": 43.4,
+"end": 43.68
+},
+{
+"text": "se",
+"start": 43.8,
+"end": 43.94
+},
+{
+"text": "Somnath",
+"start": 44.06,
+"end": 44.52
+},
+{
+"text": "tak",
+"start": 44.62,
+"end": 44.8
+},
+{
+"text": "kitne",
+"start": 45,
+"end": 45.32
+},
+{
+"text": "hi",
+"start": 45.38,
+"end": 45.5
+},
+{
+"text": "mandir",
+"start": 45.58,
+"end": 46.04
+},
+{
+"text": "aur",
+"start": 46.12,
+"end": 46.28
+},
+{
+"text": "ghat",
+"start": 46.36,
+"end": 46.62
+},
+{
+"text": "sanware",
+"start": 46.68,
+"end": 46.98
+},
+{
+"text": "gaye.",
+"start": 47.06,
+"end": 47.44
+},
+{
+"text": "Maheshwar",
+"start": 47.5,
+"end": 47.94
+},
+{
+"text": "ke",
+"start": 48.04,
+"end": 48.18
+},
+{
+"text": "bunkaron",
+"start": 48.22,
+"end": 48.64
+},
+{
+"text": "ko",
+"start": 48.68,
+"end": 48.82
+},
+{
+"text": "sahara",
+"start": 48.9,
+"end": 49.22
+},
+{
+"text": "mila",
+"start": 49.3,
+"end": 49.68
+},
+{
+"text": "aur",
+"start": 49.74,
+"end": 49.88
+},
+{
+"text": "unki",
+"start": 49.96,
+"end": 50.24
+},
+{
+"text": "kala",
+"start": 50.3,
+"end": 50.52
+},
+{
+"text": "phali-phooli.",
+"start": 50.76,
+"end": 51.58
+},
+{
+"text": "1795",
+"start": 51.62,
+"end": 52.68
+},
+{
+"text": "mein",
+"start": 52.72,
+"end": 53.02
+},
+{
+"text": "woh",
+"start": 53.08,
+"end": 53.2
+},
+{
+"text": "chali",
+"start": 53.26,
+"end": 53.46
+},
+{
+"text": "gayi",
+"start": 53.56,
+"end": 53.9
+},
+{
+"text": "par",
+"start": 53.96,
+"end": 54.14
+},
+{
+"text": "unka",
+"start": 54.2,
+"end": 54.44
+},
+{
+"text": "naam",
+"start": 54.54,
+"end": 54.76
+},
+{
+"text": "amar",
+"start": 55,
+"end": 55.22
+},
+{
+"text": "ho",
+"start": 55.28,
+"end": 55.36
+},
+{
+"text": "gaya.",
+"start": 55.44,
+"end": 55.88
+},
+{
+"text": "Aaj",
+"start": 55.96,
+"end": 56.18
+},
+{
+"text": "bhi",
+"start": 56.24,
+"end": 56.34
+},
+{
+"text": "log",
+"start": 56.4,
+"end": 56.62
+},
+{
+"text": "unhe",
+"start": 56.68,
+"end": 57.1
+},
+{
+"text": "'Punyashlok'",
+"start": 57.16,
+"end": 57.88
+},
+{
+"text": "Ahilyabai",
+"start": 57.94,
+"end": 58.54
+},
+{
+"text": "ke",
+"start": 58.58,
+"end": 58.68
+},
+{
+"text": "naam",
+"start": 58.72,
+"end": 58.9
+},
+{
+"text": "se",
+"start": 59,
+"end": 59.2
+},
+{
+"text": "yaad",
+"start": 59.3,
+"end": 59.54
+},
+{
+"text": "karte",
+"start": 59.58,
+"end": 59.84
+},
+{
+"text": "hain.",
+"start": 59.9,
+"end": 60.18
+}
+]
