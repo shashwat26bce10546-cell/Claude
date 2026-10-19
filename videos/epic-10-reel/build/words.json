@@ -1,0 +1,542 @@
+[
+{
+"text": "AGRA",
+"start": 0.14,
+"end": 0.76
+},
+{
+"text": "1666",
+"start": 1.21,
+"end": 2.44
+},
+{
+"text": "SHIVAJI",
+"start": 2.61,
+"end": 3.42
+},
+{
+"text": "MAHARAJ",
+"start": 3.43,
+"end": 3.96
+},
+{
+"text": "KO",
+"start": 4.02,
+"end": 4.28
+},
+{
+"text": "BULAYA",
+"start": 4.28,
+"end": 4.68
+},
+{
+"text": "GAYA.",
+"start": 4.68,
+"end": 4.94
+},
+{
+"text": "PAR",
+"start": 5.1,
+"end": 5.26
+},
+{
+"text": "YE",
+"start": 5.26,
+"end": 5.58
+},
+{
+"text": "NIMANTRAN",
+"start": 5.58,
+"end": 6.33
+},
+{
+"text": "NAHI",
+"start": 6.38,
+"end": 7.05
+},
+{
+"text": "EK",
+"start": 7.05,
+"end": 7.28
+},
+{
+"text": "CHAAL",
+"start": 7.37,
+"end": 7.7
+},
+{
+"text": "THI.",
+"start": 7.7,
+"end": 8.1
+},
+{
+"text": "DARBAR",
+"start": 8.2,
+"end": 8.6
+},
+{
+"text": "MEIN",
+"start": 8.6,
+"end": 8.75
+},
+{
+"text": "UNHE",
+"start": 8.75,
+"end": 9.15
+},
+{
+"text": "PEECHE",
+"start": 9.15,
+"end": 9.55
+},
+{
+"text": "KHADA",
+"start": 9.55,
+"end": 10.02
+},
+{
+"text": "KIYA",
+"start": 10.07,
+"end": 10.24
+},
+{
+"text": "GAYA.",
+"start": 10.24,
+"end": 10.64
+},
+{
+"text": "ITNA",
+"start": 10.8,
+"end": 11.12
+},
+{
+"text": "APMAAN",
+"start": 11.12,
+"end": 11.86
+},
+{
+"text": "AUR",
+"start": 11.98,
+"end": 12.1
+},
+{
+"text": "SHIVAJI",
+"start": 12.1,
+"end": 12.81
+},
+{
+"text": "NE",
+"start": 12.82,
+"end": 13.06
+},
+{
+"text": "MUNH",
+"start": 13.06,
+"end": 13.48
+},
+{
+"text": "MOD",
+"start": 13.48,
+"end": 13.65
+},
+{
+"text": "LIYA.",
+"start": 13.67,
+"end": 14.08
+},
+{
+"text": "PHIR",
+"start": 14.17,
+"end": 14.29
+},
+{
+"text": "SHURU",
+"start": 14.29,
+"end": 14.72
+},
+{
+"text": "HUI",
+"start": 14.72,
+"end": 15.02
+},
+{
+"text": "NAZARBANDI.",
+"start": 15.02,
+"end": 15.86
+},
+{
+"text": "HAR",
+"start": 15.98,
+"end": 16.06
+},
+{
+"text": "TARAF",
+"start": 16.07,
+"end": 16.64
+},
+{
+"text": "PEHRA",
+"start": 16.64,
+"end": 17.29
+},
+{
+"text": "HAR",
+"start": 17.34,
+"end": 17.42
+},
+{
+"text": "TARAF",
+"start": 17.48,
+"end": 18.03
+},
+{
+"text": "QAID.",
+"start": 18.04,
+"end": 18.58
+},
+{
+"text": "TAB",
+"start": 18.75,
+"end": 18.95
+},
+{
+"text": "SHIVAJI",
+"start": 19.01,
+"end": 19.75
+},
+{
+"text": "NE",
+"start": 19.8,
+"end": 20
+},
+{
+"text": "EK",
+"start": 20,
+"end": 20.25
+},
+{
+"text": "CHAAL",
+"start": 20.25,
+"end": 20.54
+},
+{
+"text": "CHALI.",
+"start": 20.59,
+"end": 20.95
+},
+{
+"text": "VO",
+"start": 21.09,
+"end": 21.19
+},
+{
+"text": "BIMAAR",
+"start": 21.19,
+"end": 21.55
+},
+{
+"text": "PAD",
+"start": 21.55,
+"end": 22.03
+},
+{
+"text": "GAYE.",
+"start": 22.03,
+"end": 22.46
+},
+{
+"text": "ROZ",
+"start": 22.59,
+"end": 22.9
+},
+{
+"text": "MITHAI",
+"start": 22.9,
+"end": 23.46
+},
+{
+"text": "KE",
+"start": 23.46,
+"end": 23.57
+},
+{
+"text": "TOKRE",
+"start": 23.64,
+"end": 24.18
+},
+{
+"text": "SANT",
+"start": 24.18,
+"end": 24.3
+},
+{
+"text": "AUR",
+"start": 24.3,
+"end": 24.47
+},
+{
+"text": "DARBARIYON",
+"start": 24.47,
+"end": 25.06
+},
+{
+"text": "MEIN",
+"start": 25.06,
+"end": 25.17
+},
+{
+"text": "BAANTE",
+"start": 25.17,
+"end": 25.52
+},
+{
+"text": "JAANE",
+"start": 25.52,
+"end": 25.77
+},
+{
+"text": "LAGE.",
+"start": 25.8,
+"end": 26.28
+},
+{
+"text": "PEHREDAAR",
+"start": 26.39,
+"end": 26.85
+},
+{
+"text": "AADI",
+"start": 26.85,
+"end": 27.22
+},
+{
+"text": "HO",
+"start": 27.22,
+"end": 27.32
+},
+{
+"text": "GAYE.",
+"start": 27.32,
+"end": 27.78
+},
+{
+"text": "AUR",
+"start": 27.91,
+"end": 28.03
+},
+{
+"text": "BISTAR",
+"start": 28.03,
+"end": 28.52
+},
+{
+"text": "PAR",
+"start": 28.52,
+"end": 28.76
+},
+{
+"text": "EK",
+"start": 28.77,
+"end": 29.02
+},
+{
+"text": "HUM-SHAKAL",
+"start": 29.02,
+"end": 29.45
+},
+{
+"text": "UNKI",
+"start": 29.45,
+"end": 29.82
+},
+{
+"text": "JAGAH",
+"start": 29.82,
+"end": 30.26
+},
+{
+"text": "LETA",
+"start": 30.26,
+"end": 30.74
+},
+{
+"text": "HUA.",
+"start": 30.82,
+"end": 31.46
+},
+{
+"text": "EK",
+"start": 31.61,
+"end": 31.75
+},
+{
+"text": "RAAT",
+"start": 31.75,
+"end": 32.11
+},
+{
+"text": "DO",
+"start": 32.11,
+"end": 32.4
+},
+{
+"text": "TOKRON",
+"start": 32.4,
+"end": 32.97
+},
+{
+"text": "MEIN",
+"start": 32.97,
+"end": 33.32
+},
+{
+"text": "SHIVAJI",
+"start": 33.32,
+"end": 33.95
+},
+{
+"text": "AUR",
+"start": 33.95,
+"end": 34.14
+},
+{
+"text": "SAMBHAJI.",
+"start": 34.15,
+"end": 34.84
+},
+{
+"text": "EK",
+"start": 34.95,
+"end": 35.05
+},
+{
+"text": "PEHREDAAR",
+"start": 35.05,
+"end": 35.61
+},
+{
+"text": "NE",
+"start": 35.61,
+"end": 35.82
+},
+{
+"text": "ROKA.",
+"start": 35.83,
+"end": 36.32
+},
+{
+"text": "EK",
+"start": 36.45,
+"end": 36.57
+},
+{
+"text": "PAL",
+"start": 36.57,
+"end": 36.82
+},
+{
+"text": "KE",
+"start": 36.82,
+"end": 36.95
+},
+{
+"text": "LIYE",
+"start": 36.95,
+"end": 37.38
+},
+{
+"text": "SAANS",
+"start": 37.4,
+"end": 37.64
+},
+{
+"text": "THAM",
+"start": 37.64,
+"end": 37.84
+},
+{
+"text": "GAYI.",
+"start": 37.9,
+"end": 38.48
+},
+{
+"text": "SUBAH",
+"start": 38.55,
+"end": 39.06
+},
+{
+"text": "TAK",
+"start": 39.06,
+"end": 39.34
+},
+{
+"text": "BISTAR",
+"start": 39.34,
+"end": 39.87
+},
+{
+"text": "KHALI",
+"start": 39.92,
+"end": 40.35
+},
+{
+"text": "THA.",
+"start": 40.35,
+"end": 40.81
+},
+{
+"text": "JO",
+"start": 41.01,
+"end": 41.15
+},
+{
+"text": "QAID",
+"start": 41.15,
+"end": 41.51
+},
+{
+"text": "MEIN",
+"start": 41.51,
+"end": 41.71
+},
+{
+"text": "THA",
+"start": 41.71,
+"end": 42.12
+},
+{
+"text": "VO",
+"start": 42.12,
+"end": 42.36
+},
+{
+"text": "SWARAJ",
+"start": 42.36,
+"end": 42.96
+},
+{
+"text": "KA",
+"start": 42.96,
+"end": 43.08
+},
+{
+"text": "SAPNA",
+"start": 43.08,
+"end": 43.44
+},
+{
+"text": "LEKAR",
+"start": 43.44,
+"end": 43.8
+},
+{
+"text": "LAUT",
+"start": 43.8,
+"end": 44.22
+},
+{
+"text": "AAYA.",
+"start": 44.22,
+"end": 44.7
+}
+]
