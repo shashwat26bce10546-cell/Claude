@@ -71,8 +71,7 @@ const card = (id, a, b, cls, html, tilt = -2) => gfx(id, a, b, cls,
   (T, D) => `tl.fromTo("#${id} .card", {opacity:0, y:26, scale:.88}, {opacity:1, y:0, scale:1, duration:.34, ease:"back.out(2)"}, ${T});` +
     `tl.to("#${id} .card", {opacity:0, y:-18, duration:.26, ease:"power2.in"}, ${fmt(T + D - 0.26)});`);
 
-card("g-age", 0.45, 4.9, "g-topright", `<b>AGE 16</b>`, -3);
-sfx.push(["pop", 0.45, 0.4]);
+// AGE 16, 1969 and 5 YEARS are already lettered into the artwork, so no card repeats them.
 card("g-name", 5.75, 9.5, "g-top", `<b>FRANK ABAGNALE</b><span>the teenage con artist</span>`, -1.5);
 sfx.push(["pop", 5.75, 0.4]);
 card("g-pilot", 14.3, 17.5, "g-topright", `<b>&#9992; PILOT</b>`, 3);
@@ -82,10 +81,6 @@ card("g-doctor", 26.6, 28.8, "g-topright", `<b>&#10010; DOCTOR</b>`, 2.5);
 sfx.push(["click-soft", 26.6, 0.45]);
 card("g-lawyer", 30.3, 32.9, "g-topright", `<b>&#9878; LAWYER</b>`, -3);
 sfx.push(["click-soft", 30.3, 0.45]);
-card("g-1969", 40.4, 43.2, "g-top", `<b>1969 &middot; FRANCE</b>`, 1.5);
-sfx.push(["pop", 40.4, 0.4]);
-card("g-years", 48.1, 51.3, "g-topright", `<b>5 YEARS</b>`, -2.5);
-sfx.push(["pop", 48.1, 0.4]);
 
 // final fade
 tl.push(`tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.6, ease:"power1.in", immediateRender:false}, ${fmt(END - 0.6)});`);

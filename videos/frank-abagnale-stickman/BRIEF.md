@@ -17,7 +17,7 @@ length: "59s (follows the voiceover)"
 - The Gemini sparkle watermark orbits the bottom-right below y=1095 of the 720x1280 source. A delogo
   blur smeared the flat artwork, so each clip is reframed to its top 1080 rows (1.17x push-in) instead.
 - Style per the user: minimal — captions carry the video, with a card only on the key beats
-  (AGE 16, FRANK ABAGNALE, PILOT, DOCTOR, LAWYER, 1969 - FRANCE, 5 YEARS). The money total and the
+  (FRANK ABAGNALE, PILOT, DOCTOR, LAWYER). AGE 16, $2.5 MILLION, 1969 and 5 YEARS and the
   closing "GENIUS OR FRAUD?" are already lettered into the artwork, so no card duplicates them.
 - Music: original synthesized score (build/music.py) - plucked arpeggio, soft kick, sparser through
   the chase and prison scenes. SFX: a few only (whooshes on whip/zoom cuts, pops on cards, one sparkle).
