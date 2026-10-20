@@ -13,7 +13,10 @@ length: "82.3s (follows the voiceover)"
   in chat. Each clip's artwork matches its scene, so the numbering is correct and they play 1 -> 15.
 - The voiceover matches the script almost word for word. Scene starts come from a local Whisper
   large-v3 transcript (ElevenLabs credits are exhausted); build/words.json holds the word timings.
-- Each clip is retimed to its narration line (1.03x-1.96x, motion-interpolated, then held).
+- Each clip is retimed to its narration line (1.03x-1.96x, then held). The stretch uses frame
+  BLENDING, not motion-compensated interpolation: mci guessed motion badly on flat cartoon art,
+  warping moving props and leaving an uneven cadence that read as stutter. Blending cut the
+  frame-to-frame unevenness about threefold.
 - The generator's sparkle watermark sits in the bottom-right below y=1080 of the 720x1280 source, so
   each clip is reframed to its top 1080 rows (1.17x push-in) rather than blurred.
 - Style matches the Frank Abagnale reel: minimal, captions carry it, and a card only on the beats the

@@ -23,8 +23,10 @@ for i, s in enumerate(S):
     e = S[i + 1] if i + 1 < len(S) else END
     target = round(e - s + 0.5, 3)
     f = round(min(max(target / SRC, 0.72), 2.0), 4)   # retime factor, clamped
-    speed = f"setpts={f}*PTS," + ("minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1"
-                                  if f > 1.05 else "fps=30")
+    # Frame-blend interpolation, not motion-compensated: on flat cartoon art mci guesses motion
+    # badly, which warped moving props and left the pacing uneven (the stutter the user saw).
+    # Blending keeps the cadence even at these 1.0x-2.0x stretches.
+    speed = f"setpts={f}*PTS," + ("minterpolate=fps=30:mi_mode=blend" if f > 1.02 else "fps=30")
     vf = ("crop=608:1080:56:0," + speed +
           ",tpad=stop_mode=clone:stop_duration=10,scale=1080:1920:flags=lanczos,"
           "eq=contrast=1.02:saturation=1.04,trim=duration=%s,setpts=PTS-STARTPTS,format=yuv420p" % target)
