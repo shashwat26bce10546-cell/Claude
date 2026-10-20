@@ -1,0 +1,567 @@
+[
+{
+"text": "21",
+"start": 0.14,
+"end": 0.56
+},
+{
+"text": "SIPAHI",
+"start": 0.56,
+"end": 1.31
+},
+{
+"text": "AUR",
+"start": 1.31,
+"end": 1.68
+},
+{
+"text": "SAAMNE",
+"start": 1.68,
+"end": 2.12
+},
+{
+"text": "HAZAARON",
+"start": 2.21,
+"end": 2.85
+},
+{
+"text": "DUSHMAN.",
+"start": 2.85,
+"end": 3.96
+},
+{
+"text": "1897",
+"start": 4.18,
+"end": 5.48
+},
+{
+"text": "NORTH",
+"start": 5.48,
+"end": 6.14
+},
+{
+"text": "WEST",
+"start": 6.25,
+"end": 6.61
+},
+{
+"text": "FRONTIER.",
+"start": 6.61,
+"end": 7.38
+},
+{
+"text": "SARAGARHI",
+"start": 7.44,
+"end": 8.05
+},
+{
+"text": "NAAM",
+"start": 8.05,
+"end": 8.37
+},
+{
+"text": "KI",
+"start": 8.37,
+"end": 8.48
+},
+{
+"text": "EK",
+"start": 8.48,
+"end": 8.74
+},
+{
+"text": "CHHOTI",
+"start": 8.74,
+"end": 9.24
+},
+{
+"text": "SI",
+"start": 9.24,
+"end": 9.36
+},
+{
+"text": "CHOWKI.",
+"start": 9.36,
+"end": 10.08
+},
+{
+"text": "DO",
+"start": 10.19,
+"end": 10.29
+},
+{
+"text": "BADE",
+"start": 10.29,
+"end": 10.82
+},
+{
+"text": "KILON",
+"start": 10.82,
+"end": 11.07
+},
+{
+"text": "KE",
+"start": 11.07,
+"end": 11.17
+},
+{
+"text": "BEECH",
+"start": 11.17,
+"end": 11.66
+},
+{
+"text": "SANDESH",
+"start": 11.66,
+"end": 12.4
+},
+{
+"text": "KA",
+"start": 12.4,
+"end": 12.56
+},
+{
+"text": "EK",
+"start": 12.56,
+"end": 12.88
+},
+{
+"text": "MAATRA",
+"start": 12.88,
+"end": 13.28
+},
+{
+"text": "RAASTA.",
+"start": 13.28,
+"end": 14
+},
+{
+"text": "HAVILDAR",
+"start": 14.05,
+"end": 14.55
+},
+{
+"text": "ISHAR",
+"start": 14.55,
+"end": 14.95
+},
+{
+"text": "SINGH",
+"start": 14.95,
+"end": 15.25
+},
+{
+"text": "NE",
+"start": 15.25,
+"end": 15.45
+},
+{
+"text": "DOOR",
+"start": 15.45,
+"end": 15.8
+},
+{
+"text": "SE",
+"start": 15.8,
+"end": 15.9
+},
+{
+"text": "UTHTI",
+"start": 15.9,
+"end": 16.3
+},
+{
+"text": "DHOOL",
+"start": 16.3,
+"end": 16.65
+},
+{
+"text": "DEKHI.",
+"start": 16.65,
+"end": 17.12
+},
+{
+"text": "HAZAARON",
+"start": 17.17,
+"end": 17.53
+},
+{
+"text": "AFRIDI",
+"start": 17.55,
+"end": 18.16
+},
+{
+"text": "AUR",
+"start": 18.16,
+"end": 18.37
+},
+{
+"text": "ORAKZAI",
+"start": 18.37,
+"end": 18.99
+},
+{
+"text": "HAMLAWAR",
+"start": 19,
+"end": 19.56
+},
+{
+"text": "EK",
+"start": 19.56,
+"end": 19.81
+},
+{
+"text": "HI",
+"start": 19.81,
+"end": 19.93
+},
+{
+"text": "NISHAANE",
+"start": 19.93,
+"end": 20.55
+},
+{
+"text": "PAR.",
+"start": 20.55,
+"end": 20.9
+},
+{
+"text": "GURMUKH",
+"start": 20.97,
+"end": 21.32
+},
+{
+"text": "SINGH",
+"start": 21.33,
+"end": 21.51
+},
+{
+"text": "NE",
+"start": 21.51,
+"end": 21.64
+},
+{
+"text": "SANDESH",
+"start": 21.64,
+"end": 21.93
+},
+{
+"text": "BHEJA",
+"start": 21.93,
+"end": 22.39
+},
+{
+"text": "HUM",
+"start": 22.39,
+"end": 22.62
+},
+{
+"text": "PAR",
+"start": 22.62,
+"end": 22.9
+},
+{
+"text": "HAMLA",
+"start": 22.9,
+"end": 23.18
+},
+{
+"text": "HO",
+"start": 23.18,
+"end": 23.32
+},
+{
+"text": "GAYA",
+"start": 23.32,
+"end": 23.67
+},
+{
+"text": "HAI.",
+"start": 23.67,
+"end": 23.86
+},
+{
+"text": "MADAD",
+"start": 23.95,
+"end": 24.33
+},
+{
+"text": "DOOR",
+"start": 24.33,
+"end": 24.73
+},
+{
+"text": "THI",
+"start": 24.82,
+"end": 25.14
+},
+{
+"text": "BAHUT",
+"start": 25.14,
+"end": 25.79
+},
+{
+"text": "DOOR.",
+"start": 25.8,
+"end": 26.48
+},
+{
+"text": "BHAAG",
+"start": 26.62,
+"end": 26.97
+},
+{
+"text": "JAANA",
+"start": 26.97,
+"end": 27.33
+},
+{
+"text": "YA",
+"start": 27.42,
+"end": 27.67
+},
+{
+"text": "KHADE",
+"start": 27.67,
+"end": 28.36
+},
+{
+"text": "REHNA",
+"start": 28.37,
+"end": 28.8
+},
+{
+"text": "UNHONE",
+"start": 28.9,
+"end": 29.3
+},
+{
+"text": "KHADE",
+"start": 29.3,
+"end": 29.8
+},
+{
+"text": "REHNA",
+"start": 29.8,
+"end": 30.1
+},
+{
+"text": "CHUNA.",
+"start": 30.1,
+"end": 30.52
+},
+{
+"text": "LEHAR",
+"start": 30.61,
+"end": 30.73
+},
+{
+"text": "PAR",
+"start": 30.73,
+"end": 30.9
+},
+{
+"text": "LEHAR",
+"start": 30.95,
+"end": 31.11
+},
+{
+"text": "PAR",
+"start": 31.11,
+"end": 31.28
+},
+{
+"text": "DUSHMAN",
+"start": 31.28,
+"end": 31.79
+},
+{
+"text": "AAGE",
+"start": 31.79,
+"end": 32.09
+},
+{
+"text": "NAHI",
+"start": 32.09,
+"end": 32.33
+},
+{
+"text": "BADH",
+"start": 32.34,
+"end": 32.73
+},
+{
+"text": "PAAYA.",
+"start": 32.75,
+"end": 33.34
+},
+{
+"text": "AAKHRI",
+"start": 33.45,
+"end": 33.76
+},
+{
+"text": "TAK",
+"start": 33.77,
+"end": 33.97
+},
+{
+"text": "SIGNALLER",
+"start": 33.97,
+"end": 34.48
+},
+{
+"text": "APNI",
+"start": 34.48,
+"end": 34.9
+},
+{
+"text": "JAGAH",
+"start": 34.9,
+"end": 35.27
+},
+{
+"text": "PAR",
+"start": 35.27,
+"end": 35.46
+},
+{
+"text": "RAHA.",
+"start": 35.57,
+"end": 35.9
+},
+{
+"text": "DEEWAR",
+"start": 35.99,
+"end": 36.28
+},
+{
+"text": "TOOT",
+"start": 36.33,
+"end": 36.67
+},
+{
+"text": "GAYI",
+"start": 36.67,
+"end": 37.08
+},
+{
+"text": "PAR",
+"start": 37.08,
+"end": 37.45
+},
+{
+"text": "HIMMAT",
+"start": 37.45,
+"end": 37.98
+},
+{
+"text": "NAHI.",
+"start": 38.13,
+"end": 38.62
+},
+{
+"text": "AAKHRI",
+"start": 38.74,
+"end": 39.1
+},
+{
+"text": "SANDESH",
+"start": 39.1,
+"end": 39.66
+},
+{
+"text": "AUR",
+"start": 39.66,
+"end": 40.01
+},
+{
+"text": "PHIR",
+"start": 40.01,
+"end": 40.47
+},
+{
+"text": "KHAMOSHI.",
+"start": 40.47,
+"end": 41.44
+},
+{
+"text": "SAARI",
+"start": 41.51,
+"end": 41.71
+},
+{
+"text": "CHOWKI",
+"start": 41.86,
+"end": 42.28
+},
+{
+"text": "GIR",
+"start": 42.28,
+"end": 42.63
+},
+{
+"text": "GAYI",
+"start": 42.63,
+"end": 43.06
+},
+{
+"text": "SAARE",
+"start": 43.15,
+"end": 43.42
+},
+{
+"text": "21",
+"start": 43.49,
+"end": 43.91
+},
+{
+"text": "SHAHEED",
+"start": 44,
+"end": 44.68
+},
+{
+"text": "HUE.",
+"start": 44.68,
+"end": 45.32
+},
+{
+"text": "UNKI",
+"start": 45.44,
+"end": 45.63
+},
+{
+"text": "VAJAH",
+"start": 45.75,
+"end": 46.1
+},
+{
+"text": "SE",
+"start": 46.1,
+"end": 46.17
+},
+{
+"text": "AASPAAS",
+"start": 46.26,
+"end": 46.76
+},
+{
+"text": "KE",
+"start": 46.76,
+"end": 46.88
+},
+{
+"text": "KILE",
+"start": 46.88,
+"end": 47.12
+},
+{
+"text": "BACH",
+"start": 47.12,
+"end": 47.48
+},
+{
+"text": "GAYE.",
+"start": 47.55,
+"end": 47.94
+}
+]
