@@ -1,0 +1,1358 @@
+[
+  {
+    "text": "In",
+    "start": 0.11,
+    "end": 0.16,
+    "id": "w0"
+  },
+  {
+    "text": "1920,",
+    "start": 0.16,
+    "end": 1.26,
+    "id": "w1"
+  },
+  {
+    "text": "a",
+    "start": 1.26,
+    "end": 1.43,
+    "id": "w2"
+  },
+  {
+    "text": "small",
+    "start": 1.43,
+    "end": 1.79,
+    "id": "w3"
+  },
+  {
+    "text": "man",
+    "start": 1.79,
+    "end": 2.03,
+    "id": "w4"
+  },
+  {
+    "text": "in",
+    "start": 2.03,
+    "end": 2.19,
+    "id": "w5"
+  },
+  {
+    "text": "Boston",
+    "start": 2.19,
+    "end": 2.68,
+    "id": "w6"
+  },
+  {
+    "text": "promised",
+    "start": 2.68,
+    "end": 3.31,
+    "id": "w7"
+  },
+  {
+    "text": "people",
+    "start": 3.39,
+    "end": 3.82,
+    "id": "w8"
+  },
+  {
+    "text": "a",
+    "start": 3.82,
+    "end": 3.9,
+    "id": "w9"
+  },
+  {
+    "text": "huge",
+    "start": 3.98,
+    "end": 4.22,
+    "id": "w10"
+  },
+  {
+    "text": "profit",
+    "start": 4.22,
+    "end": 4.71,
+    "id": "w11"
+  },
+  {
+    "text": "in",
+    "start": 4.71,
+    "end": 4.87,
+    "id": "w12"
+  },
+  {
+    "text": "just",
+    "start": 4.87,
+    "end": 5.19,
+    "id": "w13"
+  },
+  {
+    "text": "90",
+    "start": 5.19,
+    "end": 5.68,
+    "id": "w14"
+  },
+  {
+    "text": "days.",
+    "start": 5.68,
+    "end": 6.32,
+    "id": "w15"
+  },
+  {
+    "text": "His",
+    "start": 6.32,
+    "end": 6.645,
+    "id": "w16"
+  },
+  {
+    "text": "name",
+    "start": 6.645,
+    "end": 6.97,
+    "id": "w17"
+  },
+  {
+    "text": "was",
+    "start": 6.97,
+    "end": 7.15,
+    "id": "w18"
+  },
+  {
+    "text": "Charles",
+    "start": 7.15,
+    "end": 7.73,
+    "id": "w19"
+  },
+  {
+    "text": "Ponzi.",
+    "start": 7.73,
+    "end": 8.42,
+    "id": "w20"
+  },
+  {
+    "text": "He",
+    "start": 8.42,
+    "end": 8.53,
+    "id": "w21"
+  },
+  {
+    "text": "came",
+    "start": 8.57,
+    "end": 8.86,
+    "id": "w22"
+  },
+  {
+    "text": "from",
+    "start": 8.86,
+    "end": 9.15,
+    "id": "w23"
+  },
+  {
+    "text": "Italy",
+    "start": 9.15,
+    "end": 9.52,
+    "id": "w24"
+  },
+  {
+    "text": "with",
+    "start": 9.52,
+    "end": 9.77,
+    "id": "w25"
+  },
+  {
+    "text": "almost",
+    "start": 9.84,
+    "end": 10.17,
+    "id": "w26"
+  },
+  {
+    "text": "no",
+    "start": 10.25,
+    "end": 10.38,
+    "id": "w27"
+  },
+  {
+    "text": "money.",
+    "start": 10.44,
+    "end": 11.04,
+    "id": "w28"
+  },
+  {
+    "text": "One",
+    "start": 11.04,
+    "end": 11.385,
+    "id": "w29"
+  },
+  {
+    "text": "day,",
+    "start": 11.385,
+    "end": 11.73,
+    "id": "w30"
+  },
+  {
+    "text": "he",
+    "start": 11.73,
+    "end": 11.74,
+    "id": "w31"
+  },
+  {
+    "text": "got",
+    "start": 11.74,
+    "end": 11.95,
+    "id": "w32"
+  },
+  {
+    "text": "a",
+    "start": 11.95,
+    "end": 12.02,
+    "id": "w33"
+  },
+  {
+    "text": "letter",
+    "start": 12.02,
+    "end": 12.4,
+    "id": "w34"
+  },
+  {
+    "text": "from",
+    "start": 12.48,
+    "end": 12.74,
+    "id": "w35"
+  },
+  {
+    "text": "abroad.",
+    "start": 12.74,
+    "end": 13.44,
+    "id": "w36"
+  },
+  {
+    "text": "Inside",
+    "start": 13.44,
+    "end": 13.95,
+    "id": "w37"
+  },
+  {
+    "text": "was",
+    "start": 13.95,
+    "end": 14.2,
+    "id": "w38"
+  },
+  {
+    "text": "a",
+    "start": 14.2,
+    "end": 14.28,
+    "id": "w39"
+  },
+  {
+    "text": "small",
+    "start": 14.28,
+    "end": 14.7,
+    "id": "w40"
+  },
+  {
+    "text": "paper",
+    "start": 14.7,
+    "end": 15.12,
+    "id": "w41"
+  },
+  {
+    "text": "coupon",
+    "start": 15.12,
+    "end": 15.63,
+    "id": "w42"
+  },
+  {
+    "text": "for",
+    "start": 15.7,
+    "end": 15.88,
+    "id": "w43"
+  },
+  {
+    "text": "postage.",
+    "start": 15.88,
+    "end": 16.78,
+    "id": "w44"
+  },
+  {
+    "text": "He",
+    "start": 16.78,
+    "end": 16.95,
+    "id": "w45"
+  },
+  {
+    "text": "had",
+    "start": 16.95,
+    "end": 17.12,
+    "id": "w46"
+  },
+  {
+    "text": "a",
+    "start": 17.12,
+    "end": 17.29,
+    "id": "w47"
+  },
+  {
+    "text": "big",
+    "start": 17.29,
+    "end": 17.43,
+    "id": "w48"
+  },
+  {
+    "text": "idea.",
+    "start": 17.43,
+    "end": 17.94,
+    "id": "w49"
+  },
+  {
+    "text": "Buy",
+    "start": 17.94,
+    "end": 18.16,
+    "id": "w50"
+  },
+  {
+    "text": "these",
+    "start": 18.16,
+    "end": 18.37,
+    "id": "w51"
+  },
+  {
+    "text": "coupons",
+    "start": 18.6,
+    "end": 19.04,
+    "id": "w52"
+  },
+  {
+    "text": "where",
+    "start": 19.04,
+    "end": 19.41,
+    "id": "w53"
+  },
+  {
+    "text": "they",
+    "start": 19.41,
+    "end": 19.7,
+    "id": "w54"
+  },
+  {
+    "text": "are",
+    "start": 19.7,
+    "end": 19.9,
+    "id": "w55"
+  },
+  {
+    "text": "cheap.",
+    "start": 19.95,
+    "end": 20.49,
+    "id": "w56"
+  },
+  {
+    "text": "Swap",
+    "start": 20.57,
+    "end": 20.88,
+    "id": "w57"
+  },
+  {
+    "text": "them",
+    "start": 20.88,
+    "end": 21.18,
+    "id": "w58"
+  },
+  {
+    "text": "for",
+    "start": 21.26,
+    "end": 21.4,
+    "id": "w59"
+  },
+  {
+    "text": "stamps",
+    "start": 21.4,
+    "end": 21.85,
+    "id": "w60"
+  },
+  {
+    "text": "where",
+    "start": 21.85,
+    "end": 22.24,
+    "id": "w61"
+  },
+  {
+    "text": "they",
+    "start": 22.24,
+    "end": 22.44,
+    "id": "w62"
+  },
+  {
+    "text": "cost",
+    "start": 22.44,
+    "end": 22.64,
+    "id": "w63"
+  },
+  {
+    "text": "more.",
+    "start": 22.75,
+    "end": 23.05,
+    "id": "w64"
+  },
+  {
+    "text": "On",
+    "start": 23.11,
+    "end": 23.24,
+    "id": "w65"
+  },
+  {
+    "text": "paper,",
+    "start": 23.24,
+    "end": 23.71,
+    "id": "w66"
+  },
+  {
+    "text": "the",
+    "start": 23.71,
+    "end": 23.84,
+    "id": "w67"
+  },
+  {
+    "text": "trick",
+    "start": 24.06,
+    "end": 24.25,
+    "id": "w68"
+  },
+  {
+    "text": "could",
+    "start": 24.25,
+    "end": 24.59,
+    "id": "w69"
+  },
+  {
+    "text": "pay",
+    "start": 24.59,
+    "end": 24.79,
+    "id": "w70"
+  },
+  {
+    "text": "a",
+    "start": 24.79,
+    "end": 24.85,
+    "id": "w71"
+  },
+  {
+    "text": "profit.",
+    "start": 24.85,
+    "end": 25.46,
+    "id": "w72"
+  },
+  {
+    "text": "But",
+    "start": 25.46,
+    "end": 25.66,
+    "id": "w73"
+  },
+  {
+    "text": "in",
+    "start": 25.66,
+    "end": 25.79,
+    "id": "w74"
+  },
+  {
+    "text": "real",
+    "start": 25.79,
+    "end": 26.06,
+    "id": "w75"
+  },
+  {
+    "text": "life,",
+    "start": 26.06,
+    "end": 26.46,
+    "id": "w76"
+  },
+  {
+    "text": "there",
+    "start": 26.46,
+    "end": 26.8,
+    "id": "w77"
+  },
+  {
+    "text": "was",
+    "start": 26.8,
+    "end": 27,
+    "id": "w78"
+  },
+  {
+    "text": "too",
+    "start": 27,
+    "end": 27.07,
+    "id": "w79"
+  },
+  {
+    "text": "much",
+    "start": 27.19,
+    "end": 27.47,
+    "id": "w80"
+  },
+  {
+    "text": "paperwork",
+    "start": 27.47,
+    "end": 28.26,
+    "id": "w81"
+  },
+  {
+    "text": "to",
+    "start": 28.37,
+    "end": 28.42,
+    "id": "w82"
+  },
+  {
+    "text": "do",
+    "start": 28.42,
+    "end": 28.58,
+    "id": "w83"
+  },
+  {
+    "text": "it",
+    "start": 28.58,
+    "end": 28.74,
+    "id": "w84"
+  },
+  {
+    "text": "at",
+    "start": 28.74,
+    "end": 28.9,
+    "id": "w85"
+  },
+  {
+    "text": "scale.",
+    "start": 28.9,
+    "end": 29.45,
+    "id": "w86"
+  },
+  {
+    "text": "Ponzi",
+    "start": 29.68,
+    "end": 29.93,
+    "id": "w87"
+  },
+  {
+    "text": "did",
+    "start": 29.97,
+    "end": 30.18,
+    "id": "w88"
+  },
+  {
+    "text": "not",
+    "start": 30.18,
+    "end": 30.42,
+    "id": "w89"
+  },
+  {
+    "text": "care.",
+    "start": 30.42,
+    "end": 30.98,
+    "id": "w90"
+  },
+  {
+    "text": "He",
+    "start": 30.98,
+    "end": 31.14,
+    "id": "w91"
+  },
+  {
+    "text": "told",
+    "start": 31.14,
+    "end": 31.46,
+    "id": "w92"
+  },
+  {
+    "text": "people,",
+    "start": 31.46,
+    "end": 32.12,
+    "id": "w93"
+  },
+  {
+    "text": "give",
+    "start": 32.12,
+    "end": 32.41,
+    "id": "w94"
+  },
+  {
+    "text": "me",
+    "start": 32.41,
+    "end": 32.55,
+    "id": "w95"
+  },
+  {
+    "text": "one",
+    "start": 32.55,
+    "end": 32.69,
+    "id": "w96"
+  },
+  {
+    "text": "dollar",
+    "start": 32.79,
+    "end": 33.16,
+    "id": "w97"
+  },
+  {
+    "text": "and",
+    "start": 33.25,
+    "end": 33.43,
+    "id": "w98"
+  },
+  {
+    "text": "I",
+    "start": 33.43,
+    "end": 33.5,
+    "id": "w99"
+  },
+  {
+    "text": "will",
+    "start": 33.5,
+    "end": 33.79,
+    "id": "w100"
+  },
+  {
+    "text": "give",
+    "start": 33.79,
+    "end": 34.08,
+    "id": "w101"
+  },
+  {
+    "text": "you",
+    "start": 34.08,
+    "end": 34.36,
+    "id": "w102"
+  },
+  {
+    "text": "50%",
+    "start": 34.47,
+    "end": 34.86,
+    "id": "w103"
+  },
+  {
+    "text": "back.",
+    "start": 34.92,
+    "end": 35.43,
+    "id": "w104"
+  },
+  {
+    "text": "People",
+    "start": 35.43,
+    "end": 35.91,
+    "id": "w105"
+  },
+  {
+    "text": "lined",
+    "start": 35.91,
+    "end": 36.3,
+    "id": "w106"
+  },
+  {
+    "text": "up",
+    "start": 36.3,
+    "end": 36.45,
+    "id": "w107"
+  },
+  {
+    "text": "outside",
+    "start": 36.45,
+    "end": 36.98,
+    "id": "w108"
+  },
+  {
+    "text": "his",
+    "start": 36.99,
+    "end": 37.23,
+    "id": "w109"
+  },
+  {
+    "text": "office.",
+    "start": 37.23,
+    "end": 37.87,
+    "id": "w110"
+  },
+  {
+    "text": "Money",
+    "start": 37.94,
+    "end": 38.32,
+    "id": "w111"
+  },
+  {
+    "text": "poured",
+    "start": 38.34,
+    "end": 38.79,
+    "id": "w112"
+  },
+  {
+    "text": "in,",
+    "start": 38.79,
+    "end": 39.09,
+    "id": "w113"
+  },
+  {
+    "text": "thousands",
+    "start": 39.09,
+    "end": 39.8,
+    "id": "w114"
+  },
+  {
+    "text": "of",
+    "start": 39.8,
+    "end": 39.95,
+    "id": "w115"
+  },
+  {
+    "text": "dollars",
+    "start": 39.95,
+    "end": 40.49,
+    "id": "w116"
+  },
+  {
+    "text": "a",
+    "start": 40.49,
+    "end": 40.55,
+    "id": "w117"
+  },
+  {
+    "text": "day.",
+    "start": 40.56,
+    "end": 41.16,
+    "id": "w118"
+  },
+  {
+    "text": "Here",
+    "start": 41.16,
+    "end": 41.475,
+    "id": "w119"
+  },
+  {
+    "text": "is",
+    "start": 41.475,
+    "end": 41.79,
+    "id": "w120"
+  },
+  {
+    "text": "the",
+    "start": 41.79,
+    "end": 41.88,
+    "id": "w121"
+  },
+  {
+    "text": "secret.",
+    "start": 41.88,
+    "end": 42.6,
+    "id": "w122"
+  },
+  {
+    "text": "He",
+    "start": 42.6,
+    "end": 42.75,
+    "id": "w123"
+  },
+  {
+    "text": "did",
+    "start": 42.75,
+    "end": 42.89,
+    "id": "w124"
+  },
+  {
+    "text": "not",
+    "start": 43.1,
+    "end": 43.24,
+    "id": "w125"
+  },
+  {
+    "text": "buy",
+    "start": 43.24,
+    "end": 43.48,
+    "id": "w126"
+  },
+  {
+    "text": "many",
+    "start": 43.48,
+    "end": 43.8,
+    "id": "w127"
+  },
+  {
+    "text": "coupons.",
+    "start": 43.8,
+    "end": 44.59,
+    "id": "w128"
+  },
+  {
+    "text": "He",
+    "start": 44.66,
+    "end": 44.76,
+    "id": "w129"
+  },
+  {
+    "text": "paid",
+    "start": 44.76,
+    "end": 44.99,
+    "id": "w130"
+  },
+  {
+    "text": "early",
+    "start": 45.07,
+    "end": 45.48,
+    "id": "w131"
+  },
+  {
+    "text": "investors",
+    "start": 45.48,
+    "end": 46.12,
+    "id": "w132"
+  },
+  {
+    "text": "with",
+    "start": 46.21,
+    "end": 46.52,
+    "id": "w133"
+  },
+  {
+    "text": "money",
+    "start": 46.52,
+    "end": 46.92,
+    "id": "w134"
+  },
+  {
+    "text": "from",
+    "start": 46.92,
+    "end": 47.24,
+    "id": "w135"
+  },
+  {
+    "text": "new",
+    "start": 47.24,
+    "end": 47.5,
+    "id": "w136"
+  },
+  {
+    "text": "investors.",
+    "start": 47.63,
+    "end": 48.51,
+    "id": "w137"
+  },
+  {
+    "text": "Ponzi",
+    "start": 48.51,
+    "end": 48.92,
+    "id": "w138"
+  },
+  {
+    "text": "became",
+    "start": 48.95,
+    "end": 49.42,
+    "id": "w139"
+  },
+  {
+    "text": "rich.",
+    "start": 49.42,
+    "end": 49.99,
+    "id": "w140"
+  },
+  {
+    "text": "He",
+    "start": 49.99,
+    "end": 50.14,
+    "id": "w141"
+  },
+  {
+    "text": "wore",
+    "start": 50.15,
+    "end": 50.43,
+    "id": "w142"
+  },
+  {
+    "text": "fancy",
+    "start": 50.5,
+    "end": 50.83,
+    "id": "w143"
+  },
+  {
+    "text": "suits",
+    "start": 50.91,
+    "end": 51.3,
+    "id": "w144"
+  },
+  {
+    "text": "and",
+    "start": 51.3,
+    "end": 51.55,
+    "id": "w145"
+  },
+  {
+    "text": "he",
+    "start": 51.56,
+    "end": 51.71,
+    "id": "w146"
+  },
+  {
+    "text": "bought",
+    "start": 51.71,
+    "end": 52.21,
+    "id": "w147"
+  },
+  {
+    "text": "a",
+    "start": 52.21,
+    "end": 52.27,
+    "id": "w148"
+  },
+  {
+    "text": "big",
+    "start": 52.34,
+    "end": 52.54,
+    "id": "w149"
+  },
+  {
+    "text": "house.",
+    "start": 52.54,
+    "end": 53.28,
+    "id": "w150"
+  },
+  {
+    "text": "But",
+    "start": 53.39,
+    "end": 53.48,
+    "id": "w151"
+  },
+  {
+    "text": "a",
+    "start": 53.48,
+    "end": 53.55,
+    "id": "w152"
+  },
+  {
+    "text": "newspaper",
+    "start": 53.55,
+    "end": 54.17,
+    "id": "w153"
+  },
+  {
+    "text": "started",
+    "start": 54.17,
+    "end": 54.47,
+    "id": "w154"
+  },
+  {
+    "text": "asking",
+    "start": 54.71,
+    "end": 55.06,
+    "id": "w155"
+  },
+  {
+    "text": "questions.",
+    "start": 55.06,
+    "end": 55.91,
+    "id": "w156"
+  },
+  {
+    "text": "Then,",
+    "start": 56.63,
+    "end": 56.92,
+    "id": "w157"
+  },
+  {
+    "text": "auditors",
+    "start": 56.92,
+    "end": 57.46,
+    "id": "w158"
+  },
+  {
+    "text": "looked",
+    "start": 57.46,
+    "end": 57.71,
+    "id": "w159"
+  },
+  {
+    "text": "at",
+    "start": 57.94,
+    "end": 58,
+    "id": "w160"
+  },
+  {
+    "text": "his",
+    "start": 58,
+    "end": 58.19,
+    "id": "w161"
+  },
+  {
+    "text": "books.",
+    "start": 58.23,
+    "end": 58.74,
+    "id": "w162"
+  },
+  {
+    "text": "The",
+    "start": 58.74,
+    "end": 58.86,
+    "id": "w163"
+  },
+  {
+    "text": "numbers",
+    "start": 58.95,
+    "end": 59.42,
+    "id": "w164"
+  },
+  {
+    "text": "did",
+    "start": 59.42,
+    "end": 59.62,
+    "id": "w165"
+  },
+  {
+    "text": "not",
+    "start": 59.62,
+    "end": 59.82,
+    "id": "w166"
+  },
+  {
+    "text": "add",
+    "start": 59.82,
+    "end": 60.02,
+    "id": "w167"
+  },
+  {
+    "text": "up.",
+    "start": 60.02,
+    "end": 60.46,
+    "id": "w168"
+  },
+  {
+    "text": "There",
+    "start": 60.46,
+    "end": 60.705,
+    "id": "w169"
+  },
+  {
+    "text": "was",
+    "start": 60.705,
+    "end": 60.95,
+    "id": "w170"
+  },
+  {
+    "text": "not",
+    "start": 60.95,
+    "end": 61.12,
+    "id": "w171"
+  },
+  {
+    "text": "enough",
+    "start": 61.12,
+    "end": 61.48,
+    "id": "w172"
+  },
+  {
+    "text": "money",
+    "start": 61.48,
+    "end": 61.78,
+    "id": "w173"
+  },
+  {
+    "text": "to",
+    "start": 61.78,
+    "end": 61.9,
+    "id": "w174"
+  },
+  {
+    "text": "pay",
+    "start": 61.9,
+    "end": 62.03,
+    "id": "w175"
+  },
+  {
+    "text": "everyone.",
+    "start": 62.26,
+    "end": 62.8,
+    "id": "w176"
+  },
+  {
+    "text": "In",
+    "start": 62.8,
+    "end": 63.53,
+    "id": "w177"
+  },
+  {
+    "text": "1920,",
+    "start": 63.53,
+    "end": 64.09,
+    "id": "w178"
+  },
+  {
+    "text": "the",
+    "start": 64.12,
+    "end": 64.34,
+    "id": "w179"
+  },
+  {
+    "text": "scheme",
+    "start": 64.34,
+    "end": 64.61,
+    "id": "w180"
+  },
+  {
+    "text": "fell",
+    "start": 64.85,
+    "end": 65.15,
+    "id": "w181"
+  },
+  {
+    "text": "apart.",
+    "start": 65.15,
+    "end": 65.76,
+    "id": "w182"
+  },
+  {
+    "text": "Banks",
+    "start": 65.85,
+    "end": 66.2,
+    "id": "w183"
+  },
+  {
+    "text": "closed",
+    "start": 66.21,
+    "end": 66.7,
+    "id": "w184"
+  },
+  {
+    "text": "and",
+    "start": 66.7,
+    "end": 66.93,
+    "id": "w185"
+  },
+  {
+    "text": "many",
+    "start": 66.94,
+    "end": 67.26,
+    "id": "w186"
+  },
+  {
+    "text": "people",
+    "start": 67.26,
+    "end": 67.75,
+    "id": "w187"
+  },
+  {
+    "text": "lost",
+    "start": 67.75,
+    "end": 68.07,
+    "id": "w188"
+  },
+  {
+    "text": "their",
+    "start": 68.07,
+    "end": 68.48,
+    "id": "w189"
+  },
+  {
+    "text": "savings.",
+    "start": 68.48,
+    "end": 69.36,
+    "id": "w190"
+  },
+  {
+    "text": "Ponzi",
+    "start": 69.36,
+    "end": 69.695,
+    "id": "w191"
+  },
+  {
+    "text": "went",
+    "start": 69.695,
+    "end": 70.03,
+    "id": "w192"
+  },
+  {
+    "text": "to",
+    "start": 70.03,
+    "end": 70.18,
+    "id": "w193"
+  },
+  {
+    "text": "prison",
+    "start": 70.18,
+    "end": 70.63,
+    "id": "w194"
+  },
+  {
+    "text": "for",
+    "start": 70.63,
+    "end": 70.85,
+    "id": "w195"
+  },
+  {
+    "text": "fraud.",
+    "start": 70.85,
+    "end": 71.45,
+    "id": "w196"
+  },
+  {
+    "text": "Later,",
+    "start": 71.45,
+    "end": 71.98,
+    "id": "w197"
+  },
+  {
+    "text": "he",
+    "start": 71.98,
+    "end": 72.13,
+    "id": "w198"
+  },
+  {
+    "text": "was",
+    "start": 72.13,
+    "end": 72.26,
+    "id": "w199"
+  },
+  {
+    "text": "sent",
+    "start": 72.35,
+    "end": 72.64,
+    "id": "w200"
+  },
+  {
+    "text": "back",
+    "start": 72.67,
+    "end": 72.95,
+    "id": "w201"
+  },
+  {
+    "text": "to",
+    "start": 72.96,
+    "end": 73.1,
+    "id": "w202"
+  },
+  {
+    "text": "Italy.",
+    "start": 73.1,
+    "end": 73.78,
+    "id": "w203"
+  },
+  {
+    "text": "Today,",
+    "start": 74.32,
+    "end": 74.35,
+    "id": "w204"
+  },
+  {
+    "text": "we",
+    "start": 74.43,
+    "end": 74.51,
+    "id": "w205"
+  },
+  {
+    "text": "use",
+    "start": 74.51,
+    "end": 74.73,
+    "id": "w206"
+  },
+  {
+    "text": "his",
+    "start": 74.79,
+    "end": 74.99,
+    "id": "w207"
+  },
+  {
+    "text": "name",
+    "start": 74.99,
+    "end": 75.32,
+    "id": "w208"
+  },
+  {
+    "text": "for",
+    "start": 75.32,
+    "end": 75.49,
+    "id": "w209"
+  },
+  {
+    "text": "the",
+    "start": 75.74,
+    "end": 75.8,
+    "id": "w210"
+  },
+  {
+    "text": "same",
+    "start": 75.8,
+    "end": 76.13,
+    "id": "w211"
+  },
+  {
+    "text": "trick,",
+    "start": 76.13,
+    "end": 76.66,
+    "id": "w212"
+  },
+  {
+    "text": "a",
+    "start": 76.75,
+    "end": 76.78,
+    "id": "w213"
+  },
+  {
+    "text": "Ponzi",
+    "start": 76.78,
+    "end": 77.18,
+    "id": "w214"
+  },
+  {
+    "text": "scheme.",
+    "start": 77.18,
+    "end": 77.99,
+    "id": "w215"
+  },
+  {
+    "text": "So,",
+    "start": 77.99,
+    "end": 78.49,
+    "id": "w216"
+  },
+  {
+    "text": "would",
+    "start": 78.49,
+    "end": 78.59,
+    "id": "w217"
+  },
+  {
+    "text": "you",
+    "start": 78.59,
+    "end": 78.78,
+    "id": "w218"
+  },
+  {
+    "text": "have",
+    "start": 78.78,
+    "end": 79.04,
+    "id": "w219"
+  },
+  {
+    "text": "invested?",
+    "start": 79.04,
+    "end": 79.61,
+    "id": "w220"
+  },
+  {
+    "text": "Tell",
+    "start": 79.8,
+    "end": 80.01,
+    "id": "w221"
+  },
+  {
+    "text": "me",
+    "start": 80.01,
+    "end": 80.14,
+    "id": "w222"
+  },
+  {
+    "text": "in",
+    "start": 80.14,
+    "end": 80.27,
+    "id": "w223"
+  },
+  {
+    "text": "the",
+    "start": 80.27,
+    "end": 80.46,
+    "id": "w224"
+  },
+  {
+    "text": "comments.",
+    "start": 80.46,
+    "end": 81.24,
+    "id": "w225"
+  }
+]
