@@ -11,8 +11,8 @@ const words = JSON.parse(readFileSync(join(here, "words.json"), "utf8"));
 const fmt = (n) => +(+n).toFixed(3);
 
 // Scene starts (output seconds) — must match build/preprocess.py
-const S = [0, 5.49, 9.15, 13.12, 19.06, 23.39, 27.37, 32.28, 36.43, 42.90, 46.83, 50.49, 56.03, 60.94, 65.13];
-const END = 70.2;
+const S = [0, 5.04, 8.40, 12.05, 17.50, 21.48, 25.12, 29.63, 33.44, 39.39, 42.99, 46.35, 51.43, 55.94, 59.80];
+const END = 64.3;
 const HANDLE = 0.3; // each prepped clip starts 0.3s early so transitions have something to work with
 
 // transition INTO scene i (i >= 1) — kept light: cut-like fades, a couple of whips and zooms
@@ -27,8 +27,9 @@ const footage = S.map((s, i) => {
   const end = i < S.length - 1 ? S[i + 1] + HANDLE : END;
   const dur = fmt(end - start);
   const id = `s${i + 1}`;
-  // the source art already pushes in, so only a touch of extra drift here
-  tl.push(`tl.fromTo("#${id}-kb", {scale:1.01}, {scale:${i % 2 ? 1.05 : 1.04}, duration:${dur}, ease:"none"}, ${start});`);
+  // no push-in on the artwork: the frame sits still (the flat 2% only keeps the whip/zoom cuts
+  // from showing an edge for a few frames)
+  tl.push(`tl.set("#${id}-kb", {scale:1.02}, ${start});`);
   return `      <div class="seg" id="${id}-wrap" style="z-index:${i + 1}"><div class="kb" id="${id}-kb"><div class="tx" id="${id}-tx">
         <video id="${id}" class="clip" src="media/prepped/s${i + 1}.mp4" muted playsinline data-start="${start}" data-duration="${dur}" data-track-index="0"></video>
       </div></div></div>`;
@@ -73,15 +74,15 @@ const card = (id, a, b, cls, html, tilt = -2) => gfx(id, a, b, cls,
 
 // 1671, COLONEL BLOOD, NERVE!, MAY 9 and WHY DID THE KING FORGIVE HIM? are already lettered
 // into the artwork, so no card repeats them.
-card("g-priest", 16.34, 18.97, "g-topright", `<b>&#10013; PRIEST DISGUISE</b>`, -3);
-sfx.push(["click-soft", 16.34, 0.45]);
-card("g-nephew", 20.18, 23.3, "g-top", `<b>A NEPHEW</b><span>who did not exist</span>`, -1.5);
-sfx.push(["pop", 20.18, 0.4]);
-card("g-loot", 36.7, 40.18, "g-topright", `<b>CROWN &middot; ORB &middot; SCEPTRE</b>`, 2.5);
-sfx.push(["click-soft", 36.7, 0.45]);
-sfx.push(["sparkle", 53.57, 0.4]);   // the jewels coming back is in the artwork; just accent it
-card("g-pardon", 63.21, 65.18, "g-top", `<b>PARDONED</b><span>and given land</span>`, 2);
-sfx.push(["pop", 63.21, 0.4]);
+card("g-priest", 15.0, 17.42, "g-topright", `<b>&#10013; PRIEST DISGUISE</b>`, -3);
+sfx.push(["click-soft", 15.0, 0.45]);
+card("g-nephew", 18.52, 21.39, "g-top", `<b>A NEPHEW</b><span>who did not exist</span>`, -1.5);
+sfx.push(["pop", 18.52, 0.4]);
+card("g-loot", 33.69, 36.89, "g-topright", `<b>CROWN &middot; ORB &middot; SCEPTRE</b>`, 2.5);
+sfx.push(["click-soft", 33.69, 0.45]);
+sfx.push(["sparkle", 49.18, 0.4]);   // the jewels coming back is in the artwork; just accent it
+card("g-pardon", 58.03, 59.84, "g-top", `<b>PARDONED</b><span>and given land</span>`, 2);
+sfx.push(["pop", 58.03, 0.4]);
 
 // final fade
 tl.push(`tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.6, ease:"power1.in", immediateRender:false}, ${fmt(END - 0.6)});`);
@@ -173,7 +174,7 @@ ${G.join("\n")}
 ${caps}
       <div id="dip"></div>
       <div id="fade"></div>
-      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="69.1" data-track-index="10" data-volume="1"></audio>
+      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="63.4" data-track-index="10" data-volume="1"></audio>
       <audio id="score" src="assets/audio/score.mp3" data-start="0" data-duration="${END}" data-track-index="11" data-volume="0.3"></audio>
 ${sfxHtml}
     </div>

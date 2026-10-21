@@ -5,7 +5,7 @@ storyboard: no
 message: "Thomas Blood: the man who stole the Crown Jewels and was pardoned for it"
 aspect: "9:16"
 language: "English VO (ElevenLabs 'Drew'), English captions"
-length: "70.2s (the voiceover, sped up 1.12x)"
+length: "64.3s (the voiceover, sped up 1.22x)"
 ---
 
 ## Notes
@@ -13,13 +13,17 @@ length: "70.2s (the voiceover, sped up 1.12x)"
   in chat. Each clip's artwork matches its scene, so the numbering is correct and they play 1 -> 15.
 - Scene starts come from a local Whisper large-v3 transcript (no ElevenLabs credits used);
   build/words.json holds the word timings.
-- The delivered read was slower than the artwork's own animation, so the voiceover is sped up 1.12x
-  (atempo, pitch unchanged) and every clip plays at its natural speed (capped at 1.08x). When a line
-  still runs longer than one pass of the clip, the clip plays again with a 0.5s crossfade.
-  build/words.json holds the word timings divided by that same 1.12.
+- The voiceover is sped up 1.22x (atempo, pitch unchanged) so the clips barely have to stretch; each
+  clip then plays ONCE, slowed at most 1.65x (average 1.23x). No repeated passes and no held frames —
+  the user disliked both. build/words.json holds the word timings divided by that same 1.22.
+- No push-in on the artwork either: scenes sit still (a flat 2% scale only keeps the whip/zoom cuts
+  from showing an edge).
   The stretch uses frame blending, not motion-compensated interpolation (mci warps flat cartoon art).
-- The sparkle watermark sits in the bottom-right below y=1080 of the 720x1280 source, so each clip is
-  reframed to its top 1080 rows (1.17x push-in).
+- The FULL frame is kept (no crop). The sparkle watermark is erased in place instead: it is a fixed
+  semi-transparent star, so build/preprocess.py measures its alpha per clip from the footage itself
+  (the mark is the one thing that holds still while the art moves), un-composites it frame by frame
+  and feathers the edge. The measured maps are cached in build/watermark-alpha.npy. Over flat art it
+  is invisible; on one or two clips where the mark sat on a dark character a faint trace remains.
 - Style per the user: same as the Frank Abagnale reel — minimal, captions carry it, with a card only
   on the beats the artwork does not already letter (PRIEST DISGUISE, A NEPHEW who did not exist,
   CROWN · ORB · SCEPTRE, PARDONED and given land). 1671, COLONEL BLOOD, NERVE!, MAY 9 and
