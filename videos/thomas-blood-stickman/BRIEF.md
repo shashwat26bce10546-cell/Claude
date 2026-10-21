@@ -5,7 +5,7 @@ storyboard: no
 message: "Thomas Blood: the man who stole the Crown Jewels and was pardoned for it"
 aspect: "9:16"
 language: "English VO (ElevenLabs 'Drew'), English captions"
-length: "78.2s (follows the voiceover)"
+length: "70.2s (the voiceover, sped up 1.12x)"
 ---
 
 ## Notes
@@ -13,8 +13,10 @@ length: "78.2s (follows the voiceover)"
   in chat. Each clip's artwork matches its scene, so the numbering is correct and they play 1 -> 15.
 - Scene starts come from a local Whisper large-v3 transcript (no ElevenLabs credits used);
   build/words.json holds the word timings.
-- Timing as fixed on the Ponzi reel: each clip is slowed at most 1.3x, and when a line runs longer
-  than one pass of the clip, the clip plays again with a 0.5s crossfade — no slow motion, no freeze.
+- The delivered read was slower than the artwork's own animation, so the voiceover is sped up 1.12x
+  (atempo, pitch unchanged) and every clip plays at its natural speed (capped at 1.08x). When a line
+  still runs longer than one pass of the clip, the clip plays again with a 0.5s crossfade.
+  build/words.json holds the word timings divided by that same 1.12.
   The stretch uses frame blending, not motion-compensated interpolation (mci warps flat cartoon art).
 - The sparkle watermark sits in the bottom-right below y=1080 of the 720x1280 source, so each clip is
   reframed to its top 1080 rows (1.17x push-in).

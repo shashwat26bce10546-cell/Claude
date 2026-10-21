@@ -6,7 +6,7 @@ import numpy as np, os, subprocess, wave
 
 os.chdir(os.path.join(os.path.dirname(__file__), ".."))
 SR = 48000
-DUR = 78.5           # voiceover is 76.3s; tail lets the last note ring out
+DUR = 70.4           # voiceover is 68.1s after the 1.12x speed-up; tail lets it ring out
 BPM = 112.0
 BEAT = 60.0 / BPM
 BAR = 4 * BEAT
@@ -62,8 +62,8 @@ for b in range(bars):
     bar_t = b * BAR
     root, arp = CHORDS[b % 4]
     # darker, sparser pass for the chase/caught/prison stretch (~38s-50s)
-    dark = 36.0 <= bar_t < 62.0        # the break-in, the chase and the arrest
-    lift = 68.0 <= bar_t < 75.0          # the pardon and the land
+    dark = 32.0 <= bar_t < 55.0        # the break-in, the chase and the arrest
+    lift = 60.0 <= bar_t < 67.0          # the pardon and the land
     amp = 0.17 * (0.6 if dark else (1.15 if lift else 1.0))
     for i, f in enumerate(arp):
         if dark and i % 2:               # halve the note density in the dark section

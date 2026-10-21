@@ -1,7 +1,7 @@
 # Clips 1-15 in the user's order (verified against the script and the voiceover: each clip's
 # artwork matches its scene, so the numbering is correct). Each clip is fitted to its narration
-# line: slowed at most 1.3x (beyond that the animation looks sluggish) and, when the line runs
-# longer than one pass of the clip, the clip plays again with a crossfade. Upscaled to 1080x1920.
+# line: played at natural speed (at most 1.08x) and, when the line runs longer than one pass of
+# the clip, the clip plays again with a crossfade. Upscaled to 1080x1920.
 # The Gemini sparkle watermark orbits the bottom-right below y=1095. Blurring it out smears the flat
 # artwork, so each clip is reframed to its top 1080 rows (a 1.17x push-in) and the watermark is gone.
 import subprocess, os
@@ -9,18 +9,22 @@ import subprocess, os
 os.chdir(os.path.join(os.path.dirname(__file__), ".."))
 
 # scene starts, from the Scribe word timings (one per voiceover line)
-S = [0, 6.15, 10.25, 14.70, 21.35, 26.20, 30.65, 36.15, 40.80, 48.05, 52.45, 56.55, 62.75, 68.25, 72.95]
-END = 78.2
+S = [0, 5.49, 9.15, 13.12, 19.06, 23.39, 27.37, 32.28, 36.43, 42.90, 46.83, 50.49, 56.03, 60.94, 65.13]
+END = 70.2
 SRC = 4.01                      # every source clip is 4.01s
 
+# The delivered read is slower than the artwork's own animation, which made the cut drag. Speeding
+# the voiceover up 1.12x (atempo keeps the pitch) lets every clip play at its own natural speed.
+VO_SPEED = 1.12
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/audio/voiceover.mp3", "-af",
+                f"atempo={VO_SPEED},"
                 "highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=5:release=100:makeup=2,"
                 "loudnorm=I=-15:TP=-1.5:LRA=8",
                 "-ar", "48000", "-c:a", "libmp3lame", "-b:a", "192k",
                 "assets/audio/voiceover-master.mp3"], check=True)
 
 os.makedirs("media/prepped", exist_ok=True)
-MAX_SLOW = 1.3          # beyond this the animation starts to look sluggish
+MAX_SLOW = 1.08         # essentially natural speed; the voiceover carries the pacing instead
 XF = 0.5                # crossfade used when a scene outlasts one pass of the clip
 
 for i, s in enumerate(S):
