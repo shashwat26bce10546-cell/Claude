@@ -1,0 +1,1448 @@
+[
+  {
+    "text": "In",
+    "start": 0.09,
+    "end": 0.16,
+    "id": "w0"
+  },
+  {
+    "text": "1671,",
+    "start": 0.16,
+    "end": 1.27,
+    "id": "w1"
+  },
+  {
+    "text": "one",
+    "start": 1.27,
+    "end": 1.51,
+    "id": "w2"
+  },
+  {
+    "text": "man",
+    "start": 1.51,
+    "end": 1.68,
+    "id": "w3"
+  },
+  {
+    "text": "tried",
+    "start": 1.9,
+    "end": 2.16,
+    "id": "w4"
+  },
+  {
+    "text": "to",
+    "start": 2.16,
+    "end": 2.32,
+    "id": "w5"
+  },
+  {
+    "text": "steal",
+    "start": 2.32,
+    "end": 2.72,
+    "id": "w6"
+  },
+  {
+    "text": "the",
+    "start": 2.72,
+    "end": 2.89,
+    "id": "w7"
+  },
+  {
+    "text": "crown",
+    "start": 2.96,
+    "end": 3.36,
+    "id": "w8"
+  },
+  {
+    "text": "jewels",
+    "start": 3.36,
+    "end": 3.84,
+    "id": "w9"
+  },
+  {
+    "text": "of",
+    "start": 3.84,
+    "end": 4,
+    "id": "w10"
+  },
+  {
+    "text": "England",
+    "start": 4,
+    "end": 4.63,
+    "id": "w11"
+  },
+  {
+    "text": "from",
+    "start": 4.63,
+    "end": 4.78,
+    "id": "w12"
+  },
+  {
+    "text": "the",
+    "start": 5.12,
+    "end": 5.13,
+    "id": "w13"
+  },
+  {
+    "text": "Tower",
+    "start": 5.13,
+    "end": 5.48,
+    "id": "w14"
+  },
+  {
+    "text": "of",
+    "start": 5.48,
+    "end": 5.62,
+    "id": "w15"
+  },
+  {
+    "text": "London.",
+    "start": 5.62,
+    "end": 6.25,
+    "id": "w16"
+  },
+  {
+    "text": "His",
+    "start": 6.25,
+    "end": 6.6,
+    "id": "w17"
+  },
+  {
+    "text": "name",
+    "start": 6.6,
+    "end": 6.95,
+    "id": "w18"
+  },
+  {
+    "text": "was",
+    "start": 6.95,
+    "end": 7.12,
+    "id": "w19"
+  },
+  {
+    "text": "Thomas",
+    "start": 7.12,
+    "end": 7.63,
+    "id": "w20"
+  },
+  {
+    "text": "Blood.",
+    "start": 7.63,
+    "end": 8.34,
+    "id": "w21"
+  },
+  {
+    "text": "People",
+    "start": 8.34,
+    "end": 8.91,
+    "id": "w22"
+  },
+  {
+    "text": "called",
+    "start": 8.91,
+    "end": 9.14,
+    "id": "w23"
+  },
+  {
+    "text": "him",
+    "start": 9.14,
+    "end": 9.34,
+    "id": "w24"
+  },
+  {
+    "text": "Colonel",
+    "start": 9.34,
+    "end": 9.81,
+    "id": "w25"
+  },
+  {
+    "text": "Blood.",
+    "start": 9.81,
+    "end": 10.35,
+    "id": "w26"
+  },
+  {
+    "text": "He",
+    "start": 10.35,
+    "end": 10.55,
+    "id": "w27"
+  },
+  {
+    "text": "was",
+    "start": 10.55,
+    "end": 10.75,
+    "id": "w28"
+  },
+  {
+    "text": "an",
+    "start": 10.75,
+    "end": 10.95,
+    "id": "w29"
+  },
+  {
+    "text": "Irish",
+    "start": 10.95,
+    "end": 11.37,
+    "id": "w30"
+  },
+  {
+    "text": "soldier",
+    "start": 11.37,
+    "end": 11.96,
+    "id": "w31"
+  },
+  {
+    "text": "and",
+    "start": 11.96,
+    "end": 12.21,
+    "id": "w32"
+  },
+  {
+    "text": "a",
+    "start": 12.21,
+    "end": 12.29,
+    "id": "w33"
+  },
+  {
+    "text": "rebel,",
+    "start": 12.29,
+    "end": 12.88,
+    "id": "w34"
+  },
+  {
+    "text": "and",
+    "start": 12.88,
+    "end": 13.13,
+    "id": "w35"
+  },
+  {
+    "text": "he",
+    "start": 13.13,
+    "end": 13.3,
+    "id": "w36"
+  },
+  {
+    "text": "had",
+    "start": 13.3,
+    "end": 13.51,
+    "id": "w37"
+  },
+  {
+    "text": "a",
+    "start": 13.57,
+    "end": 13.63,
+    "id": "w38"
+  },
+  {
+    "text": "lot",
+    "start": 13.63,
+    "end": 13.88,
+    "id": "w39"
+  },
+  {
+    "text": "of",
+    "start": 13.88,
+    "end": 14.05,
+    "id": "w40"
+  },
+  {
+    "text": "nerve.",
+    "start": 14.05,
+    "end": 14.8,
+    "id": "w41"
+  },
+  {
+    "text": "First,",
+    "start": 14.8,
+    "end": 15.105,
+    "id": "w42"
+  },
+  {
+    "text": "he",
+    "start": 15.105,
+    "end": 15.41,
+    "id": "w43"
+  },
+  {
+    "text": "made",
+    "start": 15.41,
+    "end": 15.65,
+    "id": "w44"
+  },
+  {
+    "text": "friends",
+    "start": 15.65,
+    "end": 16.11,
+    "id": "w45"
+  },
+  {
+    "text": "with",
+    "start": 16.11,
+    "end": 16.37,
+    "id": "w46"
+  },
+  {
+    "text": "the",
+    "start": 16.37,
+    "end": 16.56,
+    "id": "w47"
+  },
+  {
+    "text": "man",
+    "start": 16.56,
+    "end": 16.77,
+    "id": "w48"
+  },
+  {
+    "text": "who",
+    "start": 16.77,
+    "end": 16.97,
+    "id": "w49"
+  },
+  {
+    "text": "guarded",
+    "start": 16.97,
+    "end": 17.43,
+    "id": "w50"
+  },
+  {
+    "text": "the",
+    "start": 17.43,
+    "end": 17.63,
+    "id": "w51"
+  },
+  {
+    "text": "jewels.",
+    "start": 17.63,
+    "end": 18.21,
+    "id": "w52"
+  },
+  {
+    "text": "Blood",
+    "start": 18.21,
+    "end": 18.91,
+    "id": "w53"
+  },
+  {
+    "text": "dressed",
+    "start": 18.91,
+    "end": 19.08,
+    "id": "w54"
+  },
+  {
+    "text": "as",
+    "start": 19.08,
+    "end": 19.21,
+    "id": "w55"
+  },
+  {
+    "text": "a",
+    "start": 19.21,
+    "end": 19.23,
+    "id": "w56"
+  },
+  {
+    "text": "priest",
+    "start": 19.29,
+    "end": 19.67,
+    "id": "w57"
+  },
+  {
+    "text": "and",
+    "start": 19.67,
+    "end": 19.87,
+    "id": "w58"
+  },
+  {
+    "text": "visited",
+    "start": 19.87,
+    "end": 20.33,
+    "id": "w59"
+  },
+  {
+    "text": "the",
+    "start": 20.33,
+    "end": 20.5,
+    "id": "w60"
+  },
+  {
+    "text": "guard's",
+    "start": 20.71,
+    "end": 21,
+    "id": "w61"
+  },
+  {
+    "text": "home.",
+    "start": 21,
+    "end": 21.47,
+    "id": "w62"
+  },
+  {
+    "text": "He",
+    "start": 21.47,
+    "end": 21.72,
+    "id": "w63"
+  },
+  {
+    "text": "even",
+    "start": 21.72,
+    "end": 21.97,
+    "id": "w64"
+  },
+  {
+    "text": "offered",
+    "start": 21.97,
+    "end": 22.42,
+    "id": "w65"
+  },
+  {
+    "text": "a",
+    "start": 22.46,
+    "end": 22.5,
+    "id": "w66"
+  },
+  {
+    "text": "match",
+    "start": 22.5,
+    "end": 22.84,
+    "id": "w67"
+  },
+  {
+    "text": "for",
+    "start": 22.85,
+    "end": 23.06,
+    "id": "w68"
+  },
+  {
+    "text": "the",
+    "start": 23.06,
+    "end": 23.27,
+    "id": "w69"
+  },
+  {
+    "text": "guard's",
+    "start": 23.27,
+    "end": 23.76,
+    "id": "w70"
+  },
+  {
+    "text": "daughter",
+    "start": 23.8,
+    "end": 24.32,
+    "id": "w71"
+  },
+  {
+    "text": "with",
+    "start": 24.32,
+    "end": 24.6,
+    "id": "w72"
+  },
+  {
+    "text": "a",
+    "start": 24.6,
+    "end": 24.67,
+    "id": "w73"
+  },
+  {
+    "text": "nephew",
+    "start": 24.67,
+    "end": 25.09,
+    "id": "w74"
+  },
+  {
+    "text": "who",
+    "start": 25.09,
+    "end": 25.3,
+    "id": "w75"
+  },
+  {
+    "text": "did",
+    "start": 25.31,
+    "end": 25.51,
+    "id": "w76"
+  },
+  {
+    "text": "not",
+    "start": 25.51,
+    "end": 25.72,
+    "id": "w77"
+  },
+  {
+    "text": "exist.",
+    "start": 25.72,
+    "end": 26.3,
+    "id": "w78"
+  },
+  {
+    "text": "The",
+    "start": 26.3,
+    "end": 26.83,
+    "id": "w79"
+  },
+  {
+    "text": "guard",
+    "start": 26.83,
+    "end": 26.86,
+    "id": "w80"
+  },
+  {
+    "text": "liked",
+    "start": 26.86,
+    "end": 27.15,
+    "id": "w81"
+  },
+  {
+    "text": "him.",
+    "start": 27.21,
+    "end": 27.64,
+    "id": "w82"
+  },
+  {
+    "text": "So,",
+    "start": 27.73,
+    "end": 27.95,
+    "id": "w83"
+  },
+  {
+    "text": "one",
+    "start": 27.95,
+    "end": 28.18,
+    "id": "w84"
+  },
+  {
+    "text": "day,",
+    "start": 28.22,
+    "end": 28.58,
+    "id": "w85"
+  },
+  {
+    "text": "Blood",
+    "start": 28.58,
+    "end": 28.97,
+    "id": "w86"
+  },
+  {
+    "text": "asked,",
+    "start": 28.97,
+    "end": 29.56,
+    "id": "w87"
+  },
+  {
+    "text": "could",
+    "start": 29.56,
+    "end": 29.82,
+    "id": "w88"
+  },
+  {
+    "text": "we",
+    "start": 29.82,
+    "end": 29.92,
+    "id": "w89"
+  },
+  {
+    "text": "see",
+    "start": 29.92,
+    "end": 30.08,
+    "id": "w90"
+  },
+  {
+    "text": "the",
+    "start": 30.08,
+    "end": 30.24,
+    "id": "w91"
+  },
+  {
+    "text": "jewels?",
+    "start": 30.24,
+    "end": 30.74,
+    "id": "w92"
+  },
+  {
+    "text": "On",
+    "start": 30.74,
+    "end": 31.045,
+    "id": "w93"
+  },
+  {
+    "text": "May",
+    "start": 31.045,
+    "end": 31.35,
+    "id": "w94"
+  },
+  {
+    "text": "9th,",
+    "start": 31.35,
+    "end": 31.65,
+    "id": "w95"
+  },
+  {
+    "text": "Blood",
+    "start": 31.65,
+    "end": 32.04,
+    "id": "w96"
+  },
+  {
+    "text": "came",
+    "start": 32.04,
+    "end": 32.35,
+    "id": "w97"
+  },
+  {
+    "text": "back",
+    "start": 32.35,
+    "end": 32.66,
+    "id": "w98"
+  },
+  {
+    "text": "with",
+    "start": 32.66,
+    "end": 32.97,
+    "id": "w99"
+  },
+  {
+    "text": "three",
+    "start": 32.97,
+    "end": 33.36,
+    "id": "w100"
+  },
+  {
+    "text": "friends.",
+    "start": 33.36,
+    "end": 34.22,
+    "id": "w101"
+  },
+  {
+    "text": "The",
+    "start": 34.22,
+    "end": 34.475,
+    "id": "w102"
+  },
+  {
+    "text": "guard",
+    "start": 34.475,
+    "end": 34.73,
+    "id": "w103"
+  },
+  {
+    "text": "took",
+    "start": 34.73,
+    "end": 34.94,
+    "id": "w104"
+  },
+  {
+    "text": "them",
+    "start": 34.94,
+    "end": 35.18,
+    "id": "w105"
+  },
+  {
+    "text": "to",
+    "start": 35.22,
+    "end": 35.3,
+    "id": "w106"
+  },
+  {
+    "text": "the",
+    "start": 35.3,
+    "end": 35.48,
+    "id": "w107"
+  },
+  {
+    "text": "jewel",
+    "start": 35.48,
+    "end": 35.78,
+    "id": "w108"
+  },
+  {
+    "text": "room.",
+    "start": 35.78,
+    "end": 36.26,
+    "id": "w109"
+  },
+  {
+    "text": "Then",
+    "start": 36.26,
+    "end": 36.535,
+    "id": "w110"
+  },
+  {
+    "text": "they",
+    "start": 36.535,
+    "end": 36.81,
+    "id": "w111"
+  },
+  {
+    "text": "threw",
+    "start": 36.81,
+    "end": 37.04,
+    "id": "w112"
+  },
+  {
+    "text": "a",
+    "start": 37.04,
+    "end": 37.1,
+    "id": "w113"
+  },
+  {
+    "text": "cloak",
+    "start": 37.1,
+    "end": 37.4,
+    "id": "w114"
+  },
+  {
+    "text": "over",
+    "start": 37.4,
+    "end": 37.64,
+    "id": "w115"
+  },
+  {
+    "text": "the",
+    "start": 37.64,
+    "end": 37.82,
+    "id": "w116"
+  },
+  {
+    "text": "guard's",
+    "start": 37.82,
+    "end": 38.23,
+    "id": "w117"
+  },
+  {
+    "text": "head",
+    "start": 38.23,
+    "end": 38.4,
+    "id": "w118"
+  },
+  {
+    "text": "and",
+    "start": 38.61,
+    "end": 38.66,
+    "id": "w119"
+  },
+  {
+    "text": "knocked",
+    "start": 38.66,
+    "end": 39.09,
+    "id": "w120"
+  },
+  {
+    "text": "him",
+    "start": 39.09,
+    "end": 39.27,
+    "id": "w121"
+  },
+  {
+    "text": "down.",
+    "start": 39.27,
+    "end": 39.78,
+    "id": "w122"
+  },
+  {
+    "text": "They",
+    "start": 39.78,
+    "end": 40.17,
+    "id": "w123"
+  },
+  {
+    "text": "tied",
+    "start": 40.17,
+    "end": 40.34,
+    "id": "w124"
+  },
+  {
+    "text": "him",
+    "start": 40.34,
+    "end": 40.49,
+    "id": "w125"
+  },
+  {
+    "text": "up.",
+    "start": 40.55,
+    "end": 40.9,
+    "id": "w126"
+  },
+  {
+    "text": "Blood",
+    "start": 40.9,
+    "end": 41.39,
+    "id": "w127"
+  },
+  {
+    "text": "grabbed",
+    "start": 41.39,
+    "end": 41.71,
+    "id": "w128"
+  },
+  {
+    "text": "the",
+    "start": 41.77,
+    "end": 41.92,
+    "id": "w129"
+  },
+  {
+    "text": "crown.",
+    "start": 41.92,
+    "end": 42.5,
+    "id": "w130"
+  },
+  {
+    "text": "One",
+    "start": 42.5,
+    "end": 42.99,
+    "id": "w131"
+  },
+  {
+    "text": "friend",
+    "start": 42.99,
+    "end": 43.1,
+    "id": "w132"
+  },
+  {
+    "text": "flattened",
+    "start": 43.1,
+    "end": 43.7,
+    "id": "w133"
+  },
+  {
+    "text": "the",
+    "start": 43.7,
+    "end": 43.9,
+    "id": "w134"
+  },
+  {
+    "text": "orb.",
+    "start": 43.9,
+    "end": 44.32,
+    "id": "w135"
+  },
+  {
+    "text": "Another",
+    "start": 44.69,
+    "end": 44.72,
+    "id": "w136"
+  },
+  {
+    "text": "tried",
+    "start": 44.72,
+    "end": 45.01,
+    "id": "w137"
+  },
+  {
+    "text": "to",
+    "start": 45.01,
+    "end": 45.12,
+    "id": "w138"
+  },
+  {
+    "text": "cut",
+    "start": 45.12,
+    "end": 45.29,
+    "id": "w139"
+  },
+  {
+    "text": "up",
+    "start": 45.29,
+    "end": 45.4,
+    "id": "w140"
+  },
+  {
+    "text": "the",
+    "start": 45.4,
+    "end": 45.55,
+    "id": "w141"
+  },
+  {
+    "text": "scepter.",
+    "start": 45.57,
+    "end": 46.18,
+    "id": "w142"
+  },
+  {
+    "text": "They",
+    "start": 46.18,
+    "end": 46.415,
+    "id": "w143"
+  },
+  {
+    "text": "hid",
+    "start": 46.415,
+    "end": 46.65,
+    "id": "w144"
+  },
+  {
+    "text": "the",
+    "start": 46.65,
+    "end": 46.81,
+    "id": "w145"
+  },
+  {
+    "text": "loot",
+    "start": 46.81,
+    "end": 47.06,
+    "id": "w146"
+  },
+  {
+    "text": "in",
+    "start": 47.06,
+    "end": 47.18,
+    "id": "w147"
+  },
+  {
+    "text": "their",
+    "start": 47.18,
+    "end": 47.49,
+    "id": "w148"
+  },
+  {
+    "text": "clothes.",
+    "start": 47.49,
+    "end": 48.15,
+    "id": "w149"
+  },
+  {
+    "text": "But",
+    "start": 48.15,
+    "end": 48.65,
+    "id": "w150"
+  },
+  {
+    "text": "right",
+    "start": 48.65,
+    "end": 48.7,
+    "id": "w151"
+  },
+  {
+    "text": "then,",
+    "start": 48.7,
+    "end": 49.1,
+    "id": "w152"
+  },
+  {
+    "text": "the",
+    "start": 49.14,
+    "end": 49.3,
+    "id": "w153"
+  },
+  {
+    "text": "guard's",
+    "start": 49.3,
+    "end": 49.77,
+    "id": "w154"
+  },
+  {
+    "text": "son",
+    "start": 49.77,
+    "end": 49.97,
+    "id": "w155"
+  },
+  {
+    "text": "came",
+    "start": 49.97,
+    "end": 50.23,
+    "id": "w156"
+  },
+  {
+    "text": "home",
+    "start": 50.45,
+    "end": 50.51,
+    "id": "w157"
+  },
+  {
+    "text": "from",
+    "start": 50.51,
+    "end": 50.78,
+    "id": "w158"
+  },
+  {
+    "text": "war,",
+    "start": 50.78,
+    "end": 51.11,
+    "id": "w159"
+  },
+  {
+    "text": "and",
+    "start": 51.11,
+    "end": 51.31,
+    "id": "w160"
+  },
+  {
+    "text": "he",
+    "start": 51.31,
+    "end": 51.44,
+    "id": "w161"
+  },
+  {
+    "text": "heard",
+    "start": 51.44,
+    "end": 51.78,
+    "id": "w162"
+  },
+  {
+    "text": "the",
+    "start": 51.78,
+    "end": 51.98,
+    "id": "w163"
+  },
+  {
+    "text": "noise.",
+    "start": 51.99,
+    "end": 52.57,
+    "id": "w164"
+  },
+  {
+    "text": "The",
+    "start": 52.57,
+    "end": 53.09,
+    "id": "w165"
+  },
+  {
+    "text": "guard",
+    "start": 53.09,
+    "end": 53.17,
+    "id": "w166"
+  },
+  {
+    "text": "shouted",
+    "start": 53.17,
+    "end": 53.67,
+    "id": "w167"
+  },
+  {
+    "text": "for",
+    "start": 53.67,
+    "end": 53.86,
+    "id": "w168"
+  },
+  {
+    "text": "help.",
+    "start": 53.88,
+    "end": 54.4,
+    "id": "w169"
+  },
+  {
+    "text": "The",
+    "start": 54.4,
+    "end": 54.73,
+    "id": "w170"
+  },
+  {
+    "text": "thieves",
+    "start": 54.73,
+    "end": 54.94,
+    "id": "w171"
+  },
+  {
+    "text": "ran",
+    "start": 54.94,
+    "end": 55.05,
+    "id": "w172"
+  },
+  {
+    "text": "for",
+    "start": 55.11,
+    "end": 55.26,
+    "id": "w173"
+  },
+  {
+    "text": "the",
+    "start": 55.26,
+    "end": 55.42,
+    "id": "w174"
+  },
+  {
+    "text": "gate",
+    "start": 55.42,
+    "end": 55.64,
+    "id": "w175"
+  },
+  {
+    "text": "with",
+    "start": 55.64,
+    "end": 55.86,
+    "id": "w176"
+  },
+  {
+    "text": "the",
+    "start": 55.86,
+    "end": 56.02,
+    "id": "w177"
+  },
+  {
+    "text": "loot.",
+    "start": 56.02,
+    "end": 56.32,
+    "id": "w178"
+  },
+  {
+    "text": "Guard",
+    "start": 56.67,
+    "end": 56.76,
+    "id": "w179"
+  },
+  {
+    "text": "stopped",
+    "start": 56.76,
+    "end": 57.17,
+    "id": "w180"
+  },
+  {
+    "text": "them.",
+    "start": 57.19,
+    "end": 57.62,
+    "id": "w181"
+  },
+  {
+    "text": "They",
+    "start": 57.62,
+    "end": 57.95,
+    "id": "w182"
+  },
+  {
+    "text": "tried",
+    "start": 57.95,
+    "end": 58.11,
+    "id": "w183"
+  },
+  {
+    "text": "to",
+    "start": 58.11,
+    "end": 58.21,
+    "id": "w184"
+  },
+  {
+    "text": "save",
+    "start": 58.22,
+    "end": 58.4,
+    "id": "w185"
+  },
+  {
+    "text": "them",
+    "start": 58.44,
+    "end": 58.66,
+    "id": "w186"
+  },
+  {
+    "text": "before",
+    "start": 58.66,
+    "end": 58.99,
+    "id": "w187"
+  },
+  {
+    "text": "they",
+    "start": 58.99,
+    "end": 59.21,
+    "id": "w188"
+  },
+  {
+    "text": "could",
+    "start": 59.21,
+    "end": 59.48,
+    "id": "w189"
+  },
+  {
+    "text": "leave.",
+    "start": 59.48,
+    "end": 59.94,
+    "id": "w190"
+  },
+  {
+    "text": "Blood",
+    "start": 59.94,
+    "end": 60.29,
+    "id": "w191"
+  },
+  {
+    "text": "was",
+    "start": 60.29,
+    "end": 60.43,
+    "id": "w192"
+  },
+  {
+    "text": "caught,",
+    "start": 60.43,
+    "end": 60.92,
+    "id": "w193"
+  },
+  {
+    "text": "and",
+    "start": 60.92,
+    "end": 61.1,
+    "id": "w194"
+  },
+  {
+    "text": "the",
+    "start": 61.1,
+    "end": 61.28,
+    "id": "w195"
+  },
+  {
+    "text": "jewels",
+    "start": 61.28,
+    "end": 61.65,
+    "id": "w196"
+  },
+  {
+    "text": "came",
+    "start": 61.65,
+    "end": 61.87,
+    "id": "w197"
+  },
+  {
+    "text": "back.",
+    "start": 62.09,
+    "end": 62.36,
+    "id": "w198"
+  },
+  {
+    "text": "Everyone",
+    "start": 62.85,
+    "end": 62.95,
+    "id": "w199"
+  },
+  {
+    "text": "expected",
+    "start": 62.95,
+    "end": 63.54,
+    "id": "w200"
+  },
+  {
+    "text": "a",
+    "start": 63.54,
+    "end": 63.61,
+    "id": "w201"
+  },
+  {
+    "text": "hanging.",
+    "start": 63.61,
+    "end": 64.35,
+    "id": "w202"
+  },
+  {
+    "text": "Instead,",
+    "start": 64.75,
+    "end": 65.05,
+    "id": "w203"
+  },
+  {
+    "text": "King",
+    "start": 65.05,
+    "end": 65.36,
+    "id": "w204"
+  },
+  {
+    "text": "Charles",
+    "start": 65.36,
+    "end": 65.89,
+    "id": "w205"
+  },
+  {
+    "text": "II",
+    "start": 65.89,
+    "end": 66.05,
+    "id": "w206"
+  },
+  {
+    "text": "wanted",
+    "start": 66.05,
+    "end": 66.33,
+    "id": "w207"
+  },
+  {
+    "text": "to",
+    "start": 66.56,
+    "end": 66.67,
+    "id": "w208"
+  },
+  {
+    "text": "talk",
+    "start": 66.67,
+    "end": 66.98,
+    "id": "w209"
+  },
+  {
+    "text": "to",
+    "start": 66.98,
+    "end": 67.13,
+    "id": "w210"
+  },
+  {
+    "text": "Blood",
+    "start": 67.13,
+    "end": 67.52,
+    "id": "w211"
+  },
+  {
+    "text": "himself.",
+    "start": 67.52,
+    "end": 68.36,
+    "id": "w212"
+  },
+  {
+    "text": "And",
+    "start": 68.36,
+    "end": 68.575,
+    "id": "w213"
+  },
+  {
+    "text": "the",
+    "start": 68.575,
+    "end": 68.79,
+    "id": "w214"
+  },
+  {
+    "text": "king",
+    "start": 68.79,
+    "end": 69.05,
+    "id": "w215"
+  },
+  {
+    "text": "did",
+    "start": 69.06,
+    "end": 69.24,
+    "id": "w216"
+  },
+  {
+    "text": "the",
+    "start": 69.28,
+    "end": 69.48,
+    "id": "w217"
+  },
+  {
+    "text": "strangest",
+    "start": 69.48,
+    "end": 70.12,
+    "id": "w218"
+  },
+  {
+    "text": "thing.",
+    "start": 70.12,
+    "end": 70.74,
+    "id": "w219"
+  },
+  {
+    "text": "He",
+    "start": 70.74,
+    "end": 71.09,
+    "id": "w220"
+  },
+  {
+    "text": "pardoned",
+    "start": 71.09,
+    "end": 71.5,
+    "id": "w221"
+  },
+  {
+    "text": "him",
+    "start": 71.5,
+    "end": 71.73,
+    "id": "w222"
+  },
+  {
+    "text": "and",
+    "start": 71.73,
+    "end": 71.95,
+    "id": "w223"
+  },
+  {
+    "text": "gave",
+    "start": 71.96,
+    "end": 72.25,
+    "id": "w224"
+  },
+  {
+    "text": "him",
+    "start": 72.25,
+    "end": 72.48,
+    "id": "w225"
+  },
+  {
+    "text": "land.",
+    "start": 72.48,
+    "end": 73.06,
+    "id": "w226"
+  },
+  {
+    "text": "So,",
+    "start": 73.06,
+    "end": 73.45,
+    "id": "w227"
+  },
+  {
+    "text": "why",
+    "start": 73.45,
+    "end": 73.59,
+    "id": "w228"
+  },
+  {
+    "text": "did",
+    "start": 73.59,
+    "end": 73.77,
+    "id": "w229"
+  },
+  {
+    "text": "the",
+    "start": 73.83,
+    "end": 74.05,
+    "id": "w230"
+  },
+  {
+    "text": "king",
+    "start": 74.05,
+    "end": 74.35,
+    "id": "w231"
+  },
+  {
+    "text": "forgive",
+    "start": 74.35,
+    "end": 74.87,
+    "id": "w232"
+  },
+  {
+    "text": "him?",
+    "start": 74.87,
+    "end": 75.36,
+    "id": "w233"
+  },
+  {
+    "text": "Tell",
+    "start": 75.36,
+    "end": 75.71,
+    "id": "w234"
+  },
+  {
+    "text": "me",
+    "start": 75.71,
+    "end": 75.73,
+    "id": "w235"
+  },
+  {
+    "text": "your",
+    "start": 75.73,
+    "end": 75.97,
+    "id": "w236"
+  },
+  {
+    "text": "theory",
+    "start": 75.98,
+    "end": 76.35,
+    "id": "w237"
+  },
+  {
+    "text": "in",
+    "start": 76.35,
+    "end": 76.47,
+    "id": "w238"
+  },
+  {
+    "text": "the",
+    "start": 76.47,
+    "end": 76.65,
+    "id": "w239"
+  },
+  {
+    "text": "comments.",
+    "start": 76.65,
+    "end": 77.3,
+    "id": "w240"
+  }
+]
