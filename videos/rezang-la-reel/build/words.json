@@ -1,0 +1,732 @@
+[
+{
+"text": "LAGBHAG",
+"start": 0.09,
+"end": 0.76
+},
+{
+"text": "120",
+"start": 0.76,
+"end": 1.37
+},
+{
+"text": "JAWAAN",
+"start": 1.37,
+"end": 2.08
+},
+{
+"text": "SAAMNE",
+"start": 2.11,
+"end": 2.47
+},
+{
+"text": "KAI",
+"start": 2.47,
+"end": 2.75
+},
+{
+"text": "GUNA",
+"start": 2.75,
+"end": 3.31
+},
+{
+"text": "DUSHMAN",
+"start": 3.31,
+"end": 4.08
+},
+{
+"text": "AUR",
+"start": 4.27,
+"end": 4.43
+},
+{
+"text": "JAMAATI",
+"start": 4.43,
+"end": 4.92
+},
+{
+"text": "THAND.",
+"start": 4.92,
+"end": 5.41
+},
+{
+"text": "1962",
+"start": 5.51,
+"end": 5.95
+},
+{
+"text": "YUDDH",
+"start": 6.12,
+"end": 6.81
+},
+{
+"text": "LADAKH",
+"start": 6.81,
+"end": 7.51
+},
+{
+"text": "KA",
+"start": 7.51,
+"end": 7.56
+},
+{
+"text": "CHUSHUL",
+"start": 7.7,
+"end": 8.23
+},
+{
+"text": "HAWAI",
+"start": 8.31,
+"end": 8.64
+},
+{
+"text": "ADDA",
+"start": 8.68,
+"end": 9.21
+},
+{
+"text": "BACHANA",
+"start": 9.21,
+"end": 9.66
+},
+{
+"text": "THA.",
+"start": 9.69,
+"end": 10.12
+},
+{
+"text": "CHUSHUL",
+"start": 10.19,
+"end": 10.77
+},
+{
+"text": "SE",
+"start": 10.82,
+"end": 10.87
+},
+{
+"text": "PEHLE",
+"start": 10.87,
+"end": 11.17
+},
+{
+"text": "THI",
+"start": 11.17,
+"end": 11.37
+},
+{
+"text": "REZANG LA",
+"start": 11.42,
+"end": 12.15
+},
+{
+"text": "16,000",
+"start": 12.43,
+"end": 12.93
+},
+{
+"text": "FEET",
+"start": 13.13,
+"end": 13.4
+},
+{
+"text": "OONCHI",
+"start": 13.4,
+"end": 13.8
+},
+{
+"text": "PAHAADI.",
+"start": 13.8,
+"end": 14.42
+},
+{
+"text": "YAHAN",
+"start": 14.5,
+"end": 14.73
+},
+{
+"text": "13",
+"start": 14.74,
+"end": 14.95
+},
+{
+"text": "KUMAON",
+"start": 15.12,
+"end": 15.63
+},
+{
+"text": "KI",
+"start": 15.69,
+"end": 15.74
+},
+{
+"text": "CHARLIE",
+"start": 15.74,
+"end": 16.11
+},
+{
+"text": "COMPANY",
+"start": 16.11,
+"end": 16.48
+},
+{
+"text": "THI",
+"start": 16.48,
+"end": 17.05
+},
+{
+"text": "ZYADATAR",
+"start": 17.05,
+"end": 17.64
+},
+{
+"text": "AHIR",
+"start": 17.68,
+"end": 17.98
+},
+{
+"text": "JAWAAN.",
+"start": 17.98,
+"end": 18.37
+},
+{
+"text": "MAJOR",
+"start": 18.59,
+"end": 18.85
+},
+{
+"text": "SHAITAN",
+"start": 18.89,
+"end": 19.21
+},
+{
+"text": "SINGH",
+"start": 19.24,
+"end": 19.52
+},
+{
+"text": "KE",
+"start": 19.55,
+"end": 19.62
+},
+{
+"text": "NETRITVA",
+"start": 19.62,
+"end": 20.23
+},
+{
+"text": "MEIN.",
+"start": 20.24,
+"end": 20.68
+},
+{
+"text": "JAMAATI",
+"start": 20.85,
+"end": 21.2
+},
+{
+"text": "THAND",
+"start": 21.2,
+"end": 21.73
+},
+{
+"text": "KAM",
+"start": 21.74,
+"end": 21.86
+},
+{
+"text": "GARAM",
+"start": 21.86,
+"end": 22.16
+},
+{
+"text": "KAPDE",
+"start": 22.16,
+"end": 22.88
+},
+{
+"text": "AUR",
+"start": 22.88,
+"end": 23.09
+},
+{
+"text": "TOP",
+"start": 23.19,
+"end": 23.46
+},
+{
+"text": "KHANE",
+"start": 23.46,
+"end": 23.77
+},
+{
+"text": "KI",
+"start": 23.77,
+"end": 23.87
+},
+{
+"text": "MADAD",
+"start": 23.87,
+"end": 24.24
+},
+{
+"text": "NAHI.",
+"start": 24.35,
+"end": 24.72
+},
+{
+"text": "18",
+"start": 24.82,
+"end": 25.07
+},
+{
+"text": "NOVEMBER",
+"start": 25.07,
+"end": 25.76
+},
+{
+"text": "SUBAH",
+"start": 25.76,
+"end": 26.18
+},
+{
+"text": "SE",
+"start": 26.18,
+"end": 26.28
+},
+{
+"text": "PEHLE",
+"start": 26.32,
+"end": 26.65
+},
+{
+"text": "BHAARI",
+"start": 26.68,
+"end": 27.01
+},
+{
+"text": "GOLA",
+"start": 27.12,
+"end": 27.32
+},
+{
+"text": "BAARI",
+"start": 27.32,
+"end": 27.63
+},
+{
+"text": "KE",
+"start": 27.68,
+"end": 27.73
+},
+{
+"text": "SAATH",
+"start": 27.73,
+"end": 27.98
+},
+{
+"text": "HAMLA.",
+"start": 27.98,
+"end": 28.65
+},
+{
+"text": "SAAT",
+"start": 28.76,
+"end": 29
+},
+{
+"text": "HAMLE",
+"start": 29,
+"end": 29.18
+},
+{
+"text": "HUE",
+"start": 29.3,
+"end": 29.68
+},
+{
+"text": "SAAT",
+"start": 29.73,
+"end": 29.93
+},
+{
+"text": "BAAR",
+"start": 29.93,
+"end": 30.18
+},
+{
+"text": "JAWAANON",
+"start": 30.18,
+"end": 30.68
+},
+{
+"text": "NE",
+"start": 30.68,
+"end": 30.83
+},
+{
+"text": "DUSHMAN",
+"start": 30.98,
+"end": 31.48
+},
+{
+"text": "KO",
+"start": 31.48,
+"end": 31.58
+},
+{
+"text": "ROKA.",
+"start": 31.58,
+"end": 32
+},
+{
+"text": "GOLIYAAN",
+"start": 32.07,
+"end": 32.46
+},
+{
+"text": "LAGBHAG",
+"start": 32.46,
+"end": 33.1
+},
+{
+"text": "KHATAM",
+"start": 33.1,
+"end": 33.47
+},
+{
+"text": "PHIR",
+"start": 33.57,
+"end": 33.75
+},
+{
+"text": "BHI",
+"start": 33.75,
+"end": 33.95
+},
+{
+"text": "MORCHE",
+"start": 33.95,
+"end": 34.34
+},
+{
+"text": "PAR",
+"start": 34.45,
+"end": 34.55
+},
+{
+"text": "JAME",
+"start": 34.55,
+"end": 34.8
+},
+{
+"text": "RAHE.",
+"start": 34.8,
+"end": 35.12
+},
+{
+"text": "GHAYAL",
+"start": 35.21,
+"end": 35.49
+},
+{
+"text": "MAJOR",
+"start": 35.51,
+"end": 35.86
+},
+{
+"text": "SHAITAN",
+"start": 35.86,
+"end": 36.28
+},
+{
+"text": "SINGH",
+"start": 36.35,
+"end": 36.76
+},
+{
+"text": "MORCHE",
+"start": 36.76,
+"end": 37.17
+},
+{
+"text": "MORCHE",
+"start": 37.17,
+"end": 37.7
+},
+{
+"text": "JAAKAR",
+"start": 37.7,
+"end": 38.06
+},
+{
+"text": "HAUSLA",
+"start": 38.1,
+"end": 38.26
+},
+{
+"text": "BADHATE",
+"start": 38.26,
+"end": 38.77
+},
+{
+"text": "RAHE.",
+"start": 38.77,
+"end": 39.05
+},
+{
+"text": "KAHA",
+"start": 39.18,
+"end": 39.34
+},
+{
+"text": "JAATA",
+"start": 39.34,
+"end": 39.78
+},
+{
+"text": "HAI",
+"start": 39.82,
+"end": 39.96
+},
+{
+"text": "UNHONE",
+"start": 40.02,
+"end": 40.59
+},
+{
+"text": "SAATHIYON",
+"start": 40.66,
+"end": 41.14
+},
+{
+"text": "KO",
+"start": 41.14,
+"end": 41.26
+},
+{
+"text": "UNHE",
+"start": 41.4,
+"end": 41.65
+},
+{
+"text": "CHHOD",
+"start": 41.65,
+"end": 42.08
+},
+{
+"text": "DENE",
+"start": 42.13,
+"end": 42.33
+},
+{
+"text": "KO",
+"start": 42.33,
+"end": 42.41
+},
+{
+"text": "KAHA.",
+"start": 42.41,
+"end": 42.72
+},
+{
+"text": "114",
+"start": 42.82,
+"end": 43.25
+},
+{
+"text": "JAWAAN",
+"start": 43.39,
+"end": 43.75
+},
+{
+"text": "SHAHEED",
+"start": 43.75,
+"end": 44.19
+},
+{
+"text": "HUE",
+"start": 44.29,
+"end": 44.66
+},
+{
+"text": "AAKHRI",
+"start": 44.73,
+"end": 45.08
+},
+{
+"text": "GOLI",
+"start": 45.17,
+"end": 45.33
+},
+{
+"text": "TAK",
+"start": 45.33,
+"end": 45.5
+},
+{
+"text": "LADTE",
+"start": 45.5,
+"end": 45.94
+},
+{
+"text": "HUE.",
+"start": 45.98,
+"end": 46.52
+},
+{
+"text": "CHUSHUL",
+"start": 46.59,
+"end": 47.17
+},
+{
+"text": "BACH",
+"start": 47.22,
+"end": 47.44
+},
+{
+"text": "GAYA",
+"start": 47.51,
+"end": 47.82
+},
+{
+"text": "TEEN",
+"start": 47.88,
+"end": 48.03
+},
+{
+"text": "DIN",
+"start": 48.03,
+"end": 48.24
+},
+{
+"text": "BAAD",
+"start": 48.24,
+"end": 48.54
+},
+{
+"text": "CHINA",
+"start": 48.54,
+"end": 48.92
+},
+{
+"text": "NE",
+"start": 48.92,
+"end": 49.09
+},
+{
+"text": "YUDDH",
+"start": 49.12,
+"end": 49.65
+},
+{
+"text": "VIRAAM",
+"start": 49.65,
+"end": 49.93
+},
+{
+"text": "KIYA.",
+"start": 49.93,
+"end": 50.36
+},
+{
+"text": "KUCH",
+"start": 50.41,
+"end": 50.73
+},
+{
+"text": "MAHINE",
+"start": 50.75,
+"end": 50.98
+},
+{
+"text": "BAAD",
+"start": 51.07,
+"end": 51.35
+},
+{
+"text": "CHARWAHE",
+"start": 51.35,
+"end": 51.83
+},
+{
+"text": "KO",
+"start": 51.92,
+"end": 51.97
+},
+{
+"text": "SHAHEED",
+"start": 51.97,
+"end": 52.42
+},
+{
+"text": "APNE",
+"start": 52.73,
+"end": 53.04
+},
+{
+"text": "MORCHON",
+"start": 53.04,
+"end": 53.49
+},
+{
+"text": "MEIN",
+"start": 53.49,
+"end": 53.64
+},
+{
+"text": "MILE.",
+"start": 53.64,
+"end": 53.82
+},
+{
+"text": "MAJOR",
+"start": 53.92,
+"end": 54.28
+},
+{
+"text": "SHAITAN",
+"start": 54.28,
+"end": 54.77
+},
+{
+"text": "SINGH",
+"start": 54.77,
+"end": 55.19
+},
+{
+"text": "KO",
+"start": 55.19,
+"end": 55.33
+},
+{
+"text": "PARAM VIR",
+"start": 55.33,
+"end": 56
+},
+{
+"text": "CHAKRA",
+"start": 56.14,
+"end": 56.48
+},
+{
+"text": "COMPANY",
+"start": 56.54,
+"end": 56.92
+},
+{
+"text": "BANI",
+"start": 56.92,
+"end": 57.32
+},
+{
+"text": "REZANG LA",
+"start": 57.32,
+"end": 58.05
+},
+{
+"text": "COMPANY.",
+"start": 58.08,
+"end": 58.43
+}
+]

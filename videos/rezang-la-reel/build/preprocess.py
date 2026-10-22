@@ -6,8 +6,8 @@
 # map is measured per clip from the footage itself (the only thing that stays put while the art moves)
 # and then un-composited frame by frame, with a light feather over the edge it leaves behind.
 #
-# Timing: the voiceover is sped up 1.22x (atempo, pitch unchanged) so the clips do not have to stretch
-# much; each clip then plays ONCE, slowed at most 1.65x to cover its line. No repeats, no held frames.
+# Timing: the read already fits the clips, so the voiceover is untouched. Each clip plays ONCE,
+# slowed at most 1.6x to cover its line (most sit near 1.1x). No repeats, no held frames.
 import subprocess, os
 import numpy as np
 import cv2
@@ -18,12 +18,12 @@ W, H = 720, 1280
 X0, X1, Y0, Y1 = 540, 700, 1100, 1245      # the region the watermark lives in
 SRC = 4.01
 VO_SPEED = 1.0          # the read already fits the clips; no speed-up needed
-MAX_SLOW = 1.45
+MAX_SLOW = 1.6
 FPS = 30
 
 # scene starts (output seconds) — must match build/build.mjs
-S = [0, 5.04, 8.40, 12.05, 17.50, 21.48, 25.12, 29.63, 33.44, 39.39, 42.99, 46.35, 51.43, 55.94, 59.80]
-END = 64.3
+S = [0, 5.41, 10.10, 14.45, 18.50, 20.78, 24.75, 28.70, 32.00, 35.15, 39.10, 42.78, 46.50, 50.35, 53.85]
+END = 59.6
 
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/audio/voiceover.mp3", "-af",
                 "highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=5:release=100:makeup=2,"
