@@ -6,8 +6,8 @@
 # map is measured per clip from the footage itself (the only thing that stays put while the art moves)
 # and then un-composited frame by frame, with a light feather over the edge it leaves behind.
 #
-# Timing: the voiceover is sped up 1.22x (atempo, pitch unchanged) so the clips do not have to stretch
-# much; each clip then plays ONCE, slowed at most 1.65x to cover its line. No repeats, no held frames.
+# Timing: the read already fits the clips, so the voiceover is untouched. Each clip plays ONCE,
+# slowed at most 1.6x to cover its line (most near 1.1x). No repeats, no held frames.
 import subprocess, os
 import numpy as np
 import cv2
@@ -22,16 +22,15 @@ SHARED_CLIPS = ["t211907", "n3", "t212202", "t212213", "t211930"]
 W, H = 720, 1280
 X0, X1, Y0, Y1 = 540, 700, 1100, 1245      # the region the watermark lives in
 SRC = 4.01
-VO_SPEED = 1.22
-MAX_SLOW = 1.65
+VO_SPEED = 1.0          # the read already fits the clips; no speed-up needed
+MAX_SLOW = 1.6
 FPS = 30
 
 # scene starts (output seconds) — must match build/build.mjs
-S = [0, 5.04, 8.40, 12.05, 17.50, 21.48, 25.12, 29.63, 33.44, 39.39, 42.99, 46.35, 51.43, 55.94, 59.80]
-END = 64.3
+S = [0, 5.20, 8.95, 12.68, 16.10, 20.06, 23.35, 26.75, 31.06, 34.95, 38.32, 41.28, 45.50, 50.76, 55.76]
+END = 60.2
 
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/audio/voiceover.mp3", "-af",
-                f"atempo={VO_SPEED},"
                 "highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=5:release=100:makeup=2,"
                 "loudnorm=I=-15:TP=-1.5:LRA=8",
                 "-ar", "48000", "-c:a", "libmp3lame", "-b:a", "192k",
