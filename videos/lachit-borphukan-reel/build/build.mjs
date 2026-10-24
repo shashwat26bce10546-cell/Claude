@@ -1,4 +1,4 @@
-// Generates ../index.html for "Rezang La, 1962" (Hindi VO, Hinglish captions).
+// Generates ../index.html for "Lachit Borphukan: Saraighat, 1671" (Hindi VO, Hinglish captions).
 //   node build/build.mjs
 // Timing comes from the voiceover itself (build/words.json, Whisper word timestamps,
 // Roman spellings corrected by hand).
@@ -11,8 +11,8 @@ const words = JSON.parse(readFileSync(join(here, "words.json"), "utf8"));
 const fmt = (n) => +(+n).toFixed(3);
 
 // Scene starts (output seconds) — must match build/preprocess.py
-const S = [0, 5.41, 10.10, 14.45, 18.50, 20.78, 24.75, 28.70, 32.00, 35.15, 39.10, 42.78, 46.50, 50.35, 53.85];
-const END = 59.6;
+const S = [0, 2.62, 7.92, 11.18, 14.38, 18.30, 21.72, 25.68, 29.75, 33.57, 38.13, 41.73, 44.88, 47.90, 51.42];
+const END = 57.0;
 const HANDLE = 0.3; // each prepped clip starts 0.3s before its scene (crossfade handle)
 
 // transition INTO scene i (i >= 1)
@@ -82,7 +82,7 @@ const gfx = (id, a, b, cls, html, anim) => {
 };
 
 // 1 — hook title over the lone sentry
-gfx("g-title", 0.3, 5.1, "g-top", `<div class="title-wrap"><div class="kicker">LADAKH &middot; 1962</div><div class="title">REZANG LA</div><div class="title title2">120 JAWAAN</div><div class="rule"></div></div>`,
+gfx("g-title", 0.25, 2.55, "g-top", `<div class="title-wrap"><div class="kicker">ASSAM &middot; 1671</div><div class="title">LACHIT</div><div class="title title2">BORPHUKAN</div><div class="rule"></div></div>`,
   (T, D) => `
     tl.fromTo("#g-title .kicker", {opacity:0, y:20}, {opacity:1, y:0, duration:.5, ease:"power3.out"}, ${T});
     tl.fromTo("#g-title .title", {opacity:0, scale:1.6, filter:"blur(10px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:.6, ease:"power4.out", stagger:.18}, ${T + 0.15});
@@ -92,22 +92,22 @@ gfx("g-title", 0.3, 5.1, "g-top", `<div class="title-wrap"><div class="kicker">L
 sfx.push(["impact-bass-1", 0.3, 0.45]);
 
 // the attack, and the breach: a red wash only, no cards
-tl.push(`tl.fromTo("#redwash", {opacity:0}, {opacity:.42, duration:.3, ease:"power2.out", immediateRender:false}, 26.7);`);
-tl.push(`tl.to("#redwash", {opacity:0, duration:1.4, ease:"power2.inOut"}, 27.5);`);
-sfx.push(["impact-bass-2", 26.7, 0.45]);
-tl.push(`tl.fromTo("#redwash", {opacity:0}, {opacity:.45, duration:.25, ease:"power2.out", immediateRender:false}, 28.8);`);
-tl.push(`tl.to("#redwash", {opacity:0, duration:1.5, ease:"power2.inOut"}, 29.5);`);
-sfx.push(["impact-bass-2", 28.8, 0.5]);
+tl.push(`tl.fromTo("#redwash", {opacity:0}, {opacity:.4, duration:.3, ease:"power2.out", immediateRender:false}, 41.73);`);
+tl.push(`tl.to("#redwash", {opacity:0, duration:1.4, ease:"power2.inOut"}, 42.5);`);
+sfx.push(["impact-bass-2", 41.73, 0.45]);
+tl.push(`tl.fromTo("#redwash", {opacity:0}, {opacity:.45, duration:.25, ease:"power2.out", immediateRender:false}, 44.88);`);
+tl.push(`tl.to("#redwash", {opacity:0, duration:1.5, ease:"power2.inOut"}, 45.6);`);
+sfx.push(["impact-bass-2", 44.88, 0.5]);
 // the silence after the last message
-tl.push(`tl.fromTo("#cold", {opacity:0}, {opacity:.32, duration:.9, immediateRender:false}, 20.9);`);
-tl.push(`tl.to("#cold", {opacity:0, duration:1.0}, 24.3);`);
-sfx.push(["impact-bass-1", 42.9, 0.45]);
+tl.push(`tl.fromTo("#cold", {opacity:0}, {opacity:.3, duration:.9, immediateRender:false}, 25.7);`);
+tl.push(`tl.to("#cold", {opacity:0, duration:1.0}, 33.0);`);
+sfx.push(["impact-bass-1", 29.97, 0.45]);
 
 // 2 — closing card
-gfx("g-fin", 54.1, END, "g-top2", `<div class="finale"><div class="fin-k">REZANG LA &middot; 18 NOVEMBER 1962</div><div class="fin-t" id="g-fin-t" style="opacity:0">114 SHAHEED<br>PARAM VIR CHAKRA</div></div>`,
+gfx("g-fin", 53.3, END, "g-top2", `<div class="finale"><div class="fin-k">SARAIGHAT &middot; 1671</div><div class="fin-t" id="g-fin-t" style="opacity:0">24 NOVEMBER<br>LACHIT DIVAS</div></div>`,
   (T, D) => `tl.fromTo("#g-fin .fin-k", {opacity:0, y:20}, {opacity:1, y:0, duration:.5, ease:"power3.out"}, ${T});
-    tl.fromTo("#g-fin-t", {opacity:0, scale:1.5, filter:"blur(8px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:.6, ease:"power4.out", immediateRender:false}, 55.2);`);
-sfx.push(["impact-bass-2", 55.2, 0.45]);
+    tl.fromTo("#g-fin-t", {opacity:0, scale:1.5, filter:"blur(8px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:.6, ease:"power4.out", immediateRender:false}, 53.9);`);
+sfx.push(["impact-bass-2", 53.9, 0.45]);
 
 // final fade
 
@@ -115,7 +115,7 @@ sfx.push(["impact-bass-2", 55.2, 0.45]);
 tl.push(`tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.7, ease:"power1.in", immediateRender:false}, ${fmt(END - 0.7)});`);
 
 // ---------- captions ----------
-const KEY = /^(120|1962|rezang|la|ladakh|chushul|jawaan|jawaanon|dushman|thand|kumaon|charlie|company|ahir|major|shaitan|singh|hamla|hamle|saat|goliyaan|khatam|morche|ghayal|shaheed|114|param|vir|chakra|18|november)$/i;
+const KEY = /^(lachit|borphukan|mughal|mughalon|1667|1671|assam|guwahati|aurangzeb|ram|singh|ghudsawaar|bandh|nau|brahmaputra|mama|desh|bimaar|saat|naavon|naavein|ahom|hamla|24|november|divas)$/i;
 const groups = [];
 let cur = [];
 words.forEach((w, i) => {
@@ -148,7 +148,7 @@ const caps = groups.map((g, gi) => {
 
 // ---------- audio ----------
 const SFX_LEN = { whoosh: 1.2, "whoosh-cinematic": 1.6, "impact-bass-1": 2.12, "impact-bass-2": 2.59, riser: 4, sparkle: 1.5, chime: 2.5, "glitch-3": 1.5 };
-const KEEP_SFX = [[0.3, "impact-bass-1"], [26.7, "impact-bass-2"], [28.8, "impact-bass-2"], [42.9, "impact-bass-1"], [55.2, "impact-bass-2"]];
+const KEEP_SFX = [[0.25, "impact-bass-1"], [29.97, "impact-bass-1"], [41.73, "impact-bass-2"], [44.88, "impact-bass-2"], [53.9, "impact-bass-2"]];
 const sfxKept = sfx.filter(([f, t]) => KEEP_SFX.some(([kt, kf]) => Math.abs(kt - t) < 0.05 && kf === f));
 const sfxHtml = sfxKept
   .sort((a, b) => a[1] - b[1])
@@ -164,7 +164,7 @@ const html = `<!doctype html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <title>Rezang La — 1962</title>
+    <title>Lachit Borphukan — 1671</title>
     <script src="vendor/gsap.min.js"></script>
     <style>
       @font-face { font-family: "Cinzel"; font-weight: 700; src: url("assets/fonts/cinzel-latin-700-normal.woff2") format("woff2"); }
@@ -271,7 +271,7 @@ ${caps}
       <div id="flash"></div>
       <div id="dip"></div>
       <div id="fade"></div>
-      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="58.5" data-track-index="10" data-volume="1"></audio>
+      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="56.1" data-track-index="10" data-volume="1"></audio>
       <audio id="score" src="assets/audio/score.mp3" data-start="0" data-duration="${END}" data-track-index="11" data-volume="0.32"></audio>
 ${sfxHtml}
     </div>

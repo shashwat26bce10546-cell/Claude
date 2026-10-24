@@ -1,5 +1,8 @@
-# Rezang La (1962). Clips 1-15 in the user's order — each clip's artwork matches its narration line,
-# so the numbering is correct and they play straight through.
+# Lachit Borphukan (Saraighat, 1671). Two numbering problems in the user's clips are corrected here:
+#   * clips 6 and 10 are swapped: clip 10 is the heavy Mughal boats with the glowing "weak point" arrow
+#     (line 6), clip 6 is the cavalry crossing the river by boat at dawn (line 10);
+#   * clip 9 is byte-for-byte the same video as clip 15 (the sunset silhouette), so line 9 - the
+#     close-up on Lachit's face - uses the back of clip 1, which pushes in to exactly that close-up.
 #
 # Framing: the FULL frame is kept (720x1280 -> 1080x1920, no crop). The generator's sparkle watermark
 # in the bottom-right is erased in place instead: it is a fixed semi-transparent star, so its alpha
@@ -22,8 +25,11 @@ MAX_SLOW = 1.6
 FPS = 30
 
 # scene starts (output seconds) — must match build/build.mjs
-S = [0, 5.41, 10.10, 14.45, 18.50, 20.78, 24.75, 28.70, 32.00, 35.15, 39.10, 42.78, 46.50, 50.35, 53.85]
-END = 59.6
+S = [0, 2.62, 7.92, 11.18, 14.38, 18.30, 21.72, 25.68, 29.75, 33.57, 38.13, 41.73, 44.88, 47.90, 51.42]
+# narration line -> (source clip, start offset in the source)
+CLIPS = [1, 2, 3, 4, 5, 10, 7, 8, 1, 6, 11, 12, 13, 14, 15]
+SRC_IN = [0, 0, 0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0]
+END = 57.0
 
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", "assets/audio/voiceover.mp3", "-af",
                 "highpass=f=70,acompressor=threshold=-22dB:ratio=2.5:attack=5:release=100:makeup=2,"
@@ -70,7 +76,7 @@ if os.path.exists(ALPHA_CACHE):
     ALPHAS = np.load(ALPHA_CACHE)
 else:
     shared = []
-    for c in (14, 13, 3, 2, 12):                 # clips whose mark sits over plain sky or snow
+    for c in (7, 9, 2, 14, 4):                   # clips whose mark sits over plain water or sky
         for f in read_gray(c, 4):
             roi = f[Y0:Y1, X0:X1]
             bg = cv2.medianBlur(roi.astype(np.uint8), 61).astype(np.float32)
@@ -79,7 +85,7 @@ else:
     T[T < 0.04] = 0
     T = cv2.morphologyEx(T, cv2.MORPH_CLOSE, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (15, 15)))
     T = cv2.GaussianBlur(T, (0, 0), 1.2)
-    ALPHAS = np.array([watermark_alpha(c, T) for c in range(1, 16)])
+    ALPHAS = np.array([watermark_alpha(c, T) for c in range(1, 16)])      # indexed by source clip
     np.save(ALPHA_CACHE, ALPHAS)
 
 
@@ -100,14 +106,15 @@ os.makedirs("media/prepped", exist_ok=True)
 for i, s0 in enumerate(S):
     e = S[i + 1] if i + 1 < len(S) else END
     target = round(e - s0 + 0.65, 3)                       # scene + the composition's crossfade handles
-    f = round(min(max(target / SRC, 0.70), MAX_SLOW), 4)
-    A = ALPHAS[i]
+    avail = SRC - SRC_IN[i]
+    f = round(min(max(target / avail, 0.70), MAX_SLOW), 4)
+    A = ALPHAS[CLIPS[i] - 1]
     sel = A > 0.04
     mask = cv2.dilate((sel.astype(np.uint8)) * 255, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (5, 5)))
     feather = np.clip(cv2.GaussianBlur(cv2.dilate(A, cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (7, 7))),
                                        (0, 0), 2.5) / max(A.max(), 1e-6), 0, 1)[..., None]
 
-    dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", f"media/clips/{i+1}.mp4",
+    dec = subprocess.Popen(["ffmpeg", "-v", "error", "-ss", str(SRC_IN[i]), "-i", f"media/clips/{CLIPS[i]}.mp4",
                             "-vf", "format=bgr24", "-f", "rawvideo", "-"], stdout=subprocess.PIPE)
     # blended retime (motion-compensated interpolation warps flat cartoon art), then upscale
     speed = f"setpts={f}*PTS," + (f"minterpolate=fps={FPS}:mi_mode=blend" if f > 1.02 else f"fps={FPS}")
@@ -128,4 +135,4 @@ for i, s0 in enumerate(S):
     enc.stdin.close()
     dec.wait()
     enc.wait()
-    print(f"slot {i+1:2d} <- clip {i+1}: {n} frames -> {target}s @x{f}", flush=True)
+    print(f"slot {i+1:2d} <- clip {CLIPS[i]:2d} @{SRC_IN[i]}: {n} frames -> {target}s @x{f}", flush=True)
