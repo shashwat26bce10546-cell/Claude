@@ -1,0 +1,938 @@
+[
+  {
+    "text": "A",
+    "start": 0.07,
+    "end": 0.13,
+    "id": "w0"
+  },
+  {
+    "text": "woman",
+    "start": 0.13,
+    "end": 0.43,
+    "id": "w1"
+  },
+  {
+    "text": "in",
+    "start": 0.43,
+    "end": 0.57,
+    "id": "w2"
+  },
+  {
+    "text": "New",
+    "start": 0.57,
+    "end": 0.78,
+    "id": "w3"
+  },
+  {
+    "text": "York",
+    "start": 0.78,
+    "end": 1.06,
+    "id": "w4"
+  },
+  {
+    "text": "said",
+    "start": 1.06,
+    "end": 1.34,
+    "id": "w5"
+  },
+  {
+    "text": "she",
+    "start": 1.34,
+    "end": 1.55,
+    "id": "w6"
+  },
+  {
+    "text": "was",
+    "start": 1.55,
+    "end": 1.76,
+    "id": "w7"
+  },
+  {
+    "text": "a",
+    "start": 1.76,
+    "end": 1.82,
+    "id": "w8"
+  },
+  {
+    "text": "German",
+    "start": 1.89,
+    "end": 2.26,
+    "id": "w9"
+  },
+  {
+    "text": "heiress.",
+    "start": 2.26,
+    "end": 2.82,
+    "id": "w10"
+  },
+  {
+    "text": "She",
+    "start": 2.82,
+    "end": 3.34,
+    "id": "w11"
+  },
+  {
+    "text": "claimed",
+    "start": 3.34,
+    "end": 3.6,
+    "id": "w12"
+  },
+  {
+    "text": "60",
+    "start": 3.6,
+    "end": 4.04,
+    "id": "w13"
+  },
+  {
+    "text": "million",
+    "start": 4.06,
+    "end": 4.6,
+    "id": "w14"
+  },
+  {
+    "text": "euros.",
+    "start": 4.63,
+    "end": 5.28,
+    "id": "w15"
+  },
+  {
+    "text": "Her",
+    "start": 5.28,
+    "end": 5.735,
+    "id": "w16"
+  },
+  {
+    "text": "name",
+    "start": 5.735,
+    "end": 6.19,
+    "id": "w17"
+  },
+  {
+    "text": "was",
+    "start": 6.19,
+    "end": 6.22,
+    "id": "w18"
+  },
+  {
+    "text": "Anna",
+    "start": 6.22,
+    "end": 6.6,
+    "id": "w19"
+  },
+  {
+    "text": "Delvey.",
+    "start": 6.6,
+    "end": 7.47,
+    "id": "w20"
+  },
+  {
+    "text": "That",
+    "start": 7.47,
+    "end": 8.11,
+    "id": "w21"
+  },
+  {
+    "text": "name",
+    "start": 8.11,
+    "end": 8.16,
+    "id": "w22"
+  },
+  {
+    "text": "was",
+    "start": 8.16,
+    "end": 8.41,
+    "id": "w23"
+  },
+  {
+    "text": "fake.",
+    "start": 8.41,
+    "end": 9.02,
+    "id": "w24"
+  },
+  {
+    "text": "Her",
+    "start": 9.02,
+    "end": 9.59,
+    "id": "w25"
+  },
+  {
+    "text": "real",
+    "start": 9.59,
+    "end": 9.63,
+    "id": "w26"
+  },
+  {
+    "text": "name",
+    "start": 9.63,
+    "end": 9.98,
+    "id": "w27"
+  },
+  {
+    "text": "was",
+    "start": 9.98,
+    "end": 10.24,
+    "id": "w28"
+  },
+  {
+    "text": "Anna",
+    "start": 10.24,
+    "end": 10.58,
+    "id": "w29"
+  },
+  {
+    "text": "Sorokin.",
+    "start": 10.58,
+    "end": 11.52,
+    "id": "w30"
+  },
+  {
+    "text": "She",
+    "start": 11.52,
+    "end": 11.73,
+    "id": "w31"
+  },
+  {
+    "text": "was",
+    "start": 11.73,
+    "end": 11.94,
+    "id": "w32"
+  },
+  {
+    "text": "born",
+    "start": 11.94,
+    "end": 12.09,
+    "id": "w33"
+  },
+  {
+    "text": "in",
+    "start": 12.09,
+    "end": 12.2,
+    "id": "w34"
+  },
+  {
+    "text": "Russia.",
+    "start": 12.2,
+    "end": 12.74,
+    "id": "w35"
+  },
+  {
+    "text": "She",
+    "start": 12.74,
+    "end": 13.065,
+    "id": "w36"
+  },
+  {
+    "text": "wore",
+    "start": 13.065,
+    "end": 13.39,
+    "id": "w37"
+  },
+  {
+    "text": "designer",
+    "start": 13.39,
+    "end": 13.9,
+    "id": "w38"
+  },
+  {
+    "text": "clothes",
+    "start": 13.9,
+    "end": 14.37,
+    "id": "w39"
+  },
+  {
+    "text": "and",
+    "start": 14.44,
+    "end": 14.65,
+    "id": "w40"
+  },
+  {
+    "text": "planned",
+    "start": 14.67,
+    "end": 15.21,
+    "id": "w41"
+  },
+  {
+    "text": "a",
+    "start": 15.21,
+    "end": 15.28,
+    "id": "w42"
+  },
+  {
+    "text": "huge",
+    "start": 15.28,
+    "end": 15.52,
+    "id": "w43"
+  },
+  {
+    "text": "art",
+    "start": 15.63,
+    "end": 15.82,
+    "id": "w44"
+  },
+  {
+    "text": "club.",
+    "start": 15.82,
+    "end": 16.16,
+    "id": "w45"
+  },
+  {
+    "text": "She",
+    "start": 16.16,
+    "end": 16.92,
+    "id": "w46"
+  },
+  {
+    "text": "stayed",
+    "start": 16.92,
+    "end": 17.14,
+    "id": "w47"
+  },
+  {
+    "text": "in",
+    "start": 17.14,
+    "end": 17.3,
+    "id": "w48"
+  },
+  {
+    "text": "fancy",
+    "start": 17.3,
+    "end": 17.7,
+    "id": "w49"
+  },
+  {
+    "text": "hotels",
+    "start": 17.7,
+    "end": 18.18,
+    "id": "w50"
+  },
+  {
+    "text": "like",
+    "start": 18.18,
+    "end": 18.5,
+    "id": "w51"
+  },
+  {
+    "text": "money",
+    "start": 18.5,
+    "end": 18.9,
+    "id": "w52"
+  },
+  {
+    "text": "was",
+    "start": 18.9,
+    "end": 19.06,
+    "id": "w53"
+  },
+  {
+    "text": "no",
+    "start": 19.17,
+    "end": 19.3,
+    "id": "w54"
+  },
+  {
+    "text": "problem.",
+    "start": 19.3,
+    "end": 20.14,
+    "id": "w55"
+  },
+  {
+    "text": "But",
+    "start": 20.14,
+    "end": 20.65,
+    "id": "w56"
+  },
+  {
+    "text": "prosecutors",
+    "start": 20.65,
+    "end": 21.21,
+    "id": "w57"
+  },
+  {
+    "text": "said",
+    "start": 21.21,
+    "end": 21.51,
+    "id": "w58"
+  },
+  {
+    "text": "she",
+    "start": 21.51,
+    "end": 21.73,
+    "id": "w59"
+  },
+  {
+    "text": "had",
+    "start": 21.73,
+    "end": 21.95,
+    "id": "w60"
+  },
+  {
+    "text": "not",
+    "start": 21.95,
+    "end": 22.17,
+    "id": "w61"
+  },
+  {
+    "text": "a",
+    "start": 22.17,
+    "end": 22.24,
+    "id": "w62"
+  },
+  {
+    "text": "cent",
+    "start": 22.24,
+    "end": 22.54,
+    "id": "w63"
+  },
+  {
+    "text": "to",
+    "start": 22.54,
+    "end": 22.69,
+    "id": "w64"
+  },
+  {
+    "text": "her",
+    "start": 22.69,
+    "end": 22.91,
+    "id": "w65"
+  },
+  {
+    "text": "name.",
+    "start": 22.91,
+    "end": 23.43,
+    "id": "w66"
+  },
+  {
+    "text": "They",
+    "start": 23.43,
+    "end": 24.01,
+    "id": "w67"
+  },
+  {
+    "text": "said",
+    "start": 24.01,
+    "end": 24.08,
+    "id": "w68"
+  },
+  {
+    "text": "she",
+    "start": 24.08,
+    "end": 24.29,
+    "id": "w69"
+  },
+  {
+    "text": "forged",
+    "start": 24.29,
+    "end": 24.7,
+    "id": "w70"
+  },
+  {
+    "text": "papers",
+    "start": 24.7,
+    "end": 25.12,
+    "id": "w71"
+  },
+  {
+    "text": "and",
+    "start": 25.12,
+    "end": 25.34,
+    "id": "w72"
+  },
+  {
+    "text": "made",
+    "start": 25.34,
+    "end": 25.62,
+    "id": "w73"
+  },
+  {
+    "text": "up",
+    "start": 25.62,
+    "end": 25.72,
+    "id": "w74"
+  },
+  {
+    "text": "a",
+    "start": 25.79,
+    "end": 25.83,
+    "id": "w75"
+  },
+  {
+    "text": "fake",
+    "start": 25.83,
+    "end": 26.11,
+    "id": "w76"
+  },
+  {
+    "text": "advisor.",
+    "start": 26.11,
+    "end": 26.81,
+    "id": "w77"
+  },
+  {
+    "text": "She",
+    "start": 26.81,
+    "end": 27.36,
+    "id": "w78"
+  },
+  {
+    "text": "asked",
+    "start": 27.36,
+    "end": 27.62,
+    "id": "w79"
+  },
+  {
+    "text": "for",
+    "start": 27.62,
+    "end": 27.9,
+    "id": "w80"
+  },
+  {
+    "text": "huge",
+    "start": 27.9,
+    "end": 28.28,
+    "id": "w81"
+  },
+  {
+    "text": "loans.",
+    "start": 28.28,
+    "end": 29.06,
+    "id": "w82"
+  },
+  {
+    "text": "She",
+    "start": 29.2,
+    "end": 29.33,
+    "id": "w83"
+  },
+  {
+    "text": "did",
+    "start": 29.34,
+    "end": 29.58,
+    "id": "w84"
+  },
+  {
+    "text": "not",
+    "start": 29.58,
+    "end": 29.83,
+    "id": "w85"
+  },
+  {
+    "text": "get",
+    "start": 29.83,
+    "end": 30.08,
+    "id": "w86"
+  },
+  {
+    "text": "them.",
+    "start": 30.08,
+    "end": 30.68,
+    "id": "w87"
+  },
+  {
+    "text": "Prosecutors",
+    "start": 31.14,
+    "end": 31.52,
+    "id": "w88"
+  },
+  {
+    "text": "said",
+    "start": 31.52,
+    "end": 31.83,
+    "id": "w89"
+  },
+  {
+    "text": "she",
+    "start": 31.83,
+    "end": 32.06,
+    "id": "w90"
+  },
+  {
+    "text": "never",
+    "start": 32.06,
+    "end": 32.42,
+    "id": "w91"
+  },
+  {
+    "text": "paid",
+    "start": 32.44,
+    "end": 32.75,
+    "id": "w92"
+  },
+  {
+    "text": "a",
+    "start": 32.75,
+    "end": 32.82,
+    "id": "w93"
+  },
+  {
+    "text": "$35,000",
+    "start": 32.82,
+    "end": 34.04,
+    "id": "w94"
+  },
+  {
+    "text": "jet",
+    "start": 34.33,
+    "end": 34.42,
+    "id": "w95"
+  },
+  {
+    "text": "bill.",
+    "start": 34.42,
+    "end": 35.03,
+    "id": "w96"
+  },
+  {
+    "text": "In",
+    "start": 35.03,
+    "end": 35.62,
+    "id": "w97"
+  },
+  {
+    "text": "October",
+    "start": 35.62,
+    "end": 35.74,
+    "id": "w98"
+  },
+  {
+    "text": "2017,",
+    "start": 35.74,
+    "end": 36.83,
+    "id": "w99"
+  },
+  {
+    "text": "police",
+    "start": 36.83,
+    "end": 37.3,
+    "id": "w100"
+  },
+  {
+    "text": "arrested",
+    "start": 37.3,
+    "end": 37.92,
+    "id": "w101"
+  },
+  {
+    "text": "her.",
+    "start": 37.92,
+    "end": 38.4,
+    "id": "w102"
+  },
+  {
+    "text": "Her",
+    "start": 38.4,
+    "end": 38.99,
+    "id": "w103"
+  },
+  {
+    "text": "lawyer",
+    "start": 38.99,
+    "end": 39.02,
+    "id": "w104"
+  },
+  {
+    "text": "said",
+    "start": 39.02,
+    "end": 39.29,
+    "id": "w105"
+  },
+  {
+    "text": "she",
+    "start": 39.29,
+    "end": 39.49,
+    "id": "w106"
+  },
+  {
+    "text": "never",
+    "start": 39.49,
+    "end": 39.83,
+    "id": "w107"
+  },
+  {
+    "text": "meant",
+    "start": 39.83,
+    "end": 40.16,
+    "id": "w108"
+  },
+  {
+    "text": "to",
+    "start": 40.18,
+    "end": 40.3,
+    "id": "w109"
+  },
+  {
+    "text": "commit",
+    "start": 40.3,
+    "end": 40.69,
+    "id": "w110"
+  },
+  {
+    "text": "a",
+    "start": 40.69,
+    "end": 40.71,
+    "id": "w111"
+  },
+  {
+    "text": "crime.",
+    "start": 40.77,
+    "end": 41.36,
+    "id": "w112"
+  },
+  {
+    "text": "In",
+    "start": 41.36,
+    "end": 41.99,
+    "id": "w113"
+  },
+  {
+    "text": "2019,",
+    "start": 41.99,
+    "end": 42.64,
+    "id": "w114"
+  },
+  {
+    "text": "a",
+    "start": 42.64,
+    "end": 42.71,
+    "id": "w115"
+  },
+  {
+    "text": "jury",
+    "start": 42.71,
+    "end": 42.97,
+    "id": "w116"
+  },
+  {
+    "text": "found",
+    "start": 43.04,
+    "end": 43.44,
+    "id": "w117"
+  },
+  {
+    "text": "her",
+    "start": 43.44,
+    "end": 43.67,
+    "id": "w118"
+  },
+  {
+    "text": "guilty",
+    "start": 43.67,
+    "end": 44.12,
+    "id": "w119"
+  },
+  {
+    "text": "of",
+    "start": 44.23,
+    "end": 44.32,
+    "id": "w120"
+  },
+  {
+    "text": "grand",
+    "start": 44.32,
+    "end": 44.72,
+    "id": "w121"
+  },
+  {
+    "text": "larceny.",
+    "start": 44.72,
+    "end": 45.56,
+    "id": "w122"
+  },
+  {
+    "text": "The",
+    "start": 45.56,
+    "end": 46.24,
+    "id": "w123"
+  },
+  {
+    "text": "judge",
+    "start": 46.24,
+    "end": 46.35,
+    "id": "w124"
+  },
+  {
+    "text": "gave",
+    "start": 46.39,
+    "end": 46.75,
+    "id": "w125"
+  },
+  {
+    "text": "her",
+    "start": 46.75,
+    "end": 47.05,
+    "id": "w126"
+  },
+  {
+    "text": "4",
+    "start": 47.05,
+    "end": 47.35,
+    "id": "w127"
+  },
+  {
+    "text": "to",
+    "start": 47.35,
+    "end": 47.55,
+    "id": "w128"
+  },
+  {
+    "text": "12",
+    "start": 47.55,
+    "end": 48.14,
+    "id": "w129"
+  },
+  {
+    "text": "years.",
+    "start": 48.14,
+    "end": 48.96,
+    "id": "w130"
+  },
+  {
+    "text": "She",
+    "start": 48.96,
+    "end": 49.187,
+    "id": "w131"
+  },
+  {
+    "text": "got",
+    "start": 49.187,
+    "end": 49.413,
+    "id": "w132"
+  },
+  {
+    "text": "out",
+    "start": 49.413,
+    "end": 49.64,
+    "id": "w133"
+  },
+  {
+    "text": "in",
+    "start": 49.64,
+    "end": 49.73,
+    "id": "w134"
+  },
+  {
+    "text": "2021.",
+    "start": 49.73,
+    "end": 50.84,
+    "id": "w135"
+  },
+  {
+    "text": "She",
+    "start": 50.84,
+    "end": 51.265,
+    "id": "w136"
+  },
+  {
+    "text": "then",
+    "start": 51.265,
+    "end": 51.69,
+    "id": "w137"
+  },
+  {
+    "text": "fought",
+    "start": 51.69,
+    "end": 52.02,
+    "id": "w138"
+  },
+  {
+    "text": "deportation.",
+    "start": 52.02,
+    "end": 53.32,
+    "id": "w139"
+  },
+  {
+    "text": "Her",
+    "start": 53.32,
+    "end": 53.82,
+    "id": "w140"
+  },
+  {
+    "text": "story",
+    "start": 53.82,
+    "end": 53.99,
+    "id": "w141"
+  },
+  {
+    "text": "became",
+    "start": 53.99,
+    "end": 54.49,
+    "id": "w142"
+  },
+  {
+    "text": "Inventing",
+    "start": 54.49,
+    "end": 55.23,
+    "id": "w143"
+  },
+  {
+    "text": "Anna.",
+    "start": 55.23,
+    "end": 55.84,
+    "id": "w144"
+  },
+  {
+    "text": "So,",
+    "start": 55.84,
+    "end": 56.37,
+    "id": "w145"
+  },
+  {
+    "text": "would",
+    "start": 56.37,
+    "end": 56.46,
+    "id": "w146"
+  },
+  {
+    "text": "you",
+    "start": 56.46,
+    "end": 56.67,
+    "id": "w147"
+  },
+  {
+    "text": "have",
+    "start": 56.67,
+    "end": 56.95,
+    "id": "w148"
+  },
+  {
+    "text": "believed",
+    "start": 56.95,
+    "end": 57.49,
+    "id": "w149"
+  },
+  {
+    "text": "her?",
+    "start": 57.49,
+    "end": 57.94,
+    "id": "w150"
+  },
+  {
+    "text": "Tell",
+    "start": 58.27,
+    "end": 58.34,
+    "id": "w151"
+  },
+  {
+    "text": "me",
+    "start": 58.34,
+    "end": 58.43,
+    "id": "w152"
+  },
+  {
+    "text": "in",
+    "start": 58.43,
+    "end": 58.52,
+    "id": "w153"
+  },
+  {
+    "text": "the",
+    "start": 58.52,
+    "end": 58.66,
+    "id": "w154"
+  },
+  {
+    "text": "comments!",
+    "start": 58.66,
+    "end": 59.2,
+    "id": "w155"
+  }
+]

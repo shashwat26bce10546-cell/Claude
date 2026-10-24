@@ -2,54 +2,607 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Anna Delvey — stickman explainer</title>
+    <script src="vendor/gsap.min.js"></script>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: #0a0a0a;
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
-      }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+      @font-face { font-family: "Montserrat"; font-weight: 900; src: url("assets/fonts/montserrat-latin-900-normal.woff2") format("woff2"); }
+      @font-face { font-family: "Anton"; src: url("assets/fonts/anton-latin-400-normal.woff2") format("woff2"); }
+      :root { --ink: #16120E; --paper: #FFF8EC; --orange: #F08A24; }
+      body { margin: 0; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #000; font-family: "Montserrat", sans-serif; color: #fff; }
+      .seg { position: absolute; inset: 0; overflow: hidden; }
+      .kb, .tx { position: absolute; inset: 0; transform-origin: 50% 45%; }
+      .seg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      /* the artwork is bright and flat, so only a soft shelf behind the captions is darkened */
+      #grade { position: absolute; inset: 0; z-index: 100; pointer-events: none;
+        background: linear-gradient(0deg, rgba(14,10,6,.5) 0%, rgba(14,10,6,.15) 18%, rgba(14,10,6,0) 30%); }
+      #dip { position: absolute; inset: 0; z-index: 401; opacity: 0; background: #000; }
+      #fade { position: absolute; inset: 0; z-index: 500; opacity: 0; background: #000; }
+
+      .gfx { position: absolute; left: 0; right: 0; z-index: 300; display: flex; justify-content: center; }
+      .g-top { top: 110px; }
+      .g-topright { top: 120px; justify-content: flex-end; padding-right: 60px; }
+      .g-mid { top: 620px; }
+      .card { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 22px 42px;
+        background: var(--paper); border: 7px solid var(--ink); border-radius: 26px;
+        box-shadow: 10px 12px 0 rgba(22,18,14,.35); }
+      .card b { display: block; font-size: 62px; line-height: 1; letter-spacing: 1px; color: var(--ink); }
+      .card span { display: block; font-family: "Montserrat"; font-weight: 900; font-size: 30px; letter-spacing: 2px; color: #7A6B57; text-transform: uppercase; }
+      .money { display: flex; flex-direction: column; align-items: center; padding: 26px 56px;
+        background: var(--orange); border: 8px solid var(--ink); border-radius: 30px; box-shadow: 12px 14px 0 rgba(22,18,14,.4); }
+      .money { font-family: "Anton"; font-size: 160px; line-height: .95; color: var(--paper); -webkit-text-stroke: 4px var(--ink); }
+      .money span { display: block; font-size: 62px; letter-spacing: 6px; -webkit-text-stroke: 3px var(--ink); }
+
+      .cap { position: absolute; left: 60px; right: 60px; top: 1430px; height: 290px; z-index: 350;
+        display: flex; align-items: center; justify-content: center; }
+      .cap-in { display: block; max-width: 940px; text-align: center; font-weight: 900; font-size: 74px; line-height: 1.12;
+        color: #fff; -webkit-text-stroke: 11px var(--ink); paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); }
+      .cw { display: inline-block; margin: 0 .18em; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="60.2">
+      <div class="seg" id="s1-wrap" style="z-index:1"><div class="kb" id="s1-kb"><div class="tx" id="s1-tx">
+        <video id="s1" class="clip" src="media/prepped/s1.mp4" muted playsinline data-start="0" data-duration="5.5" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s2-wrap" style="z-index:2"><div class="kb" id="s2-kb"><div class="tx" id="s2-tx">
+        <video id="s2" class="clip" src="media/prepped/s2.mp4" muted playsinline data-start="4.9" data-duration="4.35" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s3-wrap" style="z-index:3"><div class="kb" id="s3-kb"><div class="tx" id="s3-tx">
+        <video id="s3" class="clip" src="media/prepped/s3.mp4" muted playsinline data-start="8.65" data-duration="4.33" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s4-wrap" style="z-index:4"><div class="kb" id="s4-kb"><div class="tx" id="s4-tx">
+        <video id="s4" class="clip" src="media/prepped/s4.mp4" muted playsinline data-start="12.38" data-duration="4.02" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s5-wrap" style="z-index:5"><div class="kb" id="s5-kb"><div class="tx" id="s5-tx">
+        <video id="s5" class="clip" src="media/prepped/s5.mp4" muted playsinline data-start="15.8" data-duration="4.56" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s6-wrap" style="z-index:6"><div class="kb" id="s6-kb"><div class="tx" id="s6-tx">
+        <video id="s6" class="clip" src="media/prepped/s6.mp4" muted playsinline data-start="19.76" data-duration="3.89" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s7-wrap" style="z-index:7"><div class="kb" id="s7-kb"><div class="tx" id="s7-tx">
+        <video id="s7" class="clip" src="media/prepped/s7.mp4" muted playsinline data-start="23.05" data-duration="4" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s8-wrap" style="z-index:8"><div class="kb" id="s8-kb"><div class="tx" id="s8-tx">
+        <video id="s8" class="clip" src="media/prepped/s8.mp4" muted playsinline data-start="26.45" data-duration="4.91" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s9-wrap" style="z-index:9"><div class="kb" id="s9-kb"><div class="tx" id="s9-tx">
+        <video id="s9" class="clip" src="media/prepped/s9.mp4" muted playsinline data-start="30.76" data-duration="4.49" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s10-wrap" style="z-index:10"><div class="kb" id="s10-kb"><div class="tx" id="s10-tx">
+        <video id="s10" class="clip" src="media/prepped/s10.mp4" muted playsinline data-start="34.65" data-duration="3.97" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s11-wrap" style="z-index:11"><div class="kb" id="s11-kb"><div class="tx" id="s11-tx">
+        <video id="s11" class="clip" src="media/prepped/s11.mp4" muted playsinline data-start="38.02" data-duration="3.56" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s12-wrap" style="z-index:12"><div class="kb" id="s12-kb"><div class="tx" id="s12-tx">
+        <video id="s12" class="clip" src="media/prepped/s12.mp4" muted playsinline data-start="40.98" data-duration="4.82" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s13-wrap" style="z-index:13"><div class="kb" id="s13-kb"><div class="tx" id="s13-tx">
+        <video id="s13" class="clip" src="media/prepped/s13.mp4" muted playsinline data-start="45.2" data-duration="5.86" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s14-wrap" style="z-index:14"><div class="kb" id="s14-kb"><div class="tx" id="s14-tx">
+        <video id="s14" class="clip" src="media/prepped/s14.mp4" muted playsinline data-start="50.46" data-duration="5.6" data-track-index="0"></video>
+      </div></div></div>
+      <div class="seg" id="s15-wrap" style="z-index:15"><div class="kb" id="s15-kb"><div class="tx" id="s15-tx">
+        <video id="s15" class="clip" src="media/prepped/s15.mp4" muted playsinline data-start="55.46" data-duration="4.74" data-track-index="0"></video>
+      </div></div></div>
+      <div id="grade"></div>
+      <div class="gfx g-top clip" id="g-name" data-start="5.6" data-duration="3.25" data-track-index="6"><div class="card" style="transform:rotate(-1.5deg)"><b>ANNA DELVEY</b><span>the name was fake</span></div></div>
+      <div class="gfx g-topright clip" id="g-larceny" data-start="43" data-duration="2.4" data-track-index="6"><div class="card" style="transform:rotate(2.5deg)"><b>GRAND LARCENY</b></div></div>
+      <div class="gfx g-topright clip" id="g-years" data-start="46.1" data-duration="2.7" data-track-index="6"><div class="card" style="transform:rotate(-3deg)"><b>4 TO 12 YEARS</b></div></div>
+      <div class="gfx g-top clip" id="g-show" data-start="53.3" data-duration="2.35" data-track-index="6"><div class="card" style="transform:rotate(2deg)"><b>&ldquo;INVENTING ANNA&rdquo;</b><span>her story on screen</span></div></div>
+      <div class="cap clip" id="cap-0" data-start="0.02" data-duration="0.5" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-0-w0">A</span> <span class="cw" id="cap-0-w1">WOMAN</span> <span class="cw" id="cap-0-w2">IN</span></div></div>
+      <div class="cap clip" id="cap-1" data-start="0.52" data-duration="0.77" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-1-w0">NEW</span> <span class="cw" id="cap-1-w1">YORK</span> <span class="cw" id="cap-1-w2">SAID</span></div></div>
+      <div class="cap clip" id="cap-2" data-start="1.29" data-duration="0.55" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-2-w0">SHE</span> <span class="cw" id="cap-2-w1">WAS</span> <span class="cw" id="cap-2-w2">A</span></div></div>
+      <div class="cap clip" id="cap-3" data-start="1.84" data-duration="0.93" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-3-w0">GERMAN</span> <span class="cw" id="cap-3-w1">HEIRESS</span></div></div>
+      <div class="cap clip" id="cap-4" data-start="2.77" data-duration="1.24" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-4-w0">SHE</span> <span class="cw" id="cap-4-w1">CLAIMED</span> <span class="cw" id="cap-4-w2">60</span></div></div>
+      <div class="cap clip" id="cap-5" data-start="4.01" data-duration="1.22" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-5-w0">MILLION</span> <span class="cw" id="cap-5-w1">EUROS</span></div></div>
+      <div class="cap clip" id="cap-6" data-start="5.23" data-duration="0.94" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-6-w0">HER</span> <span class="cw" id="cap-6-w1">NAME</span> <span class="cw" id="cap-6-w2">WAS</span></div></div>
+      <div class="cap clip" id="cap-7" data-start="6.17" data-duration="1.25" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-7-w0">ANNA</span> <span class="cw" id="cap-7-w1">DELVEY</span></div></div>
+      <div class="cap clip" id="cap-8" data-start="7.42" data-duration="0.94" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-8-w0">THAT</span> <span class="cw" id="cap-8-w1">NAME</span> <span class="cw" id="cap-8-w2">WAS</span></div></div>
+      <div class="cap clip" id="cap-9" data-start="8.36" data-duration="0.61" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-9-w0">FAKE</span></div></div>
+      <div class="cap clip" id="cap-10" data-start="8.97" data-duration="0.96" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-10-w0">HER</span> <span class="cw" id="cap-10-w1">REAL</span> <span class="cw" id="cap-10-w2">NAME</span></div></div>
+      <div class="cap clip" id="cap-11" data-start="9.93" data-duration="1.54" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-11-w0">WAS</span> <span class="cw" id="cap-11-w1">ANNA</span> <span class="cw" id="cap-11-w2">SOROKIN</span></div></div>
+      <div class="cap clip" id="cap-12" data-start="11.47" data-duration="0.57" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-12-w0">SHE</span> <span class="cw" id="cap-12-w1">WAS</span> <span class="cw" id="cap-12-w2">BORN</span></div></div>
+      <div class="cap clip" id="cap-13" data-start="12.04" data-duration="0.65" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-13-w0">IN</span> <span class="cw" id="cap-13-w1">RUSSIA</span></div></div>
+      <div class="cap clip" id="cap-14" data-start="12.69" data-duration="1.16" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-14-w0">SHE</span> <span class="cw" id="cap-14-w1">WORE</span> <span class="cw" id="cap-14-w2">DESIGNER</span></div></div>
+      <div class="cap clip" id="cap-15" data-start="13.85" data-duration="1.31" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-15-w0">CLOTHES</span> <span class="cw" id="cap-15-w1">AND</span> <span class="cw" id="cap-15-w2">PLANNED</span></div></div>
+      <div class="cap clip" id="cap-16" data-start="15.16" data-duration="0.61" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-16-w0">A</span> <span class="cw" id="cap-16-w1">HUGE</span> <span class="cw" id="cap-16-w2">ART</span></div></div>
+      <div class="cap clip" id="cap-17" data-start="15.77" data-duration="0.34" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-17-w0">CLUB</span></div></div>
+      <div class="cap clip" id="cap-18" data-start="16.11" data-duration="1.14" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-18-w0">SHE</span> <span class="cw" id="cap-18-w1">STAYED</span> <span class="cw" id="cap-18-w2">IN</span></div></div>
+      <div class="cap clip" id="cap-19" data-start="17.25" data-duration="1.2" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-19-w0">FANCY</span> <span class="cw" id="cap-19-w1">HOTELS</span> <span class="cw" id="cap-19-w2">LIKE</span></div></div>
+      <div class="cap clip" id="cap-20" data-start="18.45" data-duration="0.8" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-20-w0">MONEY</span> <span class="cw" id="cap-20-w1">WAS</span> <span class="cw" id="cap-20-w2">NO</span></div></div>
+      <div class="cap clip" id="cap-21" data-start="19.25" data-duration="0.84" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-21-w0">PROBLEM</span></div></div>
+      <div class="cap clip" id="cap-22" data-start="20.09" data-duration="1.37" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-22-w0">BUT</span> <span class="cw" id="cap-22-w1">PROSECUTORS</span> <span class="cw" id="cap-22-w2">SAID</span></div></div>
+      <div class="cap clip" id="cap-23" data-start="21.46" data-duration="0.66" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-23-w0">SHE</span> <span class="cw" id="cap-23-w1">HAD</span> <span class="cw" id="cap-23-w2">NOT</span></div></div>
+      <div class="cap clip" id="cap-24" data-start="22.12" data-duration="0.52" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-24-w0">A</span> <span class="cw" id="cap-24-w1">CENT</span> <span class="cw" id="cap-24-w2">TO</span></div></div>
+      <div class="cap clip" id="cap-25" data-start="22.64" data-duration="0.74" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-25-w0">HER</span> <span class="cw" id="cap-25-w1">NAME</span></div></div>
+      <div class="cap clip" id="cap-26" data-start="23.38" data-duration="0.86" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-26-w0">THEY</span> <span class="cw" id="cap-26-w1">SAID</span> <span class="cw" id="cap-26-w2">SHE</span></div></div>
+      <div class="cap clip" id="cap-27" data-start="24.24" data-duration="1.05" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-27-w0">FORGED</span> <span class="cw" id="cap-27-w1">PAPERS</span> <span class="cw" id="cap-27-w2">AND</span></div></div>
+      <div class="cap clip" id="cap-28" data-start="25.29" data-duration="0.49" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-28-w0">MADE</span> <span class="cw" id="cap-28-w1">UP</span> <span class="cw" id="cap-28-w2">A</span></div></div>
+      <div class="cap clip" id="cap-29" data-start="25.78" data-duration="0.98" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-29-w0">FAKE</span> <span class="cw" id="cap-29-w1">ADVISOR</span></div></div>
+      <div class="cap clip" id="cap-30" data-start="26.76" data-duration="1.09" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-30-w0">SHE</span> <span class="cw" id="cap-30-w1">ASKED</span> <span class="cw" id="cap-30-w2">FOR</span></div></div>
+      <div class="cap clip" id="cap-31" data-start="27.85" data-duration="1.3" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-31-w0">HUGE</span> <span class="cw" id="cap-31-w1">LOANS</span></div></div>
+      <div class="cap clip" id="cap-32" data-start="29.15" data-duration="0.63" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-32-w0">SHE</span> <span class="cw" id="cap-32-w1">DID</span> <span class="cw" id="cap-32-w2">NOT</span></div></div>
+      <div class="cap clip" id="cap-33" data-start="29.78" data-duration="1.31" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-33-w0">GET</span> <span class="cw" id="cap-33-w1">THEM</span></div></div>
+      <div class="cap clip" id="cap-34" data-start="31.09" data-duration="0.92" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-34-w0">PROSECUTORS</span> <span class="cw" id="cap-34-w1">SAID</span> <span class="cw" id="cap-34-w2">SHE</span></div></div>
+      <div class="cap clip" id="cap-35" data-start="32.01" data-duration="0.76" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-35-w0">NEVER</span> <span class="cw" id="cap-35-w1">PAID</span> <span class="cw" id="cap-35-w2">A</span></div></div>
+      <div class="cap clip" id="cap-36" data-start="32.77" data-duration="1.51" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-36-w0">$35,000</span></div></div>
+      <div class="cap clip" id="cap-37" data-start="34.28" data-duration="0.7" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-37-w0">JET</span> <span class="cw" id="cap-37-w1">BILL</span></div></div>
+      <div class="cap clip" id="cap-38" data-start="34.98" data-duration="1.8" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-38-w0">IN</span> <span class="cw" id="cap-38-w1">OCTOBER</span> <span class="cw" id="cap-38-w2">2017</span></div></div>
+      <div class="cap clip" id="cap-39" data-start="36.78" data-duration="1.57" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-39-w0">POLICE</span> <span class="cw" id="cap-39-w1">ARRESTED</span> <span class="cw" id="cap-39-w2">HER</span></div></div>
+      <div class="cap clip" id="cap-40" data-start="38.35" data-duration="0.89" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-40-w0">HER</span> <span class="cw" id="cap-40-w1">LAWYER</span> <span class="cw" id="cap-40-w2">SAID</span></div></div>
+      <div class="cap clip" id="cap-41" data-start="39.24" data-duration="0.89" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-41-w0">SHE</span> <span class="cw" id="cap-41-w1">NEVER</span> <span class="cw" id="cap-41-w2">MEANT</span></div></div>
+      <div class="cap clip" id="cap-42" data-start="40.13" data-duration="0.59" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-42-w0">TO</span> <span class="cw" id="cap-42-w1">COMMIT</span> <span class="cw" id="cap-42-w2">A</span></div></div>
+      <div class="cap clip" id="cap-43" data-start="40.72" data-duration="0.59" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-43-w0">CRIME</span></div></div>
+      <div class="cap clip" id="cap-44" data-start="41.31" data-duration="1.28" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-44-w0">IN</span> <span class="cw" id="cap-44-w1">2019</span></div></div>
+      <div class="cap clip" id="cap-45" data-start="42.59" data-duration="0.8" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-45-w0">A</span> <span class="cw" id="cap-45-w1">JURY</span> <span class="cw" id="cap-45-w2">FOUND</span></div></div>
+      <div class="cap clip" id="cap-46" data-start="43.39" data-duration="0.88" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-46-w0">HER</span> <span class="cw" id="cap-46-w1">GUILTY</span> <span class="cw" id="cap-46-w2">OF</span></div></div>
+      <div class="cap clip" id="cap-47" data-start="44.27" data-duration="1.24" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-47-w0">GRAND</span> <span class="cw" id="cap-47-w1">LARCENY</span></div></div>
+      <div class="cap clip" id="cap-48" data-start="45.51" data-duration="1.19" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-48-w0">THE</span> <span class="cw" id="cap-48-w1">JUDGE</span> <span class="cw" id="cap-48-w2">GAVE</span></div></div>
+      <div class="cap clip" id="cap-49" data-start="46.7" data-duration="0.8" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-49-w0">HER</span> <span class="cw" id="cap-49-w1">4</span> <span class="cw" id="cap-49-w2">TO</span></div></div>
+      <div class="cap clip" id="cap-50" data-start="47.5" data-duration="1.41" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-50-w0">12</span> <span class="cw" id="cap-50-w1">YEARS</span></div></div>
+      <div class="cap clip" id="cap-51" data-start="48.91" data-duration="0.68" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-51-w0">SHE</span> <span class="cw" id="cap-51-w1">GOT</span> <span class="cw" id="cap-51-w2">OUT</span></div></div>
+      <div class="cap clip" id="cap-52" data-start="49.59" data-duration="1.2" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-52-w0">IN</span> <span class="cw" id="cap-52-w1">2021</span></div></div>
+      <div class="cap clip" id="cap-53" data-start="50.79" data-duration="1.18" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-53-w0">SHE</span> <span class="cw" id="cap-53-w1">THEN</span> <span class="cw" id="cap-53-w2">FOUGHT</span></div></div>
+      <div class="cap clip" id="cap-54" data-start="51.97" data-duration="1.3" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-54-w0">DEPORTATION</span></div></div>
+      <div class="cap clip" id="cap-55" data-start="53.27" data-duration="1.17" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-55-w0">HER</span> <span class="cw" id="cap-55-w1">STORY</span> <span class="cw" id="cap-55-w2">BECAME</span></div></div>
+      <div class="cap clip" id="cap-56" data-start="54.44" data-duration="1.35" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-56-w0">INVENTING</span> <span class="cw" id="cap-56-w1">ANNA</span></div></div>
+      <div class="cap clip" id="cap-57" data-start="55.79" data-duration="0.53" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-57-w0">SO</span></div></div>
+      <div class="cap clip" id="cap-58" data-start="56.32" data-duration="0.58" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-58-w0">WOULD</span> <span class="cw" id="cap-58-w1">YOU</span> <span class="cw" id="cap-58-w2">HAVE</span></div></div>
+      <div class="cap clip" id="cap-59" data-start="56.9" data-duration="1.32" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-59-w0">BELIEVED</span> <span class="cw" id="cap-59-w1">HER</span></div></div>
+      <div class="cap clip" id="cap-60" data-start="58.22" data-duration="0.25" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-60-w0">TELL</span> <span class="cw" id="cap-60-w1">ME</span> <span class="cw" id="cap-60-w2">IN</span></div></div>
+      <div class="cap clip" id="cap-61" data-start="58.47" data-duration="1.03" data-track-index="5"><div class="cap-in"><span class="cw" id="cap-61-w0">THE</span> <span class="cw" id="cap-61-w1">COMMENTS</span></div></div>
+      <div id="dip"></div>
+      <div id="fade"></div>
+      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="59.3" data-track-index="10" data-volume="1"></audio>
+      <audio id="score" src="assets/audio/score.mp3" data-start="0" data-duration="60.2" data-track-index="11" data-volume="0.3"></audio>
+      <audio id="sfx-0" src="assets/sfx/whoosh-short.mp3" data-start="4.84" data-duration="0.9" data-track-index="20" data-volume="0.33"></audio>
+      <audio id="sfx-1" src="assets/sfx/pop.mp3" data-start="5.6" data-duration="0.5" data-track-index="21" data-volume="0.4"></audio>
+      <audio id="sfx-2" src="assets/sfx/sparkle.mp3" data-start="16.3" data-duration="1.5" data-track-index="22" data-volume="0.4"></audio>
+      <audio id="sfx-3" src="assets/sfx/whoosh-short.mp3" data-start="19.72" data-duration="0.9" data-track-index="23" data-volume="0.28"></audio>
+      <audio id="sfx-4" src="assets/sfx/whoosh-short.mp3" data-start="26.39" data-duration="0.9" data-track-index="20" data-volume="0.33"></audio>
+      <audio id="sfx-5" src="assets/sfx/click-soft.mp3" data-start="43" data-duration="0.4" data-track-index="21" data-volume="0.45"></audio>
+      <audio id="sfx-6" src="assets/sfx/click-soft.mp3" data-start="46.1" data-duration="0.4" data-track-index="22" data-volume="0.45"></audio>
+      <audio id="sfx-7" src="assets/sfx/whoosh-short.mp3" data-start="50.42" data-duration="0.9" data-track-index="23" data-volume="0.28"></audio>
+      <audio id="sfx-8" src="assets/sfx/pop.mp3" data-start="53.3" data-duration="0.5" data-track-index="20" data-volume="0.4"></audio>
+      <audio id="sfx-9" src="assets/sfx/whoosh-short.mp3" data-start="55.4" data-duration="0.9" data-track-index="21" data-volume="0.33"></audio>
     </div>
     <script>
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+      tl.set("#s1-kb", {scale:1.02}, 0);
+      tl.set("#s2-kb", {scale:1.02}, 4.9);
+      tl.set("#s3-kb", {scale:1.02}, 8.65);
+      tl.set("#s4-kb", {scale:1.02}, 12.38);
+      tl.set("#s5-kb", {scale:1.02}, 15.8);
+      tl.set("#s6-kb", {scale:1.02}, 19.76);
+      tl.set("#s7-kb", {scale:1.02}, 23.05);
+      tl.set("#s8-kb", {scale:1.02}, 26.45);
+      tl.set("#s9-kb", {scale:1.02}, 30.76);
+      tl.set("#s10-kb", {scale:1.02}, 34.65);
+      tl.set("#s11-kb", {scale:1.02}, 38.02);
+      tl.set("#s12-kb", {scale:1.02}, 40.98);
+      tl.set("#s13-kb", {scale:1.02}, 45.2);
+      tl.set("#s14-kb", {scale:1.02}, 50.46);
+      tl.set("#s15-kb", {scale:1.02}, 55.46);
+      tl.set("#s1-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s2-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s3-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s4-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s5-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s6-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s7-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s8-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s9-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s10-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s11-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s12-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s13-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s14-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.set("#s15-tx", {opacity:1, scale:1, xPercent:0, filter:"blur(0px)"}, 0);
+      tl.fromTo("#s2-tx", {opacity:1, xPercent:100, filter:"blur(14px)"}, {xPercent:0, filter:"blur(0px)", duration:.32, ease:"power3.out", immediateRender:false}, 4.9);
+      tl.fromTo("#s1-tx", {xPercent:0, filter:"blur(0px)"}, {xPercent:-55, filter:"blur(14px)", duration:.32, ease:"power3.out", immediateRender:false}, 4.9);
+      tl.fromTo("#s3-tx", {opacity:0}, {opacity:1, duration:.45, ease:"sine.inOut", immediateRender:false}, 8.65);
+      tl.fromTo("#s4-tx", {opacity:0, scale:.88}, {opacity:1, scale:1, duration:.38, ease:"back.out(1.7)", immediateRender:false}, 12.38);
+      tl.fromTo("#s5-tx", {opacity:0}, {opacity:1, duration:.45, ease:"sine.inOut", immediateRender:false}, 15.8);
+      tl.fromTo("#s6-tx", {opacity:0, scale:1.25, filter:"blur(8px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:.4, ease:"power3.out", immediateRender:false}, 19.76);
+      tl.fromTo("#s7-tx", {opacity:0}, {opacity:1, duration:.45, ease:"sine.inOut", immediateRender:false}, 23.05);
+      tl.fromTo("#s8-tx", {opacity:1, xPercent:100, filter:"blur(14px)"}, {xPercent:0, filter:"blur(0px)", duration:.32, ease:"power3.out", immediateRender:false}, 26.45);
+      tl.fromTo("#s7-tx", {xPercent:0, filter:"blur(0px)"}, {xPercent:-55, filter:"blur(14px)", duration:.32, ease:"power3.out", immediateRender:false}, 26.45);
+      tl.fromTo("#s9-tx", {opacity:0}, {opacity:1, duration:.45, ease:"sine.inOut", immediateRender:false}, 30.76);
+      tl.fromTo("#dip", {opacity:0}, {opacity:1, duration:.2, ease:"power2.in", immediateRender:false}, 34.75);
+      tl.to("#dip", {opacity:0, duration:.35, ease:"power2.out"}, 34.95);
+      tl.fromTo("#s10-tx", {opacity:0}, {opacity:1, duration:.01, immediateRender:false}, 34.95);
+      tl.fromTo("#s11-tx", {opacity:0}, {opacity:1, duration:.45, ease:"sine.inOut", immediateRender:false}, 38.02);
+      tl.fromTo("#dip", {opacity:0}, {opacity:1, duration:.2, ease:"power2.in", immediateRender:false}, 41.08);
+      tl.to("#dip", {opacity:0, duration:.35, ease:"power2.out"}, 41.28);
+      tl.fromTo("#s12-tx", {opacity:0}, {opacity:1, duration:.01, immediateRender:false}, 41.28);
+      tl.fromTo("#s13-tx", {opacity:0}, {opacity:1, duration:.45, ease:"sine.inOut", immediateRender:false}, 45.2);
+      tl.fromTo("#s14-tx", {opacity:0, scale:1.25, filter:"blur(8px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:.4, ease:"power3.out", immediateRender:false}, 50.46);
+      tl.fromTo("#s15-tx", {opacity:1, xPercent:100, filter:"blur(14px)"}, {xPercent:0, filter:"blur(0px)", duration:.32, ease:"power3.out", immediateRender:false}, 55.46);
+      tl.fromTo("#s14-tx", {xPercent:0, filter:"blur(0px)"}, {xPercent:-55, filter:"blur(14px)", duration:.32, ease:"power3.out", immediateRender:false}, 55.46);
+      tl.fromTo("#g-name .card", {opacity:0, y:26, scale:.88}, {opacity:1, y:0, scale:1, duration:.34, ease:"back.out(2)"}, 5.6);tl.to("#g-name .card", {opacity:0, y:-18, duration:.26, ease:"power2.in"}, 8.59);
+      tl.fromTo("#g-larceny .card", {opacity:0, y:26, scale:.88}, {opacity:1, y:0, scale:1, duration:.34, ease:"back.out(2)"}, 43);tl.to("#g-larceny .card", {opacity:0, y:-18, duration:.26, ease:"power2.in"}, 45.14);
+      tl.fromTo("#g-years .card", {opacity:0, y:26, scale:.88}, {opacity:1, y:0, scale:1, duration:.34, ease:"back.out(2)"}, 46.1);tl.to("#g-years .card", {opacity:0, y:-18, duration:.26, ease:"power2.in"}, 48.54);
+      tl.fromTo("#g-show .card", {opacity:0, y:26, scale:.88}, {opacity:1, y:0, scale:1, duration:.34, ease:"back.out(2)"}, 53.3);tl.to("#g-show .card", {opacity:0, y:-18, duration:.26, ease:"power2.in"}, 55.39);
+      tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.6, ease:"power1.in", immediateRender:false}, 59.6);
+      tl.fromTo("#cap-0 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 0.02);
+      tl.fromTo("#cap-0-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 0.07);
+      tl.to("#cap-0-w0", {scale:1, y:0, duration:.12}, 0.16);
+      tl.fromTo("#cap-0-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 0.13);
+      tl.to("#cap-0-w1", {scale:1, y:0, duration:.12}, 0.43);
+      tl.fromTo("#cap-0-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 0.43);
+      tl.to("#cap-0-w2", {scale:1, y:0, duration:.12}, 0.57);
+      tl.fromTo("#cap-1 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 0.52);
+      tl.fromTo("#cap-1-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 0.57);
+      tl.to("#cap-1-w0", {scale:1, y:0, duration:.12}, 0.78);
+      tl.fromTo("#cap-1-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 0.78);
+      tl.to("#cap-1-w1", {scale:1, y:0, duration:.12}, 1.06);
+      tl.fromTo("#cap-1-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 1.06);
+      tl.to("#cap-1-w2", {scale:1, y:0, duration:.12}, 1.34);
+      tl.fromTo("#cap-2 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 1.29);
+      tl.fromTo("#cap-2-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 1.34);
+      tl.to("#cap-2-w0", {scale:1, y:0, duration:.12}, 1.55);
+      tl.fromTo("#cap-2-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 1.55);
+      tl.to("#cap-2-w1", {scale:1, y:0, duration:.12}, 1.76);
+      tl.fromTo("#cap-2-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 1.76);
+      tl.to("#cap-2-w2", {scale:1, y:0, duration:.12}, 1.85);
+      tl.fromTo("#cap-3 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 1.84);
+      tl.fromTo("#cap-3-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 1.89);
+      tl.to("#cap-3-w0", {scale:1, y:0, duration:.12}, 2.26);
+      tl.fromTo("#cap-3-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 2.26);
+      tl.to("#cap-3-w1", {scale:1, y:0, duration:.12}, 2.82);
+      tl.fromTo("#cap-4 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 2.77);
+      tl.fromTo("#cap-4-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 2.82);
+      tl.to("#cap-4-w0", {scale:1, y:0, duration:.12}, 3.34);
+      tl.fromTo("#cap-4-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 3.34);
+      tl.to("#cap-4-w1", {scale:1, y:0, duration:.12}, 3.6);
+      tl.fromTo("#cap-4-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 3.6);
+      tl.to("#cap-4-w2", {scale:1, y:0, duration:.12}, 4.04);
+      tl.fromTo("#cap-5 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 4.01);
+      tl.fromTo("#cap-5-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 4.06);
+      tl.to("#cap-5-w0", {scale:1, y:0, duration:.12}, 4.6);
+      tl.fromTo("#cap-5-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 4.63);
+      tl.to("#cap-5-w1", {scale:1, y:0, duration:.12}, 5.28);
+      tl.fromTo("#cap-6 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 5.23);
+      tl.fromTo("#cap-6-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 5.28);
+      tl.to("#cap-6-w0", {scale:1, y:0, duration:.12}, 5.735);
+      tl.fromTo("#cap-6-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 5.735);
+      tl.to("#cap-6-w1", {scale:1, y:0, duration:.12}, 6.19);
+      tl.fromTo("#cap-6-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 6.19);
+      tl.to("#cap-6-w2", {scale:1, y:0, duration:.12}, 6.28);
+      tl.fromTo("#cap-7 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 6.17);
+      tl.fromTo("#cap-7-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 6.22);
+      tl.to("#cap-7-w0", {scale:1, y:0, duration:.12}, 6.6);
+      tl.fromTo("#cap-7-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 6.6);
+      tl.to("#cap-7-w1", {scale:1, y:0, duration:.12}, 7.47);
+      tl.fromTo("#cap-8 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 7.42);
+      tl.fromTo("#cap-8-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 7.47);
+      tl.to("#cap-8-w0", {scale:1, y:0, duration:.12}, 8.11);
+      tl.fromTo("#cap-8-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 8.11);
+      tl.to("#cap-8-w1", {scale:1, y:0, duration:.12}, 8.2);
+      tl.fromTo("#cap-8-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 8.16);
+      tl.to("#cap-8-w2", {scale:1, y:0, duration:.12}, 8.41);
+      tl.fromTo("#cap-9 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 8.36);
+      tl.fromTo("#cap-9-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 8.41);
+      tl.to("#cap-9-w0", {scale:1, y:0, duration:.12}, 9.02);
+      tl.fromTo("#cap-10 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 8.97);
+      tl.fromTo("#cap-10-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 9.02);
+      tl.to("#cap-10-w0", {scale:1, y:0, duration:.12}, 9.59);
+      tl.fromTo("#cap-10-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 9.59);
+      tl.to("#cap-10-w1", {scale:1, y:0, duration:.12}, 9.68);
+      tl.fromTo("#cap-10-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 9.63);
+      tl.to("#cap-10-w2", {scale:1, y:0, duration:.12}, 9.98);
+      tl.fromTo("#cap-11 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 9.93);
+      tl.fromTo("#cap-11-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 9.98);
+      tl.to("#cap-11-w0", {scale:1, y:0, duration:.12}, 10.24);
+      tl.fromTo("#cap-11-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 10.24);
+      tl.to("#cap-11-w1", {scale:1, y:0, duration:.12}, 10.58);
+      tl.fromTo("#cap-11-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 10.58);
+      tl.to("#cap-11-w2", {scale:1, y:0, duration:.12}, 11.52);
+      tl.fromTo("#cap-12 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 11.47);
+      tl.fromTo("#cap-12-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 11.52);
+      tl.to("#cap-12-w0", {scale:1, y:0, duration:.12}, 11.73);
+      tl.fromTo("#cap-12-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 11.73);
+      tl.to("#cap-12-w1", {scale:1, y:0, duration:.12}, 11.94);
+      tl.fromTo("#cap-12-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 11.94);
+      tl.to("#cap-12-w2", {scale:1, y:0, duration:.12}, 12.09);
+      tl.fromTo("#cap-13 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 12.04);
+      tl.fromTo("#cap-13-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 12.09);
+      tl.to("#cap-13-w0", {scale:1, y:0, duration:.12}, 12.2);
+      tl.fromTo("#cap-13-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 12.2);
+      tl.to("#cap-13-w1", {scale:1, y:0, duration:.12}, 12.74);
+      tl.fromTo("#cap-14 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 12.69);
+      tl.fromTo("#cap-14-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 12.74);
+      tl.to("#cap-14-w0", {scale:1, y:0, duration:.12}, 13.065);
+      tl.fromTo("#cap-14-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 13.065);
+      tl.to("#cap-14-w1", {scale:1, y:0, duration:.12}, 13.39);
+      tl.fromTo("#cap-14-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 13.39);
+      tl.to("#cap-14-w2", {scale:1, y:0, duration:.12}, 13.9);
+      tl.fromTo("#cap-15 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 13.85);
+      tl.fromTo("#cap-15-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 13.9);
+      tl.to("#cap-15-w0", {scale:1, y:0, duration:.12}, 14.37);
+      tl.fromTo("#cap-15-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 14.44);
+      tl.to("#cap-15-w1", {scale:1, y:0, duration:.12}, 14.65);
+      tl.fromTo("#cap-15-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 14.67);
+      tl.to("#cap-15-w2", {scale:1, y:0, duration:.12}, 15.21);
+      tl.fromTo("#cap-16 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 15.16);
+      tl.fromTo("#cap-16-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 15.21);
+      tl.to("#cap-16-w0", {scale:1, y:0, duration:.12}, 15.3);
+      tl.fromTo("#cap-16-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 15.28);
+      tl.to("#cap-16-w1", {scale:1, y:0, duration:.12}, 15.52);
+      tl.fromTo("#cap-16-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 15.63);
+      tl.to("#cap-16-w2", {scale:1, y:0, duration:.12}, 15.82);
+      tl.fromTo("#cap-17 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 15.77);
+      tl.fromTo("#cap-17-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 15.82);
+      tl.to("#cap-17-w0", {scale:1, y:0, duration:.12}, 16.16);
+      tl.fromTo("#cap-18 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 16.11);
+      tl.fromTo("#cap-18-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 16.16);
+      tl.to("#cap-18-w0", {scale:1, y:0, duration:.12}, 16.92);
+      tl.fromTo("#cap-18-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 16.92);
+      tl.to("#cap-18-w1", {scale:1, y:0, duration:.12}, 17.14);
+      tl.fromTo("#cap-18-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 17.14);
+      tl.to("#cap-18-w2", {scale:1, y:0, duration:.12}, 17.3);
+      tl.fromTo("#cap-19 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 17.25);
+      tl.fromTo("#cap-19-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 17.3);
+      tl.to("#cap-19-w0", {scale:1, y:0, duration:.12}, 17.7);
+      tl.fromTo("#cap-19-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 17.7);
+      tl.to("#cap-19-w1", {scale:1, y:0, duration:.12}, 18.18);
+      tl.fromTo("#cap-19-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 18.18);
+      tl.to("#cap-19-w2", {scale:1, y:0, duration:.12}, 18.5);
+      tl.fromTo("#cap-20 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 18.45);
+      tl.fromTo("#cap-20-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 18.5);
+      tl.to("#cap-20-w0", {scale:1, y:0, duration:.12}, 18.9);
+      tl.fromTo("#cap-20-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 18.9);
+      tl.to("#cap-20-w1", {scale:1, y:0, duration:.12}, 19.06);
+      tl.fromTo("#cap-20-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 19.17);
+      tl.to("#cap-20-w2", {scale:1, y:0, duration:.12}, 19.3);
+      tl.fromTo("#cap-21 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 19.25);
+      tl.fromTo("#cap-21-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 19.3);
+      tl.to("#cap-21-w0", {scale:1, y:0, duration:.12}, 20.14);
+      tl.fromTo("#cap-22 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 20.09);
+      tl.fromTo("#cap-22-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 20.14);
+      tl.to("#cap-22-w0", {scale:1, y:0, duration:.12}, 20.65);
+      tl.fromTo("#cap-22-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 20.65);
+      tl.to("#cap-22-w1", {scale:1, y:0, duration:.12}, 21.21);
+      tl.fromTo("#cap-22-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 21.21);
+      tl.to("#cap-22-w2", {scale:1, y:0, duration:.12}, 21.51);
+      tl.fromTo("#cap-23 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 21.46);
+      tl.fromTo("#cap-23-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 21.51);
+      tl.to("#cap-23-w0", {scale:1, y:0, duration:.12}, 21.73);
+      tl.fromTo("#cap-23-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 21.73);
+      tl.to("#cap-23-w1", {scale:1, y:0, duration:.12}, 21.95);
+      tl.fromTo("#cap-23-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 21.95);
+      tl.to("#cap-23-w2", {scale:1, y:0, duration:.12}, 22.17);
+      tl.fromTo("#cap-24 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 22.12);
+      tl.fromTo("#cap-24-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 22.17);
+      tl.to("#cap-24-w0", {scale:1, y:0, duration:.12}, 22.26);
+      tl.fromTo("#cap-24-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 22.24);
+      tl.to("#cap-24-w1", {scale:1, y:0, duration:.12}, 22.54);
+      tl.fromTo("#cap-24-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 22.54);
+      tl.to("#cap-24-w2", {scale:1, y:0, duration:.12}, 22.69);
+      tl.fromTo("#cap-25 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 22.64);
+      tl.fromTo("#cap-25-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 22.69);
+      tl.to("#cap-25-w0", {scale:1, y:0, duration:.12}, 22.91);
+      tl.fromTo("#cap-25-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 22.91);
+      tl.to("#cap-25-w1", {scale:1, y:0, duration:.12}, 23.43);
+      tl.fromTo("#cap-26 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 23.38);
+      tl.fromTo("#cap-26-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 23.43);
+      tl.to("#cap-26-w0", {scale:1, y:0, duration:.12}, 24.01);
+      tl.fromTo("#cap-26-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 24.01);
+      tl.to("#cap-26-w1", {scale:1, y:0, duration:.12}, 24.1);
+      tl.fromTo("#cap-26-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 24.08);
+      tl.to("#cap-26-w2", {scale:1, y:0, duration:.12}, 24.29);
+      tl.fromTo("#cap-27 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 24.24);
+      tl.fromTo("#cap-27-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 24.29);
+      tl.to("#cap-27-w0", {scale:1, y:0, duration:.12}, 24.7);
+      tl.fromTo("#cap-27-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 24.7);
+      tl.to("#cap-27-w1", {scale:1, y:0, duration:.12}, 25.12);
+      tl.fromTo("#cap-27-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 25.12);
+      tl.to("#cap-27-w2", {scale:1, y:0, duration:.12}, 25.34);
+      tl.fromTo("#cap-28 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 25.29);
+      tl.fromTo("#cap-28-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 25.34);
+      tl.to("#cap-28-w0", {scale:1, y:0, duration:.12}, 25.62);
+      tl.fromTo("#cap-28-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 25.62);
+      tl.to("#cap-28-w1", {scale:1, y:0, duration:.12}, 25.72);
+      tl.fromTo("#cap-28-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 25.79);
+      tl.to("#cap-28-w2", {scale:1, y:0, duration:.12}, 25.88);
+      tl.fromTo("#cap-29 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 25.78);
+      tl.fromTo("#cap-29-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 25.83);
+      tl.to("#cap-29-w0", {scale:1, y:0, duration:.12}, 26.11);
+      tl.fromTo("#cap-29-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 26.11);
+      tl.to("#cap-29-w1", {scale:1, y:0, duration:.12}, 26.81);
+      tl.fromTo("#cap-30 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 26.76);
+      tl.fromTo("#cap-30-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 26.81);
+      tl.to("#cap-30-w0", {scale:1, y:0, duration:.12}, 27.36);
+      tl.fromTo("#cap-30-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 27.36);
+      tl.to("#cap-30-w1", {scale:1, y:0, duration:.12}, 27.62);
+      tl.fromTo("#cap-30-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 27.62);
+      tl.to("#cap-30-w2", {scale:1, y:0, duration:.12}, 27.9);
+      tl.fromTo("#cap-31 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 27.85);
+      tl.fromTo("#cap-31-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 27.9);
+      tl.to("#cap-31-w0", {scale:1, y:0, duration:.12}, 28.28);
+      tl.fromTo("#cap-31-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 28.28);
+      tl.to("#cap-31-w1", {scale:1, y:0, duration:.12}, 29.06);
+      tl.fromTo("#cap-32 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 29.15);
+      tl.fromTo("#cap-32-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 29.2);
+      tl.to("#cap-32-w0", {scale:1, y:0, duration:.12}, 29.33);
+      tl.fromTo("#cap-32-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 29.34);
+      tl.to("#cap-32-w1", {scale:1, y:0, duration:.12}, 29.58);
+      tl.fromTo("#cap-32-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 29.58);
+      tl.to("#cap-32-w2", {scale:1, y:0, duration:.12}, 29.83);
+      tl.fromTo("#cap-33 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 29.78);
+      tl.fromTo("#cap-33-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 29.83);
+      tl.to("#cap-33-w0", {scale:1, y:0, duration:.12}, 30.08);
+      tl.fromTo("#cap-33-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 30.08);
+      tl.to("#cap-33-w1", {scale:1, y:0, duration:.12}, 30.68);
+      tl.fromTo("#cap-34 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 31.09);
+      tl.fromTo("#cap-34-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 31.14);
+      tl.to("#cap-34-w0", {scale:1, y:0, duration:.12}, 31.52);
+      tl.fromTo("#cap-34-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 31.52);
+      tl.to("#cap-34-w1", {scale:1, y:0, duration:.12}, 31.83);
+      tl.fromTo("#cap-34-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 31.83);
+      tl.to("#cap-34-w2", {scale:1, y:0, duration:.12}, 32.06);
+      tl.fromTo("#cap-35 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 32.01);
+      tl.fromTo("#cap-35-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 32.06);
+      tl.to("#cap-35-w0", {scale:1, y:0, duration:.12}, 32.42);
+      tl.fromTo("#cap-35-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 32.44);
+      tl.to("#cap-35-w1", {scale:1, y:0, duration:.12}, 32.75);
+      tl.fromTo("#cap-35-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 32.75);
+      tl.to("#cap-35-w2", {scale:1, y:0, duration:.12}, 32.84);
+      tl.fromTo("#cap-36 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 32.77);
+      tl.fromTo("#cap-36-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 32.82);
+      tl.to("#cap-36-w0", {scale:1, y:0, duration:.12}, 34.04);
+      tl.fromTo("#cap-37 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 34.28);
+      tl.fromTo("#cap-37-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 34.33);
+      tl.to("#cap-37-w0", {scale:1, y:0, duration:.12}, 34.42);
+      tl.fromTo("#cap-37-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 34.42);
+      tl.to("#cap-37-w1", {scale:1, y:0, duration:.12}, 35.03);
+      tl.fromTo("#cap-38 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 34.98);
+      tl.fromTo("#cap-38-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 35.03);
+      tl.to("#cap-38-w0", {scale:1, y:0, duration:.12}, 35.62);
+      tl.fromTo("#cap-38-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 35.62);
+      tl.to("#cap-38-w1", {scale:1, y:0, duration:.12}, 35.74);
+      tl.fromTo("#cap-38-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 35.74);
+      tl.to("#cap-38-w2", {scale:1, y:0, duration:.12}, 36.83);
+      tl.fromTo("#cap-39 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 36.78);
+      tl.fromTo("#cap-39-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 36.83);
+      tl.to("#cap-39-w0", {scale:1, y:0, duration:.12}, 37.3);
+      tl.fromTo("#cap-39-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 37.3);
+      tl.to("#cap-39-w1", {scale:1, y:0, duration:.12}, 37.92);
+      tl.fromTo("#cap-39-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 37.92);
+      tl.to("#cap-39-w2", {scale:1, y:0, duration:.12}, 38.4);
+      tl.fromTo("#cap-40 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 38.35);
+      tl.fromTo("#cap-40-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 38.4);
+      tl.to("#cap-40-w0", {scale:1, y:0, duration:.12}, 38.99);
+      tl.fromTo("#cap-40-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 38.99);
+      tl.to("#cap-40-w1", {scale:1, y:0, duration:.12}, 39.08);
+      tl.fromTo("#cap-40-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 39.02);
+      tl.to("#cap-40-w2", {scale:1, y:0, duration:.12}, 39.29);
+      tl.fromTo("#cap-41 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 39.24);
+      tl.fromTo("#cap-41-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 39.29);
+      tl.to("#cap-41-w0", {scale:1, y:0, duration:.12}, 39.49);
+      tl.fromTo("#cap-41-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 39.49);
+      tl.to("#cap-41-w1", {scale:1, y:0, duration:.12}, 39.83);
+      tl.fromTo("#cap-41-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 39.83);
+      tl.to("#cap-41-w2", {scale:1, y:0, duration:.12}, 40.16);
+      tl.fromTo("#cap-42 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 40.13);
+      tl.fromTo("#cap-42-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 40.18);
+      tl.to("#cap-42-w0", {scale:1, y:0, duration:.12}, 40.3);
+      tl.fromTo("#cap-42-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 40.3);
+      tl.to("#cap-42-w1", {scale:1, y:0, duration:.12}, 40.69);
+      tl.fromTo("#cap-42-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 40.69);
+      tl.to("#cap-42-w2", {scale:1, y:0, duration:.12}, 40.78);
+      tl.fromTo("#cap-43 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 40.72);
+      tl.fromTo("#cap-43-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 40.77);
+      tl.to("#cap-43-w0", {scale:1, y:0, duration:.12}, 41.36);
+      tl.fromTo("#cap-44 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 41.31);
+      tl.fromTo("#cap-44-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 41.36);
+      tl.to("#cap-44-w0", {scale:1, y:0, duration:.12}, 41.99);
+      tl.fromTo("#cap-44-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 41.99);
+      tl.to("#cap-44-w1", {scale:1, y:0, duration:.12}, 42.64);
+      tl.fromTo("#cap-45 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 42.59);
+      tl.fromTo("#cap-45-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 42.64);
+      tl.to("#cap-45-w0", {scale:1, y:0, duration:.12}, 42.73);
+      tl.fromTo("#cap-45-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 42.71);
+      tl.to("#cap-45-w1", {scale:1, y:0, duration:.12}, 42.97);
+      tl.fromTo("#cap-45-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 43.04);
+      tl.to("#cap-45-w2", {scale:1, y:0, duration:.12}, 43.44);
+      tl.fromTo("#cap-46 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 43.39);
+      tl.fromTo("#cap-46-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 43.44);
+      tl.to("#cap-46-w0", {scale:1, y:0, duration:.12}, 43.67);
+      tl.fromTo("#cap-46-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 43.67);
+      tl.to("#cap-46-w1", {scale:1, y:0, duration:.12}, 44.12);
+      tl.fromTo("#cap-46-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 44.23);
+      tl.to("#cap-46-w2", {scale:1, y:0, duration:.12}, 44.32);
+      tl.fromTo("#cap-47 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 44.27);
+      tl.fromTo("#cap-47-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 44.32);
+      tl.to("#cap-47-w0", {scale:1, y:0, duration:.12}, 44.72);
+      tl.fromTo("#cap-47-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 44.72);
+      tl.to("#cap-47-w1", {scale:1, y:0, duration:.12}, 45.56);
+      tl.fromTo("#cap-48 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 45.51);
+      tl.fromTo("#cap-48-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 45.56);
+      tl.to("#cap-48-w0", {scale:1, y:0, duration:.12}, 46.24);
+      tl.fromTo("#cap-48-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 46.24);
+      tl.to("#cap-48-w1", {scale:1, y:0, duration:.12}, 46.35);
+      tl.fromTo("#cap-48-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 46.39);
+      tl.to("#cap-48-w2", {scale:1, y:0, duration:.12}, 46.75);
+      tl.fromTo("#cap-49 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 46.7);
+      tl.fromTo("#cap-49-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 46.75);
+      tl.to("#cap-49-w0", {scale:1, y:0, duration:.12}, 47.05);
+      tl.fromTo("#cap-49-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 47.05);
+      tl.to("#cap-49-w1", {scale:1, y:0, duration:.12}, 47.35);
+      tl.fromTo("#cap-49-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 47.35);
+      tl.to("#cap-49-w2", {scale:1, y:0, duration:.12}, 47.55);
+      tl.fromTo("#cap-50 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 47.5);
+      tl.fromTo("#cap-50-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 47.55);
+      tl.to("#cap-50-w0", {scale:1, y:0, duration:.12}, 48.14);
+      tl.fromTo("#cap-50-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 48.14);
+      tl.to("#cap-50-w1", {scale:1, y:0, duration:.12}, 48.96);
+      tl.fromTo("#cap-51 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 48.91);
+      tl.fromTo("#cap-51-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 48.96);
+      tl.to("#cap-51-w0", {scale:1, y:0, duration:.12}, 49.187);
+      tl.fromTo("#cap-51-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 49.187);
+      tl.to("#cap-51-w1", {scale:1, y:0, duration:.12}, 49.413);
+      tl.fromTo("#cap-51-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 49.413);
+      tl.to("#cap-51-w2", {scale:1, y:0, duration:.12}, 49.64);
+      tl.fromTo("#cap-52 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 49.59);
+      tl.fromTo("#cap-52-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 49.64);
+      tl.to("#cap-52-w0", {scale:1, y:0, duration:.12}, 49.73);
+      tl.fromTo("#cap-52-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 49.73);
+      tl.to("#cap-52-w1", {scale:1, y:0, duration:.12}, 50.84);
+      tl.fromTo("#cap-53 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 50.79);
+      tl.fromTo("#cap-53-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 50.84);
+      tl.to("#cap-53-w0", {scale:1, y:0, duration:.12}, 51.265);
+      tl.fromTo("#cap-53-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 51.265);
+      tl.to("#cap-53-w1", {scale:1, y:0, duration:.12}, 51.69);
+      tl.fromTo("#cap-53-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 51.69);
+      tl.to("#cap-53-w2", {scale:1, y:0, duration:.12}, 52.02);
+      tl.fromTo("#cap-54 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 51.97);
+      tl.fromTo("#cap-54-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 52.02);
+      tl.to("#cap-54-w0", {scale:1, y:0, duration:.12}, 53.32);
+      tl.fromTo("#cap-55 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 53.27);
+      tl.fromTo("#cap-55-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 53.32);
+      tl.to("#cap-55-w0", {scale:1, y:0, duration:.12}, 53.82);
+      tl.fromTo("#cap-55-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 53.82);
+      tl.to("#cap-55-w1", {scale:1, y:0, duration:.12}, 53.99);
+      tl.fromTo("#cap-55-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 53.99);
+      tl.to("#cap-55-w2", {scale:1, y:0, duration:.12}, 54.49);
+      tl.fromTo("#cap-56 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 54.44);
+      tl.fromTo("#cap-56-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 54.49);
+      tl.to("#cap-56-w0", {scale:1, y:0, duration:.12}, 55.23);
+      tl.fromTo("#cap-56-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 55.23);
+      tl.to("#cap-56-w1", {scale:1, y:0, duration:.12}, 55.84);
+      tl.fromTo("#cap-57 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 55.79);
+      tl.fromTo("#cap-57-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 55.84);
+      tl.to("#cap-57-w0", {scale:1, y:0, duration:.12}, 56.37);
+      tl.fromTo("#cap-58 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 56.32);
+      tl.fromTo("#cap-58-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 56.37);
+      tl.to("#cap-58-w0", {scale:1, y:0, duration:.12}, 56.46);
+      tl.fromTo("#cap-58-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 56.46);
+      tl.to("#cap-58-w1", {scale:1, y:0, duration:.12}, 56.67);
+      tl.fromTo("#cap-58-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 56.67);
+      tl.to("#cap-58-w2", {scale:1, y:0, duration:.12}, 56.95);
+      tl.fromTo("#cap-59 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 56.9);
+      tl.fromTo("#cap-59-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 56.95);
+      tl.to("#cap-59-w0", {scale:1, y:0, duration:.12}, 57.49);
+      tl.fromTo("#cap-59-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 57.49);
+      tl.to("#cap-59-w1", {scale:1, y:0, duration:.12}, 57.94);
+      tl.fromTo("#cap-60 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 58.22);
+      tl.fromTo("#cap-60-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 58.27);
+      tl.to("#cap-60-w0", {scale:1, y:0, duration:.12}, 58.36);
+      tl.fromTo("#cap-60-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 58.34);
+      tl.to("#cap-60-w1", {scale:1, y:0, duration:.12}, 58.43);
+      tl.fromTo("#cap-60-w2", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 58.43);
+      tl.to("#cap-60-w2", {scale:1, y:0, duration:.12}, 58.52);
+      tl.fromTo("#cap-61 .cap-in", {opacity:0, y:18, scale:.95}, {opacity:1, y:0, scale:1, duration:.13, ease:"back.out(2)"}, 58.47);
+      tl.fromTo("#cap-61-w0", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 58.52);
+      tl.to("#cap-61-w0", {scale:1, y:0, duration:.12}, 58.66);
+      tl.fromTo("#cap-61-w1", {scale:1, y:0}, {scale:1.1, y:-4, duration:.08, ease:"power2.out", immediateRender:false}, 58.66);
+      tl.to("#cap-61-w1", {scale:1, y:0, duration:.12}, 59.2);
       window.__timelines["main"] = tl;
-      tl.seek(0);
     </script>
   </body>
 </html>

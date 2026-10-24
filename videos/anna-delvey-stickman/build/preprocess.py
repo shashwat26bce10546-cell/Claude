@@ -76,7 +76,7 @@ if os.path.exists(ALPHA_CACHE):
     ALPHAS = np.load(ALPHA_CACHE)
 else:
     shared = []
-    for c in (1, 2, 9, 10, 11, 12, 15):          # clips whose mark sits over flat art
+    for c in SHARED_CLIPS:                       # clips whose mark sits over flat background
         for f in read_gray(c, 4):
             roi = f[Y0:Y1, X0:X1]
             bg = cv2.medianBlur(roi.astype(np.uint8), 61).astype(np.float32)

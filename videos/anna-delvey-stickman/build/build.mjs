@@ -1,4 +1,4 @@
-// Generates ../index.html for the Thomas Blood stickman explainer (English VO).
+// Generates ../index.html for the Anna Delvey stickman explainer (English VO).
 //   node build/build.mjs
 // Timing comes from the ElevenLabs Scribe word timestamps in build/words.json.
 // Style brief: minimal — captions carry the video, with a card only on the key beats.
@@ -11,12 +11,12 @@ const words = JSON.parse(readFileSync(join(here, "words.json"), "utf8"));
 const fmt = (n) => +(+n).toFixed(3);
 
 // Scene starts (output seconds) — must match build/preprocess.py
-const S = [0, 5.04, 8.40, 12.05, 17.50, 21.48, 25.12, 29.63, 33.44, 39.39, 42.99, 46.35, 51.43, 55.94, 59.80];
-const END = 64.3;
+const S = [0, 5.20, 8.95, 12.68, 16.10, 20.06, 23.35, 26.75, 31.06, 34.95, 38.32, 41.28, 45.50, 50.76, 55.76];
+const END = 60.2;
 const HANDLE = 0.3; // each prepped clip starts 0.3s early so transitions have something to work with
 
 // transition INTO scene i (i >= 1) — kept light: cut-like fades, a couple of whips and zooms
-const TRANS = [null, "fade", "whip", "fade", "zoom", "fade", "pop", "whip", "fade", "zoom", "dip", "fade", "dip", "zoom", "fade"];
+const TRANS = [null, "whip", "fade", "pop", "fade", "zoom", "fade", "whip", "fade", "dip", "fade", "dip", "fade", "zoom", "whip"];
 
 const tl = [];
 const sfx = []; // [file, time, volume]
@@ -72,17 +72,18 @@ const card = (id, a, b, cls, html, tilt = -2) => gfx(id, a, b, cls,
   (T, D) => `tl.fromTo("#${id} .card", {opacity:0, y:26, scale:.88}, {opacity:1, y:0, scale:1, duration:.34, ease:"back.out(2)"}, ${T});` +
     `tl.to("#${id} .card", {opacity:0, y:-18, duration:.26, ease:"power2.in"}, ${fmt(T + D - 0.26)});`);
 
-// 1671, COLONEL BLOOD, NERVE!, MAY 9 and WHY DID THE KING FORGIVE HIM? are already lettered
-// into the artwork, so no card repeats them.
-card("g-priest", 15.0, 17.42, "g-topright", `<b>&#10013; PRIEST DISGUISE</b>`, -3);
-sfx.push(["click-soft", 15.0, 0.45]);
-card("g-nephew", 18.52, 21.39, "g-top", `<b>A NEPHEW</b><span>who did not exist</span>`, -1.5);
-sfx.push(["pop", 18.52, 0.4]);
-card("g-loot", 33.69, 36.89, "g-topright", `<b>CROWN &middot; ORB &middot; SCEPTRE</b>`, 2.5);
-sfx.push(["click-soft", 33.69, 0.45]);
-sfx.push(["sparkle", 49.18, 0.4]);   // the jewels coming back is in the artwork; just accent it
-card("g-pardon", 58.03, 59.84, "g-top", `<b>PARDONED</b><span>and given land</span>`, 2);
-sfx.push(["pop", 58.03, 0.4]);
+// EUR 60 MILLION, ANNA SOROKIN, ART CLUB, HOTEL, PROSECUTORS SAID, FORGED, $22M/$25M NO,
+// $35,400 UNPAID, 2017, NO CRIME MEANT, APRIL 2019 GUILTY, 2021, 2022 and WOULD YOU HAVE
+// BELIEVED HER? are already lettered into the artwork, so no card repeats them.
+card("g-name", 5.6, 8.85, "g-top", `<b>ANNA DELVEY</b><span>the name was fake</span>`, -1.5);
+sfx.push(["pop", 5.6, 0.4]);
+sfx.push(["sparkle", 16.3, 0.4]);   // the hotel-life reveal is in the artwork; just accent it
+card("g-larceny", 43.0, 45.4, "g-topright", `<b>GRAND LARCENY</b>`, 2.5);
+sfx.push(["click-soft", 43.0, 0.45]);
+card("g-years", 46.1, 48.8, "g-topright", `<b>4 TO 12 YEARS</b>`, -3);
+sfx.push(["click-soft", 46.1, 0.45]);
+card("g-show", 53.3, 55.65, "g-top", `<b>&ldquo;INVENTING ANNA&rdquo;</b><span>her story on screen</span>`, 2);
+sfx.push(["pop", 53.3, 0.4]);
 
 // final fade
 tl.push(`tl.fromTo("#fade", {opacity:0}, {opacity:1, duration:.6, ease:"power1.in", immediateRender:false}, ${fmt(END - 0.6)});`);
@@ -128,7 +129,7 @@ const html = `<!doctype html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1080, height=1920" />
-    <title>Thomas Blood — stickman explainer</title>
+    <title>Anna Delvey — stickman explainer</title>
     <script src="vendor/gsap.min.js"></script>
     <style>
       @font-face { font-family: "Montserrat"; font-weight: 900; src: url("assets/fonts/montserrat-latin-900-normal.woff2") format("woff2"); }
@@ -174,7 +175,7 @@ ${G.join("\n")}
 ${caps}
       <div id="dip"></div>
       <div id="fade"></div>
-      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="63.4" data-track-index="10" data-volume="1"></audio>
+      <audio id="voiceover" src="assets/audio/voiceover-master.mp3" data-start="0" data-duration="59.3" data-track-index="10" data-volume="1"></audio>
       <audio id="score" src="assets/audio/score.mp3" data-start="0" data-duration="${END}" data-track-index="11" data-volume="0.3"></audio>
 ${sfxHtml}
     </div>
